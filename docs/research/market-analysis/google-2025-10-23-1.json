@@ -1,0 +1,4169 @@
+[
+  {
+    "keyword": "fitness interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,78",
+    "data-numeric (5)": "R$ 3,67"
+  },
+  {
+    "keyword": "hiit workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,98",
+    "data-numeric (5)": "R$ 6,32"
+  },
+  {
+    "keyword": "tabata timer app",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,16"
+  },
+  {
+    "keyword": "workout countdown timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,42",
+    "data-numeric (5)": "R$ 4,81"
+  },
+  {
+    "keyword": "exercise interval timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "crossfit timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,95",
+    "data-numeric (5)": "R$ 5,62"
+  },
+  {
+    "keyword": "training countdown timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,81",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "crossfit timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,73",
+    "data-numeric (5)": "R$ 7,79"
+  },
+  {
+    "keyword": "tabata timer",
+    "value-text": "10 mil – 100 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,52"
+  },
+  {
+    "keyword": "free hiit workout app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 4,59",
+    "data-numeric (5)": "R$ 12,21"
+  },
+  {
+    "keyword": "fitness timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,81",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "best gym timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,92",
+    "data-numeric (5)": "R$ 14,85"
+  },
+  {
+    "keyword": "exercise timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,81",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "hiit timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 4,31"
+  },
+  {
+    "keyword": "interval training app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,67",
+    "data-numeric (5)": "R$ 18,73"
+  },
+  {
+    "keyword": "best gym clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,48",
+    "data-numeric (5)": "R$ 21,32"
+  },
+  {
+    "keyword": "gym interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,68",
+    "data-numeric (5)": "R$ 7,87"
+  },
+  {
+    "keyword": "hiit timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,70",
+    "data-numeric (5)": "R$ 6,78"
+  },
+  {
+    "keyword": "workout timer clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,62",
+    "data-numeric (5)": "R$ 5,89"
+  },
+  {
+    "keyword": "best free hiit workout app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 5,45",
+    "data-numeric (5)": "R$ 14,86"
+  },
+  {
+    "keyword": "interval training timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "best home gym timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 4,81",
+    "data-numeric (5)": "R$ 22,72"
+  },
+  {
+    "keyword": "crossfit gym timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,73",
+    "data-numeric (5)": "R$ 7,79"
+  },
+  {
+    "keyword": "hiit interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,27",
+    "data-numeric (5)": "R$ 3,67"
+  },
+  {
+    "keyword": "boxing gym timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,84",
+    "data-numeric (5)": "R$ 8,91"
+  },
+  {
+    "keyword": "tabata app",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,28",
+    "data-numeric (5)": "R$ 7,04"
+  },
+  {
+    "keyword": "crossfit clock app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,79",
+    "data-numeric (5)": "R$ 3,64"
+  },
+  {
+    "keyword": "workout interval timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "crossfit gym clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,16",
+    "data-numeric (5)": "R$ 9,40"
+  },
+  {
+    "keyword": "best workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,35",
+    "data-numeric (5)": "R$ 8,10"
+  },
+  {
+    "keyword": "crossfit timer clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,16",
+    "data-numeric (5)": "R$ 7,94"
+  },
+  {
+    "keyword": "best hiit workout app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,43",
+    "data-numeric (5)": "R$ 19,15"
+  },
+  {
+    "keyword": "gym interval timer clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,78",
+    "data-numeric (5)": "R$ 8,91"
+  },
+  {
+    "keyword": "workout timer online",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,51",
+    "data-numeric (5)": "R$ 9,29"
+  },
+  {
+    "keyword": "interval clock for gym",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,16",
+    "data-numeric (5)": "R$ 9,02"
+  },
+  {
+    "keyword": "best gym timer clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 3,87",
+    "data-numeric (5)": "R$ 17,14"
+  },
+  {
+    "keyword": "best tabata app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,56",
+    "data-numeric (5)": "R$ 19,96"
+  },
+  {
+    "keyword": "gym countdown timer",
+    "value-text": "10 – 100",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,36",
+    "data-numeric (5)": "R$ 6,16"
+  },
+  {
+    "keyword": "crossfit wall clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,15",
+    "data-numeric (5)": "R$ 5,95"
+  },
+  {
+    "keyword": "best home gym clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 4,16",
+    "data-numeric (5)": "R$ 21,50"
+  },
+  {
+    "keyword": "best portable gym timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,82",
+    "data-numeric (5)": "R$ 6,16"
+  },
+  {
+    "keyword": "gym timer online",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,40",
+    "data-numeric (5)": "R$ 21,77"
+  },
+  {
+    "keyword": "interval training timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 8,55"
+  },
+  {
+    "keyword": "hiit clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,12",
+    "data-numeric (5)": "R$ 5,51"
+  },
+  {
+    "keyword": "best free hiit app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,30",
+    "data-numeric (5)": "R$ 20,47"
+  },
+  {
+    "keyword": "circuit training timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 3,40"
+  },
+  {
+    "keyword": "gym interval clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,68",
+    "data-numeric (5)": "R$ 7,87"
+  },
+  {
+    "keyword": "best interval training app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 5,29",
+    "data-numeric (5)": "R$ 27,46"
+  },
+  {
+    "keyword": "exercise timer clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,62",
+    "data-numeric (5)": "R$ 5,89"
+  },
+  {
+    "keyword": "tabata workout app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,14",
+    "data-numeric (5)": "R$ 17,78"
+  },
+  {
+    "keyword": "best crossfit gym timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free hiit app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 3,87",
+    "data-numeric (5)": "R$ 13,12"
+  },
+  {
+    "keyword": "gym workout clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,21",
+    "data-numeric (5)": "R$ 11,34"
+  },
+  {
+    "keyword": "fitness clock timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,62",
+    "data-numeric (5)": "R$ 5,89"
+  },
+  {
+    "keyword": "hiit workout timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,08",
+    "data-numeric (5)": "R$ 12,85"
+  },
+  {
+    "keyword": "gym workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,43",
+    "data-numeric (5)": "R$ 4,16"
+  },
+  {
+    "keyword": "portable crossfit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best workout clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,38",
+    "data-numeric (5)": "R$ 8,19"
+  },
+  {
+    "keyword": "free workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,19",
+    "data-numeric (5)": "R$ 8,41"
+  },
+  {
+    "keyword": "apple watch hiit timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best hiit timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,08",
+    "data-numeric (5)": "R$ 6,21"
+  },
+  {
+    "keyword": "timer for gym workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,59",
+    "data-numeric (5)": "R$ 3,19"
+  },
+  {
+    "keyword": "workout set timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 5,08"
+  },
+  {
+    "keyword": "tabata training app",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,28",
+    "data-numeric (5)": "R$ 7,04"
+  },
+  {
+    "keyword": "best garage gym timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,11",
+    "data-numeric (5)": "R$ 13,57"
+  },
+  {
+    "keyword": "interval training app free",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,93",
+    "data-numeric (5)": "R$ 12,07"
+  },
+  {
+    "keyword": "gym rest timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,08",
+    "data-numeric (5)": "R$ 5,29"
+  },
+  {
+    "keyword": "free hiit timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,99",
+    "data-numeric (5)": "R$ 7,54"
+  },
+  {
+    "keyword": "high intensity interval training app",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 4,44",
+    "data-numeric (5)": "R$ 17,98"
+  },
+  {
+    "keyword": "hiit timer free",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 2,81"
+  },
+  {
+    "keyword": "workout timer online free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,63",
+    "data-numeric (5)": "R$ 8,59"
+  },
+  {
+    "keyword": "timer crossfit app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,29",
+    "data-numeric (5)": "R$ 4,26"
+  },
+  {
+    "keyword": "interval training clock",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "crossfit interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,67",
+    "data-numeric (5)": "R$ 5,84"
+  },
+  {
+    "keyword": "tabata app free",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,37",
+    "data-numeric (5)": "R$ 6,27"
+  },
+  {
+    "keyword": "best gym clock timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,59",
+    "data-numeric (5)": "R$ 21,26"
+  },
+  {
+    "keyword": "gym round timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,67",
+    "data-numeric (5)": "R$ 8,01"
+  },
+  {
+    "keyword": "boxing training timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best crossfit timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "10 minute tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "15 minute tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "-100%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "20 10 tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "20 minute hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "20 minute tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "30 30 hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "30 sec workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 5,40"
+  },
+  {
+    "keyword": "30 second exercise timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 5,40"
+  },
+  {
+    "keyword": "30 second hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "30 second timer workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "4 minute tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "40 20 hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "40 20 tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "45 15 workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "a hiit interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "android hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "android tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "android workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "app crossfit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "app for hiit timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,70",
+    "data-numeric (5)": "R$ 6,78"
+  },
+  {
+    "keyword": "app for hiit workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 14,20"
+  },
+  {
+    "keyword": "app for tabata timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,16"
+  },
+  {
+    "keyword": "app tabata gratis",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 1,73"
+  },
+  {
+    "keyword": "app tabata iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "app timer crossfit",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,95",
+    "data-numeric (5)": "R$ 5,62"
+  },
+  {
+    "keyword": "app timer interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,20",
+    "data-numeric (5)": "R$ 6,22"
+  },
+  {
+    "keyword": "app timer tabata",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,09",
+    "data-numeric (5)": "R$ 0,39"
+  },
+  {
+    "keyword": "apple watch exercise timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch interval training app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch running app intervals",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch running interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch tabata",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch tabata app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch tabata timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch wod timer",
+    "value-text": "10 – 100",
+    "data-numeric": "-100%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch workout interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "apple watch workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best app for hiit workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best app for interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,38",
+    "data-numeric (5)": "R$ 6,75"
+  },
+  {
+    "keyword": "best app for tabata workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 6,05",
+    "data-numeric (5)": "R$ 24,95"
+  },
+  {
+    "keyword": "best apps for interval running",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 3,08",
+    "data-numeric (5)": "R$ 27,64"
+  },
+  {
+    "keyword": "best crossfit clock app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best exercise timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,35",
+    "data-numeric (5)": "R$ 8,10"
+  },
+  {
+    "keyword": "best fitness timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,35",
+    "data-numeric (5)": "R$ 8,10"
+  },
+  {
+    "keyword": "best free app for hiit workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,38",
+    "data-numeric (5)": "R$ 6,86"
+  },
+  {
+    "keyword": "best free hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free hiit timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,94",
+    "data-numeric (5)": "R$ 6,59"
+  },
+  {
+    "keyword": "best free hiit timer app iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free interval timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free interval training app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 4,54",
+    "data-numeric (5)": "R$ 24,13"
+  },
+  {
+    "keyword": "best free tabata app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,77",
+    "data-numeric (5)": "R$ 5,60"
+  },
+  {
+    "keyword": "best free tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free tabata timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,35",
+    "data-numeric (5)": "R$ 8,53"
+  },
+  {
+    "keyword": "best free tabata timer app android",
+    "value-text": "10 – 100",
+    "data-numeric": "+∞",
+    "data-numeric (2)": "+∞",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best free workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,07",
+    "data-numeric (5)": "R$ 8,26"
+  },
+  {
+    "keyword": "best gym interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 3,51",
+    "data-numeric (5)": "R$ 14,31"
+  },
+  {
+    "keyword": "best hiit app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 6,84",
+    "data-numeric (5)": "R$ 19,39"
+  },
+  {
+    "keyword": "best hiit interval timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best hiit timer app for android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best hiit timer app for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best hiit workout timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best home gym interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best interval timer app free",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,55",
+    "data-numeric (5)": "R$ 5,20"
+  },
+  {
+    "keyword": "best interval timer watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best interval training app for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best interval training timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,17",
+    "data-numeric (5)": "R$ 10,01"
+  },
+  {
+    "keyword": "best running app for interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,22",
+    "data-numeric (5)": "R$ 26,71"
+  },
+  {
+    "keyword": "best running apps for interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best running interval timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,32",
+    "data-numeric (5)": "R$ 20,10"
+  },
+  {
+    "keyword": "best stopwatch for interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata app 2021",
+    "value-text": "0 – 10",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata app 2022",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata app android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata app for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata app iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 4,81",
+    "data-numeric (5)": "R$ 10,44"
+  },
+  {
+    "keyword": "best tabata app with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 10,53"
+  },
+  {
+    "keyword": "best tabata timer app 2021",
+    "value-text": "0 – 10",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata timer app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,97",
+    "data-numeric (5)": "R$ 6,70"
+  },
+  {
+    "keyword": "best tabata timer for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best tabata workout app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best timer app for hiit training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best timer app for interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,17",
+    "data-numeric (5)": "R$ 10,01"
+  },
+  {
+    "keyword": "best timer for hiit training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best timer for interval training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,01",
+    "data-numeric (5)": "R$ 8,53"
+  },
+  {
+    "keyword": "best timer for workouts",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,35",
+    "data-numeric (5)": "R$ 8,10"
+  },
+  {
+    "keyword": "best wod timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best wod timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "best workout interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "boxing workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "bra tabata app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "cardio timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,66",
+    "data-numeric (5)": "R$ 6,59"
+  },
+  {
+    "keyword": "circuit exercise timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "circuit interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "circuit training clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,86",
+    "data-numeric (5)": "R$ 9,34"
+  },
+  {
+    "keyword": "circuit training interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 1,82",
+    "data-numeric (5)": "R$ 12,88"
+  },
+  {
+    "keyword": "circuit workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 3,40"
+  },
+  {
+    "keyword": "continuous timer for exercise",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,82",
+    "data-numeric (5)": "R$ 2,86"
+  },
+  {
+    "keyword": "countdown interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "countdown timer for exercise",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,42",
+    "data-numeric (5)": "R$ 4,81"
+  },
+  {
+    "keyword": "countdown workout app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "countdown workout timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,42",
+    "data-numeric (5)": "R$ 4,81"
+  },
+  {
+    "keyword": "crossfit countdown clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 2,16",
+    "data-numeric (5)": "R$ 3,51"
+  },
+  {
+    "keyword": "crossfit hero timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "crossfit tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "crossfit timer app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,45",
+    "data-numeric (5)": "R$ 2,81"
+  },
+  {
+    "keyword": "crossfit timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "crossfit video timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "crossfit wall clock timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "crossfit workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,94",
+    "data-numeric (5)": "R$ 9,88"
+  },
+  {
+    "keyword": "crossfit workout timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "custom hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "custom tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "custom workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "download tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,08",
+    "data-numeric (5)": "R$ 0,43"
+  },
+  {
+    "keyword": "download workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise beep timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise circuit timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 3,40"
+  },
+  {
+    "keyword": "exercise countdown timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise rep timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,06",
+    "data-numeric (5)": "R$ 6,83"
+  },
+  {
+    "keyword": "exercise timer 30 seconds",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise timer iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise timer with rest",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "exercise timers interval training",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "fitbit tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitbod timed intervals",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitlb com tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitlb tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitness countdown app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitness training timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,82",
+    "data-numeric (5)": "R$ 3,13"
+  },
+  {
+    "keyword": "fitsifu timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free apps for hiit workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free crossfit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free crossfit timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free exercise timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,19",
+    "data-numeric (5)": "R$ 8,41"
+  },
+  {
+    "keyword": "free fitness timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,19",
+    "data-numeric (5)": "R$ 8,41"
+  },
+  {
+    "keyword": "free high intensity interval training app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+∞",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free interval timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free interval timer for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free online tabata timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,78",
+    "data-numeric (5)": "R$ 8,64"
+  },
+  {
+    "keyword": "free tabata timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,08",
+    "data-numeric (5)": "R$ 5,03"
+  },
+  {
+    "keyword": "free tabata timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,57",
+    "data-numeric (5)": "R$ 4,60"
+  },
+  {
+    "keyword": "free tabata timer with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,62",
+    "data-numeric (5)": "R$ 8,13"
+  },
+  {
+    "keyword": "free wod timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "free workout interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "galaxy watch 4 interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "garmin hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "gym boss timers",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,51",
+    "data-numeric (5)": "R$ 4,65"
+  },
+  {
+    "keyword": "gym box timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "gym circuit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,09",
+    "data-numeric (5)": "R$ 3,84"
+  },
+  {
+    "keyword": "gym clocks and timers",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,94",
+    "data-numeric (5)": "R$ 9,51"
+  },
+  {
+    "keyword": "gym set timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,62",
+    "data-numeric (5)": "R$ 4,72"
+  },
+  {
+    "keyword": "gym timer clock online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "gymboss max",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "gymnext flex timer review",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "high intensity interval timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 4,31"
+  },
+  {
+    "keyword": "high intensity interval training timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 4,31"
+  },
+  {
+    "keyword": "hiit 40 20 timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit app ios",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit app timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,70",
+    "data-numeric (5)": "R$ 6,78"
+  },
+  {
+    "keyword": "hiit cardio timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,25",
+    "data-numeric (5)": "R$ 3,85"
+  },
+  {
+    "keyword": "hiit circuit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit clock app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,96",
+    "data-numeric (5)": "R$ 5,77"
+  },
+  {
+    "keyword": "hiit clock timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit countdown timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit e tabata app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit exercise timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,98",
+    "data-numeric (5)": "R$ 6,32"
+  },
+  {
+    "keyword": "hiit interval app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 2,05",
+    "data-numeric (5)": "R$ 20,16"
+  },
+  {
+    "keyword": "hiit interval timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit interval timer online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit interval training app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 2,05",
+    "data-numeric (5)": "R$ 20,16"
+  },
+  {
+    "keyword": "hiit interval training timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,26",
+    "data-numeric (5)": "R$ 1,47"
+  },
+  {
+    "keyword": "hiit online timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,32",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "hiit tabata app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,24",
+    "data-numeric (5)": "R$ 5,61"
+  },
+  {
+    "keyword": "hiit tabata timer",
+    "value-text": "10 mil – 100 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,52"
+  },
+  {
+    "keyword": "hiit timer 20 10",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer 40 20",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer 45 15",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer app android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,08",
+    "data-numeric (5)": "R$ 1,75"
+  },
+  {
+    "keyword": "hiit timer clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer on apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,16",
+    "data-numeric (5)": "R$ 3,33"
+  },
+  {
+    "keyword": "hiit timer with sound",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit timer workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit training clock",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,12",
+    "data-numeric (5)": "R$ 5,51"
+  },
+  {
+    "keyword": "hiit training clock app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit training timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 4,31"
+  },
+  {
+    "keyword": "hiit training timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,70",
+    "data-numeric (5)": "R$ 6,78"
+  },
+  {
+    "keyword": "hiit workout clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,30",
+    "data-numeric (5)": "R$ 5,34"
+  },
+  {
+    "keyword": "hiit workout creator",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit workout interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit workout maker",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit workout timer 40 20",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit workout timer app free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "hiit workout timers",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "home gym interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval app apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval fitness timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "interval hiit timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,27",
+    "data-numeric (5)": "R$ 3,67"
+  },
+  {
+    "keyword": "interval running timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 1,40",
+    "data-numeric (5)": "R$ 10,72"
+  },
+  {
+    "keyword": "interval tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,32",
+    "data-numeric (5)": "R$ 3,19"
+  },
+  {
+    "keyword": "interval timer crossfit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,67",
+    "data-numeric (5)": "R$ 5,84"
+  },
+  {
+    "keyword": "interval timer custom",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval timer fitness",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "interval timer for gym",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,68",
+    "data-numeric (5)": "R$ 7,87"
+  },
+  {
+    "keyword": "interval timer galaxy watch 4",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval timer hiit workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,27",
+    "data-numeric (5)": "R$ 4,83"
+  },
+  {
+    "keyword": "interval timer that works with spotify",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval timer with rest",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval training 20 seconds 10 seconds",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval training 30 seconds",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval training app android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,54",
+    "data-numeric (5)": "R$ 12,31"
+  },
+  {
+    "keyword": "interval training app apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,74",
+    "data-numeric (5)": "R$ 27,52"
+  },
+  {
+    "keyword": "interval training stopwatch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,88",
+    "data-numeric (5)": "R$ 9,02"
+  },
+  {
+    "keyword": "interval training timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval training timer online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "interval workout clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,51",
+    "data-numeric (5)": "R$ 4,15"
+  },
+  {
+    "keyword": "interval workout timer online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "intervals app for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "ios workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "iphone tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "jefit interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+∞",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "joe wicks interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "jump rope interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "one minute workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,50",
+    "data-numeric (5)": "R$ 2,48"
+  },
+  {
+    "keyword": "online free interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,11",
+    "data-numeric (5)": "R$ 4,95"
+  },
+  {
+    "keyword": "online interval timer for workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "+∞",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "online tabata clock",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,62",
+    "data-numeric (5)": "R$ 5,99"
+  },
+  {
+    "keyword": "online tabata interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,32",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "online tabata timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,32",
+    "data-numeric (5)": "R$ 4,48"
+  },
+  {
+    "keyword": "online timer hiit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "online workout timer free",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "programmable workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,65",
+    "data-numeric (5)": "R$ 3,46"
+  },
+  {
+    "keyword": "rep fitness timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 3,77",
+    "data-numeric (5)": "R$ 23,50"
+  },
+  {
+    "keyword": "repeating timer for workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,49",
+    "data-numeric (5)": "R$ 8,37"
+  },
+  {
+    "keyword": "repeating workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "round and workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 1,21",
+    "data-numeric (5)": "R$ 4,21"
+  },
+  {
+    "keyword": "running app for interval training",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 2,00",
+    "data-numeric (5)": "R$ 19,69"
+  },
+  {
+    "keyword": "running interval timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "samsung galaxy watch 4 interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "-100%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "samsung watch 4 interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "set timer for workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,06",
+    "data-numeric (5)": "R$ 1,13"
+  },
+  {
+    "keyword": "set timer workout",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "simple hiit timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,86",
+    "data-numeric (5)": "R$ 1,89"
+  },
+  {
+    "keyword": "smart wod timer",
+    "value-text": "10 – 100",
+    "data-numeric": "-90%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "smartwod timer app",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,43",
+    "data-numeric (5)": "R$ 3,02"
+  },
+  {
+    "keyword": "smartwod timer online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "smartwod timer premium apk",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "spotify hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "sprint interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata 20 20 timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata 40 20 timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,13",
+    "data-numeric (5)": "R$ 2,37"
+  },
+  {
+    "keyword": "tabata android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata apk",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata app android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 4,65"
+  },
+  {
+    "keyword": "tabata app apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata app download",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata app for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata app iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,27",
+    "data-numeric (5)": "R$ 4,64"
+  },
+  {
+    "keyword": "tabata app timer",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,16"
+  },
+  {
+    "keyword": "tabata app with music",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,37",
+    "data-numeric (5)": "R$ 7,23"
+  },
+  {
+    "keyword": "tabata apple watch app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata clock app",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,16"
+  },
+  {
+    "keyword": "tabata clock with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata countdown",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata countdown timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata exercise timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,54",
+    "data-numeric (5)": "R$ 8,24"
+  },
+  {
+    "keyword": "tabata for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata hiit app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,24",
+    "data-numeric (5)": "R$ 5,61"
+  },
+  {
+    "keyword": "tabata hiit counter premium apk",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata hiit interval timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata hiit timer online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata ios",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata music and timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata music timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,31",
+    "data-numeric (5)": "R$ 4,43"
+  },
+  {
+    "keyword": "tabata music with countdown free download",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata online workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata pro",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata pro app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata pro tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata pro timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata pro timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata songs app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,54",
+    "data-numeric (5)": "R$ 3,48"
+  },
+  {
+    "keyword": "tabata stopwatch",
+    "value-text": "10 – 100",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata stopwatch app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata stopwatch pro",
+    "value-text": "10 – 100",
+    "data-numeric": "+900%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,07",
+    "data-numeric (5)": "R$ 1,44"
+  },
+  {
+    "keyword": "tabata stopwatch pro app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata stopwatch pro paid",
+    "value-text": "10 – 100",
+    "data-numeric": "-100%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata style timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer 1 minute",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer 20 10 with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer 40 20",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer 45 15",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer and hiit timer",
+    "value-text": "10 mil – 100 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,52"
+  },
+  {
+    "keyword": "tabata timer apk",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer app android",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer app store",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer app with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,23",
+    "data-numeric (5)": "R$ 0,65"
+  },
+  {
+    "keyword": "tabata timer apple watch",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,54",
+    "data-numeric (5)": "R$ 4,32"
+  },
+  {
+    "keyword": "tabata timer com",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer crossfit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer fitbit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer for apple watch",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer for pc",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer for windows",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer free download",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer galaxy watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer google play",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer interval timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 3,35"
+  },
+  {
+    "keyword": "tabata timer ios",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer iphone",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer pro apk",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer samsung watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer that works with spotify",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,16",
+    "data-numeric (5)": "R$ 3,33"
+  },
+  {
+    "keyword": "tabata timer windows",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer with sound",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,57",
+    "data-numeric (5)": "R$ 8,54"
+  },
+  {
+    "keyword": "tabata timer with voice",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata timer workout",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,54",
+    "data-numeric (5)": "R$ 8,24"
+  },
+  {
+    "keyword": "tabata timer youtube",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata trainer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata training timer",
+    "value-text": "10 mil – 100 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,52"
+  },
+  {
+    "keyword": "tabata watch timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata wod generator",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+∞",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout timer app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout timer with music",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "tabata workout with timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timebirds gym timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timebirds workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 3,40",
+    "data-numeric (5)": "R$ 18,10"
+  },
+  {
+    "keyword": "timed interval workouts",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 7,13"
+  },
+  {
+    "keyword": "timer 45 seconds 15 seconds rest",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timer app for hiit workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,43",
+    "data-numeric (5)": "R$ 12,77"
+  },
+  {
+    "keyword": "timer circuit training",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,36",
+    "data-numeric (5)": "R$ 1,80"
+  },
+  {
+    "keyword": "timer for boxing workouts",
+    "value-text": "10 – 100",
+    "data-numeric": "+∞",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timer for hiit app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 0,27",
+    "data-numeric (5)": "R$ 2,16"
+  },
+  {
+    "keyword": "timer for tabata",
+    "value-text": "10 mil – 100 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,11",
+    "data-numeric (5)": "R$ 2,52"
+  },
+  {
+    "keyword": "timer for workout online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timer for workout sets",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 5,08"
+  },
+  {
+    "keyword": "timer hiit online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "timer plus workout timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+900%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 0,13",
+    "data-numeric (5)": "R$ 1,62"
+  },
+  {
+    "keyword": "timer workout interval",
+    "value-text": "1 mil – 10 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,87",
+    "data-numeric (5)": "R$ 5,24"
+  },
+  {
+    "keyword": "weight lifting timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,73",
+    "data-numeric (5)": "R$ 12,37"
+  },
+  {
+    "keyword": "wod timer apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "wod timer for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "+∞",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "work out interval timer",
+    "value-text": "0 – 10",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-100%",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout 30 second intervals",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,72",
+    "data-numeric (5)": "R$ 17,89"
+  },
+  {
+    "keyword": "workout 30 second timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout and rest timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,18",
+    "data-numeric (5)": "R$ 9,56"
+  },
+  {
+    "keyword": "workout clock online",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout countdown",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,02",
+    "data-numeric (5)": "R$ 8,91"
+  },
+  {
+    "keyword": "workout countdown app",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 0,76",
+    "data-numeric (5)": "R$ 9,51"
+  },
+  {
+    "keyword": "workout countdown clock",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout hiit timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout online timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout rep timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "R$ 1,06",
+    "data-numeric (5)": "R$ 6,83"
+  },
+  {
+    "keyword": "workout rest timer",
+    "value-text": "100 – 1 mil",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "R$ 1,40",
+    "data-numeric (5)": "R$ 6,38"
+  },
+  {
+    "keyword": "workout round timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "R$ 1,21",
+    "data-numeric (5)": "R$ 4,21"
+  },
+  {
+    "keyword": "workout split timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer 30 seconds",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer custom intervals",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer for apple watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "-90%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer for home gym",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer tabata hiit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer tabata hiit",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer that beeps every minute",
+    "value-text": "10 – 100",
+    "data-numeric": "+∞",
+    "data-numeric (2)": "0%",
+    "resizable": "Média",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer watch",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Alta",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer website",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "workout timer with breaks",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "www gymboss com",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "youtube tabata timer",
+    "value-text": "10 – 100",
+    "data-numeric": "0%",
+    "data-numeric (2)": "0%",
+    "resizable": "Baixa",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "fitness class timer app",
+    "value-text": "0 – 10",
+    "data-numeric": "—",
+    "data-numeric (2)": "—",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "gym class timer",
+    "value-text": "0 – 10",
+    "data-numeric": "—",
+    "data-numeric (2)": "—",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  },
+  {
+    "keyword": "sports event timer",
+    "value-text": "0 – 10",
+    "data-numeric": "—",
+    "data-numeric (2)": "—",
+    "resizable": "—",
+    "data-numeric (4)": "—",
+    "data-numeric (5)": "—"
+  }
+]
