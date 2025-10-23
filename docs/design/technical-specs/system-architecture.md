@@ -21,7 +21,7 @@
  App Schema   Marketing       Billing     Auth        Storage
  (events,     Schema          Schema      (users,     (logos,
  timers,      (signups,       (plans,     sessions)   reports,
- reports)     forms, blog)    subs, txns)             assets)
+ messages)    forms, blog)    subs, txns)             assets)
 ```
 
 ```
@@ -35,6 +35,7 @@
    │ - Timer creation         │
    │ - Presenter/Controller   │
    │ - Real-time sync         │
+   │ - Presenter messaging    │
    │ - Reports export         │
    └──────────────────────────┘
 ```
@@ -70,11 +71,13 @@
 ---
 
 ## 🔑 Key Points
-- **One Supabase instance** serves both the **app** and the **marketing site**.  
-- **Schemas separate concerns**:  
-  - `app` schema → timers, events, reports.  
-  - `marketing` schema → signups, blog posts.  
-  - `billing` schema → subscriptions, payments.  
-- **Auth is shared**: users can log in once and be recognized across app + marketing.  
-- **Stripe/LemonSqueezy** integrates via webhooks → updates subscription tables in Supabase.  
+- **One Supabase instance** serves both the **app** and the **marketing site**.
+- **Mobile-first approach** using **Next.js + Ionic + Capacitor starter** for rapid development
+- **Schemas separate concerns**:
+  - `app` schema → timers, events, messages, reports.
+  - `marketing` schema → signups, blog posts.
+  - `billing` schema → subscriptions, payments.
+- **Cross-platform deployment**: Single codebase deploys to web, iOS, and Android
+- **Auth is shared**: users can log in once and be recognized across app + marketing.
+- **Stripe/LemonSqueezy** integrates via webhooks → updates subscription tables in Supabase.
 - **Admin dashboard** (optional) can query Supabase directly for analytics.  
