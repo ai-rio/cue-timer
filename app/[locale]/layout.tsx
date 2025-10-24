@@ -1,6 +1,6 @@
 import '../globals.css';
 
-import { JetBrains_Mono, Plus_Jakarta_Sans, Source_Serif_4 } from 'next/font/google';
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -10,33 +10,33 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import Navigation from '@/components/Navigation';
 import { AuthProvider } from '@/contexts/AuthContext';
 
-// Configure Plus Jakarta Sans (Body & UI) - Optimized with fewer weights
-const jakarta = Plus_Jakarta_Sans({
+// Configure Inter (Primary Font) - Design System Requirement
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '600'], // Reduced from 4 to 2 weights for better performance
+  weight: ['400', '500', '600', '700'], // Regular, Medium, Semibold, Bold
   display: 'swap',
   preload: true,
   fallback: ['system-ui', 'sans-serif'],
 });
 
-// Configure Source Serif 4 (Headers & Emphasis) - Optimized
-const sourceSerif = Source_Serif_4({
+// Configure Space Grotesk (Timer Display) - Design System Requirement
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-serif',
-  weight: ['400', '700'], // Reduced from 3 to 2 weights
+  variable: '--font-timer',
+  weight: ['400', '500', '700'], // Regular, Medium, Bold
   display: 'swap',
   preload: true,
-  fallback: ['Georgia', 'serif'],
+  fallback: ['Inter', 'system-ui', 'sans-serif'],
 });
 
-// Configure JetBrains Mono (Code & Data) - Load on demand
+// Configure JetBrains Mono (Technical Elements) - Design System Requirement
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['400'], // Single weight for monospace
+  weight: ['400'], // Regular weight for monospace
   display: 'swap',
-  preload: false, // Load only when needed
+  preload: true,
   fallback: ['Consolas', 'Monaco', 'monospace'],
 });
 
@@ -60,10 +60,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html
       lang={locale}
-      className={`scroll-smooth ${jakarta.variable} ${sourceSerif.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <body className={`${jakarta.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <script
           dangerouslySetInnerHTML={{
             __html: `
