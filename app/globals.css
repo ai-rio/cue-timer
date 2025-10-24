@@ -146,6 +146,29 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Smooth theme transitions for all elements */
+* {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Enhanced theme transitions for interactive elements */
+button,
+a,
+.card,
+.badge,
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
 }
 
 @layer base {

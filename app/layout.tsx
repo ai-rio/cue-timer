@@ -29,7 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
-      <body className='font-sans antialiased'>{children}</body>
+      <body
+        className='font-sans antialiased bg-background text-foreground transition-colors duration-300'
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
     </html>
   );
 }
