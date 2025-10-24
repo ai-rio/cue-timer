@@ -21,10 +21,16 @@ categorization.
 Comprehensive project planning, business strategy, content strategy, and
 go-to-market planning.
 
-- **Project Planning**: Core project documents, briefs, and customer profiles
-- **Content Strategy**: Brand voice, messaging frameworks, and content pillars
-- **Go-to-Market**: Market strategy, competitive positioning, and launch plans
-- **Help Documentation**: User assistance and support content
+- **[Project Planning](strategy/project-planning/)**: Core project documents,
+  briefs, and customer profiles
+- **[Roadmap](strategy/roadmap/)**: Strategic development timeline and feature
+  delivery plan
+- **[Content Strategy](strategy/content-strategy.md)**: Brand voice, messaging
+  frameworks, and content pillars
+- **[Go-to-Market](strategy/go-to-market/)**: Market strategy, competitive
+  positioning, and launch plans
+- **[Help Documentation](strategy/help-documentation.md)**: User assistance and
+  support content
 
 ### 🎨 Design
 
@@ -99,6 +105,7 @@ Images, brand resources, and other visual assets.
 
 ### For Product Managers
 
+- [Product Roadmap](strategy/roadmap/project-roadmap.md)
 - [Product Strategy](strategy/)
 - [Content Strategy](strategy/content-strategy.md)
 - [Market Research](research/market-analysis/)
@@ -146,7 +153,7 @@ All documentation follows kebab-case naming conventions:
 
 | Category    | Status      | Files     | Last Updated    |
 | ----------- | ----------- | --------- | --------------- |
-| Strategy    | ✅ Complete | 9 files   | 2025-10-23      |
+| Strategy    | ✅ Complete | 10 files  | 2025-10-24      |
 | Design      | ✅ Complete | 4 files   | 2025-10-23      |
 | Development | ✅ Complete | 7 files   | 2025-10-23      |
 | Research    | ✅ Complete | 1 file    | 2025-10-23      |
@@ -159,6 +166,8 @@ All documentation follows kebab-case naming conventions:
 
 - **[Project Brief](strategy/project-planning/project-brief.md)** -
   Comprehensive MVP planning
+- **[Project Roadmap](strategy/roadmap/project-roadmap.md)** - Complete
+  development timeline and feature delivery plan
 - **[Design System](design/branding/design-system.md)** - Complete brand
   guidelines
 - **[System Architecture](design/technical-specs/system-architecture.md)** -
@@ -177,8 +186,8 @@ All documentation follows kebab-case naming conventions:
   System architecture and design decisions
 - **[Troubleshooting Guide](development/guides/troubleshooting-guide.md)** -
   Common issues and solutions
-- **[Next Steps](development/roadmap/next-steps.md)** - Project roadmap and
-  implementation plan
+- **[Project Roadmap](strategy/roadmap/project-roadmap.md)** - Comprehensive
+  development timeline and feature delivery plan
 - **[Go-to-Market Strategy](strategy/go-to-market/go-to-market-strategy.md)** -
   Market positioning
 - **[Content Strategy](strategy/content-strategy.md)** - Brand voice and
@@ -209,13 +218,14 @@ If you can't find what you're looking for:
 
 ## 📈 Documentation Statistics
 
-- **Total Files**: 33 documents (27 markdown, 6 JSON)
-- **Categories**: 6 main categories with 28 subdirectories
+- **Total Files**: 34 documents (28 markdown, 6 JSON)
+- **Categories**: 6 main categories with 29 subdirectories
 - **Coverage**: Strategy, Design, Research, Development sections complete
 - **Market Research**: 345+ timing-related keywords analyzed
 - **Development Docs**: Complete technical setup, workflow, and architecture
   documentation
-- **Last Major Update**: 2025-10-23 (Complete development documentation)
+- **Strategic Planning**: Comprehensive project roadmap and delivery timeline
+- **Last Major Update**: 2025-10-24 (Project roadmap documentation)
 
 ## 🔄 Planned Additions
 
