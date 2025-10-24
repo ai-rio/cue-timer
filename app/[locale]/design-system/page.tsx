@@ -211,7 +211,22 @@ export default function DesignSystemPage() {
                     <p className='text-sm text-muted-foreground mb-2'>
                       Timer Display (Space Grotesk)
                     </p>
-                    <div className='text-6xl font-timer timer-display'>05:42.3</div>
+                    <div
+                      className='text-6xl font-timer'
+                      style={{
+                        color: 'var(--foreground)',
+                        fontFamily: 'var(--font-timer), Inter, sans-serif',
+                        fontWeight: 700,
+                        textShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                        backgroundColor: 'hsla(var(--background), 0.1)',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '0.5rem',
+                        border: '1px solid hsla(var(--foreground), 0.2)',
+                        display: 'inline-block',
+                      }}
+                    >
+                      05:42.3
+                    </div>
                   </div>
 
                   <div>
@@ -424,7 +439,20 @@ export default function DesignSystemPage() {
                 <div className='max-w-sm mx-auto space-y-6'>
                   {/* Timer Display */}
                   <div className='text-center py-8'>
-                    <div className='text-6xl font-timer timer-display text-professional-gray dark:text-white'>
+                    <div
+                      className='text-6xl font-timer'
+                      style={{
+                        color: 'var(--foreground)',
+                        fontFamily: 'var(--font-timer), Inter, sans-serif',
+                        fontWeight: 700,
+                        textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                        backgroundColor: 'hsla(var(--background), 0.1)',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '0.5rem',
+                        border: '1px solid hsla(var(--foreground), 0.2)',
+                        display: 'inline-block',
+                      }}
+                    >
                       {currentTime}
                     </div>
                   </div>
@@ -512,7 +540,16 @@ export default function DesignSystemPage() {
                         className={`${state.color} ${state.textColor} text-white`}
                       >
                         <CardContent className='p-4 text-center'>
-                          <div className='text-2xl font-timer timer-display mb-2'>
+                          <div
+                            className='text-2xl font-timer mb-2'
+                            style={{
+                              color: '#FFFFFF',
+                              fontFamily: 'var(--font-timer), Inter, sans-serif',
+                              fontWeight: 700,
+                              textShadow: '0 2px 4px rgba(0,0,0,0.8)',
+                              display: 'inline-block',
+                            }}
+                          >
                             {state.value === 'success'
                               ? '10:00'
                               : state.value === 'warning'
@@ -702,7 +739,22 @@ export default function DesignSystemPage() {
                       {[1, 2, 3, 4].map((item) => (
                         <Card key={item} className='bg-muted/50'>
                           <CardContent className='p-4 text-center'>
-                            <div className='text-2xl font-timer timer-display mb-2'>0{item}:00</div>
+                            <div
+                              className='text-2xl font-timer mb-2'
+                              style={{
+                                color: 'var(--foreground)',
+                                fontFamily: 'var(--font-timer), Inter, sans-serif',
+                                fontWeight: 700,
+                                textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+                                backgroundColor: 'hsla(var(--background), 0.1)',
+                                padding: '0.25rem 0.5rem',
+                                borderRadius: '0.25rem',
+                                border: '1px solid hsla(var(--foreground), 0.2)',
+                                display: 'inline-block',
+                              }}
+                            >
+                              0{item}:00
+                            </div>
                             <p className='text-sm'>Timer {item}</p>
                           </CardContent>
                         </Card>
