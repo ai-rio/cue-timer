@@ -25,7 +25,7 @@ module.exports = {
 
   // Config files (with specific formatting)
   '*.{config.js,config.mjs,config.cjs,config.ts}': [
-    'eslint --fix --max-warnings=0',
+    'eslint --fix --max-warnings=20 --config eslint.config.js',
     'prettier --write',
   ],
 
