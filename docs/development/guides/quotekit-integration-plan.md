@@ -1,19 +1,21 @@
 # CueTimer + QuoteKit Integration Plan
 
-**Document Version:** 1.0
-**Date:** 2025-10-23
-**Status:** Ready for Implementation
-**Purpose:** Guide for integrating QuoteKit's Stripe and marketing features into CueTimer
+**Document Version:** 1.0 **Date:** 2025-10-23 **Status:** Ready for
+Implementation **Purpose:** Guide for integrating QuoteKit's Stripe and
+marketing features into CueTimer
 
 ---
 
 ## 🎯 Integration Overview
 
-QuoteKit provides an excellent foundation for CueTimer's marketing site and payment infrastructure. This integration plan outlines how to leverage QuoteKit's proven components while adding our custom blog system.
+QuoteKit provides an excellent foundation for CueTimer's marketing site and
+payment infrastructure. This integration plan outlines how to leverage
+QuoteKit's proven components while adding our custom blog system.
 
 ## ✅ What We Get From QuoteKit
 
 ### **1. Complete Stripe Integration**
+
 - **Subscription Management**: Full Stripe Checkout workflow
 - **Webhook Processing**: `/api/webhooks` route for real-time sync
 - **Customer Portal**: Self-service subscription management
@@ -21,17 +23,20 @@ QuoteKit provides an excellent foundation for CueTimer's marketing site and paym
 - **Security**: Proper webhook signature verification
 
 ### **2. Authentication System**
+
 - **Supabase Auth**: Email-based magic link authentication
 - **User Management**: Account creation and session handling
 - **Protected Routes**: Middleware for authenticated pages
 
 ### **3. Marketing Components**
+
 - **Pricing Page**: Tiered pricing display with Stripe integration
 - **UI Components**: shadcn/ui with Tailwind CSS
 - **Responsive Design**: Mobile-first approach
 - **Modern Styling**: Professional appearance
 
 ### **4. Email Infrastructure**
+
 - **React Email**: Component-based email templates
 - **Resend Integration**: Transactional email delivery
 - **Welcome Emails**: Automated user onboarding
@@ -39,6 +44,7 @@ QuoteKit provides an excellent foundation for CueTimer's marketing site and paym
 ## 🏗️ Integration Architecture
 
 ### **System Components**
+
 ```
 ┌─────────────────────────────────┐
 │      CueTimer Marketing Site    │
@@ -77,6 +83,7 @@ QuoteKit provides an excellent foundation for CueTimer's marketing site and paym
 QuoteKit includes a **comprehensive MDX blog system** with these features:
 
 ### **File-Based Content Management**
+
 ```
 content/posts/
 ├── 2024/
@@ -89,6 +96,7 @@ content/posts/
 ```
 
 ### **MDX Components System**
+
 ```typescript
 // mdx-components.tsx - Custom component mapping
 - BlogGrid.tsx - Responsive post grid
@@ -101,6 +109,7 @@ content/posts/
 ```
 
 ### **Content Management Tools**
+
 ```bash
 bun run blog:new "Post Title"     # Create new MDX post
 bun run blog:validate            # Validate content
@@ -110,6 +119,7 @@ bun run blog:publish             # Publishing workflow
 ```
 
 ### **Blog Structure for CueTimer**
+
 ```
 src/app/blog/
 ├── page.tsx                     # Blog listing (reuse QuoteKit)
@@ -126,6 +136,7 @@ src/app/blog/
 ## 💳 Stripe Configuration for CueTimer
 
 ### **Product Pricing Structure**
+
 ```json
 // Update stripe-fixtures.json
 {
@@ -206,6 +217,7 @@ src/app/blog/
 ## 🚀 Implementation Steps
 
 ### **Phase 1: Base Integration (Week 1)**
+
 1. **Clone QuoteKit**: Set up as base foundation
 2. **Environment Setup**: Configure Supabase and Stripe for CueTimer
 3. **Branding Update**: Replace QuoteKit branding with CueTimer
@@ -213,13 +225,17 @@ src/app/blog/
 5. **Landing Page**: Create CueTimer-specific landing content
 
 ### **Phase 2: Blog Content & Customization (Week 2)**
+
 1. **Content Strategy**: Create CueTimer-focused blog categories
-2. **Content Migration**: Replace landscaping posts with event management content
+2. **Content Migration**: Replace landscaping posts with event management
+   content
 3. **Component Customization**: Update MDX components with CueTimer branding
-4. **SEO Configuration**: Update metadata and structured data for CueTimer topics
+4. **SEO Configuration**: Update metadata and structured data for CueTimer
+   topics
 5. **Content Creation**: Write initial blog posts for event management keywords
 
 ### **Phase 3: Integration & Testing (Week 3)**
+
 1. **User Flow Testing**: Complete signup → payment → blog access
 2. **Content Creation**: Add initial blog posts
 3. **Performance Optimization**: Optimize loading speeds
@@ -229,27 +245,31 @@ src/app/blog/
 ## 📋 Content Strategy Integration
 
 ### **Blog Categories for CueTimer (MDX Frontmatter)**
+
 ```yaml
 ---
-title: "How to Keep Your Conference on Schedule"
-slug: "keep-conference-on-schedule"
-category: "event-management"  # Updated from "pricing" | "operations" | "tools"
-author: "CueTimer Team"
-publishedAt: "2025-10-24"
-summary: "Professional strategies for maintaining perfect event timing"
+title: 'How to Keep Your Conference on Schedule'
+slug: 'keep-conference-on-schedule'
+category: 'event-management' # Updated from "pricing" | "operations" | "tools"
+author: 'CueTimer Team'
+publishedAt: '2025-10-24'
+summary: 'Professional strategies for maintaining perfect event timing'
 readTime: 8
-image: "/images/conference-timing.jpg"
+image: '/images/conference-timing.jpg'
 featured: true
 draft: false
-tags: ["conference", "timing", "event-management", "professional"]
+tags: ['conference', 'timing', 'event-management', 'professional']
 seo:
-  description: "Learn professional strategies to keep your conference running on schedule with CueTimer"
-  keywords: ["conference timing", "event management", "schedule management"]
-imageAlt: "Conference presenter on stage with timer display"
+  description:
+    'Learn professional strategies to keep your conference running on schedule
+    with CueTimer'
+  keywords: ['conference timing', 'event management', 'schedule management']
+imageAlt: 'Conference presenter on stage with timer display'
 ---
 ```
 
 **Content Categories:**
+
 1. **event-management** - Professional event strategies
 2. **technical-tutorials** - Timer setup and features
 3. **industry-insights** - Event technology trends
@@ -259,6 +279,7 @@ imageAlt: "Conference presenter on stage with timer display"
 ## 🎨 Design Adaptation
 
 ### **CueTimer Brand Colors**
+
 ```css
 /* Update Tailwind config */
 theme: {
@@ -278,6 +299,7 @@ theme: {
 ```
 
 ### **Component Customization**
+
 - **Buttons**: Use CueTimer brand colors
 - **Typography**: Maintain professional event industry feel
 - **Icons**: Event and timing-related iconography
@@ -286,18 +308,21 @@ theme: {
 ## 🔧 Technical Considerations
 
 ### **SEO Optimization**
+
 - **Blog Posts**: Optimize for event management keywords
 - **Structured Data**: Add Article schema for blog content
 - **Meta Tags**: Dynamic meta tags for each page
 - **Sitemap**: Auto-generate sitemap with blog posts
 
 ### **Performance**
+
 - **Image Optimization**: Next.js Image component for blog images
 - **Code Splitting**: Separate bundles for marketing vs app
 - **Caching**: Implement proper caching strategies
 - **CDN**: Leverage Vercel's Edge Network
 
 ### **Security**
+
 - **Webhook Validation**: Verify Stripe webhook signatures
 - **Content Security**: Sanitize user-generated blog content
 - **Rate Limiting**: Implement API rate limiting
@@ -306,12 +331,14 @@ theme: {
 ## 📊 Success Metrics
 
 ### **Marketing Site Metrics**
+
 - **Conversion Rate**: Signups from landing page
 - **Blog Engagement**: Time on page, scroll depth
 - **SEO Performance**: Organic traffic growth
 - **Social Sharing**: Blog post share metrics
 
 ### **Business Metrics**
+
 - **Free to Pro Conversion**: % upgrading to paid plans
 - **User Acquisition**: Cost per acquisition by channel
 - **Content ROI**: Leads generated from blog content
@@ -339,10 +366,12 @@ theme: {
    - Performance testing
    - Marketing material preparation
 
-This integration provides CueTimer with a professional marketing foundation while allowing us to focus development resources on the core timer application functionality.
+This integration provides CueTimer with a professional marketing foundation
+while allowing us to focus development resources on the core timer application
+functionality.
 
 ---
 
-**Document Status:** Ready for Implementation
-**Dependencies:** QuoteKit repository access, Supabase setup, Stripe configuration
-**Timeline:** 3 weeks to complete integration and launch
+**Document Status:** Ready for Implementation **Dependencies:** QuoteKit
+repository access, Supabase setup, Stripe configuration **Timeline:** 3 weeks to
+complete integration and launch
