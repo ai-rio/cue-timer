@@ -9,9 +9,21 @@ const nextConfig = {
     serverActions: {
       allowedOrigins: ['localhost:3000', '127.0.0.1:3000'],
     },
+    // Optimize webpack chunks to prevent vendor chunk issues
+    optimizePackageImports: ['next-intl'],
   },
   // Enable transpilation of packages
   transpilePackages: ['@radix-ui/react-slot', '@ionic/react'],
+  // Configure webpack to handle vendor chunks properly
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
   // Configure images
   images: {
     domains: ['localhost'],
@@ -43,6 +55,24 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/css/(.*)',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/css; charset=utf-8',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/chunks/(.*)',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/javascript; charset=utf-8',
           },
         ],
       },

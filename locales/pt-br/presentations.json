@@ -1,0 +1,14 @@
+{
+  "title": "Apresentações",
+  "createPresentation": "Criar Apresentação",
+  "editPresentation": "Editar Apresentação",
+  "deletePresentation": "Excluir Apresentação",
+  "presentationName": "Nome da Apresentação",
+  "duration": "Duração",
+  "slides": "Slides",
+  "speaker": "Palestrante",
+  "startPresentation": "Iniciar Apresentação",
+  "pausePresentation": "Pausar Apresentação",
+  "stopPresentation": "Parar Apresentação",
+  "resumePresentation": "Retomar Apresentação"
+}

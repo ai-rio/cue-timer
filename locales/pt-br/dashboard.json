@@ -1,0 +1,14 @@
+{
+  "title": "Painel",
+  "welcome": "Bem-vindo de volta",
+  "overview": "Visão Geral",
+  "recentActivity": "Atividade Recente",
+  "quickActions": "Ações Rápidas",
+  "statistics": "Estatísticas",
+  "events": "Eventos",
+  "timers": "Temporizadores",
+  "totalEvents": "Total de Eventos",
+  "totalTimers": "Total de Temporizadores",
+  "activeTimers": "Temporizadores Ativos",
+  "upcomingEvents": "Próximos Eventos"
+}

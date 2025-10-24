@@ -1,0 +1,16 @@
+{
+  "home": "Início",
+  "dashboard": "Painel",
+  "events": "Eventos",
+  "timers": "Temporizadores",
+  "pricing": "Preços",
+  "blog": "Blog",
+  "about": "Sobre",
+  "contact": "Contato",
+  "login": "Entrar",
+  "signup": "Cadastrar",
+  "logout": "Sair",
+  "profile": "Perfil",
+  "settings": "Configurações",
+  "backToHome": "Voltar ao Início"
+}

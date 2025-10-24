@@ -1,0 +1,39 @@
+import '../globals.css';
+
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+
+interface LocaleLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}
+
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!['en', 'pt-br', 'es', 'fr', 'de'].includes(locale)) {
+    // For now, just continue without notFound to test
+  }
+
+  return (
+    <html lang={locale}>
+      <body className={inter.className}>
+        <div className='min-h-screen bg-white text-gray-900'>
+          <main>{children}</main>
+        </div>
+      </body>
+    </html>
+  );
+}
+
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'pt-br' },
+    { locale: 'es' },
+    { locale: 'fr' },
+    { locale: 'de' },
+  ];
+}
