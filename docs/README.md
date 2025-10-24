@@ -176,8 +176,8 @@ All documentation follows kebab-case naming conventions:
   Real-time presenter communication
 - **[PowerSync Integration](development/guides/powersync-implementation-guide.md)** -
   Offline-first synchronization
-- **[QuoteKit Integration](development/guides/quotekit-integration-plan.md)** -
-  Marketing site and payment system
+- **[Marketing Infrastructure Plan](development/guides/quotekit-integration-plan.md)** -
+  Autonomous marketing site and payment system (QuoteKit patterns as reference only)
 - **[Technical Setup Summary](development/setup/technical-setup-summary.md)** -
   Complete technical architecture and configuration
 - **[Development Workflow](development/guides/development-workflow.md)** -

@@ -18,7 +18,8 @@
     "logout": "Sair",
     "profile": "Perfil",
     "settings": "Configurações",
-    "backToHome": "Voltar para Início"
+    "backToHome": "Voltar para Início",
+    "getStarted": "Começar"
   },
   "auth": {
     "email": "E-mail",

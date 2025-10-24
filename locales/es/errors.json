@@ -1,0 +1,25 @@
+{
+  "title": "Errors",
+  "pageNotFound": "Page Not Found",
+  "serverError": "Server Error",
+  "networkError": "Network Error",
+  "validationError": "Validation Error",
+  "authenticationError": "Authentication Error",
+  "authorizationError": "Authorization Error",
+  "unknownError": "Unknown Error",
+  "messages": {
+    "pageNotFound": "The page you're looking for doesn't exist.",
+    "serverError": "Something went wrong on our end. Please try again later.",
+    "networkError": "Please check your internet connection and try again.",
+    "validationError": "Please check your input and try again.",
+    "authenticationError": "Please sign in to continue.",
+    "authorizationError": "You don't have permission to access this resource.",
+    "unknownError": "An unexpected error occurred. Please try again."
+  },
+  "actions": {
+    "goHome": "Go Home",
+    "retry": "Try Again",
+    "reload": "Reload Page",
+    "contactSupport": "Contact Support"
+  }
+}

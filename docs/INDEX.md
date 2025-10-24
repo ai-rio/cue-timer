@@ -27,8 +27,10 @@
 
 - **[PowerSync Integration](development/guides/powersync-implementation-guide.md)** -
   Offline-first setup
-- **[QuoteKit Integration](development/guides/quotekit-integration-plan.md)** -
-  Marketing site setup
+- **[QuoteKit Reference-Only Policy](development/guides/quotekit-reference-only-policy.md)** -
+  **CRITICAL: QuoteKit usage policy and guidelines**
+- **[Marketing Infrastructure Plan](development/guides/quotekit-integration-plan.md)** -
+  Autonomous marketing site setup (QuoteKit patterns as reference only)
 
 ---
 
@@ -73,14 +75,16 @@
 
 - `design/branding/design-system.md` - Visual identity and component library
 
-### 💻 Development & Implementation (2 files)
+### 💻 Development & Implementation (3 files)
 
 #### Implementation Guides
 
 - `development/guides/powersync-implementation-guide.md` - **PowerSync +
   Supabase setup**
-- `development/guides/quotekit-integration-plan.md` - **QuoteKit marketing site
-  integration**
+- `development/guides/quotekit-reference-only-policy.md` - **CRITICAL: QuoteKit
+  usage policy and guidelines**
+- `development/guides/quotekit-integration-plan.md` - **Autonomous marketing
+  infrastructure (QuoteKit patterns as reference only)**
 
 ### 🔬 Research & Analysis (1 file)
 
@@ -115,9 +119,11 @@
    [System Architecture](design/technical-specs/system-architecture.md)
 2. **Implementation**:
    [PowerSync Guide](development/guides/powersync-implementation-guide.md)
-3. **Marketing Site**:
-   [QuoteKit Integration](development/guides/quotekit-integration-plan.md)
-4. **UI Components**:
+3. **CRITICAL POLICY**:
+   [QuoteKit Reference-Only Policy](development/guides/quotekit-reference-only-policy.md)
+4. **Marketing Site**:
+   [Marketing Infrastructure Plan](development/guides/quotekit-integration-plan.md)
+5. **UI Components**:
    [Messaging Specifications](design/ui-ux/messaging-system-specifications.md)
 
 ### For Product Managers
@@ -141,7 +147,7 @@
 - **PowerSync**: Offline-first synchronization
 - **Ionic**: Mobile UI components
 - **Capacitor**: App store deployment
-- **Stripe**: Payment processing (via QuoteKit)
+- **Stripe**: Direct payment processing (QuoteKit patterns as reference only)
 
 ### Features
 
@@ -195,5 +201,5 @@
 
 ---
 
-**Last Updated:** 2025-10-23 **Total Documents:** 17 files **Next Review:**
+**Last Updated:** 2025-10-24 **Total Documents:** 18 files **Next Review:**
 Weekly or as needed

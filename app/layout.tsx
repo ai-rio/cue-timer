@@ -1,7 +1,19 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-timer',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'CueTimer - Professional Event Management Timer',
@@ -12,8 +24,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='en' className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className='font-sans antialiased'>{children}</body>
     </html>
   );
 }

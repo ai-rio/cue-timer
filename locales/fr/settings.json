@@ -1,0 +1,21 @@
+{
+  "title": "Settings",
+  "profile": "Profile",
+  "account": "Account",
+  "preferences": "Preferences",
+  "notifications": "Notifications",
+  "security": "Security",
+  "billing": "Billing",
+  "language": "Language",
+  "theme": "Theme",
+  "timezone": "Timezone",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  "systemMode": "System",
+  "emailNotifications": "Email Notifications",
+  "pushNotifications": "Push Notifications",
+  "changePassword": "Change Password",
+  "twoFactorAuth": "Two-Factor Authentication",
+  "deleteAccount": "Delete Account",
+  "saveChanges": "Save Changes"
+}

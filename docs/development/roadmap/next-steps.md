@@ -1,4 +1,4 @@
-# Next Steps: QuoteKit Integration Phase
+# Next Steps: Autonomous Marketing Infrastructure Phase
 
 ## Overview
 
@@ -7,8 +7,7 @@ CueTimer has successfully completed its foundational setup phase with Next.js
 server is running successfully, all build processes are working correctly, and
 the code quality infrastructure is in place.
 
-This document outlines the immediate next steps, focusing on the QuoteKit
-integration phase and subsequent development priorities.
+This document outlines the immediate next steps, focusing on the autonomous marketing infrastructure development phase and subsequent development priorities.
 
 ## Current Status Summary
 
@@ -31,36 +30,38 @@ integration phase and subsequent development priorities.
 - All tests: Passing ✅
 - Documentation: Complete ✅
 
-## Phase 1: QuoteKit Integration (Immediate Priority)
+## Phase 1: Autonomous Marketing Infrastructure (Immediate Priority)
 
-### 1.1 QuoteKit Setup and Configuration
+### **CRITICAL POLICY: QuoteKit Reference-Only**
+**QuoteKit is used as reference inspiration ONLY - NO QuoteKit packages or dependencies will be installed.**
+
+### 1.1 Marketing Infrastructure Setup (Reference-Inspired)
 
 **Timeline**: Week 1-2 **Priority**: High
 
 #### Tasks:
 
-1. **Install QuoteKit dependencies**
+1. **Study QuoteKit patterns for inspiration**
+   - Analyze QuoteKit's marketing approach and payment flow design
+   - Learn from their component architecture concepts
+   - Understand their user experience patterns
 
-   ```bash
-   bun add @quotekit/core @quotekit/react @quotekit/stripe
-   ```
-
-2. **Configure QuoteKit provider**
-   - Set up QuoteKit configuration in `lib/quotekit.ts`
-   - Create QuoteKit context provider
-   - Configure Stripe integration (planned)
+2. **Build independent marketing infrastructure**
+   - Set up original configuration in `lib/marketing.ts`
+   - Create custom marketing context provider
+   - Configure direct Stripe integration
 
 3. **Integrate with existing Next.js app**
-   - Add QuoteKit provider to root layout
-   - Configure routing for QuoteKit pages
-   - Set up API routes for QuoteKit webhooks
+   - Add marketing provider to root layout
+   - Configure routing for marketing pages
+   - Set up API routes for Stripe webhooks
 
 #### Deliverables:
 
-- [ ] QuoteKit fully integrated with Next.js
-- [ ] Stripe payment configuration
-- [ ] QuoteKit templates and themes configured
-- [ ] Documentation for QuoteKit usage
+- [ ] Independent marketing infrastructure integrated with Next.js
+- [ ] Direct Stripe payment configuration
+- [ ] Original templates and themes (inspired by QuoteKit patterns)
+- [ ] Documentation for marketing infrastructure usage
 
 ### 1.2 Marketing Site Implementation
 
@@ -76,24 +77,24 @@ integration phase and subsequent development priorities.
    │   ├── pricing/
    │   ├── about/
    │   ├── features/
-   │   └── quote/               # QuoteKit integration
+   │   └── quote/               # Original quote builder implementation
    ```
 
-2. **Implement QuoteKit quote builder**
-   - Interactive quote configuration
+2. **Build independent quote builder**
+   - Interactive quote configuration (original implementation)
    - Real-time pricing calculation
    - Custom timer package options
 
 3. **Design system integration**
    - Apply existing Tailwind design system
-   - Ensure QuoteKit components match brand
-   - Create custom QuoteKit themes
+   - Ensure marketing components match brand
+   - Create custom themes (inspired by QuoteKit patterns)
 
 #### Deliverables:
 
-- [ ] Complete marketing site with QuoteKit
-- [ ] Interactive quote builder
-- [ ] Pricing page with QuoteKit integration
+- [ ] Complete marketing site (original implementation)
+- [ ] Interactive quote builder (independent build)
+- [ ] Pricing page with direct Stripe integration
 - [ ] Quote-to-checkout flow
 
 ### 1.3 Payment Processing Setup
@@ -107,8 +108,8 @@ integration phase and subsequent development priorities.
    - Set up webhooks for payment confirmation
    - Implement payment form components
 
-2. **Quote checkout flow**
-   - Connect QuoteKit quotes to Stripe checkout
+2. **Independent checkout flow**
+   - Connect quote builder to Stripe checkout
    - Handle payment success/failure states
    - Create customer account creation flow
 
@@ -124,7 +125,7 @@ integration phase and subsequent development priorities.
 - [ ] Customer account functionality
 - [ ] Email notifications
 
-## Phase 2: Core Timer Features (Following QuoteKit)
+## Phase 2: Core Timer Features (Following Marketing Infrastructure)
 
 ### 2.1 Timer Functionality
 
@@ -209,7 +210,7 @@ integration phase and subsequent development priorities.
 - [ ] Complete authentication system
 - [ ] User profiles and settings
 - [ ] Team management features
-- [ ] Billing integration with existing QuoteKit
+- [ ] Billing integration with existing marketing infrastructure
 
 ## Phase 3: Mobile Application (Future)
 
@@ -289,13 +290,13 @@ integration phase and subsequent development priorities.
 
 ### Required Dependencies
 
-- **QuoteKit integration**: Must be completed before timer features
+- **Marketing infrastructure build**: Must be completed before timer features
 - **Payment processing**: Required for commercial launch
 - **User authentication**: Required for saved timer states
 
 ### Potential Blockers
 
-- **QuoteKit API limitations**: May require custom solutions
+- **Marketing infrastructure complexity**: May require custom solutions (study QuoteKit patterns as reference)
 - **Stripe integration complexity**: May need additional development time
 - **Mobile app store approval**: External dependency with uncertain timeline
 
@@ -303,14 +304,14 @@ integration phase and subsequent development priorities.
 
 ### Team Roles
 
-- **Frontend Developer**: QuoteKit integration, UI implementation
+- **Frontend Developer**: Marketing infrastructure development, UI implementation
 - **Backend Developer**: API development, database design
 - **UI/UX Designer**: Design system, user flows
 - **DevOps Engineer**: Deployment, monitoring, infrastructure
 
 ### Time Estimates
 
-- **Phase 1 (QuoteKit)**: 4 weeks
+- **Phase 1 (Marketing Infrastructure)**: 4 weeks
 - **Phase 2 (Core Features)**: 6 weeks
 - **Phase 3 (Mobile)**: 4 weeks
 - **Total estimated time**: 14 weeks
@@ -342,7 +343,7 @@ integration phase and subsequent development priorities.
 
 ### Technical Risks
 
-- **QuoteKit integration complexity**: Medium risk
+- **Marketing infrastructure development complexity**: Medium risk (mitigated by studying QuoteKit patterns as reference)
 - **Payment processing security**: Low risk (using Stripe)
 - **Real-time synchronization**: Medium risk
 - **Mobile app approval**: Low risk
@@ -356,18 +357,18 @@ integration phase and subsequent development priorities.
 
 ## Next Immediate Actions (This Week)
 
-1. **Day 1-2**: Research QuoteKit documentation and API
-2. **Day 3-4**: Install QuoteKit and start basic integration
-3. **Day 5**: Set up development environment for QuoteKit features
+1. **Day 1-2**: Study QuoteKit patterns and approaches for reference inspiration
+2. **Day 3-4**: Begin independent marketing infrastructure development
+3. **Day 5**: Set up development environment for marketing features
 
 ## Conclusion
 
 CueTimer is well-positioned for the next phase of development. The strong
 foundation established in the current sprint provides an excellent base for
-rapid development of QuoteKit integration and core timer features.
+rapid development of autonomous marketing infrastructure and core timer features.
 
 The focus should remain on delivering value to users through the
-QuoteKit-powered marketing and payment system, followed by robust timer
+independently-built marketing and payment system (inspired by QuoteKit patterns), followed by robust timer
 functionality and real-time synchronization.
 
 ---

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import { ThemeToggle } from './theme-toggle';
@@ -10,17 +11,28 @@ import { ThemeToggle } from './theme-toggle';
 export default function Navigation() {
   const t = useTranslations('common');
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const isActive = (path: string) => {
     return pathname === path || pathname?.startsWith(path + '/') || false;
   };
 
+  // Define static navigation links to prevent hydration issues
   const navLinks = [
-    { href: '/', label: t('navigation.home') },
-    { href: '/events', label: t('navigation.events') },
-    { href: '/timers', label: t('navigation.timers') },
-    { href: '/pricing', label: t('navigation.pricing') },
+    { href: '/', label: 'Home' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/about', label: 'About' },
   ];
+
+  // Fallback translations to prevent hydration mismatch
+  const fallbackText = {
+    login: mounted ? t('navigation.login') : 'Login',
+    getStarted: mounted ? t('navigation.getStarted') : 'Get Started',
+  };
 
   return (
     <nav className='border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
@@ -56,14 +68,14 @@ export default function Navigation() {
             <LanguageSwitcher />
 
             <Link href='/login' className='text-sm font-medium text-foreground hover:text-primary'>
-              {t('navigation.login')}
+              {fallbackText.login}
             </Link>
 
             <Link
-              href='/signup'
+              href='/pricing'
               className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary'
             >
-              {t('navigation.signup')}
+              {fallbackText.getStarted}
             </Link>
           </div>
         </div>
