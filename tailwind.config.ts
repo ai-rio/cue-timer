@@ -53,23 +53,9 @@ const config = {
         },
       },
       fontFamily: {
-        sans: [
-          'Inter',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'sans-serif',
-        ],
-        timer: [
-          'Space Grotesk',
-          'Inter',
-          'sans-serif',
-        ],
-        mono: [
-          'JetBrains Mono',
-          'Fira Code',
-          'monospace',
-        ],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        timer: ['Space Grotesk', 'Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -101,7 +87,7 @@ const config = {
         '128': '32rem',
       },
       boxShadow: {
-        'brand': '0 4px 14px 0 rgba(255, 107, 53, 0.1)',
+        brand: '0 4px 14px 0 rgba(255, 107, 53, 0.1)',
         'brand-lg': '0 10px 40px 0 rgba(255, 107, 53, 0.15)',
       },
     },

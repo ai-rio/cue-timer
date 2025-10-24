@@ -301,7 +301,8 @@ Husky is configured with the following pre-commit hooks:
 
 - [ ] Configure Supabase integration
 - [ ] Set up authentication flow
-- [ ] Build autonomous marketing infrastructure (QuoteKit patterns as reference only)
+- [ ] Build autonomous marketing infrastructure (QuoteKit patterns as reference
+      only)
 - [ ] Add testing infrastructure
 
 ### Future Enhancements

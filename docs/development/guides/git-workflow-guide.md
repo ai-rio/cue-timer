@@ -248,7 +248,8 @@ git push origin --delete hotfix/critical-fix
 
 ## Marketing Infrastructure Readiness
 
-The Git Flow workflow is fully prepared for autonomous marketing infrastructure development:
+The Git Flow workflow is fully prepared for autonomous marketing infrastructure
+development:
 
 1. **Feature Branches**: Ready for `feature/marketing-*` branches
 2. **Marketing Content**: Dedicated `marketing` commit type available
@@ -257,7 +258,9 @@ The Git Flow workflow is fully prepared for autonomous marketing infrastructure 
 5. **Release Process**: Tested and ready for regular releases
 
 ### **IMPORTANT: QuoteKit Reference-Only Policy**
-QuoteKit is used as reference inspiration only - **NO QuoteKit packages or dependencies** will be installed.
+
+QuoteKit is used as reference inspiration only - **NO QuoteKit packages or
+dependencies** will be installed.
 
 ### Suggested Marketing Infrastructure Workflow
 
@@ -340,5 +343,5 @@ The workflow is designed to integrate seamlessly with CI/CD pipelines:
 - **Branch protection** enforces proper workflow
 
 This Git Flow implementation provides a robust, professional development
-workflow suitable for the CueTimer project's autonomous marketing infrastructure development phase and
-ongoing development.
+workflow suitable for the CueTimer project's autonomous marketing infrastructure
+development phase and ongoing development.
