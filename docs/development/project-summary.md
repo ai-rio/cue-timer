@@ -33,7 +33,8 @@ development workflows are in place and functioning correctly.
 ### Future Integrations
 
 - **Database**: Supabase (PostgreSQL, Auth, Storage)
-- **Payments**: Direct Stripe integration (built independently, QuoteKit patterns as reference only)
+- **Payments**: Direct Stripe integration (built independently, QuoteKit
+  patterns as reference only)
 - **Real-time**: WebSocket connections for live sync
 - **Mobile**: Native iOS/Android apps via Capacitor
 
@@ -226,7 +227,8 @@ bun mobile:sync        # Sync with Capacitor
   System architecture
 - **[Troubleshooting Guide](development/guides/troubleshooting-guide.md)**:
   Common issues and solutions
-- **[Next Steps](development/roadmap/next-steps.md)**: Implementation roadmap
+- **[Project Roadmap](strategy/roadmap/project-roadmap-master.md)**:
+  Consolidated strategic + implementation roadmap
 
 ## Next Phase: Autonomous Marketing Infrastructure
 
@@ -344,7 +346,8 @@ bun mobile:sync        # Sync with Capacitor
 
 ### Technical Risks
 
-- **Marketing Infrastructure Build**: Medium risk, mitigated by incremental development and studying QuoteKit patterns as reference
+- **Marketing Infrastructure Build**: Medium risk, mitigated by incremental
+  development and studying QuoteKit patterns as reference
 - **Payment Processing**: Low risk (using reliable Stripe infrastructure)
 - **Real-time Features**: Medium risk, mitigated by thorough testing
 - **Mobile Deployment**: Low risk with Capacitor
@@ -360,8 +363,8 @@ bun mobile:sync        # Sync with Capacitor
 
 CueTimer has established a solid foundation with modern development practices,
 comprehensive tooling, and professional documentation. The project is
-well-positioned for rapid development of the autonomous marketing infrastructure phase and
-subsequent core features.
+well-positioned for rapid development of the autonomous marketing infrastructure
+phase and subsequent core features.
 
 The strong technical foundation, combined with clear documentation and
 development workflows, provides an excellent platform for delivering a
@@ -378,11 +381,12 @@ professional event management timer platform to market.
 
 ### Ready for Next Phase
 
-The project is fully prepared for the autonomous marketing infrastructure phase, with all
-necessary infrastructure, tooling, and documentation in place to support rapid
-development and deployment using QuoteKit patterns as reference inspiration only.
+The project is fully prepared for the autonomous marketing infrastructure phase,
+with all necessary infrastructure, tooling, and documentation in place to
+support rapid development and deployment using QuoteKit patterns as reference
+inspiration only.
 
 ---
 
-**Project Status**: Foundation Complete ✅ **Ready for**: Autonomous Marketing Infrastructure
-Phase **Last Updated**: 2025-10-23 **Next Review**: 2025-10-30
+**Project Status**: Foundation Complete ✅ **Ready for**: Autonomous Marketing
+Infrastructure Phase **Last Updated**: 2025-10-23 **Next Review**: 2025-10-30
