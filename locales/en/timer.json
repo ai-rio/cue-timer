@@ -1,0 +1,59 @@
+{
+  "title": "Timer",
+  "description": "Professional timing controls",
+  "controls": {
+    "start": "Start",
+    "pause": "Pause",
+    "stop": "Stop",
+    "reset": "Reset",
+    "resume": "Resume",
+    "addTime": "Add Time",
+    "removeTime": "Remove Time"
+  },
+  "display": {
+    "timeRemaining": "Time Remaining",
+    "timeElapsed": "Time Elapsed",
+    "totalTime": "Total Time",
+    "currentSegment": "Current Segment",
+    "nextSegment": "Next Segment"
+  },
+  "segments": {
+    "presentation": "Presentation",
+    "questions": "Q&A",
+    "break": "Break",
+    "setup": "Setup",
+    "introduction": "Introduction",
+    "conclusion": "Conclusion",
+    "networking": "Networking"
+  },
+  "warnings": {
+    "fiveMinutes": "5 minutes remaining",
+    "twoMinutes": "2 minutes remaining",
+    "oneMinute": "1 minute remaining",
+    "thirtySeconds": "30 seconds remaining",
+    "tenSeconds": "10 seconds remaining",
+    "timeUp": "Time's up!",
+    "overtime": "Overtime"
+  },
+  "presenterMessages": {
+    "startNow": "Please begin your presentation",
+    "wrapUp": "Please begin to wrap up",
+    "finishNow": "Time is up, please finish",
+    "questionsStart": "Time for questions",
+    "questionsEnd": "Q&A time is over"
+  },
+  "states": {
+    "ready": "Ready",
+    "running": "Running",
+    "paused": "Paused",
+    "finished": "Finished",
+    "overtime": "Overtime"
+  },
+  "settings": {
+    "enableSounds": "Enable Sounds",
+    "enableVibrations": "Enable Vibrations",
+    "enableWarnings": "Enable Time Warnings",
+    "presenterView": "Presenter View",
+    "audienceView": "Audience View"
+  }
+}

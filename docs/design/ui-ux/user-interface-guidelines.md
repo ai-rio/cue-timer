@@ -1,21 +1,21 @@
 # CueTimer User Interface Guidelines
 
-**Version:** 1.0
-**Date:** October 23, 2024
-**Category:** Design → UI/UX
+**Version:** 1.0 **Date:** October 23, 2024 **Category:** Design → UI/UX
 **Status:** Approved for Development
 
 ---
 
 ## Overview
 
-This document defines the user interface guidelines for CueTimer, ensuring consistent, accessible, and mobile-first experiences across all touchpoints.
+This document defines the user interface guidelines for CueTimer, ensuring
+consistent, accessible, and mobile-first experiences across all touchpoints.
 
 ---
 
 ## Design Philosophy
 
 ### Core Principles
+
 1. **Mobile-First**: Design for phones first, scale up
 2. **Touch-Friendly**: Large targets, clear feedback
 3. **Accessibility First**: WCAG AA compliance minimum
@@ -23,6 +23,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 5. **Progressive Enhancement**: Core functionality works everywhere
 
 ### User Goals
+
 - **Event Managers**: Control timing confidently, manage presenters
 - **Presenters**: Stay on time, clear visual feedback, minimal distraction
 - **Team Members**: Real-time sync, reliable updates, simple sharing
@@ -34,6 +35,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Controller View (Primary Interface)
 
 #### Layout Structure
+
 ```
 ┌─────────────────────────┐
 │ [Logo]   [Theme Toggle] │ ← Header (56px height)
@@ -56,12 +58,14 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 #### Controller Components
 
 **Header (56px)**
+
 - Logo left-aligned (32px height)
 - Theme toggle right-aligned (touch-friendly)
 - Background: Current theme primary color
 - Border: Bottom border with secondary color
 
 **Timer Display (120px minimum)**
+
 - Large timer display centered
 - Font: Space Grotesk Medium
 - Color: Text primary based on theme
@@ -69,24 +73,28 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 - Size: Responsive based on screen (60px-120px)
 
 **Primary Controls (80px height)**
+
 - Three main action buttons
 - Minimum 60px width each
 - 12px spacing between buttons
 - Colors: Orange (Play), Yellow (Pause), Gray (Stop)
 
 **Quick Adjustments (60px height)**
+
 - Preset time adjustment buttons
 - [+1min] [+5min] [-1min] layout
 - Secondary button styling
 - Clear labels with icons
 
 **QR Code Section (140px height)**
+
 - Branded QR code (140×140px minimum)
 - Session URL displayed below QR
 - "Tap to copy" functionality
 - Session status indicator
 
 **Secondary Actions (60px height)**
+
 - Messages button (notification badge)
 - Settings button (gear icon)
 - Bottom of screen, easy thumb access
@@ -94,6 +102,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Presenter View (Fullscreen Display)
 
 #### Layout Structure
+
 ```
 ┌─────────────────────────────────┐
 │                                 │
@@ -112,18 +121,21 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 #### Presenter Features
 
 **Timer Display**
+
 - Large, centered timer display
 - Responsive sizing (up to 25% screen height)
 - High contrast for visibility
 - Current time display option
 
 **Warning System**
+
 - Color-coded background transitions
 - Progressive warning states
 - Subtle pulse animations for warnings
 - Non-intrusive positioning
 
 **Auto-Hide Controls**
+
 - Controls hide after 10 seconds
 - Tap anywhere to show temporarily
 - Settings accessible via long-press
@@ -136,6 +148,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Buttons
 
 #### Primary Buttons
+
 ```css
 .ct-btn-primary {
   background-color: var(--brand-orange);
@@ -152,7 +165,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 }
 
 .ct-btn-primary:hover {
-  background-color: #E55A2B;
+  background-color: #e55a2b;
   transform: translateY(-1px);
 }
 
@@ -162,6 +175,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 #### Secondary Buttons
+
 ```css
 .ct-btn-secondary {
   background-color: transparent;
@@ -179,6 +193,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 #### Icon Buttons
+
 ```css
 .ct-btn-icon {
   width: 44px;
@@ -197,12 +212,13 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Timer Display
 
 #### Primary Timer
+
 ```css
 .ct-timer-display {
   font-family: var(--font-timer);
   font-weight: 500;
   font-size: clamp(60px, 10vw, 120px);
-  line-height: 1.0;
+  line-height: 1;
   color: var(--text-primary);
   text-align: center;
   font-variant-numeric: tabular-nums;
@@ -211,6 +227,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 #### Timer States
+
 ```css
 .ct-timer--warning {
   color: var(--brand-yellow);
@@ -231,6 +248,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Status Indicators
 
 #### Connection Status
+
 ```css
 .ct-status-indicator {
   width: 12px;
@@ -260,6 +278,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Responsive Design
 
 ### Breakpoints
+
 ```css
 /* Mobile First Approach */
 .ct-container {
@@ -289,12 +308,14 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ### Mobile Optimizations
 
 #### Touch Targets
+
 - **Primary Actions:** 60px minimum
 - **Secondary Actions:** 44px minimum
 - **Icon Buttons:** 44px × 44px minimum
 - **Spacing:** 8px minimum between touch targets
 
 #### Safe Areas
+
 ```css
 .ct-safe-area {
   padding-top: env(safe-area-inset-top);
@@ -305,8 +326,12 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 #### Viewport Meta
+
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
 ```
 
 ---
@@ -314,35 +339,57 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Animation & Transitions
 
 ### Timing Transitions
+
 ```css
 .ct-countdown-transition {
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ct-state-change {
-  transition: background-color 0.5s ease-out, color 0.3s ease-out;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.3s ease-out;
 }
 ```
 
 ### Warning Animations
+
 ```css
 @keyframes pulse-warning {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 @keyframes pulse-critical {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.02); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
 }
 
 @keyframes flash-expired {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 ```
 
 ### Loading States
+
 ```css
 .ct-spinner {
   width: 24px;
@@ -354,8 +401,12 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 ```
 
@@ -364,12 +415,14 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Accessibility Guidelines
 
 ### Color Contrast
+
 - **Normal Text:** 4.5:1 minimum contrast ratio
 - **Large Text (18px+):** 3:1 minimum contrast ratio
 - **Interactive Elements:** 3:1 minimum contrast ratio
 - **Verified:** All combinations tested and approved
 
 ### Screen Reader Support
+
 ```html
 <!-- Timer Display -->
 <div class="ct-timer-display" role="timer" aria-live="polite">
@@ -384,6 +437,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 ### Focus Management
+
 ```css
 .ct-focusable:focus {
   outline: 3px solid var(--brand-orange);
@@ -396,6 +450,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 ### Keyboard Navigation
+
 - **Tab Order:** Logical left-to-right, top-to-bottom
 - **Enter/Space:** Activate buttons and controls
 - **Arrow Keys:** Navigate between options
@@ -406,6 +461,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Error States & Validation
 
 ### Connection Issues
+
 ```css
 .ct-offline-indicator {
   background-color: var(--brand-gray);
@@ -420,6 +476,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 ### Form Validation
+
 ```css
 .ct-input-error {
   border-color: var(--warning-red);
@@ -437,6 +494,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ```
 
 ### Empty States
+
 ```css
 .ct-empty-state {
   text-align: center;
@@ -456,16 +514,19 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Performance Considerations
 
 ### Critical CSS
+
 - Inline critical above-the-fold styles
 - Load non-critical CSS asynchronously
 - Optimize for first contentful paint
 
 ### Image Optimization
+
 - Use WebP format with fallbacks
 - Implement lazy loading for non-critical images
 - Compress images to appropriate sizes
 
 ### Animation Performance
+
 - Use transform and opacity for animations
 - Avoid animating layout properties
 - Implement will-change property judiciously
@@ -475,17 +536,20 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Testing Guidelines
 
 ### Cross-Browser Testing
+
 - **Mobile Browsers:** Safari (iOS), Chrome (Android)
 - **Desktop Browsers:** Chrome, Firefox, Safari, Edge
 - **Progressive Enhancement:** Core functionality works everywhere
 
 ### Device Testing
+
 - **Small Phones:** iPhone SE, Android Mini
 - **Standard Phones:** iPhone, standard Android
 - **Tablets:** iPad, Android tablets
 - **Large Screens:** Desktop displays
 
 ### Accessibility Testing
+
 - **Screen Readers:** VoiceOver, TalkBack, NVDA
 - **Keyboard Navigation:** Full keyboard-only testing
 - **Color Contrast:** Automated tools + visual verification
@@ -496,6 +560,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ## Implementation Checklist
 
 ### Pre-Launch Requirements
+
 - [ ] All touch targets meet minimum size requirements
 - [ ] Color contrast passes WCAG AA testing
 - [ ] Keyboard navigation works for all interactive elements
@@ -506,6 +571,7 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 - [ ] Performance optimization under 3 seconds load time
 
 ### Quality Assurance
+
 - [ ] Cross-browser compatibility verified
 - [ ] Device testing on target platforms
 - [ ] Accessibility audit completed
@@ -517,12 +583,12 @@ This document defines the user interface guidelines for CueTimer, ensuring consi
 ---
 
 **Related Documents:**
+
 - [Design System](../branding/design-system.md)
 - [Technical Specifications](../technical-specs/system-architecture.md)
 - [Accessibility Guidelines](../technical-specs/accessibility-requirements.md)
 
 ---
 
-**Document Ownership:** UI/UX Design Team
-**Next Review:** Before each major release
-**Approval Status:** Approved for Development
+**Document Ownership:** UI/UX Design Team **Next Review:** Before each major
+release **Approval Status:** Approved for Development

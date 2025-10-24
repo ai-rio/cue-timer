@@ -1,28 +1,31 @@
 # CueTimer Mobile-First PWA Architecture
 
-**Version:** 1.0
-**Date:** October 23, 2024
-**Category:** Design → Technical Specifications
-**Status:** Ready for Development
+**Version:** 1.0 **Date:** October 23, 2024 **Category:** Design → Technical
+Specifications **Status:** Ready for Development
 
 ---
 
 ## Executive Summary
 
-Mobile-first Progressive Web App architecture for CueTimer, prioritizing offline-first reliability, real-time synchronization, and professional performance across all devices.
+Mobile-first Progressive Web App architecture for CueTimer, prioritizing
+offline-first reliability, real-time synchronization, and professional
+performance across all devices.
 
 ---
 
 ## Technology Stack
 
 ### Frontend Architecture
+
 - **Core:** Vanilla JavaScript with Web Components
 - **Build Tool:** Vite for fast development and optimization
 - **CSS:** Custom properties with design system tokens
 - **PWA:** Workbox for service worker and caching strategies
-- **State Management:** IndexedDB for offline storage, WebSockets for real-time sync
+- **State Management:** IndexedDB for offline storage, WebSockets for real-time
+  sync
 
 ### Backend Integration
+
 - **Database:** Supabase (PostgreSQL) for real-time data and auth
 - **Real-time:** Supabase Realtime subscriptions
 - **Authentication:** Supabase Auth with magic link support
@@ -83,6 +86,7 @@ graph TB
 ### 1. Progressive Web App (PWA) Foundation
 
 #### Service Worker Strategy
+
 ```javascript
 // sw.js - Mobile-first caching strategy
 const CACHE_STRATEGIES = {
@@ -95,36 +99,38 @@ const CACHE_STRATEGIES = {
       '/app.html',
       '/js/timer-core.js',
       '/js/offline-manager.js',
-      '/css/design-system.css'
+      '/css/design-system.css',
     ],
-    maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+    maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
   },
 
   // Real-time data - network first with offline fallback
   realtime: {
     strategy: 'NetworkFirst',
     cacheName: 'cuetimer-api-v1',
-    maxAgeSeconds: 60 * 5 // 5 minutes
+    maxAgeSeconds: 60 * 5, // 5 minutes
   },
 
   // Brand assets - cache first for performance
   assets: {
     strategy: 'CacheFirst',
     cacheName: 'cuetimer-assets-v1',
-    maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
-  }
+    maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+  },
 };
 
 // Install event - cache core functionality
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('cuetimer-core-v1')
-      .then(cache => cache.addAll(CACHE_STRATEGIES.core.urls))
+    caches
+      .open('cuetimer-core-v1')
+      .then((cache) => cache.addAll(CACHE_STRATEGIES.core.urls))
   );
 });
 ```
 
 #### Mobile-Optimized Manifest
+
 ```json
 {
   "name": "CueTimer - Professional Stage Timing",
@@ -188,6 +194,7 @@ self.addEventListener('install', (event) => {
 ### 2. Real-Time Synchronization Engine
 
 #### WebSocket Timer Sync
+
 ```javascript
 // timer-sync.js - Real-time synchronization
 class TimerSyncEngine {
@@ -203,12 +210,13 @@ class TimerSyncEngine {
     // Subscribe to real-time timer updates
     this.supabase
       .channel(`timer:${this.sessionId}`)
-      .on('postgres_changes',
+      .on(
+        'postgres_changes',
         {
           event: 'UPDATE',
           schema: 'public',
           table: 'timers',
-          filter: `id=eq.${this.sessionId}`
+          filter: `id=eq.${this.sessionId}`,
         },
         (payload) => this.handleRemoteUpdate(payload.new)
       )
@@ -217,11 +225,12 @@ class TimerSyncEngine {
     // Subscribe to session events
     this.supabase
       .channel(`session:${this.sessionId}`)
-      .on('postgres_changes',
+      .on(
+        'postgres_changes',
         {
           event: '*',
           schema: 'public',
-          table: 'session_events'
+          table: 'session_events',
         },
         (payload) => this.handleSessionEvent(payload)
       )
@@ -262,6 +271,7 @@ class TimerSyncEngine {
 ```
 
 #### Conflict Resolution Strategy
+
 ```javascript
 // conflict-resolver.js - Handle competing updates
 class ConflictResolver {
@@ -298,7 +308,7 @@ class ConflictResolver {
       // Preserve local adjustments when reasonable
       duration: this.resolveDuration(localState, remoteState),
       // Use most recent timestamp
-      updated_at: Math.max(localState.updated_at, remoteState.updated_at)
+      updated_at: Math.max(localState.updated_at, remoteState.updated_at),
     };
   }
 }
@@ -307,6 +317,7 @@ class ConflictResolver {
 ### 3. Offline-First Architecture
 
 #### IndexedDB Storage Schema
+
 ```javascript
 // offline-storage.js - Client-side data persistence
 class OfflineStorage {
@@ -335,7 +346,9 @@ class OfflineStorage {
         timerStore.createIndex('lastUpdated', 'lastUpdated', { unique: false });
 
         // Store for queued operations
-        const operationStore = db.createObjectStore('operations', { keyPath: 'id' });
+        const operationStore = db.createObjectStore('operations', {
+          keyPath: 'id',
+        });
         operationStore.createIndex('timestamp', 'timestamp', { unique: false });
         operationStore.createIndex('synced', 'synced', { unique: false });
 
@@ -343,7 +356,9 @@ class OfflineStorage {
         db.createObjectStore('settings', { keyPath: 'key' });
 
         // Store for session cache
-        const sessionStore = db.createObjectStore('sessions', { keyPath: 'sessionId' });
+        const sessionStore = db.createObjectStore('sessions', {
+          keyPath: 'sessionId',
+        });
         sessionStore.createIndex('expiresAt', 'expiresAt', { unique: false });
       };
     });
@@ -352,6 +367,7 @@ class OfflineStorage {
 ```
 
 #### Sync Queue Manager
+
 ```javascript
 // sync-queue.js - Operation queuing for offline scenarios
 class SyncQueue {
@@ -367,7 +383,7 @@ class SyncQueue {
       ...operation,
       timestamp: Date.now(),
       synced: false,
-      retries: 0
+      retries: 0,
     };
 
     await this.storage.add('operations', queuedOp);
@@ -385,7 +401,11 @@ class SyncQueue {
     this.isProcessing = true;
 
     try {
-      const unsynced = await this.storage.getAllByIndex('operations', 'synced', false);
+      const unsynced = await this.storage.getAllByIndex(
+        'operations',
+        'synced',
+        false
+      );
 
       for (const operation of unsynced) {
         if (operation.retries >= this.maxRetries) {
@@ -411,9 +431,9 @@ class SyncQueue {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${await this.getAuthToken()}`
+        Authorization: `Bearer ${await this.getAuthToken()}`,
       },
-      body: JSON.stringify(operation)
+      body: JSON.stringify(operation),
     });
 
     if (!response.ok) {
@@ -428,6 +448,7 @@ class SyncQueue {
 ### 4. Mobile-Optimized Timer Engine
 
 #### High-Precision Timer
+
 ```javascript
 // timer-core.js - Accurate mobile timer implementation
 class MobileTimer {
@@ -496,8 +517,8 @@ class MobileTimer {
     this.notifyCallbacks({
       remaining: Math.ceil(remaining / 1000),
       elapsed: Math.ceil(elapsed / 1000),
-      progress: 1 - (remaining / this.duration),
-      status: this.status
+      progress: 1 - remaining / this.duration,
+      status: this.status,
     });
 
     // Auto-stop when timer reaches zero
@@ -515,7 +536,7 @@ class MobileTimer {
     if (this.status === 'paused') {
       return {
         status: 'paused',
-        remaining: Math.ceil((this.duration - this.pausedTime) / 1000)
+        remaining: Math.ceil((this.duration - this.pausedTime) / 1000),
       };
     }
 
@@ -526,7 +547,7 @@ class MobileTimer {
       return {
         status: 'running',
         remaining: Math.ceil(remaining / 1000),
-        elapsed: Math.ceil(elapsed / 1000)
+        elapsed: Math.ceil(elapsed / 1000),
       };
     }
   }
@@ -536,6 +557,7 @@ class MobileTimer {
 ### 5. QR Code Join System
 
 #### Mobile QR Generation
+
 ```javascript
 // qr-join.js - Frictionless presenter join system
 class QRCodeJoinManager {
@@ -551,17 +573,17 @@ class QRCodeJoinManager {
       width: options.size || 200,
       margin: 2,
       color: {
-        dark: '#2D3748',  // Professional Gray
-        light: '#FFFFFF'
+        dark: '#2D3748', // Professional Gray
+        light: '#FFFFFF',
       },
-      errorCorrectionLevel: 'H' // High reliability for mobile scanning
+      errorCorrectionLevel: 'H', // High reliability for mobile scanning
     };
 
     return {
       qrDataUrl: this.generateQRCode(joinUrl, qrOptions),
       joinUrl,
       sessionId,
-      expiresAt: options.expiresAt || (Date.now() + 24 * 60 * 60 * 1000) // 24 hours
+      expiresAt: options.expiresAt || Date.now() + 24 * 60 * 60 * 1000, // 24 hours
     };
   }
 
@@ -573,10 +595,10 @@ class QRCodeJoinManager {
       width: 240,
       margin: 2,
       color: {
-        dark: '#FF6B35',  // Spotlight Orange
-        light: '#FFFFFF'
+        dark: '#FF6B35', // Spotlight Orange
+        light: '#FFFFFF',
       },
-      errorCorrectionLevel: 'H'
+      errorCorrectionLevel: 'H',
     };
 
     const qrDataUrl = await this.generateQRWithLogo(joinUrl, {
@@ -585,14 +607,14 @@ class QRCodeJoinManager {
       logoSize: 48,
       logoMargin: 6,
       logoBackground: '#FFFFFF',
-      logoCornerRadius: 8
+      logoCornerRadius: 8,
     });
 
     return {
       qrDataUrl,
       joinUrl,
       sessionId,
-      branded: true
+      branded: true,
     };
   }
 
@@ -609,6 +631,7 @@ class QRCodeJoinManager {
 ```
 
 #### Join Flow Handler
+
 ```javascript
 // join-flow.js - Mobile-optimized presenter join experience
 class JoinFlowHandler {
@@ -640,12 +663,11 @@ class JoinFlowHandler {
         sessionId: this.sessionId,
         presenterName: this.params.get('presenter') || 'Presenter',
         userAgent: navigator.userAgent,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       });
 
       // Initialize presenter view
       this.initializePresenterView(presenterSession);
-
     } catch (error) {
       console.error('Join flow error:', error);
       this.showError('Failed to join session');
@@ -674,10 +696,12 @@ class JoinFlowHandler {
 
   requestFullscreen() {
     // Check if fullscreen is supported and available
-    return document.fullscreenEnabled ||
-           document.webkitFullscreenEnabled ||
-           document.mozFullScreenEnabled ||
-           document.msFullscreenEnabled;
+    return (
+      document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled
+    );
   }
 }
 ```
@@ -687,6 +711,7 @@ class JoinFlowHandler {
 ## Mobile Performance Optimization
 
 ### Critical Performance Targets
+
 - **First Contentful Paint:** < 1.5 seconds on 3G
 - **Time to Interactive:** < 3 seconds on mobile
 - **Timer Sync Latency:** < 500ms for real-time updates
@@ -696,6 +721,7 @@ class JoinFlowHandler {
 ### Mobile-Specific Optimizations
 
 #### Touch Interaction Optimization
+
 ```css
 /* Mobile touch targets - 44px minimum */
 .ct-touch-target {
@@ -719,6 +745,7 @@ class JoinFlowHandler {
 ```
 
 #### Viewport and Safe Area Handling
+
 ```css
 /* Mobile viewport optimization */
 .ct-mobile-container {
@@ -747,6 +774,7 @@ class JoinFlowHandler {
 ```
 
 #### Battery and Performance Optimization
+
 ```javascript
 // performance-manager.js - Mobile performance optimization
 class MobilePerformanceManager {
@@ -822,6 +850,7 @@ class MobilePerformanceManager {
 ## Mobile Testing Strategy
 
 ### Device Coverage Matrix
+
 - **Small Phones:** iPhone SE (375×667), Android Mini (360×640)
 - **Standard Phones:** iPhone 12 (390×844), Pixel 5 (393×851)
 - **Large Phones:** iPhone 12 Pro Max (428×926), Galaxy S21 (384×854)
@@ -829,6 +858,7 @@ class MobilePerformanceManager {
 - **Hybrid Devices:** Surface Duo, foldable phones
 
 ### Mobile Testing Scenarios
+
 1. **Core Timer Functions** (start, pause, stop, adjust)
 2. **Real-time Sync** (multiple devices, network drops)
 3. **Offline Mode** (airplane mode, reconnection)
@@ -838,6 +868,7 @@ class MobilePerformanceManager {
 7. **Accessibility** (screen readers, voice control)
 
 ### Automated Mobile Testing
+
 ```javascript
 // mobile-tests.js - Mobile-specific test scenarios
 describe('Mobile Timer Functionality', () => {
@@ -867,9 +898,13 @@ describe('Mobile Timer Functionality', () => {
     await page.setOffline(true);
 
     // Timer should continue running
-    const initialTime = await page.locator('[data-testid="timer-display"]').textContent();
+    const initialTime = await page
+      .locator('[data-testid="timer-display"]')
+      .textContent();
     await page.waitForTimeout(2000);
-    const laterTime = await page.locator('[data-testid="timer-display"]').textContent();
+    const laterTime = await page
+      .locator('[data-testid="timer-display"]')
+      .textContent();
 
     expect(initialTime).not.toBe(laterTime);
   });
@@ -893,6 +928,7 @@ describe('Mobile Timer Functionality', () => {
 ## Implementation Roadmap
 
 ### Phase 1: Core Mobile PWA (Weeks 1-4)
+
 1. **PWA Foundation** - Service worker, mobile manifest, caching
 2. **Mobile Timer Core** - Touch-optimized controls, accurate timing
 3. **Basic Real-time Sync** - WebSocket integration for mobile devices
@@ -900,12 +936,14 @@ describe('Mobile Timer Functionality', () => {
 5. **Mobile Auth** - Magic link authentication for mobile
 
 ### Phase 2: Offline Mobile Features (Weeks 5-8)
+
 1. **Mobile Offline Storage** - IndexedDB optimization for mobile
 2. **Sync Queue** - Mobile-optimized offline operation queuing
 3. **Battery Optimization** - Adaptive performance based on battery level
 4. **Network Adaptation** - Performance adjustment for network conditions
 
 ### Phase 3: Professional Mobile Features (Weeks 9-12)
+
 1. **Advanced Mobile UI** - Gesture controls, haptic feedback
 2. **Multi-device Mobile** - Phone + tablet workflows
 3. **Mobile Analytics** - Usage tracking and performance monitoring
@@ -916,6 +954,7 @@ describe('Mobile Timer Functionality', () => {
 ## Success Metrics
 
 ### Technical Performance Metrics
+
 - **PWA Installation Rate:** > 40% of mobile users
 - **Offline Usage:** > 60% of sessions include offline period
 - **Timer Accuracy:** < 100ms drift over 1 hour
@@ -923,6 +962,7 @@ describe('Mobile Timer Functionality', () => {
 - **Mobile Load Time:** < 2 seconds on 3G networks
 
 ### User Experience Metrics
+
 - **Touch Target Success:** > 95% first-touch accuracy
 - **QR Code Scan Success:** > 90% successful scans on first attempt
 - **Mobile Session Duration:** Average 15+ minutes per session
@@ -932,6 +972,7 @@ describe('Mobile Timer Functionality', () => {
 ---
 
 **Related Documents:**
+
 - [Design System](../branding/design-system.md)
 - [UI Guidelines](../ui-ux/user-interface-guidelines.md)
 - [System Architecture](./system-architecture.md)
@@ -939,6 +980,6 @@ describe('Mobile Timer Functionality', () => {
 
 ---
 
-**Architecture Ownership:** Web Development Team
-**Next Review:** Sprint planning and mobile testing results
-**Approval Status:** Ready for Mobile-First Development
+**Architecture Ownership:** Web Development Team **Next Review:** Sprint
+planning and mobile testing results **Approval Status:** Ready for Mobile-First
+Development

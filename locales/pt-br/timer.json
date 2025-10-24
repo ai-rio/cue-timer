@@ -1,0 +1,59 @@
+{
+  "title": "Timer",
+  "description": "Controles profissionais de temporização",
+  "controls": {
+    "start": "Iniciar",
+    "pause": "Pausar",
+    "stop": "Parar",
+    "reset": "Reiniciar",
+    "resume": "Retomar",
+    "addTime": "Adicionar Tempo",
+    "removeTime": "Remover Tempo"
+  },
+  "display": {
+    "timeRemaining": "Tempo Restante",
+    "timeElapsed": "Tempo Decorrido",
+    "totalTime": "Tempo Total",
+    "currentSegment": "Segmento Atual",
+    "nextSegment": "Próximo Segmento"
+  },
+  "segments": {
+    "presentation": "Apresentação",
+    "questions": "Perguntas",
+    "break": "Pausa",
+    "setup": "Preparação",
+    "introduction": "Introdução",
+    "conclusion": "Conclusão",
+    "networking": "Networking"
+  },
+  "warnings": {
+    "fiveMinutes": "5 minutos restantes",
+    "twoMinutes": "2 minutos restantes",
+    "oneMinute": "1 minuto restante",
+    "thirtySeconds": "30 segundos restantes",
+    "tenSeconds": "10 segundos restantes",
+    "timeUp": "Tempo esgotado!",
+    "overtime": "Tempo excedido"
+  },
+  "presenterMessages": {
+    "startNow": "Por favor, comece sua apresentação",
+    "wrapUp": "Por favor, comece a concluir",
+    "finishNow": "O tempo acabou, por favor termine",
+    "questionsStart": "Hora das perguntas",
+    "questionsEnd": "Tempo de perguntas acabou"
+  },
+  "states": {
+    "ready": "Pronto",
+    "running": "Executando",
+    "paused": "Pausado",
+    "finished": "Finalizado",
+    "overtime": "Excedido"
+  },
+  "settings": {
+    "enableSounds": "Habilitar Sons",
+    "enableVibrations": "Habilitar Vibrações",
+    "enableWarnings": "Habilitar Avisos de Tempo",
+    "presenterView": "Visão do Apresentador",
+    "audienceView": "Visão da Audiência"
+  }
+}

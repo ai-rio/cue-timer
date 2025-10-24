@@ -2,7 +2,8 @@
 
 ## Overview
 
-This document establishes the naming conventions for all CueTimer documentation files and folders to ensure consistency, clarity, and easy navigation.
+This document establishes the naming conventions for all CueTimer documentation
+files and folders to ensure consistency, clarity, and easy navigation.
 
 ## File Naming Standards
 
@@ -113,14 +114,14 @@ All markdown files should include front matter with:
 
 ```yaml
 ---
-title: "Document Title"
-description: "Brief description of document content"
-date: "YYYY-MM-DD"
-version: "1.0"
-status: "draft|review|approved|archived"
-author: "Author Name"
-tags: ["tag1", "tag2"]
-category: "strategy|design|development|research"
+title: 'Document Title'
+description: 'Brief description of document content'
+date: 'YYYY-MM-DD'
+version: '1.0'
+status: 'draft|review|approved|archived'
+author: 'Author Name'
+tags: ['tag1', 'tag2']
+category: 'strategy|design|development|research'
 ---
 ```
 
@@ -140,9 +141,11 @@ Maintain a `CHANGELOG.md` in each category folder:
 # Change Log - [Category]
 
 ## [Unreleased]
+
 - Changes in progress
 
 ## [1.0.0] - 2024-10-23
+
 - Initial release
 ```
 
@@ -192,6 +195,5 @@ When renaming existing files:
 
 ---
 
-**Last Updated:** 2024-10-23
-**Maintained by:** Documentation Team
-**Review Frequency:** Quarterly
+**Last Updated:** 2024-10-23 **Maintained by:** Documentation Team **Review
+Frequency:** Quarterly
