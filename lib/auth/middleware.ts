@@ -58,7 +58,7 @@ export function withAuth<T extends Record<string, unknown> = Record<string, unkn
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       }
 
-      return handler({ ...req, user } as NextRequest & { user: User });
+      return handler({ ...req, user } as unknown as NextRequest & { user: User });
     } catch (error) {
       console.error('Auth check error:', error);
       return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

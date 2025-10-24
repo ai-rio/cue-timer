@@ -207,7 +207,9 @@ export default function LandingPage() {
               </Link>
             </Button>
           </div>
-          <p className='mt-4 text-spotlight-orange-100'>No credit card required • 3 timers free forever</p>
+          <p className='mt-4 text-spotlight-orange-100'>
+            No credit card required • 3 timers free forever
+          </p>
         </div>
       </section>
     </div>

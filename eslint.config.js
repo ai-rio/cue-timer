@@ -34,6 +34,8 @@ export default [
       'ios/**',
       'android/**',
       ' capacitor.config.ts',
+      '.claude/**',
+      '.serena/**',
     ],
   },
   {
