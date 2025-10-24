@@ -1,0 +1,11 @@
+{
+  "title": "CueTimer",
+  "subtitle": "Plataforma profissional de temporizadores para apresentações com sincronização em tempo real para temporização perfeita de eventos.",
+  "getStarted": "Começar Agora",
+  "features": {
+    "realTime": "Sincronização em Tempo Real",
+    "professional": "Temporização Profissional",
+    "reliable": "Confiável Offline",
+    "easy": "Fácil de Usar"
+  }
+}

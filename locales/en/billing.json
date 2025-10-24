@@ -1,0 +1,21 @@
+{
+  "title": "Billing",
+  "subscription": "Subscription",
+  "paymentMethod": "Payment Method",
+  "invoices": "Invoices",
+  "usage": "Usage",
+  "currentPlan": "Current Plan",
+  "upgradePlan": "Upgrade Plan",
+  "downgradePlan": "Downgrade Plan",
+  "cancelSubscription": "Cancel Subscription",
+  "reactivateSubscription": "Reactivate Subscription",
+  "addPaymentMethod": "Add Payment Method",
+  "removePaymentMethod": "Remove Payment Method",
+  "billingHistory": "Billing History",
+  "nextBillingDate": "Next Billing Date",
+  "amount": "Amount",
+  "status": "Status",
+  "paid": "Paid",
+  "pending": "Pending",
+  "failed": "Failed"
+}

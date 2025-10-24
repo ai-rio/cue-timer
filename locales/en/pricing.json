@@ -1,0 +1,36 @@
+{
+  "title": "Pricing",
+  "subtitle": "Choose the perfect plan for your needs",
+  "monthly": "Monthly",
+  "yearly": "Yearly",
+  "save": "Save",
+  "popular": "Popular",
+  "current": "Current",
+  "features": {
+    "basicTimers": "Basic Timers",
+    "unlimitedEvents": "Unlimited Events",
+    "realTimeSync": "Real-time Sync",
+    "advancedAnalytics": "Advanced Analytics",
+    "prioritySupport": "Priority Support",
+    "customBranding": "Custom Branding",
+    "apiAccess": "API Access",
+    "teamCollaboration": "Team Collaboration"
+  },
+  "plans": {
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "description": "Perfect for getting started"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9",
+      "description": "For professional presenters"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "description": "For large organizations"
+    }
+  }
+}

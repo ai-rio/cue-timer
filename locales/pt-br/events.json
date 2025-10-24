@@ -1,0 +1,17 @@
+{
+  "title": "Eventos",
+  "createEvent": "Criar Evento",
+  "editEvent": "Editar Evento",
+  "deleteEvent": "Excluir Evento",
+  "eventName": "Nome do Evento",
+  "eventDate": "Data do Evento",
+  "eventTime": "Horário do Evento",
+  "location": "Local",
+  "description": "Descrição",
+  "participants": "Participantes",
+  "status": "Status",
+  "upcoming": "Próximos",
+  "past": "Passados",
+  "active": "Ativos",
+  "completed": "Concluídos"
+}
