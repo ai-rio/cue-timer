@@ -1,0 +1,69 @@
+#!/usr/bin/env sh
+
+echo "📊 Recording CueTimer commit metrics..."
+
+# Get commit info
+COMMIT_HASH=$(git rev-parse --short HEAD)
+COMMIT_AUTHOR=$(git log -1 --format='%an')
+COMMIT_DATE=$(git log -1 --format='%ad' --date=short)
+FILES_CHANGED=$(git diff-tree --no-commit-id --name-only -r HEAD)
+FILE_COUNT=$(echo "$FILES_CHANGED" | wc -l)
+
+# Calculate commit size
+ADDITIONS=$(git diff --stat HEAD~1 HEAD | tail -1 | grep -o '[0-9]*' | head -1)
+DELETIONS=$(git diff --stat HEAD~1 HEAD | tail -1 | grep -o '[0-9]*' | head -2 | tail -1)
+
+# Log metrics
+echo "Commit: $COMMIT_HASH"
+echo "Author: $COMMIT_AUTHOR"
+echo "Date: $COMMIT_DATE"
+echo "Files changed: $FILE_COUNT"
+echo "Additions: ${ADDITIONS:-0}"
+echo "Deletions: ${DELETIONS:-0}"
+
+# Check for specific CueTimer patterns
+if echo "$FILES_CHANGED" | grep -q "supabase/migrations"; then
+    echo "🗄️ Supabase migration committed"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "src/components/timer\|src/app/timer"; then
+    echo "⏱️ Timer functionality updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "content/\|src/components/marketing"; then
+    echo "📈 Marketing content updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "ios/\|android/\|capacitor.config"; then
+    echo "📱 Mobile configuration updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "src/app/marketing"; then
+    echo "🌐 Marketing site updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q ".md\|.mdx"; then
+    echo "📝 Documentation/content files updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "src/components"; then
+    echo "🧩 Components updated"
+fi
+
+if echo "$FILES_CHANGED" | grep -q "src/app"; then
+    echo "🚀 App routes updated"
+fi
+
+# Optional: Trigger deployment or other post-commit actions
+# Uncomment and modify as needed
+# if echo "$FILES_CHANGED" | grep -q "src/app/marketing"; then
+#     echo "🚀 Triggering marketing site deployment..."
+#     # Trigger deployment webhook
+# fi
+
+echo "🎉 CueTimer commit $COMMIT_HASH completed successfully!"
+
+# Performance tip
+if [ "${ADDITIONS:-0}" -gt 500 ]; then
+    echo "💡 Tip: Large commit detected. Consider breaking into smaller commits for better tracking."
+fi

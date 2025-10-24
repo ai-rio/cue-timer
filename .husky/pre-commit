@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo "🚀 CueTimer Pre-commit Checks Starting..."
+
+# Check for staged frontend files and run lint-staged
+if git diff --cached --name-only | grep -qE "\.(ts|tsx|js|jsx|css|scss|less|json|md|mdx)$"; then
+    echo "📝 Running frontend checks..."
+
+    echo "  📝 Running lint-staged..."
+    bunx lint-staged || {
+        echo "❌ Lint-staged failed - fix errors before committing"
+        exit 1
+    }
+
+    echo "  📝 Running TypeScript type checking..."
+    bun run type-check || {
+        echo "❌ TypeScript type checking failed - fix type errors before committing"
+        exit 1
+    }
+fi
+
+echo "✅ All pre-commit checks passed!"

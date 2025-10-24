@@ -1,0 +1,256 @@
+# =============================================================================
+# CueTimer Project .gitignore
+# =============================================================================
+# Comprehensive gitignore for Next.js 15 + TypeScript + Tailwind CSS + Bun
+# Last updated: 2025-10-23
+# =============================================================================
+
+# =============================================================================
+# Dependencies & Package Managers
+# =============================================================================
+# Bun dependencies
+bun.lockb
+node_modules/
+
+# Dependency directories
+jspm_packages/
+web_modules/
+
+# =============================================================================
+# Build Outputs & Distribution
+# =============================================================================
+# Next.js build outputs
+.next/
+out/
+build/
+dist/
+
+# TypeScript compilation outputs
+*.tsbuildinfo
+
+# =============================================================================
+# Runtime & Cache
+# =============================================================================
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+bun-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# Cache directories
+.cache
+.parcel-cache
+.vite/
+.turbo/
+
+# =============================================================================
+# Environment Variables
+# =============================================================================
+# Local environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =============================================================================
+# Testing
+# =============================================================================
+# Jest
+coverage/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# =============================================================================
+# IDE & Editor Files
+# =============================================================================
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/snippets.json
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Framework & Tool Specific
+# =============================================================================
+# Next.js
+.next-env.d.ts
+
+# TypeScript
+*.tsbuildinfo
+
+# Tailwind CSS
+# Note: No specific files to ignore by default, but included for completeness
+
+# Husky
+.husky/_/
+
+# =============================================================================
+# Supabase
+# =============================================================================
+# Supabase local development
+.supabase/
+supabase/
+
+# =============================================================================
+# Vercel
+# =============================================================================
+# Vercel deployment files
+.vercel
+
+# =============================================================================
+# Development Tools & Analytics
+# =============================================================================
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettiercache
+
+# Stylelint cache
+.stylelintcache
+
+# Temporary files
+*.tmp
+*.temp
+
+# =============================================================================
+# Project Specific
+# =============================================================================
+# AI assistant files
+.bmad-core/
+.claude/
+
+# Backup files
+*.bak
+*.backup
+
+# =============================================================================
+# Documentation & Generated Files
+# =============================================================================
+# Generated documentation
+docs/generated/
+
+# API documentation
+api-docs/
+
+# =============================================================================
+# Security & Secrets
+# =============================================================================
+# Private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Secret files
+secrets/
+.secrets/
+
+# =============================================================================
+# Database
+# =============================================================================
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# Performance & Monitoring
+# =============================================================================
+# Bundle analyzer
+.bundle-analyzer/
+
+# Lighthouse reports
+lighthouse-reports/
+
+# =============================================================================
+# Experimental & Feature Flags
+# =============================================================================
+# Experimental features
+experimental/
+.next-experimental/

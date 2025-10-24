@@ -1,15 +1,18 @@
 # PowerSync + Supabase Implementation Guide for CueTimer
 
-**Based on**: Validated PowerSync Supabase demo implementation
-**Target**: CueTimer offline-first real-time sync functionality
-**Timeline**: 3-4 weeks additional development
-**Complexity**: Medium (with PowerSync handling complex sync logic)
+**Based on**: Validated PowerSync Supabase demo implementation **Target**:
+CueTimer offline-first real-time sync functionality **Timeline**: 3-4 weeks
+additional development **Complexity**: Medium (with PowerSync handling complex
+sync logic)
 
 ---
 
 ## 🎯 Overview
 
-This guide provides a step-by-step implementation approach for adding PowerSync to CueTimer, based on the complete working demo analyzed in our feasibility study. The demo shows a React + Supabase + PowerSync todo list that maps directly to CueTimer's timer session and event requirements.
+This guide provides a step-by-step implementation approach for adding PowerSync
+to CueTimer, based on the complete working demo analyzed in our feasibility
+study. The demo shows a React + Supabase + PowerSync todo list that maps
+directly to CueTimer's timer session and event requirements.
 
 ## 🏗️ Architecture Overview
 
@@ -191,7 +194,7 @@ sync_rules:
 client_auth:
   supabase: true
   supabase_jwt_secret: !env PS_SUPABASE_JWT_SECRET
-  audience: ["powersync-dev", "powersync"]
+  audience: ['powersync-dev', 'powersync']
 ```
 
 ### 1.4 Configure Sync Rules
@@ -203,7 +206,9 @@ Create `config/sync_rules.yaml`:
 bucket_definitions:
   user_timer_sessions:
     # One bucket per user's timer sessions
-    parameters: select id as session_id from timer_sessions where owner_id = request.user_id()
+    parameters:
+      select id as session_id from timer_sessions where owner_id =
+      request.user_id()
     data:
       - select * from timer_sessions where id = bucket.session_id
       - select * from timer_events where session_id = bucket.session_id
@@ -253,26 +258,30 @@ import { supabase } from './supabase';
 
 export const PowerSync = new PowerSyncDatabase({
   database: {
-    filename: 'cuetimer.db'
+    filename: 'cuetimer.db',
   },
   logger: {
-    level: 'debug'
-  }
+    level: 'debug',
+  },
 });
 
 export const connector = new SupabaseConnector({
   supabaseClient: supabase,
   credentials: async () => {
-    const { data: { session } } = await supabase.auth.getSession();
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
     if (!session) {
       throw new Error('User not authenticated');
     }
 
     return {
       token: session.access_token,
-      expiresAt: session.expires_at ? new Date(session.expires_at * 1000) : undefined
+      expiresAt: session.expires_at
+        ? new Date(session.expires_at * 1000)
+        : undefined,
     };
-  }
+  },
 });
 
 PowerSync.connect(connector);
@@ -329,46 +338,61 @@ export const useTimerSessions = () => {
   `);
 
   const createSession = async (name: string, durationSeconds: number) => {
-    const { data, error } = await powerSync.execute(`
+    const { data, error } = await powerSync.execute(
+      `
       INSERT INTO timer_sessions (name, duration_seconds, owner_id)
       VALUES (?, ?, auth.uid())
       RETURNING *
-    `, [name, durationSeconds]);
+    `,
+      [name, durationSeconds]
+    );
 
     return { data: data[0], error };
   };
 
   const startSession = async (sessionId: string) => {
-    await powerSync.execute(`
+    await powerSync.execute(
+      `
       INSERT INTO timer_events (event_type, session_id, created_by)
       VALUES ('start', ?, auth.uid())
-    `, [sessionId]);
+    `,
+      [sessionId]
+    );
 
-    await powerSync.execute(`
+    await powerSync.execute(
+      `
       UPDATE timer_sessions
       SET status = 'running'
       WHERE id = ? AND owner_id = auth.uid()
-    `, [sessionId]);
+    `,
+      [sessionId]
+    );
   };
 
   const stopSession = async (sessionId: string) => {
-    await powerSync.execute(`
+    await powerSync.execute(
+      `
       INSERT INTO timer_events (event_type, session_id, created_by)
       VALUES ('stop', ?, auth.uid())
-    `, [sessionId]);
+    `,
+      [sessionId]
+    );
 
-    await powerSync.execute(`
+    await powerSync.execute(
+      `
       UPDATE timer_sessions
       SET status = 'completed'
       WHERE id = ? AND owner_id = auth.uid()
-    `, [sessionId]);
+    `,
+      [sessionId]
+    );
   };
 
   return {
     sessions,
     createSession,
     startSession,
-    stopSession
+    stopSession,
   };
 };
 
@@ -376,13 +400,16 @@ export const usePresenterMessaging = (sessionId: string) => {
   const powerSync = usePowerSync();
 
   // Watch for active messages in this session
-  const { data: messages } = usePowerSyncWatchedQuery<PresenterMessage>(`
+  const { data: messages } = usePowerSyncWatchedQuery<PresenterMessage>(
+    `
     SELECT * FROM presenter_messages
     WHERE session_id = ?
     AND acknowledged_at IS NULL
     AND expires_at > NOW()
     ORDER BY priority DESC, created_at ASC
-  `, [sessionId]);
+  `,
+    [sessionId]
+  );
 
   const sendMessage = async (
     messageText: string,
@@ -391,23 +418,29 @@ export const usePresenterMessaging = (sessionId: string) => {
     category: string = 'presentation',
     priority: number = 1
   ) => {
-    const { data, error } = await powerSync.execute(`
+    const { data, error } = await powerSync.execute(
+      `
       INSERT INTO presenter_messages (
         session_id, message_type, message_text, icon_emoji, category, priority
       )
       VALUES (?, ?, ?, ?, ?, ?)
       RETURNING *
-    `, [sessionId, messageType, messageText, iconEmoji, category, priority]);
+    `,
+      [sessionId, messageType, messageText, iconEmoji, category, priority]
+    );
 
     return { data: data[0], error };
   };
 
   const acknowledgeMessage = async (messageId: string) => {
-    const { error } = await powerSync.execute(`
+    const { error } = await powerSync.execute(
+      `
       UPDATE presenter_messages
       SET acknowledged_at = NOW(), acknowledged_by = auth.uid()
       WHERE id = ?
-    `, [messageId]);
+    `,
+      [messageId]
+    );
 
     return { error };
   };
@@ -415,7 +448,7 @@ export const usePresenterMessaging = (sessionId: string) => {
   return {
     messages,
     sendMessage,
-    acknowledgeMessage
+    acknowledgeMessage,
   };
 };
 ```
@@ -808,7 +841,7 @@ export const useSyncStatus = () => {
     isOnline,
     isSyncing,
     hasPendingOperations,
-    status: status.connected ? 'connected' : 'offline'
+    status: status.connected ? 'connected' : 'offline',
   };
 };
 ```
@@ -819,15 +852,22 @@ For timer conflicts, use last-write-wins with device priority:
 
 ```typescript
 // Add to useTimerSessions hook
-const resolveTimerConflict = async (sessionId: string, localState: any, remoteState: any) => {
+const resolveTimerConflict = async (
+  sessionId: string,
+  localState: any,
+  remoteState: any
+) => {
   // For timer state, latest timestamp wins
   if (localState.last_updated > remoteState.last_updated) {
     // Local state is newer, push to server
-    await powerSync.execute(`
+    await powerSync.execute(
+      `
       UPDATE timer_sessions
       SET status = ?, duration_seconds = ?
       WHERE id = ? AND owner_id = auth.uid()
-    `, [localState.status, localState.duration_seconds, sessionId]);
+    `,
+      [localState.status, localState.duration_seconds, sessionId]
+    );
   }
   // Otherwise, accept remote state (will be synced automatically)
 };
@@ -871,7 +911,7 @@ const usePerformanceMetrics = () => {
   const [metrics, setMetrics] = useState({
     syncLatency: 0,
     localOperationTime: 0,
-    batteryImpact: 'low'
+    batteryImpact: 'low',
   });
 
   useEffect(() => {
@@ -880,9 +920,9 @@ const usePerformanceMetrics = () => {
       const startTime = performance.now();
       // Perform sync operation
       const endTime = performance.now();
-      setMetrics(prev => ({
+      setMetrics((prev) => ({
         ...prev,
-        syncLatency: endTime - startTime
+        syncLatency: endTime - startTime,
       }));
     };
 
@@ -900,6 +940,7 @@ const usePerformanceMetrics = () => {
 ### Supabase Production Setup
 
 1. **Create Production Project**:
+
    ```bash
    supabase projects create cuetimer-prod
    supabase link --project-ref your-project-ref
@@ -928,7 +969,7 @@ const useSyncHealthCheck = () => {
   const [health, setHealth] = useState({
     lastSyncTime: null,
     failedOperations: 0,
-    averageLatency: 0
+    averageLatency: 0,
   });
 
   // Monitor sync health and report issues
@@ -948,24 +989,28 @@ Based on the project brief's SLA requirements:
 ## 📋 Implementation Checklist
 
 ### Week 1: Setup
+
 - [ ] Supabase project initialized
 - [ ] Database schema created
 - [ ] PowerSync service configured
 - [ ] Local development environment running
 
 ### Week 2: Client Integration
+
 - [ ] PowerSync client integrated
 - [ ] Timer session management working
 - [ ] Basic offline functionality working
 - [ ] Real-time sync between devices
 
 ### Week 3: Advanced Features
+
 - [ ] Conflict resolution implemented
 - [ ] Sync status indicators added
 - [ ] Performance optimization complete
 - [ ] Error handling robust
 
 ### Week 4: Testing & Polish
+
 - [ ] End-to-end testing complete
 - [ ] Performance validation (< 500ms sync)
 - [ ] User acceptance testing
@@ -973,4 +1018,5 @@ Based on the project brief's SLA requirements:
 
 ---
 
-**Result**: Complete offline-first timer app with real-time sync, matching all requirements from the project brief with validated implementation approach.
+**Result**: Complete offline-first timer app with real-time sync, matching all
+requirements from the project brief with validated implementation approach.
