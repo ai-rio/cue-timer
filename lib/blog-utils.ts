@@ -366,7 +366,7 @@ export function generateExcerpt(content: string, maxLength: number = 160): strin
     return plainText;
   }
 
-  return plainText.substring(0, maxLength).replace(/\s+\S*$/, '') + '...';
+  return `${plainText.substring(0, maxLength).replace(/\s+\S*$/, '')}...`;
 }
 
 export function calculateReadingTime(content: string): number {
@@ -465,6 +465,6 @@ export const conditionalImports = {
   // Lazy load heavy components only when needed
   loadMDXRenderer: () => import('@/components/blog/MDXRenderer').then((mod) => mod.default),
   // Note: BlogEditor and BlogAnalytics components are not yet implemented
-  // loadBlogEditor: () => import('@/components/blog/BlogEditor').then((mod) => mod.default),
-  // loadBlogAnalytics: () => import('@/components/blog/BlogAnalytics').then((mod) => mod.default),
+  // loadBlogEditor: () => import('@/components/blog/BlogEditor').then(mod => mod.default),
+  // loadBlogAnalytics: () => import('@/components/blog/BlogAnalytics').then(mod => mod.default),
 };

@@ -155,7 +155,7 @@ function generateExcerpt(content: string, maxLength: number = 160): string {
     return plainText;
   }
 
-  return plainText.substring(0, maxLength).replace(/\s+\S*$/, '') + '...';
+  return `${plainText.substring(0, maxLength).replace(/\s+\S*$/, '')}...`;
 }
 
 // Generate slug from filename

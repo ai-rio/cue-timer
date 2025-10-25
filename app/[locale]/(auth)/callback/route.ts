@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get('next') ?? '/account/dashboard';
 
   // Extract locale from the URL pathname
-  const pathname = request.nextUrl.pathname;
+  const { pathname } = request.nextUrl;
   const localeMatch = pathname.match(/^\/([^/]+)/);
   const locale = localeMatch ? localeMatch[1] : 'en';
 

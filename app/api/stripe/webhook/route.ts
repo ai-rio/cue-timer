@@ -70,7 +70,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   const customerId = session.customer;
   const subscriptionId = session.subscription as string;
   const customerEmail = session.customer_details?.email;
-  const metadata = session.metadata;
+  const { metadata } = session;
 
   // Create or update user in database
   if (customerEmail) {

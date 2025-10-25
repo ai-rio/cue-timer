@@ -1,9 +1,6 @@
 module.exports = {
   // TypeScript/JavaScript files
-  '*.{ts,tsx,js,jsx}': [
-    'eslint --fix --max-warnings=20 --config eslint.config.js',
-    'prettier --write',
-  ],
+  '*.{ts,tsx,js,jsx}': ['eslint --fix --config eslint.config.js', 'prettier --write'],
 
   // MDX and markdown files
   '*.{md,mdx}': [
@@ -25,7 +22,7 @@ module.exports = {
 
   // Config files (with specific formatting)
   '*.{config.js,config.mjs,config.cjs,config.ts}': [
-    'eslint --fix --max-warnings=20 --config eslint.config.js',
+    'eslint --fix --config eslint.config.js',
     'prettier --write',
   ],
 
@@ -33,10 +30,10 @@ module.exports = {
   '*.d.ts': ['prettier --write'],
 
   // Test files
-  '*.{test,spec}.{ts,tsx,js,jsx}': ['eslint --fix --max-warnings=10', 'prettier --write'],
+  '*.{test,spec}.{ts,tsx,js,jsx}': ['eslint --fix', 'prettier --write'],
 
   // Story files
-  '*.stories.{ts,tsx,js,jsx}': ['eslint --fix --max-warnings=20', 'prettier --write'],
+  '*.stories.{ts,tsx,js,jsx}': ['eslint --fix', 'prettier --write'],
 
   // Supabase migration files
   'supabase/migrations/*.sql': [

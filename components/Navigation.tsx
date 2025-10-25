@@ -17,9 +17,7 @@ export default function Navigation() {
     setMounted(true);
   }, []);
 
-  const isActive = (path: string) => {
-    return pathname === path || pathname?.startsWith(path + '/') || false;
-  };
+  const isActive = (path: string) => pathname === path || pathname?.startsWith(`${path}/`) || false;
 
   // Define static navigation links to prevent hydration issues
   const navLinks = [
