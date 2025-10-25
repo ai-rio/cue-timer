@@ -59,6 +59,8 @@ export interface BlogFilter {
   featured?: boolean;
   year?: number;
   includeDrafts?: boolean;
+  limit?: number;
+  offset?: number;
 }
 
 // Blog post navigation type

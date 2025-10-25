@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import BlogContent from '@/components/blog/BlogContent';
-import { BlogPost, getAllPosts } from '@/lib/blog';
+import BlogContentSimple from '@/components/blog/BlogContentSimple';
+import { getAllPosts } from '@/lib/blog';
+import type { BlogPostEnhanced } from '@/types/blog-api';
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
   searchParams: {
     category?: string;
     featured?: string;
@@ -43,15 +44,27 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function BlogPage() {
+// Blog page component
+export default async function BlogPage() {
+  // Get initial posts
+  const initialPosts: BlogPostEnhanced[] = await getAllPosts();
+
   return (
     <div className='container mx-auto px-4 py-8'>
-      <h1 className='text-4xl font-bold text-gray-900 mb-4 text-center'>CueTimer Blog</h1>
-      <p className='text-xl text-gray-600 max-w-3xl mx-auto text-center mb-8'>
-        Simple blog page test.
-      </p>
-      <div className='text-center'>
-        <p>If you can see this page, the basic routing and layout are working.</p>
+      <div className='max-w-6xl mx-auto'>
+        {/* Header */}
+        <div className='text-center mb-12'>
+          <h1 className='text-4xl font-bold tracking-tight mb-4'>CueTimer Blog</h1>
+          <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+            Expert insights on event timing, productivity, and professional presentation skills.
+            Learn from industry experts and take your events to the next level.
+          </p>
+        </div>
+
+        {/* Blog Content with search and filtering */}
+        <Suspense fallback={<div>Loading blog posts...</div>}>
+          <BlogContentSimple initialPosts={initialPosts} />
+        </Suspense>
       </div>
     </div>
   );

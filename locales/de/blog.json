@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "CueTimer Blog - Event-Timing- und Produktivitätstipps",
+    "description": "Lesen Sie die neuesten Artikel über Veranstaltungsmanagement, Timer-Optimierung und professionelle Präsentationstipps von CueTimer-Experten."
+  },
+  "title": "CueTimer Blog",
+  "subtitle": "Experten-Einblicke in Event-Timing, Produktivität und professionelle Präsentationsfähigkeiten. Lernen Sie von Branchenexperten und verbessern Sie Ihre Veranstaltungen.",
+  "loading": "Blog-Beiträge werden geladen...",
+  "error": "Fehler beim Laden der Blog-Beiträge",
+  "empty": "Keine Blog-Beiträge gefunden.",
+  "featured": "Hervorgehoben",
+  "minRead": "Min Lesezeit",
+  "readMore": "Mehr Lesen",
+  "backToBlog": "Zurück zum Blog",
+  "relatedPosts": "Verwandte Beiträge",
+  "navigation": {
+    "previous": "Vorheriger Beitrag",
+    "next": "Nächster Beitrag"
+  },
+  "categories": {
+    "timing": "Timing",
+    "productivity": "Produktivität",
+    "events": "Veranstaltungen",
+    "features": "Funktionen",
+    "tutorials": "Tutorials",
+    "industry": "Branche"
+  },
+  "filter": {
+    "searchPlaceholder": "Blog-Beiträge suchen...",
+    "categoryLabel": "Kategorie",
+    "allCategories": "Alle Kategorien",
+    "featuredOnly": "Nur Hervorgehobene",
+    "clearFilters": "Filter löschen",
+    "activeFilters": "Aktive Filter"
+  }
+}

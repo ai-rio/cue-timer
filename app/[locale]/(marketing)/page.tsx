@@ -38,6 +38,7 @@ export default function LandingPage() {
                 variant='outline'
                 size='lg'
                 className='border-border hover:bg-accent hover:text-accent-foreground transition-all duration-200'
+                asChild
               >
                 <Link href='#demo'>Watch Demo</Link>
               </Button>

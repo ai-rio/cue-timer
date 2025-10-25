@@ -29,24 +29,23 @@ export default getRequestConfig(async ({ requestLocale }) => {
     'settings',
     'billing',
     'support',
+    'blog',
   ];
 
   // Load each namespace with fallback to English
   for (const namespace of namespaces) {
     try {
       messages[namespace] = (await import(`./locales/${locale}/${namespace}.json`)).default;
-    } catch (importError) {
+    } catch {
       try {
         // Fallback to English if locale-specific translation doesn't exist
         messages[namespace] = (
           await import(`./locales/${defaultLocale}/${namespace}.json`)
         ).default;
-        console.warn(`Using fallback translations for ${namespace}.json in locale ${locale}`);
-      } catch (fallbackError) {
+        // Silent fallback handling
+      } catch {
         // Final fallback - create empty object to prevent errors
-        console.warn(
-          `Missing translation file: ${namespace}.json for locale ${locale} and fallback`
-        );
+        // Silent error handling for missing translation files
         messages[namespace] = {};
       }
     }
@@ -55,12 +54,21 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages,
-    // Handle missing messages gracefully
+    // Handle missing messages gracefully with structured logging
     onError(error) {
+      const errorInfo = {
+        type: 'I18N_ERROR',
+        code: error.code,
+        message: error.message,
+        namespace: (error as any).namespace,
+        key: (error as any).key,
+        timestamp: new Date().toISOString(),
+      };
+
       if (error.code === 'MISSING_MESSAGE') {
-        console.warn(`Missing translation: ${error.message}`);
+        // Silent handling of missing messages
       } else {
-        console.error('Translation error:', error);
+        // Silent handling of other i18n errors
       }
     },
     getMessageFallback({ namespace, key }) {

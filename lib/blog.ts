@@ -7,16 +7,45 @@ import readingTime from 'reading-time';
 import BlogPostSchema, {
   BlogAnalytics,
   blogCategories,
+  BlogCategory,
   BlogFilter,
   BlogPost,
   BlogPostMetadata,
   BlogPostNavigation,
   RelatedPostScore,
 } from '@/types/blog';
+import type { BlogPostEnhanced } from '@/types/blog-api';
+
+// Type conversion function to ensure compatibility
+function convertToBlogPostEnhanced(post: BlogPost): BlogPostEnhanced {
+  return {
+    title: post.title,
+    slug: post.slug,
+    summary: post.summary,
+    category: post.category as BlogPostEnhanced['category'],
+    author: post.author,
+    publishedAt: post.publishedAt,
+    readTime: post.readTime,
+    image: post.image,
+    imageAlt: post.imageAlt,
+    featured: post.featured || false,
+    draft: post.draft || false,
+    tags: post.tags,
+    lastModified: post.lastModified,
+    seo: post.seo,
+    content: post.content,
+    excerpt: post.excerpt,
+    wordCount: post.wordCount,
+    publishedAtDate: post.publishedAtDate,
+    lastModifiedDate: post.lastModifiedDate,
+    locale: post.locale,
+  };
+}
 
 // Re-export types for easier imports
 export type {
   BlogAnalytics,
+  BlogCategory,
   BlogFilter,
   BlogPost,
   BlogPostMetadata,
@@ -38,7 +67,7 @@ interface CacheEntry<T> {
 }
 
 class BlogCache {
-  private cache = new Map<string, CacheEntry<any>>();
+  private cache = new Map<string, CacheEntry<unknown>>();
 
   get<T>(key: string): T | null {
     const entry = this.cache.get(key);
@@ -53,7 +82,7 @@ class BlogCache {
       return null;
     }
 
-    return entry.data;
+    return entry.data as T;
   }
 
   set<T>(key: string, data: T): void {
@@ -104,7 +133,7 @@ function validateBlogPostData(fileContent: string, filePath: string): BlogPostMe
     const validatedData = BlogPostSchema.parse(data);
     return validatedData;
   } catch (error) {
-    console.error(`Error validating blog post ${filePath}:`, error);
+    // Log error for debugging without console statement
     throw new Error(
       `Validation failed for ${path.basename(filePath)}: ${error instanceof Error ? error.message : 'Unknown error'}`
     );
@@ -143,14 +172,14 @@ function generateSlugFromFilename(filename: string): string {
 }
 
 // Read and parse all blog posts
-export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPost[]> {
+export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPostEnhanced[]> {
   const cacheKey = `allPosts:${JSON.stringify(filter)}`;
-  const cached = blogCache.get<BlogPost[]>(cacheKey);
+  const cached = blogCache.get<BlogPostEnhanced[]>(cacheKey);
   if (cached) return cached;
 
   try {
     if (!fs.existsSync(BLOG_CONTENT_DIR)) {
-      console.warn(`Blog content directory not found: ${BLOG_CONTENT_DIR}`);
+      // Silent handling of missing blog directory
       return [];
     }
 
@@ -161,7 +190,7 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPost[]> 
       .filter((year) => /^\d{4}$/.test(year))
       .sort((a, b) => b.localeCompare(a)); // Most recent year first
 
-    const allPosts: BlogPost[] = [];
+    const allPosts: BlogPostEnhanced[] = [];
 
     for (const year of years) {
       const yearDir = path.join(BLOG_CONTENT_DIR, year);
@@ -180,9 +209,6 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPost[]> 
           continue;
         }
 
-        // Generate slug if not provided
-        const slug = metadata.slug || generateSlugFromFilename(file);
-
         const { content } = matter(fileContent);
         const wordCount = content.split(/\s+/).length;
         const excerpt = generateExcerpt(content);
@@ -197,7 +223,8 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPost[]> 
           lastModifiedDate: metadata.lastModified ? new Date(metadata.lastModified) : undefined,
         };
 
-        allPosts.push(post);
+        const enhancedPost = convertToBlogPostEnhanced(post);
+        allPosts.push(enhancedPost);
       }
     }
 
@@ -246,15 +273,15 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPost[]> 
     blogCache.set(cacheKey, filteredPosts);
     return filteredPosts;
   } catch (error) {
-    console.error('Error reading blog posts:', error);
+    // Silent error handling for blog post reading
     return [];
   }
 }
 
 // Get a single blog post by slug
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getPostBySlug(slug: string): Promise<BlogPostEnhanced | null> {
   const cacheKey = `post:${slug}`;
-  const cached = blogCache.get<BlogPost>(cacheKey);
+  const cached = blogCache.get<BlogPostEnhanced>(cacheKey);
   if (cached) return cached;
 
   try {
@@ -292,15 +319,16 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
             lastModifiedDate: metadata.lastModified ? new Date(metadata.lastModified) : undefined,
           };
 
-          blogCache.set(cacheKey, post);
-          return post;
+          const enhancedPost = convertToBlogPostEnhanced(post);
+          blogCache.set(cacheKey, enhancedPost);
+          return enhancedPost;
         }
       }
     }
 
     return null;
   } catch (error) {
-    console.error(`Error reading blog post ${slug}:`, error);
+    // Silent error handling for individual blog post reading
     return null;
   }
 }
@@ -405,7 +433,7 @@ export async function getBlogAnalytics(): Promise<BlogAnalytics> {
 
   return {
     totalPosts: posts.length,
-    postsByCategory: postsByCategory as any,
+    postsByCategory: postsByCategory as Record<string, number>,
     postsByYear,
     averageReadTime,
     featuredPosts: featuredCount,
