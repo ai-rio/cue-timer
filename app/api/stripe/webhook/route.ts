@@ -108,9 +108,9 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
         stripe_price_id: subscription.items.data[0]?.price?.id,
         status: subscription.status,
         current_period_start: new Date(
-          (subscription as any).current_period_start * 1000
+          subscription.current_period_start * 1000
         ).toISOString(),
-        current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
+        current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
         cancel_at_period_end: subscription.cancel_at_period_end,
         plan_type: metadata?.plan,
         billing_cycle: metadata?.billingCycle,
@@ -126,7 +126,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 }
 
 async function handleInvoicePaymentSucceeded(invoice: Stripe.Invoice) {
-  const subscriptionId = (invoice as any).subscription as string;
+  const subscriptionId = invoice.subscription as string;
 
   if (subscriptionId) {
     await supabase
@@ -144,7 +144,7 @@ async function handleInvoicePaymentSucceeded(invoice: Stripe.Invoice) {
 }
 
 async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
-  const subscriptionId = (invoice as any).subscription as string;
+  const subscriptionId = invoice.subscription as string;
 
   if (subscriptionId) {
     await supabase
@@ -186,9 +186,9 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
     .update({
       status: subscription.status,
       current_period_start: new Date(
-        (subscription as any).current_period_start * 1000
+        subscription.current_period_start * 1000
       ).toISOString(),
-      current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
+      current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
       cancel_at_period_end: subscription.cancel_at_period_end,
       updated_at: new Date().toISOString(),
     })

@@ -72,12 +72,12 @@ export default [
       'simple-import-sort/exports': 'warn',
 
       // TypeScript rules - UPGRADED TO ERROR FOR MAX AUTO-FIXES
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-require-imports': 'off',
 
       // General code quality - AGGRESSIVE AUTO-FIX RULES
-      'no-console': 'error',
+      'no-console': ['error', { allow: ['warn', 'error'] }],
       'prefer-const': 'error',
       'no-var': 'error',
       'no-debugger': 'error',

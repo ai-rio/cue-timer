@@ -404,7 +404,7 @@ export function isBlogError(error: unknown): error is BlogError {
 /**
  * Debounce utility for search
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
