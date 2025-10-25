@@ -26,7 +26,7 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
     try {
       const filtered = await getAllPosts(filter);
       setFilteredPosts(filtered);
-    } catch (error) {
+    } catch {
       setError(t('error.filterFailed'));
       setFilteredPosts([]);
     } finally {

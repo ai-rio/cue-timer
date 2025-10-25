@@ -4,10 +4,7 @@ export default {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/tests'],
-  testMatch: [
-    '**/__tests__/**/*.+(ts|tsx|js)',
-    '**/*.(test|spec).+(ts|tsx|js)'
-  ],
+  testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/*.(test|spec).+(ts|tsx|js)'],
   transform: {
     '^.+\\.(ts|tsx)$': [
       'ts-jest',

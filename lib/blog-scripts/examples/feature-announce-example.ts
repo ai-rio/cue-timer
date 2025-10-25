@@ -229,38 +229,38 @@ export function createMobileFeatureAnnounceExample() {
 
 // Run examples if this file is executed directly
 if (import.meta.url === `file://${process.argv[1]}`) {
-  console.log('Generating Feature Announcement Examples...\n');
+  console.warn('Generating Feature Announcement Examples...\n');
 
-  console.log('1. Complete Feature Announcement:');
-  console.log('=================================');
+  console.warn('1. Complete Feature Announcement:');
+  console.warn('=================================');
   const completeExample = createCompleteFeatureAnnounceExample();
-  console.log(`Generated ${completeExample.length} characters of content`);
-  console.log(`Preview: ${completeExample.substring(0, 200)}...\n`);
+  console.warn(`Generated ${completeExample.length} characters of content`);
+  console.warn(`Preview: ${completeExample.substring(0, 200)}...\n`);
 
-  console.log('2. Simple Feature Announcement:');
-  console.log('===============================');
+  console.warn('2. Simple Feature Announcement:');
+  console.warn('===============================');
   const simpleExample = createSimpleFeatureAnnounceExample();
-  console.log(`Generated ${simpleExample.length} characters of content`);
-  console.log(`Preview: ${simpleExample.substring(0, 200)}...\n`);
+  console.warn(`Generated ${simpleExample.length} characters of content`);
+  console.warn(`Preview: ${simpleExample.substring(0, 200)}...\n`);
 
-  console.log('3. Technical Feature Announcement:');
-  console.log('===================================');
+  console.warn('3. Technical Feature Announcement:');
+  console.warn('===================================');
   const technicalExample = createTechnicalFeatureAnnounceExample();
-  console.log(`Generated ${technicalExample.length} characters of content`);
-  console.log(`Preview: ${technicalExample.substring(0, 200)}...\n`);
+  console.warn(`Generated ${technicalExample.length} characters of content`);
+  console.warn(`Preview: ${technicalExample.substring(0, 200)}...\n`);
 
-  console.log('4. Mobile Feature Announcement:');
-  console.log('===============================');
+  console.warn('4. Mobile Feature Announcement:');
+  console.warn('===============================');
   const mobileExample = createMobileFeatureAnnounceExample();
-  console.log(`Generated ${mobileExample.length} characters of content`);
-  console.log(`Preview: ${mobileExample.substring(0, 200)}...\n`);
+  console.warn(`Generated ${mobileExample.length} characters of content`);
+  console.warn(`Preview: ${mobileExample.substring(0, 200)}...\n`);
 
-  console.log('✅ All examples generated successfully!');
-  console.log('\nTo use these examples:');
-  console.log('1. Import the desired function from this file');
-  console.log('2. Call the function to generate MDX content');
-  console.log('3. Save the output to a .mdx file in your blog content directory');
-  console.log('4. Customize as needed for your specific feature');
+  console.warn('✅ All examples generated successfully!');
+  console.warn('\nTo use these examples:');
+  console.warn('1. Import the desired function from this file');
+  console.warn('2. Call the function to generate MDX content');
+  console.warn('3. Save the output to a .mdx file in your blog content directory');
+  console.warn('4. Customize as needed for your specific feature');
 }
 
 export default {

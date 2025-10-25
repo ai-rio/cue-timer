@@ -187,8 +187,8 @@ export function generateMetaTags(post: BlogPostEnhanced): {
   description: string;
   keywords: string[];
   canonical: string;
-  openGraph: Record<string, any>;
-  twitter: Record<string, any>;
+  openGraph: Record<string, string | boolean>;
+  twitter: Record<string, string | boolean>;
   jsonLd: string;
 } {
   const structuredData = generateStructuredData(post);

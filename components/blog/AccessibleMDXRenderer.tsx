@@ -99,7 +99,7 @@ interface AccessibleMDXRendererProps {
 }
 
 // Accessible components with proper ARIA labels and semantic HTML
-const AccessibleComponents = {
+export const AccessibleComponents = {
   h1: ({ children, id, ...props }: HeadingProps) => (
     <h1
       id={id}
@@ -435,7 +435,7 @@ function AccessibleCodeBlock({
 }
 
 // Accessible callout component
-function AccessibleCallout({
+export function AccessibleCallout({
   type,
   title,
   children,
@@ -523,7 +523,7 @@ function parseAccessibleMarkdown(content: string) {
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-    .replace(/^\- (.*$)/gm, '<li>$1</li>')
+    .replace(/^- (.*$)/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>')
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(.+)$/gm, '<p>$1</p>');

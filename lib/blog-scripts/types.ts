@@ -29,7 +29,7 @@ export interface TemplateVariable {
   type: 'string' | 'number' | 'boolean' | 'array';
   required: boolean;
   description: string;
-  defaultValue?: any;
+  defaultValue?: string | number | boolean | string[];
 }
 
 export interface ContentSection {

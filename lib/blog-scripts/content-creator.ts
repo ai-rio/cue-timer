@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 import { z } from 'zod';
 
-import { CueTimerTemplate, TemplateVariable } from './types';
+import { CueTimerTemplate } from './types';
 
 const BlogPostSchema = z.object({
   title: z.string(),
@@ -34,7 +34,7 @@ export class ContentCreator {
 
   async createPost(
     template: CueTimerTemplate,
-    variables: Record<string, any>,
+    variables: Record<string, string | number | boolean | string[]>,
     language: string = 'en'
   ): Promise<BlogPost> {
     // Validate required variables
@@ -64,7 +64,7 @@ export class ContentCreator {
 
   private validateTemplateVariables(
     template: CueTimerTemplate,
-    variables: Record<string, any>
+    variables: Record<string, string | number | boolean | string[]>
   ): void {
     for (const variable of template.variables) {
       if (variable.required && !variables[variable.name]) {
@@ -75,13 +75,13 @@ export class ContentCreator {
 
   private generatePostData(
     template: CueTimerTemplate,
-    variables: Record<string, any>,
+    variables: Record<string, string | number | boolean | string[]>,
     language: string
   ): BlogPost {
     const title = variables.title || 'Untitled Post';
     const slug = this.generateSlug(title, language);
 
-    const postData: any = {
+    const postData: Partial<BlogPost> & Record<string, string | number | boolean | string[]> = {
       title,
       slug,
       category: template.category,
@@ -120,7 +120,7 @@ export class ContentCreator {
 
   private serializePost(post: BlogPost): string {
     const frontmatter = { ...post };
-    delete (frontmatter as any).content;
+    delete (frontmatter as BlogPost & { content?: string }).content;
 
     const frontmatterYaml = Object.entries(frontmatter)
       .map(([key, value]) => {
@@ -131,8 +131,7 @@ export class ContentCreator {
       })
       .join('\n');
 
-    const content =
-      (post as any).content || `# ${post.title}\n\nThis is a blog post about ${post.title}.`;
+    const content = post.content || `# ${post.title}\n\nThis is a blog post about ${post.title}.`;
 
     return `---\n${frontmatterYaml}\n---\n\n${content}`;
   }

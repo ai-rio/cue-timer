@@ -46,7 +46,7 @@ export default function LoginPage() {
           text: data.error || 'Failed to send magic link. Please try again.',
         });
       }
-    } catch (_error) {
+    } catch {
       setMessage({
         type: 'error',
         text: 'An unexpected error occurred. Please try again.',

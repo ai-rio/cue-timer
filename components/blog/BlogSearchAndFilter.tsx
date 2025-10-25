@@ -3,8 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useMemo, useState } from 'react';
 
-import { BlogCategory, BlogFilter } from '@/types/blog';
-import { blogCategories } from '@/types/blog';
+import { blogCategories, BlogCategory, BlogFilter } from '@/types/blog';
 
 interface BlogSearchAndFilterProps {
   onFilterChange: (filter: BlogFilter) => void;

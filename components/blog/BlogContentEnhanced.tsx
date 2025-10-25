@@ -1,17 +1,6 @@
 'use client';
 
-import {
-  BarChart3,
-  BookOpen,
-  Calendar,
-  Clock,
-  Eye,
-  Filter,
-  Heart,
-  Share2,
-  Star,
-  Users,
-} from 'lucide-react';
+import { BookOpen, Calendar, Clock, Eye, Filter, Heart, Share2, Star, Users } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
@@ -26,7 +15,6 @@ import type {
 } from '@/types/blog-enhanced';
 
 import AdvancedBlogSearchAndFilter from './AdvancedBlogSearchAndFilter';
-import TemplateAwareBlogPostWrapper from './TemplateAwareBlogPostWrapper';
 
 // Template configurations
 const TEMPLATE_CONFIGS = {
@@ -426,8 +414,6 @@ export default function BlogContentEnhanced({
   const pagination = useMemo((): BlogPagination => {
     const totalPosts = filteredPosts.length;
     const totalPages = Math.ceil(totalPosts / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
 
     return {
       currentPage,

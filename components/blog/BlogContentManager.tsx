@@ -3,32 +3,19 @@
 import {
   AlertTriangle,
   BarChart3,
-  Calendar,
   CheckCircle,
-  Clock,
   Download,
-  Edit,
-  Eye,
   FileText,
-  Filter,
-  Heart,
-  MessageSquare,
-  PauseCircle,
   PlayCircle,
-  Plus,
   RefreshCw,
   Search,
-  Trash2,
   TrendingUp,
-  Users,
 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Progress } from '@/components/ui/progress';
 import {
   Select,
   SelectContent,
@@ -36,7 +23,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BlogAnalytics, BlogPostEnhanced, ContentMetrics, SEOResult } from '@/types/blog-enhanced';
 
@@ -66,7 +52,7 @@ const mockAPI = {
     };
   },
 
-  async getSEOScore(slug: string): Promise<SEOResult> {
+  async getSEOScore(_slug: string): Promise<SEOResult> {
     await new Promise((resolve) => setTimeout(resolve, 300));
     return {
       score: Math.floor(Math.random() * 15) + 85,
@@ -179,7 +165,6 @@ function ContentMetricsCard({ postSlug }: { postSlug: string }) {
   if (!metrics) return null;
 
   const engagementRate = ((1 - metrics.bounceRate) * 100).toFixed(1);
-  const viewTimeRatio = (metrics.readTime / metrics.views).toFixed(2);
 
   return (
     <Card>
@@ -394,7 +379,7 @@ function SEOCheckerCard({ postSlug }: { postSlug: string }) {
   );
 }
 
-function QuickActions({ posts = [] }: { posts: BlogPostEnhanced[] }) {
+function QuickActions({ posts: _posts = [] }: { posts: BlogPostEnhanced[] }) {
   const [selectedAction, setSelectedAction] = useState<string>('');
 
   const handleBulkAction = async (action: string) => {
