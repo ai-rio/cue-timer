@@ -4,6 +4,17 @@ import type Stripe from 'stripe';
 import { supabase } from '@/lib/auth/supabase';
 import { stripe, stripeWebhookSecret } from '@/lib/stripe/config';
 
+// Extended interface for Stripe subscription with additional properties
+interface ExtendedSubscription extends Stripe.Subscription {
+  current_period_start?: number;
+  current_period_end?: number;
+}
+
+// Extended interface for Stripe invoice with subscription property
+interface ExtendedInvoice extends Stripe.Invoice {
+  subscription?: string | null | Stripe.Subscription;
+}
+
 export async function POST(request: NextRequest) {
   const body = await request.text();
   const signature = request.headers.get('stripe-signature');
@@ -55,7 +66,7 @@ export async function POST(request: NextRequest) {
       }
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        console.warn(`Unhandled event type: ${event.type}`);
     }
 
     return NextResponse.json({ received: true });
@@ -99,7 +110,9 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
     // Create subscription record
     if (subscriptionId) {
-      const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+      const subscription = (await stripe.subscriptions.retrieve(
+        subscriptionId
+      )) as ExtendedSubscription;
 
       await supabase.from('subscriptions').insert({
         user_id: user?.id || customerEmail, // Use email as fallback
@@ -108,9 +121,9 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
         stripe_price_id: subscription.items.data[0]?.price?.id,
         status: subscription.status,
         current_period_start: new Date(
-          subscription.current_period_start * 1000
+          (subscription.current_period_start || 0) * 1000
         ).toISOString(),
-        current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
+        current_period_end: new Date((subscription.current_period_end || 0) * 1000).toISOString(),
         cancel_at_period_end: subscription.cancel_at_period_end,
         plan_type: metadata?.plan,
         billing_cycle: metadata?.billingCycle,
@@ -121,12 +134,13 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
     // Send welcome email
     // TODO: Implement email sending with Resend
-    console.log('Welcome email sent to:', customerEmail);
+    console.warn('Welcome email sent to:', customerEmail);
   }
 }
 
-async function handleInvoicePaymentSucceeded(invoice: Stripe.Invoice) {
-  const subscriptionId = invoice.subscription as string;
+async function handleInvoicePaymentSucceeded(invoice: ExtendedInvoice) {
+  const subscriptionId =
+    typeof invoice.subscription === 'string' ? invoice.subscription : invoice.subscription?.id;
 
   if (subscriptionId) {
     await supabase
@@ -139,12 +153,13 @@ async function handleInvoicePaymentSucceeded(invoice: Stripe.Invoice) {
 
     // Send payment confirmation email
     // TODO: Implement email sending with Resend
-    console.log('Payment confirmation email sent for subscription:', subscriptionId);
+    console.warn('Payment confirmation email sent for subscription:', subscriptionId);
   }
 }
 
-async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
-  const subscriptionId = invoice.subscription as string;
+async function handleInvoicePaymentFailed(invoice: ExtendedInvoice) {
+  const subscriptionId =
+    typeof invoice.subscription === 'string' ? invoice.subscription : invoice.subscription?.id;
 
   if (subscriptionId) {
     await supabase
@@ -157,7 +172,7 @@ async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
 
     // Send payment failed email
     // TODO: Implement email sending with Resend
-    console.log('Payment failed email sent for subscription:', subscriptionId);
+    console.warn('Payment failed email sent for subscription:', subscriptionId);
   }
 }
 
@@ -175,20 +190,18 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 
   // Send subscription canceled email
   // TODO: Implement email sending with Resend
-  console.log('Subscription canceled email sent for:', subscriptionId);
+  console.warn('Subscription canceled email sent for:', subscriptionId);
 }
 
-async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
+async function handleSubscriptionUpdated(subscription: ExtendedSubscription) {
   const subscriptionId = subscription.id;
 
   await supabase
     .from('subscriptions')
     .update({
       status: subscription.status,
-      current_period_start: new Date(
-        subscription.current_period_start * 1000
-      ).toISOString(),
-      current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
+      current_period_start: new Date((subscription.current_period_start || 0) * 1000).toISOString(),
+      current_period_end: new Date((subscription.current_period_end || 0) * 1000).toISOString(),
       cancel_at_period_end: subscription.cancel_at_period_end,
       updated_at: new Date().toISOString(),
     })

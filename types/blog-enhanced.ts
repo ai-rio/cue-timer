@@ -26,7 +26,7 @@ export interface BlogPostEnhanced extends Omit<BaseBlogPost, 'content' | 'langua
 
   // Template-specific properties
   templateId?: string;
-  templateData?: Record<string, any>;
+  templateData?: Record<string, unknown>;
   difficulty?: 'beginner' | 'intermediate' | 'advanced' | 'all-levels';
 
   // Multi-language support

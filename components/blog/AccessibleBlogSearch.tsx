@@ -16,12 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  BlogPostEnhanced,
-  BlogPostFilters,
-  BlogSearchResult,
-  CueTimerTemplate,
-} from '@/types/blog-enhanced';
+import { BlogPostEnhanced, BlogPostFilters, BlogSearchResult } from '@/types/blog-enhanced';
 
 // Template configurations with accessible descriptions
 const TEMPLATE_OPTIONS = [
@@ -531,8 +526,8 @@ export default function AccessibleBlogSearch({
           value={`${filters.sortBy}-${filters.sortOrder}`}
           onValueChange={(value) => {
             const [sortBy, sortOrder] = value.split('-');
-            updateFilter('sortBy', sortBy as any);
-            updateFilter('sortOrder', sortOrder as any);
+            updateFilter('sortBy', sortBy as 'date' | 'title' | 'readTime' | 'views' | 'seoScore');
+            updateFilter('sortOrder', sortOrder as 'asc' | 'desc');
           }}
         >
           <SelectTrigger className='w-[160px]' aria-label='Sort posts'>

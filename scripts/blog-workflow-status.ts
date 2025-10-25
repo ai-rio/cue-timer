@@ -84,7 +84,7 @@ function parseFrontmatter(content: string): BlogPost {
   }
 
   const frontmatterText = match[1] || '';
-  const frontmatter: any = {};
+  const frontmatter: Record<string, string | string[]> = {};
 
   const lines = frontmatterText.split('\n');
   for (const line of lines) {

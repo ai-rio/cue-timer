@@ -277,7 +277,7 @@ function formatAsTable(data: AnalyticsData | AnalyticsData[], metrics?: string[]
     Object.entries(data).forEach(([key, value]) => {
       if (typeof value === 'object' && value !== null) {
         output += chalk.bold(`${key}:\n`);
-        Object.entries(value as any).forEach(([subKey, subValue]) => {
+        Object.entries(value as Record<string, unknown>).forEach(([subKey, subValue]) => {
           output += chalk.white(`  ${subKey}: ${subValue}\n`);
         });
         output += '\n';

@@ -9,8 +9,14 @@
 
 import chalk from 'chalk';
 import { execSync } from 'child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { createReadStream, createWriteStream } from 'fs';
+import {
+  createReadStream,
+  createWriteStream,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+} from 'fs';
 import ora from 'ora';
 import { join } from 'path';
 import { pipeline } from 'stream';
@@ -47,7 +53,7 @@ class BlogSystemDeployer {
     steps: [],
     recommendations: [],
   };
-  private rollbackData: any = {};
+  private rollbackData: Record<string, string | boolean> = {};
   private deploymentBackup: string = '';
 
   constructor() {

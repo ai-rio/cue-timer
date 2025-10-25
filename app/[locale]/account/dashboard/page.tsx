@@ -24,7 +24,7 @@ import { Subscription, User } from '@/types/auth';
 
 export default function DashboardPage() {
   const [user, setUser] = useState<User | null>(null);
-  const [subscription, _setSubscription] = useState<Subscription | null>(null);
+  const [subscription] = useState<Subscription | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

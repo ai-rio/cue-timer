@@ -4,25 +4,11 @@ import type { Stripe } from 'stripe';
 
 import { stripe, stripeWebhookSecret } from './config';
 
-// Webhook event types we handle
-const _WEBHOOK_EVENTS = [
-  'checkout.session.completed',
-  'checkout.session.async_payment_succeeded',
-  'checkout.session.async_payment_failed',
-  'invoice.paid',
-  'invoice.payment_failed',
-  'invoice.upcoming',
-  'customer.subscription.created',
-  'customer.subscription.updated',
-  'customer.subscription.deleted',
-  'customer.subscription.trial_will_end',
-] as const;
-
 // Webhook event handlers
 const webhookHandlers = {
   'checkout.session.completed': async (event: Stripe.Event) => {
     const session = event.data.object as Stripe.Checkout.Session;
-    console.log('Checkout session completed:', session.id);
+    console.warn('Checkout session completed:', session.id);
 
     // Handle successful checkout
     if (session.mode === 'subscription') {
@@ -36,7 +22,7 @@ const webhookHandlers = {
 
   'checkout.session.async_payment_succeeded': async (event: Stripe.Event) => {
     const session = event.data.object as Stripe.Checkout.Session;
-    console.log('Async payment succeeded:', session.id);
+    console.warn('Async payment succeeded:', session.id);
 
     // Handle successful async payment
     if (session.mode === 'subscription') {
@@ -48,7 +34,7 @@ const webhookHandlers = {
 
   'checkout.session.async_payment_failed': async (event: Stripe.Event) => {
     const session = event.data.object as Stripe.Checkout.Session;
-    console.log('Async payment failed:', session.id);
+    console.warn('Async payment failed:', session.id);
 
     // Handle failed payment
     await sendPaymentFailedEmail(session);
@@ -56,7 +42,7 @@ const webhookHandlers = {
 
   'invoice.paid': async (event: Stripe.Event) => {
     const invoice = event.data.object as Stripe.Invoice;
-    console.log('Invoice paid:', invoice.id);
+    console.warn('Invoice paid:', invoice.id);
 
     // Handle successful invoice payment
     await handleSuccessfulPayment(invoice);
@@ -64,7 +50,7 @@ const webhookHandlers = {
 
   'invoice.payment_failed': async (event: Stripe.Event) => {
     const invoice = event.data.object as Stripe.Invoice;
-    console.log('Invoice payment failed:', invoice.id);
+    console.warn('Invoice payment failed:', invoice.id);
 
     // Handle failed invoice payment
     await handleFailedPayment(invoice);
@@ -72,7 +58,7 @@ const webhookHandlers = {
 
   'invoice.upcoming': async (event: Stripe.Event) => {
     const invoice = event.data.object as Stripe.Invoice;
-    console.log('Invoice upcoming:', invoice.id);
+    console.warn('Invoice upcoming:', invoice.id);
 
     // Send upcoming payment reminder
     await sendUpcomingPaymentEmail(invoice);
@@ -80,7 +66,7 @@ const webhookHandlers = {
 
   'customer.subscription.created': async (event: Stripe.Event) => {
     const subscription = event.data.object as Stripe.Subscription;
-    console.log('Subscription created:', subscription.id);
+    console.warn('Subscription created:', subscription.id);
 
     // Handle new subscription
     await handleSubscriptionCreated(subscription);
@@ -88,7 +74,7 @@ const webhookHandlers = {
 
   'customer.subscription.updated': async (event: Stripe.Event) => {
     const subscription = event.data.object as Stripe.Subscription;
-    console.log('Subscription updated:', subscription.id);
+    console.warn('Subscription updated:', subscription.id);
 
     // Handle subscription update
     await handleSubscriptionUpdated(subscription);
@@ -96,7 +82,7 @@ const webhookHandlers = {
 
   'customer.subscription.deleted': async (event: Stripe.Event) => {
     const subscription = event.data.object as Stripe.Subscription;
-    console.log('Subscription deleted:', subscription.id);
+    console.warn('Subscription deleted:', subscription.id);
 
     // Handle subscription cancellation
     await handleSubscriptionDeleted(subscription);
@@ -104,7 +90,7 @@ const webhookHandlers = {
 
   'customer.subscription.trial_will_end': async (event: Stripe.Event) => {
     const subscription = event.data.object as Stripe.Subscription;
-    console.log('Trial ending:', subscription.id);
+    console.warn('Trial ending:', subscription.id);
 
     // Send trial ending reminder
     await sendTrialEndingEmail(subscription);
@@ -115,7 +101,7 @@ const webhookHandlers = {
 async function handleNewSubscription(session: Stripe.Checkout.Session) {
   // This would typically update your database
   // Example: Create user record, subscription record, etc.
-  console.log('Processing new subscription for customer:', session.customer);
+  console.warn('Processing new subscription for customer:', session.customer);
 
   // TODO: Implement database operations
   // - Create/update user in Supabase
@@ -124,7 +110,7 @@ async function handleNewSubscription(session: Stripe.Checkout.Session) {
 }
 
 async function handleSuccessfulPayment(invoice: Stripe.Invoice) {
-  console.log('Processing successful payment for invoice:', invoice.id);
+  console.warn('Processing successful payment for invoice:', invoice.id);
 
   // TODO: Implement database operations
   // - Update subscription status
@@ -133,7 +119,7 @@ async function handleSuccessfulPayment(invoice: Stripe.Invoice) {
 }
 
 async function handleFailedPayment(invoice: Stripe.Invoice) {
-  console.log('Processing failed payment for invoice:', invoice.id);
+  console.warn('Processing failed payment for invoice:', invoice.id);
 
   // TODO: Implement database operations
   // - Update payment status
@@ -142,7 +128,7 @@ async function handleFailedPayment(invoice: Stripe.Invoice) {
 }
 
 async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
-  console.log('Processing new subscription:', subscription.id);
+  console.warn('Processing new subscription:', subscription.id);
 
   // TODO: Implement database operations
   // - Create subscription record
@@ -151,7 +137,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
 }
 
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
-  console.log('Processing subscription update:', subscription.id);
+  console.warn('Processing subscription update:', subscription.id);
 
   // TODO: Implement database operations
   // - Update subscription record
@@ -160,7 +146,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
 }
 
 async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
-  console.log('Processing subscription deletion:', subscription.id);
+  console.warn('Processing subscription deletion:', subscription.id);
 
   // TODO: Implement database operations
   // - Mark subscription as cancelled
@@ -170,22 +156,22 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 
 // Email notification functions (placeholder implementations)
 async function sendOrderConfirmationEmail(session: Stripe.Checkout.Session) {
-  console.log('Sending order confirmation for session:', session.id);
+  console.warn('Sending order confirmation for session:', session.id);
   // TODO: Implement email sending with Resend
 }
 
 async function sendPaymentFailedEmail(session: Stripe.Checkout.Session) {
-  console.log('Sending payment failure notification for session:', session.id);
+  console.warn('Sending payment failure notification for session:', session.id);
   // TODO: Implement email sending with Resend
 }
 
 async function sendUpcomingPaymentEmail(invoice: Stripe.Invoice) {
-  console.log('Sending upcoming payment reminder for invoice:', invoice.id);
+  console.warn('Sending upcoming payment reminder for invoice:', invoice.id);
   // TODO: Implement email sending with Resend
 }
 
 async function sendTrialEndingEmail(subscription: Stripe.Subscription) {
-  console.log('Sending trial ending reminder for subscription:', subscription.id);
+  console.warn('Sending trial ending reminder for subscription:', subscription.id);
   // TODO: Implement email sending with Resend
 }
 
@@ -215,7 +201,7 @@ export async function handleStripeWebhook(request: NextRequest) {
     }
 
     // Log the event for debugging
-    console.log(`Processing webhook event: ${event.type}`);
+    console.warn(`Processing webhook event: ${event.type}`);
 
     // Get the appropriate handler for this event type
     const handler = webhookHandlers[event.type as keyof typeof webhookHandlers];
@@ -223,13 +209,13 @@ export async function handleStripeWebhook(request: NextRequest) {
     if (handler) {
       try {
         await handler(event);
-        console.log(`Successfully handled ${event.type}`);
+        console.warn(`Successfully handled ${event.type}`);
       } catch (error) {
         console.error(`Error handling ${event.type}:`, error);
         return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 });
       }
     } else {
-      console.log(`No handler for event type: ${event.type}`);
+      console.warn(`No handler for event type: ${event.type}`);
     }
 
     return NextResponse.json({ received: true });

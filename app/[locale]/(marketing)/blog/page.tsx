@@ -5,17 +5,6 @@ import BlogContentSimple from '@/components/blog/BlogContentSimple';
 import { getAllPosts } from '@/lib/blog';
 import type { BlogPostEnhanced } from '@/types/blog-api';
 
-interface BlogPageProps {
-  params: Promise<{
-    locale: string;
-  }>;
-  searchParams: {
-    category?: string;
-    featured?: string;
-    search?: string;
-  };
-}
-
 // Generate metadata for the blog page
 export async function generateMetadata(): Promise<Metadata> {
   return {

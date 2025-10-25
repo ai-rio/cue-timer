@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Award,
   BarChart3,
   BookOpen,
   Calendar,
@@ -9,7 +8,6 @@ import {
   Globe,
   Linkedin,
   Mail,
-  MapPin,
   MessageSquare,
   Twitter,
   Users,
@@ -20,7 +18,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { AuthorInfo, BlogPostEnhanced } from '@/types/blog-enhanced';
 
 interface AuthorBioProps {
@@ -191,7 +188,7 @@ export default function AuthorBio({
   const handleFollowToggle = () => {
     setIsFollowing(!isFollowing);
     // In a real implementation, this would call an API
-    console.log(`${isFollowing ? 'Unfollowing' : 'Following'} ${author.name}`);
+    console.warn(`${isFollowing ? 'Unfollowing' : 'Following'} ${author.name}`);
   };
 
   if (compact) {

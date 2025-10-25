@@ -16,8 +16,8 @@ import { join, resolve } from 'path';
 interface HealthCheckResult {
   status: 'healthy' | 'warning' | 'critical';
   message: string;
-  details?: any;
-  metrics?: Record<string, any>;
+  details?: Record<string, unknown>;
+  metrics?: Record<string, number | string>;
   recommendations?: string[];
 }
 
@@ -88,7 +88,7 @@ class SystemHealthChecker {
 
   private async checkDependencies(): Promise<HealthCheckResult> {
     const spinner = ora('Checking dependencies health...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check package.json
@@ -142,7 +142,7 @@ class SystemHealthChecker {
       let outdatedCount = 0;
       try {
         const outdatedOutput = execSync('bunx npm-check-updates 2>/dev/null', { encoding: 'utf8' });
-        outdatedCount = (outdatedOutput.match(/\↑/g) || []).length;
+        outdatedCount = (outdatedOutput.match(/↑/g) || []).length;
         metrics.outdatedPackages = outdatedCount;
       } catch (error) {
         metrics.outdatedCheckFailed = true;
@@ -220,7 +220,7 @@ class SystemHealthChecker {
 
   private async checkEnvironment(): Promise<HealthCheckResult> {
     const spinner = ora('Checking environment configuration...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check for environment files
@@ -326,7 +326,7 @@ class SystemHealthChecker {
 
   private async checkFileSystem(): Promise<HealthCheckResult> {
     const spinner = ora('Checking file system health...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check critical directories
@@ -466,7 +466,7 @@ class SystemHealthChecker {
 
   private async checkCliTools(): Promise<HealthCheckResult> {
     const spinner = ora('Checking CLI tools health...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       const cliTools = [
@@ -566,7 +566,7 @@ class SystemHealthChecker {
 
   private async checkTemplateSystem(): Promise<HealthCheckResult> {
     const spinner = ora('Checking template system health...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check templates directory
@@ -677,7 +677,7 @@ class SystemHealthChecker {
 
   private async checkMultiLanguageSupport(): Promise<HealthCheckResult> {
     const spinner = ora('Checking multi-language support...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check for internationalization configuration
@@ -778,7 +778,7 @@ class SystemHealthChecker {
 
   private async checkContentSystem(): Promise<HealthCheckResult> {
     const spinner = ora('Checking content system health...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check content directory structure
@@ -897,7 +897,7 @@ class SystemHealthChecker {
 
   private async checkPerformance(): Promise<HealthCheckResult> {
     const spinner = ora('Checking performance metrics...').start();
-    const metrics: Record<string, any> = {};
+    const metrics: Record<string, number | string | boolean> = {};
 
     try {
       // Check memory usage

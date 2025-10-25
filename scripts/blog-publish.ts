@@ -37,7 +37,7 @@ async function parseFrontmatter(
   const content = match[2] || '';
 
   // Parse YAML frontmatter
-  const frontmatter: any = {};
+  const frontmatter: Record<string, string | string[]> = {};
   const lines = frontmatterText.split('\n');
 
   for (const line of lines) {

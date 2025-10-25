@@ -71,6 +71,29 @@ interface CertificationResult {
   nextSteps: string[];
 }
 
+// Jest coverage data interface
+interface CoverageData {
+  lines: { covered: number; total: number; pct: number };
+  functions: { covered: number; total: number; pct: number };
+  branches: { covered: number; total: number; pct: number };
+  statements: { covered: number; total: number; pct: number };
+}
+
+// Test coverage report interface
+interface TestCoverageReport {
+  timestamp: string;
+  summary: {
+    totalTests: number;
+    passedTests: number;
+    failedTests: number;
+    skippedTests: number;
+    coverage: TestMetrics['coverage'];
+    performance: TestMetrics['performance'];
+  };
+  coverage: Record<string, CoverageData>;
+  certification: CertificationResult;
+}
+
 class TestCoverageAnalyzer {
   private config: CoverageConfig;
   private startTime: number;
@@ -193,7 +216,7 @@ class TestCoverageAnalyzer {
   /**
    * Analyze coverage data from Jest output
    */
-  private async analyzeCoverage(): Promise<Record<string, any>> {
+  private async analyzeCoverage(): Promise<Record<string, CoverageData>> {
     try {
       // Read coverage summary if it exists
       const coverageSummaryPath = join(process.cwd(), 'coverage', 'coverage-summary.json');
@@ -214,7 +237,7 @@ class TestCoverageAnalyzer {
   /**
    * Create mock coverage data for demonstration
    */
-  private createMockCoverageData(): Record<string, any> {
+  private createMockCoverageData(): Record<string, CoverageData> {
     return {
       total: {
         lines: { covered: 1450, total: 1500, pct: 96.67 },
@@ -342,7 +365,7 @@ class TestCoverageAnalyzer {
    * Generate system certification
    */
   private async generateCertification(
-    coverageData: Record<string, any>,
+    coverageData: Record<string, CoverageData>,
     testMetrics: TestMetrics
   ): Promise<CertificationResult> {
     const categories = {
@@ -415,7 +438,7 @@ class TestCoverageAnalyzer {
    * Calculate maintainability score
    */
   private calculateMaintainabilityScore(
-    coverageData: Record<string, any>,
+    coverageData: Record<string, CoverageData>,
     metrics: TestMetrics
   ): number {
     const linesCoverage = metrics.coverage.lines;
@@ -547,7 +570,7 @@ class TestCoverageAnalyzer {
    * Generate comprehensive reports
    */
   private async generateReports(
-    coverageData: Record<string, any>,
+    coverageData: Record<string, CoverageData>,
     testMetrics: TestMetrics,
     certification: CertificationResult
   ): Promise<void> {
@@ -590,7 +613,7 @@ class TestCoverageAnalyzer {
   /**
    * Generate HTML report
    */
-  private generateHtmlReport(data: any): string {
+  private generateHtmlReport(data: TestCoverageReport): string {
     return `
 <!DOCTYPE html>
 <html>
@@ -703,7 +726,7 @@ class TestCoverageAnalyzer {
   /**
    * Generate Markdown report
    */
-  private generateMarkdownReport(data: any): string {
+  private generateMarkdownReport(data: TestCoverageReport): string {
     return `# CueTimer Blog Management System - Test Coverage Report
 
 Generated: ${new Date().toLocaleString()}

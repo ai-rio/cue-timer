@@ -1,6 +1,7 @@
 'use client';
 
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import type { FuseResult } from 'fuse.js';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -14,15 +15,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  BlogPostEnhanced,
-  BlogPostFilters,
-  BlogSearchResult,
-  CueTimerTemplate,
-} from '@/types/blog-enhanced';
+import { BlogPostEnhanced, BlogPostFilters, BlogSearchResult } from '@/types/blog-enhanced';
 
 // Dynamic import for Fuse.js - not a React component
-let FuseClass: any = null;
+let FuseClass: (typeof import('fuse.js'))['default'] | null = null;
 const loadFuse = async () => {
   if (!FuseClass) {
     const module = await import('fuse.js');
@@ -140,7 +136,7 @@ export default function AdvancedBlogSearchAndFilter({
   const [searchInput, setSearchInput] = useState(initialFilters.search || '');
 
   // Initialize Fuse instance with dynamic loading
-  const [fuse, setFuse] = useState<any>(null);
+  const [fuse, setFuse] = useState<(typeof import('fuse.js'))['default'] | null>(null);
 
   useEffect(() => {
     const initializeFuse = async () => {
@@ -149,7 +145,7 @@ export default function AdvancedBlogSearchAndFilter({
         const FuseConstructor = await loadFuse();
         const fuseInstance = new FuseConstructor(posts, FUSE_OPTIONS);
         setFuse(fuseInstance);
-      } catch (error) {
+      } catch {
         console.warn('Fuse.js not loaded yet, search will be available shortly');
       }
     };
@@ -174,8 +170,8 @@ export default function AdvancedBlogSearchAndFilter({
         );
       }
 
-      const results = fuse.search(query);
-      return results.map((result: any) => ({
+      const results = fuse?.search(query) || [];
+      return results.map((result: FuseResult<BlogPostEnhanced>) => ({
         ...result.item,
         _searchScore: result.score || 0,
         _searchMatches: result.matches || [],
@@ -189,16 +185,23 @@ export default function AdvancedBlogSearchAndFilter({
     const timer = setTimeout(() => {
       const searchResults = performSearch(searchInput);
       onSearchResults?.(
-        searchResults.map((result: any) => ({
-          post: result as BlogPostEnhanced,
-          score: result._searchScore || 0,
-          matches:
-            result._searchMatches?.map((match: any) => ({
-              field: match.key || '',
-              value: match.value || '',
-              indices: match.indices || [],
-            })) || [],
-        }))
+        searchResults.map(
+          (
+            result: BlogPostEnhanced & {
+              _searchScore?: number;
+              _searchMatches?: Array<{ key?: string; value?: string }>;
+            }
+          ) => ({
+            post: result as BlogPostEnhanced,
+            score: result._searchScore || 0,
+            matches:
+              result._searchMatches?.map((match) => ({
+                field: match.key || '',
+                value: match.value || '',
+                indices: (match as any).indices || [],
+              })) || [],
+          })
+        )
       );
 
       // Update filters with search
@@ -266,7 +269,7 @@ export default function AdvancedBlogSearchAndFilter({
     // Apply sorting
     if (filters.sortBy) {
       filtered = [...filtered].sort((a, b) => {
-        let aValue: any, bValue: any;
+        let aValue: number | string, bValue: number | string;
 
         switch (filters.sortBy) {
           case 'date':
@@ -309,7 +312,10 @@ export default function AdvancedBlogSearchAndFilter({
   }, [filters, selectedTags, onFiltersChange]);
 
   // Handle filter changes
-  const updateFilter = (key: keyof BlogPostFilters, value: any) => {
+  const updateFilter = (
+    key: keyof BlogPostFilters,
+    value: BlogPostFilters[keyof BlogPostFilters]
+  ) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
@@ -467,8 +473,11 @@ export default function AdvancedBlogSearchAndFilter({
             value={`${filters.sortBy}-${filters.sortOrder}`}
             onValueChange={(value) => {
               const [sortBy, sortOrder] = value.split('-');
-              updateFilter('sortBy', sortBy as any);
-              updateFilter('sortOrder', sortOrder as any);
+              updateFilter(
+                'sortBy',
+                sortBy as 'date' | 'title' | 'readTime' | 'views' | 'seoScore'
+              );
+              updateFilter('sortOrder', sortOrder as 'asc' | 'desc');
             }}
           >
             <SelectTrigger className='w-[160px]'>

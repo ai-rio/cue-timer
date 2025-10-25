@@ -34,7 +34,17 @@ interface TestResult {
   success: boolean;
   duration: number;
   message: string;
-  details?: any;
+  details?: Record<string, unknown>;
+}
+
+// Test template interface (allows invalid categories for testing)
+interface TestTemplate {
+  id: string;
+  name: string;
+  category: string; // Intentionally flexible for invalid test cases
+  languages: string[];
+  variables: unknown[];
+  contentStructure: unknown[];
 }
 
 // Health check result interface
@@ -569,10 +579,10 @@ Content for performance testing.
         const creator = new ContentCreator();
 
         // Create invalid template
-        const invalidTemplate = {
+        const invalidTemplate: TestTemplate = {
           id: 'invalid',
           name: 'Invalid Template',
-          category: 'invalid-category' as any,
+          category: 'invalid-category',
           languages: ['en'],
           variables: [],
           contentStructure: [],
