@@ -37,11 +37,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
+  const isDraft = post.draft;
+  const baseTitle = isDraft
+    ? `[DRAFT] ${post.title} | CueTimer Blog`
+    : `${post.title} | CueTimer Blog`;
+
   return {
-    title: `${post.title} | CueTimer Blog`,
+    title: baseTitle,
     description: post.summary,
     keywords: [...post.tags, post.category, 'CueTimer', 'event timing', 'productivity'],
     authors: [{ name: post.author }],
+    // Add noindex for draft posts
+    robots: isDraft ? 'noindex,nofollow' : 'index,follow',
     openGraph: {
       title: post.title,
       description: post.summary,
@@ -78,7 +85,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  // Get navigation and related posts
+  const isDraft = post.draft;
+
+  // Get navigation and related posts (exclude drafts from related posts)
   const [navigation, relatedPosts] = await Promise.all([
     getPostNavigation(slug),
     getRelatedPosts(post, 3),
@@ -102,6 +111,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className='container mx-auto px-4 py-8'>
       <div className='max-w-4xl mx-auto'>
+        {/* Draft warning banner */}
+        {isDraft && (
+          <div className='mb-6 rounded-lg border-2 border-yellow-200 bg-yellow-50 p-4 dark:border-yellow-800 dark:bg-yellow-950'>
+            <div className='flex items-start space-x-3'>
+              <span className='text-xl'>🚧</span>
+              <div>
+                <h3 className='font-semibold text-yellow-800 dark:text-yellow-200'>
+                  Draft Post - Work in Progress
+                </h3>
+                <p className='text-sm text-yellow-700 dark:text-yellow-300 mt-1'>
+                  This is a draft post and is not yet ready for publication. Content may change, and
+                  this post is not indexed by search engines.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Article Header */}
         <article className='mb-8'>
           <header className='mb-8'>
@@ -117,6 +144,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.featured && (
                 <Badge variant='default' className='text-xs'>
                   Featured
+                </Badge>
+              )}
+              {isDraft && (
+                <Badge
+                  variant='outline'
+                  className='text-xs border-yellow-500 text-yellow-700 dark:border-yellow-400 dark:text-yellow-300'
+                >
+                  Draft
                 </Badge>
               )}
             </div>

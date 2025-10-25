@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // Blog page component
 export default async function BlogPage() {
-  // Get initial posts
+  // Get initial posts (exclude drafts by default)
   const initialPosts: BlogPostEnhanced[] = await getAllPosts();
 
   return (

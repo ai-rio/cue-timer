@@ -1,208 +1,278 @@
 'use client';
 
-import { useMemo } from 'react';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import { Suspense } from 'react';
+import rehypeHighlight from 'rehype-highlight';
+import rehypePrismPlus from 'rehype-prism-plus';
+
+import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
 
 interface MDXRendererProps {
   content: string;
 }
 
-export default function MDXRenderer({ content }: MDXRendererProps) {
-  const renderedContent = useMemo(() => {
-    return processMarkdown(content);
-  }, [content]);
-
-  return (
-    <div
-      className='prose prose-gray max-w-none'
-      dangerouslySetInnerHTML={{ __html: renderedContent }}
+// Custom components for MDX rendering
+const components = {
+  h1: ({ children, ...props }: any) => (
+    <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6' {...props}>
+      {children}
+    </h1>
+  ),
+  h2: ({ children, ...props }: any) => (
+    <h2
+      className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
+      {...props}
+    >
+      {children}
+    </h2>
+  ),
+  h3: ({ children, ...props }: any) => (
+    <h3 className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6' {...props}>
+      {children}
+    </h3>
+  ),
+  p: ({ children, ...props }: any) => (
+    <p className='leading-7 [&:not(:first-child)]:mt-6 text-base' {...props}>
+      {children}
+    </p>
+  ),
+  strong: ({ children, ...props }: any) => (
+    <strong className='font-semibold' {...props}>
+      {children}
+    </strong>
+  ),
+  em: ({ children, ...props }: any) => (
+    <em className='italic' {...props}>
+      {children}
+    </em>
+  ),
+  code: ({ children, className, ...props }: any) => {
+    const isInline = !className;
+    return isInline ? (
+      <code
+        className='relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm font-mono'
+        {...props}
+      >
+        {children}
+      </code>
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
+  pre: ({ children, className, ...props }: any) => {
+    const language = className?.replace('language-', '') || '';
+    return (
+      <div className='mb-4 mt-6 overflow-x-auto rounded-lg border bg-black'>
+        <div className='flex items-center justify-between px-4 py-2 text-sm text-gray-400 border-b border-gray-700'>
+          <span className='font-mono'>{language || 'text'}</span>
+          <button
+            className='px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 rounded transition-colors'
+            onClick={() => {
+              const codeText = children?.props?.children || '';
+              navigator.clipboard.writeText(codeText);
+            }}
+          >
+            Copy
+          </button>
+        </div>
+        <pre className='py-4 px-4 text-white overflow-x-auto' {...props}>
+          {children}
+        </pre>
+      </div>
+    );
+  },
+  ul: ({ children, ...props }: any) => (
+    <ul className='my-6 ml-6 list-disc [&>li]:mt-2' {...props}>
+      {children}
+    </ul>
+  ),
+  ol: ({ children, ...props }: any) => (
+    <ol className='my-6 ml-6 list-decimal [&>li]:mt-2' {...props}>
+      {children}
+    </ol>
+  ),
+  li: ({ children, ...props }: any) => (
+    <li className='leading-7' {...props}>
+      {children}
+    </li>
+  ),
+  blockquote: ({ children, ...props }: any) => (
+    <blockquote className='mt-6 border-l-2 pl-6 italic text-muted-foreground' {...props}>
+      {children}
+    </blockquote>
+  ),
+  hr: ({ ...props }: any) => <hr className='my-4 border-0 border-t' {...props} />,
+  a: ({ children, href, ...props }: any) => (
+    <a
+      href={href}
+      className='text-primary underline-offset-4 hover:underline'
+      target='_blank'
+      rel='noopener noreferrer'
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+  img: ({ src, alt, ...props }: any) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt || ''}
+      className='rounded-lg border shadow-md w-full max-w-2xl mx-auto my-6'
+      loading='lazy'
+      {...props}
     />
-  );
-}
+  ),
+};
 
-// Enhanced markdown processor with better styling
-function processMarkdown(markdown: string): string {
-  let html = markdown;
-
-  // Process custom components first
-  html = processCustomComponents(html);
-
-  // Headers with proper IDs and anchors
-  html = html.replace(/^### (.*$)/gim, (match, content) => {
-    const id = content
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-');
-    return `<h3 id="${id}" class="scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6">
-      <a href="#${id}" class="hover:text-primary text-inherit no-underline">${content}</a>
-    </h3>`;
-  });
-
-  html = html.replace(/^## (.*$)/gim, (match, content) => {
-    const id = content
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-');
-    return `<h2 id="${id}" class="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2">
-      <a href="#${id}" class="hover:text-primary text-inherit no-underline">${content}</a>
-    </h2>`;
-  });
-
-  html = html.replace(/^# (.*$)/gim, (match, content) => {
-    const id = content
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-');
-    return `<h1 id="${id}" class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-      <a href="#${id}" class="hover:text-primary text-inherit no-underline">${content}</a>
-    </h1>`;
-  });
-
-  // Bold text
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>');
-
-  // Italic text
-  html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
-
-  // Inline code
-  html = html.replace(
-    /`([^`]*)`/g,
-    '<code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm font-mono">$1</code>'
-  );
-
-  // Links
-  html = html.replace(
-    /\[([^\]]*)\]\(([^)]*)\)/g,
-    '<a href="$2" class="text-primary underline-offset-4 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>'
-  );
-
-  // Lists
-  html = html.replace(/^\* (.*)$/gim, '<li class="leading-7">$1</li>');
-  html = html.replace(
-    /(<li[\s\S]*?<\/li>)/g,
-    '<ul class="my-6 ml-6 list-disc [&>li]:mt-2">$1</ul>'
-  );
-
-  html = html.replace(/^\d+\. (.*)$/gim, '<li class="leading-7">$1</li>');
-  html = html.replace(
-    /(<li[\s\S]*?<\/li>)/g,
-    '<ol class="my-6 ml-6 list-decimal [&>li]:mt-2">$1</ol>'
-  );
-
-  // Blockquotes
-  html = html.replace(
-    /^> (.*)$/gim,
-    '<blockquote class="mt-6 border-l-2 pl-6 italic text-muted-foreground">$1</blockquote>'
-  );
-
-  // Horizontal rules
-  html = html.replace(/^---$/gim, '<hr class="my-4 border-0 border-t">');
-
-  // Code blocks
-  html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
-    return `<pre class="mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4 text-white">
-      <code class="block px-4 text-sm ${lang ? `language-${lang}` : ''}">${escapeHtml(code.trim())}</code>
-    </pre>`;
-  });
-
-  // Images
-  html = html.replace(/!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt, src) => {
-    return `<img src="${src}" alt="${alt || ''}" class="rounded-lg border shadow-md w-full max-w-2xl mx-auto my-6" loading="lazy" />`;
-  });
-
-  // Paragraphs (process last to avoid interfering with other elements)
-  html = html.replace(/\n\n/g, '</p><p class="leading-7 [&:not(:first-child)]:mt-6 text-base">');
-  html = `<p class="leading-7 [&:not(:first-child)]:mt-6 text-base">${html}</p>`;
-
-  // Clean up any double tags
-  html = html.replace(/<p[^>]*>\s*<(h[1-6]|ul|ol|blockquote|hr|pre)/g, '<$1');
-  html = html.replace(/<\/(h[1-6]|ul|ol|blockquote|hr|pre)>\s*<\/p>/g, '</$1>');
-
-  return html;
-}
-
-// Process custom markdown components
-function processCustomComponents(markdown: string): string {
-  let html = markdown;
-
-  // Info cards: {{info:Title}}Content{{/info}}
-  html = html.replace(/\{\{info:([^}]+)\}\}([\s\S]*?)\{\{\/info\}\}/g, (match, title, content) => {
-    return `<div class="my-6">
-      <div class="border border-blue-200 bg-blue-50/50 rounded-lg p-4">
-        <h4 class="text-blue-800 font-semibold mb-2">${title}</h4>
-        <div class="text-blue-700">${processMarkdown(content)}</div>
+// Custom components for special syntax
+const customComponents = {
+  InfoCard: ({ title, children }: { title: string; children: React.ReactNode }) => (
+    <div className='my-6'>
+      <div className='border border-blue-200 bg-blue-50/50 rounded-lg p-4'>
+        <h4 className='text-blue-800 font-semibold mb-2'>{title}</h4>
+        <div className='text-blue-700'>{children}</div>
       </div>
-    </div>`;
-  });
-
-  // Tip cards: {{tip}}Content{{/tip}}
-  html = html.replace(/\{\{tip\}\}([\s\S]*?)\{\{\/tip\}\}/g, (match, content) => {
-    return `<div class="my-6">
-      <div class="border border-green-200 bg-green-50/50 rounded-lg p-4">
-        <h4 class="text-green-800 font-semibold mb-2">💡 Pro Tip</h4>
-        <div class="text-green-700">${processMarkdown(content)}</div>
+    </div>
+  ),
+  TipCard: ({ children }: { children: React.ReactNode }) => (
+    <div className='my-6'>
+      <div className='border border-green-200 bg-green-50/50 rounded-lg p-4'>
+        <h4 className='text-green-800 font-semibold mb-2'>💡 Pro Tip</h4>
+        <div className='text-green-700'>{children}</div>
       </div>
-    </div>`;
-  });
-
-  // Warning cards: {{warning}}Content{{/warning}}
-  html = html.replace(/\{\{warning\}\}([\s\S]*?)\{\{\/warning\}\}/g, (match, content) => {
-    return `<div class="my-6">
-      <div class="border border-yellow-200 bg-yellow-50/50 rounded-lg p-4">
-        <h4 class="text-yellow-800 font-semibold mb-2">⚠️ Important</h4>
-        <div class="text-yellow-700">${processMarkdown(content)}</div>
+    </div>
+  ),
+  WarningCard: ({ children }: { children: React.ReactNode }) => (
+    <div className='my-6'>
+      <div className='border border-yellow-200 bg-yellow-50/50 rounded-lg p-4'>
+        <h4 className='text-yellow-800 font-semibold mb-2'>⚠️ Important</h4>
+        <div className='text-yellow-700'>{children}</div>
       </div>
-    </div>`;
-  });
+    </div>
+  ),
+  CalloutCard: ({ type, children }: { type: string; children: React.ReactNode }) => {
+    const typeStyles = {
+      info: 'border-blue-200 bg-blue-50/50 text-blue-800',
+      warning: 'border-yellow-200 bg-yellow-50/50 text-yellow-800',
+      error: 'border-red-200 bg-red-50/50 text-red-800',
+      success: 'border-green-200 bg-green-50/50 text-green-800',
+    };
 
-  // Callouts: {{callout:type}}Content{{/callout}}
-  html = html.replace(
-    /\{\{callout:([^}]+)\}\}([\s\S]*?)\{\{\/callout\}\}/g,
-    (match, type, content) => {
-      const typeStyles = {
-        info: 'border-blue-200 bg-blue-50/50 text-blue-800',
-        warning: 'border-yellow-200 bg-yellow-50/50 text-yellow-800',
-        error: 'border-red-200 bg-red-50/50 text-red-800',
-        success: 'border-green-200 bg-green-50/50 text-green-800',
-      };
+    const typeIcons = {
+      info: 'ℹ️',
+      warning: '⚠️',
+      error: '❌',
+      success: '✅',
+    };
 
-      const typeIcons = {
-        info: 'ℹ️',
-        warning: '⚠️',
-        error: '❌',
-        success: '✅',
-      };
+    const style = typeStyles[type as keyof typeof typeStyles] || typeStyles.info;
+    const icon = typeIcons[type as keyof typeof typeIcons] || typeIcons.info;
 
-      const style = typeStyles[type as keyof typeof typeStyles] || typeStyles.info;
-      const icon = typeIcons[type as keyof typeof typeIcons] || typeIcons.info;
-
-      return `<div class="my-6">
-      <div class="border ${style} rounded-lg p-4">
-        <div class="flex items-start space-x-3">
-          <span class="text-xl">${icon}</span>
-          <div class="flex-1">${processMarkdown(content)}</div>
+    return (
+      <div className='my-6'>
+        <div className={`border ${style} rounded-lg p-4`}>
+          <div className='flex items-start space-x-3'>
+            <span className='text-xl'>{icon}</span>
+            <div className='flex-1'>{children}</div>
+          </div>
         </div>
       </div>
-    </div>`;
-    }
+    );
+  },
+  Tag: ({ label }: { label: string }) => (
+    <span className='inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-secondary text-secondary-foreground mr-2 mb-2'>
+      #{label}
+    </span>
+  ),
+};
+
+// Process content to handle custom syntax
+function processCustomSyntax(content: string): string {
+  let processedContent = content;
+
+  // Process info cards: {{info:Title}}Content{{/info}}
+  processedContent = processedContent.replace(
+    /\{\{info:([^}]+)\}\}([\s\S]*?)\{\{\/info\}\}/g,
+    (_, title, content) => `<InfoCard title="${title}">${content}</InfoCard>`
   );
 
-  // Tags: {{tag:label}}
-  html = html.replace(/\{\{tag:([^}]+)\}\}/g, (match, label) => {
-    return `<span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-secondary text-secondary-foreground mr-2 mb-2">#${label}</span>`;
-  });
+  // Process tip cards: {{tip}}Content{{/tip}}
+  processedContent = processedContent.replace(
+    /\{\{tip\}\}([\s\S]*?)\{\{\/tip\}\}/g,
+    (_, content) => `<TipCard>${content}</TipCard>`
+  );
 
-  return html;
+  // Process warning cards: {{warning}}Content{{/warning}}
+  processedContent = processedContent.replace(
+    /\{\{warning\}\}([\s\S]*?)\{\{\/warning\}\}/g,
+    (_, content) => `<WarningCard>${content}</WarningCard>`
+  );
+
+  // Process callouts: {{callout:type}}Content{{/callout}}
+  processedContent = processedContent.replace(
+    /\{\{callout:([^}]+)\}\}([\s\S]*?)\{\{\/callout\}\}/g,
+    (_, type, content) => `<CalloutCard type="${type}">${content}</CalloutCard>`
+  );
+
+  // Process tags: {{tag:label}}
+  processedContent = processedContent.replace(
+    /\{\{tag:([^}]+)\}\}/g,
+    (_, label) => `<Tag label="${label}" />`
+  );
+
+  return processedContent;
 }
 
-// Utility function to escape HTML
-function escapeHtml(text: string): string {
-  const map: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
-  };
+async function MDXContent({ content }: { content: string }) {
+  const processedContent = processCustomSyntax(content);
 
-  return text.replace(/[&<>"']/g, (m) => map[m as keyof typeof map] || m);
+  try {
+    const { content: mdxContent } = await compileMDX({
+      source: processedContent,
+      components: { ...components, ...customComponents },
+      options: {
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [rehypeHighlight, rehypePrismPlus],
+        },
+      },
+    });
+
+    return mdxContent;
+  } catch (error) {
+    // Enhanced error logging
+    const errorDetails = {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      contentLength: content.length,
+      hasCustomSyntax: /{{(info|tip|warning|callout|tag)}}/.test(content),
+      timestamp: new Date().toISOString(),
+    };
+
+    console.error('MDX compilation error:', errorDetails);
+
+    // In production, you might want to send this to an error reporting service
+    if (process.env.NODE_ENV === 'production') {
+      // Example: Send to error reporting service
+      // reportError(errorDetails);
+    }
+
+    // Throw the error to be caught by the error boundary
+    throw error instanceof Error ? error : new Error('MDX compilation failed');
+  }
+}
+
+export default function MDXRenderer({ content }: MDXRendererProps) {
+  return (
+    <BlogErrorBoundary fallback={MDXErrorFallback}>
+      <div className='prose prose-gray max-w-none'>
+        <Suspense fallback={<div className='animate-pulse'>Loading content...</div>}>
+          <MDXContent content={content} />
+        </Suspense>
+      </div>
+    </BlogErrorBoundary>
+  );
 }
