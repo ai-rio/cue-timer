@@ -1,12 +1,25 @@
-import { ContentCreator } from '../content-creator';
+// import { ContentCreator } from '../content-creator';
 import {
   createPresentationTipsVariables,
   generatePresentationTipsContent,
 } from './presentation-tips';
 
+// Test interfaces
+interface TemplateVariable {
+  name: string;
+  type: string;
+  required: boolean;
+  description?: string;
+}
+
+interface CueTimerTemplate {
+  variables: TemplateVariable[];
+  [key: string]: unknown;
+}
+
 // Test the presentation tips template
 async function testPresentationTipsTemplate() {
-  console.log('🧪 Testing Presentation Tips Template...\n');
+  console.warn('🧪 Testing Presentation Tips Template...\n');
 
   try {
     // Create test variables
@@ -57,19 +70,19 @@ async function testPresentationTipsTemplate() {
     });
 
     // Test content generation
-    console.log('✅ Test variables created successfully');
-    console.log(`📝 Title: ${testVariables.title}`);
-    console.log(`🎯 Topic: ${testVariables.topic}`);
-    console.log(`📊 Tips count: ${testVariables.tips.length}`);
-    console.log(`⚠️  Mistakes count: ${testVariables.commonMistakes?.length || 0}`);
-    console.log(`💡 Examples count: ${testVariables.examples?.length || 0}\n`);
+    console.warn('✅ Test variables created successfully');
+    console.warn(`📝 Title: ${testVariables.title}`);
+    console.warn(`🎯 Topic: ${testVariables.topic}`);
+    console.warn(`📊 Tips count: ${testVariables.tips.length}`);
+    console.warn(`⚠️  Mistakes count: ${testVariables.commonMistakes?.length || 0}`);
+    console.warn(`💡 Examples count: ${testVariables.examples?.length || 0}\n`);
 
     // Generate MDX content
     const generatedContent = generatePresentationTipsContent(testVariables);
 
-    console.log('✅ MDX content generated successfully');
-    console.log(`📏 Content length: ${generatedContent.length} characters`);
-    console.log(
+    console.warn('✅ MDX content generated successfully');
+    console.warn(`📏 Content length: ${generatedContent.length} characters`);
+    console.warn(
       `📖 Estimated read time: ${Math.ceil(generatedContent.split(' ').length / 200)} minutes\n`
     );
 
@@ -83,13 +96,13 @@ async function testPresentationTipsTemplate() {
       '## Putting It All Together',
     ];
 
-    let allSectionsPresent = true;
+    // let allSectionsPresent = true;
     requiredSections.forEach((section) => {
       if (!generatedContent.includes(section)) {
-        console.log(`❌ Missing section: ${section}`);
-        allSectionsPresent = false;
+        console.warn(`❌ Missing section: ${section}`);
+        // allSectionsPresent = false;
       } else {
-        console.log(`✅ Found section: ${section}`);
+        console.warn(`✅ Found section: ${section}`);
       }
     });
 
@@ -108,26 +121,29 @@ async function testPresentationTipsTemplate() {
       { check: generatedContent.includes('75%'), message: 'Example outcome included' },
     ];
 
-    console.log('\n📋 Content Quality Checks:');
+    console.warn('\n📋 Content Quality Checks:');
     contentChecks.forEach(({ check, message }) => {
-      console.log(check ? `✅ ${message}` : `❌ ${message}`);
+      console.warn(check ? `✅ ${message}` : `❌ ${message}`);
     });
 
     // Test with ContentCreator (simplified test)
-    console.log('\n🔄 Testing ContentCreator integration...');
+    console.warn('\n🔄 Testing ContentCreator integration...');
 
     // Import the template
     const PRESENTATION_TIPS_TEMPLATE = require('./presentation-tips').default;
 
     // Mock content creator validation
     const mockContentCreator = {
-      validateTemplateVariables: (template: any, variables: any) => {
-        const requiredVars = template.variables.filter((v: any) => v.required);
-        const missing = requiredVars.filter((v: any) => !variables[v.name]);
+      validateTemplateVariables: (
+        template: CueTimerTemplate,
+        variables: Record<string, unknown>
+      ) => {
+        const requiredVars = template.variables.filter((v: TemplateVariable) => v.required);
+        const missing = requiredVars.filter((v: TemplateVariable) => !variables[v.name]);
 
         if (missing.length > 0) {
           throw new Error(
-            `Missing required variables: ${missing.map((v: any) => v.name).join(', ')}`
+            `Missing required variables: ${missing.map((v: TemplateVariable) => v.name).join(', ')}`
           );
         }
 
@@ -137,19 +153,19 @@ async function testPresentationTipsTemplate() {
 
     // Test template validation
     mockContentCreator.validateTemplateVariables(PRESENTATION_TIPS_TEMPLATE, testVariables);
-    console.log('✅ Template variables validation passed');
+    console.warn('✅ Template variables validation passed');
 
     // Test missing required variable
     try {
-      const incompleteVariables: any = { ...testVariables };
+      const incompleteVariables: Record<string, unknown> = { ...testVariables };
       delete incompleteVariables.title;
       mockContentCreator.validateTemplateVariables(PRESENTATION_TIPS_TEMPLATE, incompleteVariables);
-      console.log('❌ Should have failed validation for missing title');
-    } catch (error) {
-      console.log('✅ Correctly caught missing required variable: title');
+      console.warn('❌ Should have failed validation for missing title');
+    } catch {
+      console.warn('✅ Correctly caught missing required variable: title');
     }
 
-    console.log('\n🎉 All tests passed! Presentation Tips Template is working correctly.');
+    console.warn('\n🎉 All tests passed! Presentation Tips Template is working correctly.');
 
     return {
       success: true,
@@ -170,7 +186,7 @@ async function testPresentationTipsTemplate() {
 if (require.main === module) {
   testPresentationTipsTemplate()
     .then((result) => {
-      console.log('\n📊 Test Results:', result);
+      console.warn('\n📊 Test Results:', result);
       process.exit(result.success ? 0 : 1);
     })
     .catch((error) => {

@@ -11,14 +11,20 @@ interface MDXRendererProps {
   content: string;
 }
 
+interface ComponentProps {
+  children?: React.ReactNode;
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Custom components for MDX rendering
 const components = {
-  h1: ({ children, ...props }: any) => (
+  h1: ({ children, ...props }: ComponentProps) => (
     <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6' {...props}>
       {children}
     </h1>
   ),
-  h2: ({ children, ...props }: any) => (
+  h2: ({ children, ...props }: ComponentProps) => (
     <h2
       className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
       {...props}
@@ -26,27 +32,27 @@ const components = {
       {children}
     </h2>
   ),
-  h3: ({ children, ...props }: any) => (
+  h3: ({ children, ...props }: ComponentProps) => (
     <h3 className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6' {...props}>
       {children}
     </h3>
   ),
-  p: ({ children, ...props }: any) => (
+  p: ({ children, ...props }: ComponentProps) => (
     <p className='leading-7 [&:not(:first-child)]:mt-6 text-base' {...props}>
       {children}
     </p>
   ),
-  strong: ({ children, ...props }: any) => (
+  strong: ({ children, ...props }: ComponentProps) => (
     <strong className='font-semibold' {...props}>
       {children}
     </strong>
   ),
-  em: ({ children, ...props }: any) => (
+  em: ({ children, ...props }: ComponentProps) => (
     <em className='italic' {...props}>
       {children}
     </em>
   ),
-  code: ({ children, className, ...props }: any) => {
+  code: ({ children, className, ...props }: ComponentProps) => {
     const isInline = !className;
     return isInline ? (
       <code
@@ -61,7 +67,7 @@ const components = {
       </code>
     );
   },
-  pre: ({ children, className, ...props }: any) => {
+  pre: ({ children, className, ...props }: ComponentProps) => {
     const language = className?.replace('language-', '') || '';
     return (
       <div className='mb-4 mt-6 overflow-x-auto rounded-lg border bg-black'>
@@ -83,28 +89,28 @@ const components = {
       </div>
     );
   },
-  ul: ({ children, ...props }: any) => (
+  ul: ({ children, ...props }: ComponentProps) => (
     <ul className='my-6 ml-6 list-disc [&>li]:mt-2' {...props}>
       {children}
     </ul>
   ),
-  ol: ({ children, ...props }: any) => (
+  ol: ({ children, ...props }: ComponentProps) => (
     <ol className='my-6 ml-6 list-decimal [&>li]:mt-2' {...props}>
       {children}
     </ol>
   ),
-  li: ({ children, ...props }: any) => (
+  li: ({ children, ...props }: ComponentProps) => (
     <li className='leading-7' {...props}>
       {children}
     </li>
   ),
-  blockquote: ({ children, ...props }: any) => (
+  blockquote: ({ children, ...props }: ComponentProps) => (
     <blockquote className='mt-6 border-l-2 pl-6 italic text-muted-foreground' {...props}>
       {children}
     </blockquote>
   ),
-  hr: ({ ...props }: any) => <hr className='my-4 border-0 border-t' {...props} />,
-  a: ({ children, href, ...props }: any) => (
+  hr: ({ ...props }: ComponentProps) => <hr className='my-4 border-0 border-t' {...props} />,
+  a: ({ children, href, ...props }: ComponentProps) => (
     <a
       href={href}
       className='text-primary underline-offset-4 hover:underline'
@@ -115,7 +121,7 @@ const components = {
       {children}
     </a>
   ),
-  img: ({ src, alt, ...props }: any) => (
+  img: ({ src, alt, ...props }: ComponentProps) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}

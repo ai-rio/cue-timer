@@ -85,7 +85,7 @@ interface LanguageStatusProps {
 }
 
 function LanguageStatus({
-  currentSlug,
+  currentSlug: _currentSlug,
   availableTranslations,
   onLanguageSelect,
   className = '',

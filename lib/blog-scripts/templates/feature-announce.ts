@@ -1,4 +1,4 @@
-import { ContentSection, CueTimerTemplate, TemplateVariable } from '../types';
+import { CueTimerTemplate } from '../types';
 
 export interface FeatureAnnounceVariables {
   title: string;
@@ -314,7 +314,7 @@ ${
 <div className="grid md:grid-cols-2 gap-6 mb-8">
   ${screenshots
     .map(
-      (screenshot, index) => `
+      (screenshot, _index) => `
   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
     <div className="aspect-video bg-gray-200 flex items-center justify-center">
       <img src="${screenshot.url}" alt="${screenshot.alt}" className="w-full h-full object-cover" />
@@ -344,7 +344,7 @@ ${
   <div className="grid md:grid-cols-2 gap-4">
     ${benefits
       .map(
-        (benefit, index) => `
+        (benefit, _index) => `
     <div className="flex items-start gap-3">
       <CheckCircleIcon className="w-6 h-6 text-green-600 mt-0.5 flex-shrink-0" />
       <div>
@@ -365,7 +365,7 @@ ${
   <div className="space-y-4">
     ${useCases
       .map(
-        (useCase, index) => `
+        (useCase, _index) => `
     <div className="flex items-start gap-3">
       <div className="bg-blue-100 rounded-full p-2 flex-shrink-0">
         <BoltIcon className="w-4 h-4 text-blue-600" />
@@ -388,7 +388,7 @@ ${
   <div className="space-y-4">
     ${gettingStartedSteps
       .map(
-        (step, index) => `
+        (step, _index) => `
     <div className="flex items-start gap-3">
       <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0">
         ${index + 1}
@@ -511,7 +511,7 @@ ${
 <div className="space-y-6 mb-8">
   ${testimonials
     .map(
-      (testimonial, index) => `
+      (testimonial, _index) => `
   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-indigo-200">
     <div className="flex items-start gap-4">
       <div className="bg-indigo-100 rounded-full p-3 flex-shrink-0">

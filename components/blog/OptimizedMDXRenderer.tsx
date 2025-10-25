@@ -1,63 +1,63 @@
 'use client';
 
-import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
-import { lazy, Suspense, useMemo, useState } from 'react';
+// import { ExternalLink } from 'lucide-react';
+// import Image from 'next/image';
+import { Suspense, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 
 import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
 
-// TypeScript interfaces for MDX components
-interface MDXComponentProps {
-  children?: React.ReactNode;
-  className?: string;
-  id?: string;
-  href?: string;
-  src?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  filename?: string;
-  language?: string;
-  target?: string;
-  rel?: string;
-  role?: string;
-  'aria-label'?: string;
-}
+// TypeScript interfaces for MDX components (commented - currently unused)
+// interface MDXComponentProps {
+//   children?: React.ReactNode;
+//   className?: string;
+//   id?: string;
+//   href?: string;
+//   src?: string;
+//   alt?: string;
+//   width?: number;
+//   height?: number;
+//   filename?: string;
+//   language?: string;
+//   target?: string;
+//   rel?: string;
+//   role?: string;
+//   'aria-label'?: string;
+// }
 
-interface TextProps extends Omit<MDXComponentProps, 'role'> {
-  children: React.ReactNode;
-}
+// interface TextProps extends Omit<MDXComponentProps, 'role'> {
+//   children: React.ReactNode;
+// }
 
-interface LinkProps extends Omit<MDXComponentProps, 'role'> {
-  href: string;
-  target?: string;
-  rel?: string;
-  'aria-label'?: string;
-}
+// interface LinkProps extends Omit<MDXComponentProps, 'role'> {
+//   href: string;
+//   target?: string;
+//   rel?: string;
+//   'aria-label'?: string;
+// }
 
-interface ImageProps extends Omit<MDXComponentProps, 'role'> {
-  src: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-}
+// interface ImageProps extends Omit<MDXComponentProps, 'role'> {
+//   src: string;
+//   alt?: string;
+//   width?: number;
+//   height?: number;
+// }
 
-interface CodeProps extends Omit<MDXComponentProps, 'role'> {
-  className?: string;
-  filename?: string;
-}
+// interface CodeProps extends Omit<MDXComponentProps, 'role'> {
+//   className?: string;
+//   filename?: string;
+// }
 
-interface PreProps extends Omit<MDXComponentProps, 'role'> {}
+// interface PreProps extends Omit<MDXComponentProps, 'role'> {}
 
-interface ListProps extends Omit<MDXComponentProps, 'role'> {}
+// interface ListProps extends Omit<MDXComponentProps, 'role'> {}
 
-interface ListItemProps extends Omit<MDXComponentProps, 'role'> {}
+// interface ListItemProps extends Omit<MDXComponentProps, 'role'> {}
 
-interface BlockquoteProps extends Omit<MDXComponentProps, 'role'> {}
+// interface BlockquoteProps extends Omit<MDXComponentProps, 'role'> {}
 
-interface SeparatorProps extends Omit<MDXComponentProps, 'role'> {}
+// interface SeparatorProps extends Omit<MDXComponentProps, 'role'> {}
 
 // Lazy load heavy dependencies - only load when needed
 const FullMDXRenderer = lazy(() => import('./EnhancedMDXRenderer'));
@@ -72,103 +72,8 @@ interface OptimizedMDXRendererProps {
 }
 
 // Lightweight components that don't require heavy dependencies
-const LightComponents = {
-  h1: ({ children, ...props }: TextProps) => (
-    <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6' {...props}>
-      {children}
-    </h1>
-  ),
-  h2: ({ children, ...props }: TextProps) => (
-    <h2
-      className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
-      {...props}
-    >
-      {children}
-    </h2>
-  ),
-  h3: ({ children, ...props }: TextProps) => (
-    <h3 className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6' {...props}>
-      {children}
-    </h3>
-  ),
-  p: ({ children, ...props }: TextProps) => (
-    <p className='leading-7 [&:not(:first-child)]:mt-6 text-base' {...props}>
-      {children}
-    </p>
-  ),
-  strong: ({ children, ...props }: TextProps) => (
-    <strong className='font-semibold' {...props}>
-      {children}
-    </strong>
-  ),
-  em: ({ children, ...props }: TextProps) => (
-    <em className='italic' {...props}>
-      {children}
-    </em>
-  ),
-  code: ({ children, className, ...props }: CodeProps) => {
-    const isInline = !className;
-    return isInline ? (
-      <code
-        className='relative rounded bg-muted px-[0.3rem] py-[0.2rem] text-sm font-mono'
-        {...props}
-      >
-        {children}
-      </code>
-    ) : (
-      <div className='my-6'>
-        <pre className='bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto'>
-          <code className={className}>{children}</code>
-        </pre>
-      </div>
-    );
-  },
-  pre: ({ children, ...props }: PreProps) => children,
-  ul: ({ children, ...props }: ListProps) => (
-    <ul className='my-6 ml-6 list-disc [&>li]:mt-2' {...props}>
-      {children}
-    </ul>
-  ),
-  ol: ({ children, ...props }: ListProps) => (
-    <ol className='my-6 ml-6 list-decimal [&>li]:mt-2' {...props}>
-      {children}
-    </ol>
-  ),
-  li: ({ children, ...props }: ListItemProps) => (
-    <li className='leading-7' {...props}>
-      {children}
-    </li>
-  ),
-  blockquote: ({ children, ...props }: BlockquoteProps) => (
-    <blockquote className='mt-6 border-l-2 pl-6 italic text-muted-foreground' {...props}>
-      {children}
-    </blockquote>
-  ),
-  hr: ({ ...props }: SeparatorProps) => <hr className='my-4 border-0 border-t' {...props} />,
-  a: ({ children, href, ...props }: LinkProps) => (
-    <a
-      href={href}
-      className='text-primary underline-offset-4 hover:underline inline-flex items-center gap-1'
-      target={href?.startsWith('http') ? '_blank' : undefined}
-      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-      {...props}
-    >
-      {children}
-      {href?.startsWith('http') && <ExternalLink className='h-3 w-3' />}
-    </a>
-  ),
-  img: ({ src, alt, width = 800, height = 400, ...props }: ImageProps) => (
-    <Image
-      src={src}
-      alt={alt || ''}
-      width={width}
-      height={height}
-      className='rounded-lg border shadow-md w-full max-w-2xl mx-auto my-6'
-      loading='lazy'
-      {...props}
-    />
-  ),
-};
+// Note: This section is commented out as the components are defined elsewhere
+// const LightComponents = { ... };
 
 // Simple content parser for basic markdown without MDX compilation
 function parseBasicMarkdown(content: string) {
@@ -183,7 +88,7 @@ function parseBasicMarkdown(content: string) {
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-    .replace(/^\- (.*$)/gm, '<li>$1</li>')
+    .replace(/^- (.*$)/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>')
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(.+)$/gm, '<p>$1</p>');

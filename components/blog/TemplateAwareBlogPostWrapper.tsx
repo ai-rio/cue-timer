@@ -74,7 +74,7 @@ interface TemplateAwareBlogPostWrapperProps {
 
 // Template-specific sidebar components
 function TemplateSidebar({
-  post,
+  post: _post,
   template,
   metadata,
 }: {
@@ -328,7 +328,7 @@ function TemplateSidebar({
 }
 
 // Reading progress indicator
-function ReadingProgress({ content }: { content: string }) {
+function ReadingProgress({ content: _content }: { content: string }) {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -356,7 +356,7 @@ function ReadingProgress({ content }: { content: string }) {
 
 // Related content based on template
 function RelatedTemplateContent({
-  post,
+  post: _post,
   template,
 }: {
   post: BlogPostEnhanced;

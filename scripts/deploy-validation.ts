@@ -562,7 +562,7 @@ class DeploymentValidator {
             encoding: 'utf8',
             stdio: 'pipe',
           });
-          outdatedCount = (outdatedOutput.match(/\↑/g) || []).length;
+          outdatedCount = (outdatedOutput.match(/↑/g) || []).length;
         } catch (error) {
           packageJsonValid = false;
         }

@@ -272,7 +272,7 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPostEnha
 
     blogCache.set(cacheKey, filteredPosts);
     return filteredPosts;
-  } catch (error) {
+  } catch {
     // Silent error handling for blog post reading
     return [];
   }
@@ -327,7 +327,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPostEnhanced | nu
     }
 
     return null;
-  } catch (error) {
+  } catch {
     // Silent error handling for individual blog post reading
     return null;
   }

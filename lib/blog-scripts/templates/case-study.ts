@@ -1,4 +1,4 @@
-import { ContentSection, CueTimerTemplate, TemplateVariable } from '../types';
+import { CueTimerTemplate } from '../types';
 
 export interface CaseStudyVariables {
   title: string;
@@ -352,7 +352,7 @@ ${
 <div class="space-y-6 mb-8">
   ${quotes
     .map(
-      (quote, index) => `
+      (quote, _index) => `
   <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-indigo-200">
     <div class="flex items-start gap-4">
       <div class="bg-indigo-100 rounded-full p-3">

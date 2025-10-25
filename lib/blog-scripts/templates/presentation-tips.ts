@@ -1,4 +1,4 @@
-import { ContentSection, CueTimerTemplate, TemplateVariable } from '../types';
+import { CueTimerTemplate } from '../types';
 
 export interface PresentationTipsVariables {
   title: string;
@@ -204,7 +204,7 @@ import { LightBulbIcon, ExclamationTriangleIcon, CheckCircleIcon, BookOpenIcon, 
 <div className="space-y-6">
   ${tips
     .map(
-      (tip, index) => `
+      (tip, _index) => `
     <div className="border-l-4 border-blue-500 bg-white p-6 rounded-lg shadow-sm">
       <div className="flex items-start gap-3">
         <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-semibold text-sm">
@@ -248,7 +248,7 @@ ${
   <div class="space-y-4">
     ${examples
       .map(
-        (example, index) => `
+        (example, _index) => `
       <div class="bg-white p-4 rounded-lg border border-green-200">
         <div class="flex items-start gap-3">
           <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold">
@@ -283,7 +283,7 @@ ${
   <div class="space-y-4">
     ${commonMistakes
       .map(
-        (mistake, index) => `
+        (mistake, _index) => `
       <div class="bg-white p-4 rounded-lg border border-red-200">
         <div class="flex items-start gap-3">
           <div class="flex-shrink-0 text-red-500 text-xl">⚠️</div>

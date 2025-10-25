@@ -1,4 +1,4 @@
-import { ContentSection, CueTimerTemplate, TemplateVariable } from '../types';
+import { CueTimerTemplate } from '../types';
 
 export interface TimingGuideVariables {
   title: string;

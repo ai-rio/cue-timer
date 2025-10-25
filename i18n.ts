@@ -56,14 +56,14 @@ export default getRequestConfig(async ({ requestLocale }) => {
     messages,
     // Handle missing messages gracefully with structured logging
     onError(error) {
-      const errorInfo = {
-        type: 'I18N_ERROR',
-        code: error.code,
-        message: error.message,
-        namespace: (error as any).namespace,
-        key: (error as any).key,
-        timestamp: new Date().toISOString(),
-      };
+      // const errorInfo = {
+      //   type: 'I18N_ERROR',
+      //   code: error.code,
+      //   message: error.message,
+      //   namespace: (error as any).namespace,
+      //   key: (error as any).key,
+      //   timestamp: new Date().toISOString(),
+      // };
 
       if (error.code === 'MISSING_MESSAGE') {
         // Silent handling of missing messages

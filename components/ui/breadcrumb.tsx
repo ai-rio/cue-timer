@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl';
 
 interface BreadcrumbProps {
   children: React.ReactNode;
@@ -43,7 +43,7 @@ export function BreadcrumbItem({ children, className = '' }: BreadcrumbItemProps
 }
 
 export function BreadcrumbPage({ children, className = '' }: BreadcrumbPageProps) {
-  const t = useTranslations('Common');
+  // const t = useTranslations('Common');
 
   return (
     <span className={`font-medium text-gray-900 ${className}`} aria-current='page'>

@@ -2,7 +2,7 @@
 
 import { Check, ChevronRight, Copy, Download, ExternalLink, Play, RotateCcw } from 'lucide-react';
 import Image from 'next/image';
-import { lazy, Suspense, useMemo, useState } from 'react';
+import { Suspense, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -11,17 +11,17 @@ import { Separator } from '@/components/ui/separator';
 
 import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
 
-// Lazy load heavy dependencies
-const SyntaxHighlighter = lazy(() =>
-  import('react-syntax-highlighter').then((module) => ({
-    default: module.Prism,
-  }))
-);
-const darkTheme = lazy(() =>
-  import('react-syntax-highlighter/dist/esm/styles/prism').then((module) => ({
-    default: module.vscDarkPlus as Record<string, unknown>,
-  }))
-);
+// Lazy load heavy dependencies (commented out - not currently used)
+// const SyntaxHighlighter = lazy(() =>
+//   import('react-syntax-highlighter').then((module) => ({
+//     default: module.Prism,
+//   }))
+// );
+// const darkTheme = lazy(() =>
+//   import('react-syntax-highlighter/dist/esm/styles/prism').then((module) => ({
+//     default: module.vscDarkPlus as Record<string, unknown>,
+//   }))
+// );
 const loadCompileMDX = () => import('next-mdx-remote/rsc').then((module) => module.compileMDX);
 const loadRehypePlugins = async () => {
   const [rehypeHighlight, rehypePrismPlus] = await Promise.all([
@@ -72,15 +72,15 @@ interface CodeProps extends Omit<MDXComponentProps, 'role'> {
   filename?: string;
 }
 
-interface PreProps extends Omit<MDXComponentProps, 'role'> {}
+type PreProps = Omit<MDXComponentProps, 'role'>;
 
-interface ListProps extends Omit<MDXComponentProps, 'role'> {}
+type ListProps = Omit<MDXComponentProps, 'role'>;
 
-interface ListItemProps extends Omit<MDXComponentProps, 'role'> {}
+type ListItemProps = Omit<MDXComponentProps, 'role'>;
 
-interface BlockquoteProps extends Omit<MDXComponentProps, 'role'> {}
+type BlockquoteProps = Omit<MDXComponentProps, 'role'>;
 
-interface SeparatorProps extends Omit<MDXComponentProps, 'role'> {}
+type SeparatorProps = Omit<MDXComponentProps, 'role'>;
 
 interface EnhancedMDXRendererProps {
   content: string;
@@ -668,7 +668,7 @@ const baseComponents = {
       </EnhancedCodeBlock>
     );
   },
-  pre: ({ children, ...props }: PreProps) => children,
+  pre: ({ children }: PreProps) => children,
   ul: ({ children, ...props }: ListProps) => (
     <ul className='my-6 ml-6 list-disc [&>li]:mt-2' {...props}>
       {children}
@@ -788,15 +788,15 @@ async function EnhancedMDXContent({
 export default function EnhancedMDXRenderer({
   content,
   template,
-  enableAdvancedFeatures = true,
+  enableAdvancedFeatures: _enableAdvancedFeatures = true,
   onReadingTimeUpdate,
   onCodeBlockCount,
 }: EnhancedMDXRendererProps) {
-  const components = useMemo(
-    () =>
-      enableAdvancedFeatures ? { ...baseComponents, ...enhancedCustomComponents } : baseComponents,
-    [enableAdvancedFeatures]
-  );
+  // const components = useMemo(
+  //   () =>
+  //     enableAdvancedFeatures ? { ...baseComponents, ...enhancedCustomComponents } : baseComponents,
+  //   [enableAdvancedFeatures]
+  // );
 
   return (
     <BlogErrorBoundary fallback={MDXErrorFallback}>

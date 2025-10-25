@@ -198,7 +198,7 @@ export default function AdvancedBlogSearchAndFilter({
               result._searchMatches?.map((match) => ({
                 field: match.key || '',
                 value: match.value || '',
-                indices: (match as any).indices || [],
+                indices: (match as { indices?: number[] }).indices || [],
               })) || [],
           })
         )
