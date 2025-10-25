@@ -9,11 +9,11 @@ import { AuthProvider } from '@/contexts/AuthContext';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
   if (!['en', 'pt-br', 'es', 'fr', 'de'].includes(locale)) {

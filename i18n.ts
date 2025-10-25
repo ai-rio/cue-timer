@@ -35,15 +35,18 @@ export default getRequestConfig(async ({ requestLocale }) => {
   for (const namespace of namespaces) {
     try {
       messages[namespace] = (await import(`./locales/${locale}/${namespace}.json`)).default;
-    } catch {
+    } catch (importError) {
       try {
         // Fallback to English if locale-specific translation doesn't exist
         messages[namespace] = (
           await import(`./locales/${defaultLocale}/${namespace}.json`)
         ).default;
-      } catch {
+        console.warn(`Using fallback translations for ${namespace}.json in locale ${locale}`);
+      } catch (fallbackError) {
         // Final fallback - create empty object to prevent errors
-        console.warn(`Missing translation file: ${namespace}.json for locale ${locale}`);
+        console.warn(
+          `Missing translation file: ${namespace}.json for locale ${locale} and fallback`
+        );
         messages[namespace] = {};
       }
     }
