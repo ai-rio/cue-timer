@@ -1,0 +1,57 @@
+{
+  "title": "Blog",
+  "description": "Discover the latest insights, tips, and tutorials on event timing, productivity, and professional presentation management.",
+  "meta": {
+    "title": "CueTimer Blog - Expert Event Timing & Productivity Tips",
+    "description": "Read the latest articles on event management, timer optimization, and professional presentation tips from CueTimer experts.",
+    "keywords": [
+      "event timing",
+      "timer tips",
+      "productivity",
+      "event management",
+      "presentation skills"
+    ]
+  },
+  "categories": {
+    "timing": "Timing",
+    "productivity": "Productivity",
+    "events": "Events",
+    "features": "Features",
+    "tutorials": "Tutorials",
+    "industry": "Industry"
+  },
+  "filter": {
+    "searchPlaceholder": "Search blog posts...",
+    "categoryLabel": "Category",
+    "allCategories": "All Categories",
+    "featuredOnly": "Featured Only",
+    "clearFilters": "Clear Filters",
+    "activeFilters": "Active Filters"
+  },
+  "featured": "Featured",
+  "totalPosts": "total posts",
+  "featuredPosts": "featured posts",
+  "avgReadTime": "avg. read time",
+  "minRead": "min read",
+  "more": "more",
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest event timing tips and productivity insights delivered to your inbox weekly.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  },
+  "post": {
+    "by": "By",
+    "publishedOn": "Published on",
+    "readingTime": "Reading time",
+    "minutes": "minutes",
+    "relatedPosts": "Related Posts",
+    "tableOfContents": "Table of Contents",
+    "share": "Share",
+    "tags": "Tags",
+    "backToBlog": "Back to Blog",
+    "nextPost": "Next Post",
+    "previousPost": "Previous Post"
+  }
+}

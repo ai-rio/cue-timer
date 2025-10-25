@@ -69,7 +69,7 @@ export default function LanguageSwitcher({
   }
 
   return (
-    <div className={`relative inline-block text-left ${className}`} suppressHydrationWarning>
+    <div className={`relative inline-block text-left ${className}`} suppressHydrationWarning={true}>
       <select
         className='appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-8 text-sm leading-5 text-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
         value={locale}

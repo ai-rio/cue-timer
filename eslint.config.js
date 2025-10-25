@@ -7,9 +7,21 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import react from 'eslint-plugin-react';
 import next from '@next/eslint-plugin-next';
 
+const nextConfig = {
+  files: ['**/*.{js,jsx,ts,tsx}'],
+  plugins: {
+    '@next/next': next,
+  },
+  rules: {
+    '@next/next/no-img-element': 'error',
+    '@next/next/no-sync-scripts': 'error',
+  },
+};
+
 export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
+  nextConfig,
   prettierConfig,
   {
     ignores: [
@@ -41,6 +53,7 @@ export default [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: {
+      '@next/next': next,
       'simple-import-sort': simpleImportSort,
       prettier: prettier,
       '@typescript-eslint': tseslint.plugin,
@@ -72,6 +85,11 @@ export default [
       'react/no-unescaped-entities': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
+
+      // Next.js specific rules
+      '@next/next/no-img-element': 'error',
+      '@next/next/no-sync-scripts': 'error',
+      '@next/next/no-page-custom-font': 'warn',
 
       // Marketing/Content specific rules
       'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],

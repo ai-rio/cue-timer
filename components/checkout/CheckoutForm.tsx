@@ -1,6 +1,5 @@
 'use client';
 
-// @ts-expect-error TODO: Install Stripe dependencies when implementing payment features
 import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
