@@ -52,5 +52,17 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages,
+    // Handle missing messages gracefully
+    onError(error) {
+      if (error.code === 'MISSING_MESSAGE') {
+        console.warn(`Missing translation: ${error.message}`);
+      } else {
+        console.error('Translation error:', error);
+      }
+    },
+    getMessageFallback({ namespace, key }) {
+      const path = [namespace, key].filter((part) => part != null).join('.');
+      return `${path}`;
+    },
   };
 });
