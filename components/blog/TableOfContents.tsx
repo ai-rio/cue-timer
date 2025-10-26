@@ -35,7 +35,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
 
   // Update active section based on scroll position
   useEffect(() => {
-    if (!isClient || computedHeadings.length === 0) return;
+    if (!isClient || computedHeadings.length === 0) return undefined;
 
     const handleScroll = () => {
       try {

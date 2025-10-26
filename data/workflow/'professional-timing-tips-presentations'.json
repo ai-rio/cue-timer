@@ -1,0 +1,23 @@
+{
+  "masterPost": {
+    "title": "'5 Professional Timing Tips for Perfect Presentations'",
+    "slug": "'professional-timing-tips-presentations'",
+    "summary": "",
+    "publishedAt": "'2024-10-24T10:00:00Z'",
+    "lastModified": "'2024-10-24T10:00:00Z'",
+    "author": "'CueTimer Team'",
+    "category": "'timing'",
+    "tags": ["'presentations'", "'timing'", "'professional'", "'tips'"],
+    "featured": "true",
+    "draft": "false",
+    "readTime": "5"
+  },
+  "translations": {},
+  "workflowState": "published",
+  "synchronizationStatus": {
+    "isMaster": false,
+    "lastSynced": "2025-10-26T18:55:38.344Z",
+    "pendingTranslations": ["en", "pt-br", "es"],
+    "inconsistentFields": []
+  }
+}

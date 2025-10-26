@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 import { blogStorage, createBlogError, useBlogApi, useBlogState } from '@/lib/blog-utils';
 import type { BlogFilter, BlogPostEnhanced } from '@/types/blog-api';
@@ -17,12 +17,12 @@ export default function BlogContentSimple({ initialPosts }: BlogContentSimplePro
   const { state, dispatch, setFilter, filteredPosts } = useBlogState(initialPosts);
 
   // Load saved filter from localStorage on mount
-  useState(() => {
+  useEffect(() => {
     const savedFilter = blogStorage.getFilter();
     if (Object.keys(savedFilter).length > 0) {
       setFilter(savedFilter);
     }
-  });
+  }, [setFilter]);
 
   const handleFilterChange = async (filter: BlogFilter) => {
     // Clear any previous errors

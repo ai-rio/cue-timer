@@ -1,0 +1,23 @@
+{
+  "masterPost": {
+    "title": "'Test Timing Guide'",
+    "slug": "'test-timing-guide'",
+    "category": "'timing-guide'",
+    "summary": "'A timing guide about test timing guide'",
+    "author": "'CueTimer Team'",
+    "publishedAt": "'2025-10-25T17:23:27.392Z'",
+    "readTime": "1",
+    "isDraft": "true",
+    "difficulty": "'advanced'",
+    "language": "'en'",
+    "lastModified": "'2025-10-25T17:23:27.392Z'"
+  },
+  "translations": {},
+  "workflowState": "draft",
+  "synchronizationStatus": {
+    "isMaster": false,
+    "lastSynced": "2025-10-26T18:55:38.344Z",
+    "pendingTranslations": ["en", "pt-br", "es"],
+    "inconsistentFields": []
+  }
+}
