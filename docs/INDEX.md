@@ -86,6 +86,13 @@
 - `development/guides/quotekit-integration-plan.md` - **Autonomous marketing
   infrastructure (QuoteKit patterns as reference only)**
 
+### 📝 Blog Management (1 file)
+
+#### Content Automation
+
+- `blog-management/internal-linking-automation-design.md` - **Automated internal
+  linking system for SEO optimization**
+
 ### 🔬 Research & Analysis (1 file)
 
 #### Competitor Research
@@ -135,6 +142,8 @@
 3. **Market Strategy**:
    [Go-to-Market Plan](strategy/go-to-market/go-to-market-strategy.md)
 4. **Content Strategy**: [Content Strategy](strategy/content-strategy.md)
+5. **SEO Optimization**:
+   [Internal Linking Automation](blog-management/internal-linking-automation-design.md)
 
 ---
 
@@ -201,5 +210,5 @@
 
 ---
 
-**Last Updated:** 2025-10-24 **Total Documents:** 18 files **Next Review:**
+**Last Updated:** 2025-10-26 **Total Documents:** 19 files **Next Review:**
 Weekly or as needed

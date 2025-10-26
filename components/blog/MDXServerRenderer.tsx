@@ -269,6 +269,11 @@ function processCustomSyntax(content: string): string {
 
 // Server Component that compiles MDX
 export default async function MDXServerRenderer({ content }: { content: string }) {
+  // TEMPORARY FIX: Disable MDX compilation entirely and use fallback renderer
+  // to diagnose the compilation issue
+  console.warn('TEMPORARY: Using fallback renderer for all content');
+  return <FallbackMDXRenderer content={content} />;
+
   const processedContent = processBlogContent(processCustomSyntax(content));
 
   try {
@@ -285,7 +290,7 @@ export default async function MDXServerRenderer({ content }: { content: string }
     });
 
     return mdxContent;
-  } catch (error) {
+  } catch (error: unknown) {
     // Enhanced error logging with proper serialization for Server Components
     let errorMessage = 'Unknown error';
     let errorStack = undefined;
@@ -315,11 +320,20 @@ export default async function MDXServerRenderer({ content }: { content: string }
       timestamp: new Date().toISOString(),
     };
 
-    // Log error details as JSON for proper serialization
-    console.error('MDX compilation error:', JSON.stringify(errorDetails, null, 2));
+    // Log error details as JSON for proper serialization (with error handling)
+    try {
+      console.error('MDX compilation error:', JSON.stringify(errorDetails, null, 2));
+    } catch (jsonError) {
+      console.error('MDX compilation error (basic):', errorMessage);
+      console.error('Failed to serialize error details:', jsonError);
+    }
 
     // Also log the raw error for debugging
-    console.error('Raw error object:', error);
+    try {
+      console.error('Raw error object:', error);
+    } catch (rawError) {
+      console.error('Failed to log raw error:', rawError);
+    }
 
     // In production, you might want to send this to an error reporting service
     if (process.env.NODE_ENV === 'production') {
@@ -328,47 +342,25 @@ export default async function MDXServerRenderer({ content }: { content: string }
     }
 
     // Check for specific error patterns and handle accordingly
-    const isFrontmatterError =
-      errorMessage.includes('frontmatter') ||
-      errorMessage.includes('yaml') ||
-      errorDetails.frontmatterIndented;
-
     const isMDXCompilationError =
       errorMessage.includes('start') ||
       errorMessage.includes('next-mdx-remote') ||
       errorMessage.includes('MDX') ||
-      errorMessage.includes('compile');
+      errorMessage.includes('compile') ||
+      errorMessage.includes('Cannot read properties of undefined');
 
-    if (isFrontmatterError) {
-      console.warn('Falling back due to frontmatter parsing error - attempting to fix indentation');
-      // Try to fix frontmatter indentation automatically (additional fallback)
-      const fixedContent = dedentFrontmatter(content);
-      if (fixedContent !== content) {
-        console.warn(
-          'Automatically fixed frontmatter indentation with dedent utility, retrying compilation'
-        );
-        try {
-          const { content: fixedMdxContent } = await compileMDX({
-            source: processCustomSyntax(fixedContent),
-            components: { ...components, ...customComponents },
-            options: {
-              parseFrontmatter: true,
-              mdxOptions: {
-                remarkPlugins: [],
-                rehypePlugins: [],
-              },
-            },
-          });
-          return fixedMdxContent;
-        } catch {
-          console.warn('Auto-fix with dedent utility failed, falling back to basic renderer');
-        }
-      }
-      return <FallbackMDXRenderer content={content} />;
-    }
-
+    // Try to identify and fix the specific issue
     if (isMDXCompilationError) {
-      console.warn('Falling back to basic MDX renderer due to MDX compilation error');
+      console.warn('MDX compilation error detected, attempting fallback strategies');
+      console.warn(
+        'Content length:',
+        content.length,
+        'First 100 chars:',
+        content.substring(0, 100)
+      );
+
+      // Strategy 1: Direct fallback to markdown renderer (skip MDX entirely)
+      console.warn('Skipping MDX compilation entirely, using fallback markdown renderer');
       return <FallbackMDXRenderer content={content} />;
     }
 
