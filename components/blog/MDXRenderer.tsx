@@ -275,9 +275,14 @@ async function MDXContent({ content }: { content: string }) {
       // reportError(errorDetails);
     }
 
-    // If the error is related to rehype plugins, use fallback
-    if (error instanceof Error && error.message.includes('start')) {
-      console.warn('Falling back to basic MDX renderer due to rehype plugin error');
+    // If the error is related to MDX compilation, use fallback
+    if (
+      error instanceof Error &&
+      (error.message.includes('start') ||
+        error.message.includes('next-mdx-remote') ||
+        error.message.includes('MDX'))
+    ) {
+      console.warn('Falling back to basic MDX renderer due to MDX compilation error');
       return <FallbackMDXRenderer content={content} />;
     }
 

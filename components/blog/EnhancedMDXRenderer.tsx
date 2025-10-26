@@ -10,6 +10,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
+import FallbackMDXRenderer from './FallbackMDXRenderer';
 
 // Lazy load heavy dependencies (commented out - not currently used)
 // const SyntaxHighlighter = lazy(() =>
@@ -789,6 +790,17 @@ async function EnhancedMDXContent({
     if (process.env.NODE_ENV === 'production') {
       // Example: Send to error reporting service
       // reportError(errorDetails);
+    }
+
+    // If the error is related to MDX compilation, use fallback
+    if (
+      error instanceof Error &&
+      (error.message.includes('start') ||
+        error.message.includes('next-mdx-remote') ||
+        error.message.includes('MDX'))
+    ) {
+      console.warn('Falling back to basic MDX renderer due to MDX compilation error');
+      return <FallbackMDXRenderer content={content} />;
     }
 
     // Throw error to be caught by error boundary
