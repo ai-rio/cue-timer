@@ -348,7 +348,7 @@ ${
     <div className="flex items-start gap-3">
       <CheckCircleIcon className="w-6 h-6 text-green-600 mt-0.5 flex-shrink-0" />
       <div>
-        <h4 class="font-medium text-green-900 mb-1">Benefit ${index + 1}</h4>
+        <h4 class="font-medium text-green-900 mb-1">Benefit ${_index + 1}</h4>
         <p class="text-green-800">${benefit}</p>
       </div>
     </div>
@@ -371,7 +371,7 @@ ${
         <BoltIcon className="w-4 h-4 text-blue-600" />
       </div>
       <div>
-        <h4 class="font-medium text-blue-900 mb-1">Use Case ${index + 1}</h4>
+        <h4 class="font-medium text-blue-900 mb-1">Use Case ${_index + 1}</h4>
         <p class="text-blue-800">${useCase}</p>
       </div>
     </div>
@@ -391,7 +391,7 @@ ${
         (step, _index) => `
     <div className="flex items-start gap-3">
       <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0">
-        ${index + 1}
+        ${_index + 1}
       </div>
       <p class="text-gray-700 pt-1">${step}</p>
     </div>

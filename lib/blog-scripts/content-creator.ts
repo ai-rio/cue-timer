@@ -79,22 +79,22 @@ export class ContentCreator {
     language: string
   ): BlogPost {
     const title = variables.title || 'Untitled Post';
-    const slug = this.generateSlug(title, language);
+    const slug = this.generateSlug(title as string, language);
 
     const postData: Partial<BlogPost> & Record<string, string | number | boolean | string[]> = {
-      title,
+      title: title as string,
       slug,
       category: template.category,
       summary:
-        variables.summary ||
-        `A ${template.category.replace('-', ' ')} about ${title.toLowerCase()}`,
-      author: variables.author || 'CueTimer Team',
-      publishedAt: variables.publishedAt || new Date().toISOString(),
-      readTime: this.estimateReadingTime(variables.content || ''),
+        (variables.summary as string) ||
+        `A ${(template.category as string).replace('-', ' ')} about ${(title as string).toLowerCase()}`,
+      author: (variables.author as string) || 'CueTimer Team',
+      publishedAt: (variables.publishedAt as string) || new Date().toISOString(),
+      readTime: this.estimateReadingTime((variables.content as string) || ''),
       isDraft: variables.isDraft !== false,
       language,
       lastModified: new Date().toISOString(),
-      content: variables.content || `# ${title}\n\nThis is a blog post about ${title}.`,
+      content: (variables.content as string) || `# ${title}\n\nThis is a blog post about ${title}.`,
       ...variables,
     };
 
@@ -107,7 +107,7 @@ export class ContentCreator {
       .replace(/[^a-z0-9\s-]/g, '')
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
-      .trim('-');
+      .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
 
     return language !== 'en' ? `${slug}-${language}` : slug;
   }
@@ -119,8 +119,7 @@ export class ContentCreator {
   }
 
   private serializePost(post: BlogPost): string {
-    const frontmatter = { ...post };
-    delete (frontmatter as BlogPost & { content?: string }).content;
+    const { content: postContent, ...frontmatter } = post;
 
     const frontmatterYaml = Object.entries(frontmatter)
       .map(([key, value]) => {
@@ -131,7 +130,7 @@ export class ContentCreator {
       })
       .join('\n');
 
-    const content = post.content || `# ${post.title}\n\nThis is a blog post about ${post.title}.`;
+    const content = postContent || `# ${post.title}\n\nThis is a blog post about ${post.title}.`;
 
     return `---\n${frontmatterYaml}\n---\n\n${content}`;
   }
@@ -144,7 +143,8 @@ export class ContentCreator {
       if (error instanceof z.ZodError) {
         return {
           valid: false,
-          errors: error.errors.map((e) => `${e.path.join('.')}: ${e.message}`),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          errors: (error as any).errors.map((e: z.ZodIssue) => `${e.path.join('.')}: ${e.message}`),
         };
       }
       return { valid: false, errors: ['Unknown validation error'] };

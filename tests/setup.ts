@@ -1,5 +1,8 @@
 // Jest setup file for global test configuration
+import '@testing-library/jest-dom';
+
 import { jest } from '@jest/globals';
+import { expect } from '@jest/globals';
 import { TextDecoder, TextEncoder } from 'util';
 
 // Mock for Node.js environment

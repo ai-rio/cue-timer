@@ -1,23 +1,27 @@
 # ESLint Maintenance Strategy
 
 ## 🎯 Objective
-Maintain code quality and prevent ESLint issues from accumulating after the disaster recovery cleanup.
+
+Maintain code quality and prevent ESLint issues from accumulating after the
+disaster recovery cleanup.
 
 ## 🔄 Continuous Integration
 
 ### Pre-commit Hooks (Already Configured)
+
 ```javascript
 // lint-staged.config.cjs
 module.exports = {
   '*.{ts,tsx,js,jsx}': [
     'eslint --fix --config eslint.config.js',
-    'prettier --write'
+    'prettier --write',
   ],
   // ... other file types
 };
 ```
 
 ### CI/CD Pipeline Gates
+
 ```yaml
 # .github/workflows/quality-check.yml
 name: Code Quality Check
@@ -44,6 +48,7 @@ jobs:
 ## 📊 Monitoring & Reporting
 
 ### Weekly Health Check
+
 ```bash
 #!/bin/bash
 # scripts/eslint-health-check.sh
@@ -73,6 +78,7 @@ fi
 ```
 
 ### Issue Tracking Dashboard
+
 Create a simple GitHub Actions workflow that posts weekly metrics:
 
 ```yaml
@@ -80,7 +86,7 @@ Create a simple GitHub Actions workflow that posts weekly metrics:
 name: ESLint Metrics
 on:
   schedule:
-    - cron: '0 9 * * 1'  # Weekly on Monday 9am
+    - cron: '0 9 * * 1' # Weekly on Monday 9am
   workflow_dispatch:
 
 jobs:
@@ -99,6 +105,7 @@ jobs:
 ## 🛠️ Development Workflow
 
 ### Before Every Commit
+
 ```bash
 # 1. Run lint fixes
 bun run lint:fix
@@ -114,6 +121,7 @@ bun run build
 ```
 
 ### Before Every Push
+
 ```bash
 # Full quality check suite
 bun run lint      # Check for remaining issues
@@ -123,6 +131,7 @@ bun run build     # Ensure production build works
 ```
 
 ### Feature Branch Workflow
+
 ```bash
 # 1. Create feature branch
 git checkout -b feature/new-component
@@ -142,6 +151,7 @@ git push origin feature/new-component
 ## 🚨 Issue Prevention Strategies
 
 ### 1. ESLint Configuration Optimization
+
 ```javascript
 // eslint.config.js
 export default [
@@ -160,21 +170,24 @@ export default [
       // Type safety
       '@typescript-eslint/no-unsafe-assignment': 'warn',
       '@typescript-eslint/no-unsafe-call': 'warn',
-    }
-  }
+    },
+  },
 ];
 ```
 
 ### 2. IDE Integration
+
 - **VS Code**: Configure ESLint extension to auto-fix on save
 - **WebStorm**: Enable ESLint integration
 - **Vim/Neovim**: Use ALE or null-ls for ESLint
 
 ### 3. Code Review Templates
+
 Add ESLint checks to PR templates:
 
 ```markdown
 ## Code Quality Checklist
+
 - [ ] ESLint passes with zero errors
 - [ ] TypeScript compilation succeeds
 - [ ] No new `any` types introduced
@@ -185,6 +198,7 @@ Add ESLint checks to PR templates:
 ## 📈 Performance Considerations
 
 ### Fast Linting for Large Projects
+
 ```bash
 # Use cache for faster linting
 bunx eslint --ext .ts,.tsx,.js,.jsx . --cache
@@ -194,6 +208,7 @@ bunx eslint --ext .ts,.tsx,.js,.jsx . --cache $(git diff --name-only --diff-filt
 ```
 
 ### Optimized CI Pipeline
+
 ```yaml
 # Parallel lint and type check
 jobs:
@@ -214,6 +229,7 @@ jobs:
 ### Common Issues & Solutions
 
 #### 1. ESLint Performance Issues
+
 ```bash
 # Clear ESLint cache
 rm -rf node_modules/.cache/
@@ -223,12 +239,14 @@ npm install --save-dev @typescript-eslint/parser
 ```
 
 #### 2. Conflicting Rules
+
 ```bash
 # Check rule conflicts
 bunx eslint --print-config path/to/file.ts
 ```
 
 #### 3. Import Sorting Issues
+
 ```bash
 # Fix import sorting manually
 bunx eslint --ext .ts,.tsx,.js,.jsx . --fix --rule 'simple-import-sort/imports: error'
@@ -237,23 +255,27 @@ bunx eslint --ext .ts,.tsx,.js,.jsx . --fix --rule 'simple-import-sort/imports: 
 ## 📋 Maintenance Checklist
 
 ### Daily (Developer Responsibility)
+
 - [ ] Run `bun run lint:fix` before commits
 - [ ] Check IDE for ESLint warnings
 - [ ] Fix any new ESLint issues immediately
 
 ### Weekly (Team Lead Responsibility)
+
 - [ ] Run eslint health check script
 - [ ] Review ESLint metrics trend
 - [ ] Address any issue count increases
 - [ ] Update ESLint rules if needed
 
 ### Monthly (Tech Lead Responsibility)
+
 - [ ] Review ESLint configuration
 - [ ] Update dependencies (ESLint, plugins)
 - [ ] Assess new ESLint rules/features
 - [ ] Update coding standards documentation
 
 ### Quarterly (Architecture Review)
+
 - [ ] Evaluate code quality metrics
 - [ ] Consider ESLint rule changes
 - [ ] Review and update maintenance strategy
@@ -262,6 +284,7 @@ bunx eslint --ext .ts,.tsx,.js,.jsx . --fix --rule 'simple-import-sort/imports: 
 ## 🎯 Success Metrics
 
 ### Key Performance Indicators
+
 - **ESLint Error Count**: Target < 10
 - **ESLint Warning Count**: Target < 50
 - **Build Time Impact**: < 10% increase
@@ -269,6 +292,7 @@ bunx eslint --ext .ts,.tsx,.js,.jsx . --fix --rule 'simple-import-sort/imports: 
 - **Code Review Efficiency**: Reduced lint-related comments
 
 ### Quality Thresholds
+
 ```javascript
 // CI/CD Quality Gates
 const qualityGates = {
@@ -283,6 +307,7 @@ const qualityGates = {
 ## 🔄 Continuous Improvement
 
 ### Feedback Loop
+
 1. **Monitor**: Track ESLint metrics over time
 2. **Analyze**: Identify patterns and problem areas
 3. **Adjust**: Update rules and configurations
@@ -290,6 +315,7 @@ const qualityGates = {
 5. **Automate**: Improve tooling and processes
 
 ### Team Training
+
 - ESLint best practices workshop
 - Code review training
 - IDE setup and configuration guide
@@ -297,4 +323,6 @@ const qualityGates = {
 
 ---
 
-This maintenance strategy ensures the ESLint disaster recovery成果 (achievements) are preserved and the codebase continues to improve over time.
+This maintenance strategy ensures the ESLint disaster
+recovery成果 (achievements) are preserved and the codebase continues to improve
+over time.

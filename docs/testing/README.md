@@ -1,6 +1,7 @@
 # Testing Guide
 
-This guide covers the comprehensive testing strategy for the CueTimer blog management system, ensuring code quality, type safety, and ESLint compliance.
+This guide covers the comprehensive testing strategy for the CueTimer blog
+management system, ensuring code quality, type safety, and ESLint compliance.
 
 ## Table of Contents
 
@@ -19,7 +20,8 @@ Our testing approach follows these principles:
 
 - **Type Safety First**: TypeScript strict mode catches issues before runtime
 - **ESLint Compliance**: Code quality is enforced through automated linting
-- **Comprehensive Coverage**: Unit, integration, and E2E tests cover all critical paths
+- **Comprehensive Coverage**: Unit, integration, and E2E tests cover all
+  critical paths
 - **Fast Feedback**: Tests run quickly to enable rapid development
 - **Documentation**: Tests serve as living documentation of system behavior
 
@@ -85,6 +87,7 @@ bun run test:coverage
 ### CI/CD
 
 Tests automatically run on:
+
 - Pull requests to `main`, `master`, and `develop` branches
 - Pushes to feature branches
 - Merges to main branches
@@ -98,6 +101,7 @@ Tests automatically run on:
 Unit tests focus on individual functions and components in isolation.
 
 **Example CLI Script Test**:
+
 ```typescript
 describe('blog-create CLI Script', () => {
   test('should create blog post with timing-guide template', async () => {
@@ -113,6 +117,7 @@ describe('blog-create CLI Script', () => {
 ```
 
 **Key Areas Tested**:
+
 - CLI script functionality
 - Blog content creation
 - SEO analysis
@@ -126,6 +131,7 @@ describe('blog-create CLI Script', () => {
 Integration tests verify that components work together correctly.
 
 **Example Component Integration**:
+
 ```typescript
 describe('MDX Renderer Components Integration Tests', () => {
   test('should render basic markdown content with proper accessibility', async () => {
@@ -138,6 +144,7 @@ describe('MDX Renderer Components Integration Tests', () => {
 ```
 
 **Key Areas Tested**:
+
 - MDX renderer components
 - Blog content manager
 - Component interactions
@@ -150,6 +157,7 @@ describe('MDX Renderer Components Integration Tests', () => {
 Configuration tests validate that our tooling is correctly configured.
 
 **Example ESLint Validation**:
+
 ```typescript
 describe('ESLint Configuration Validation', () => {
   test('should enforce TypeScript strict rules', () => {
@@ -163,6 +171,7 @@ describe('ESLint Configuration Validation', () => {
 ```
 
 **Key Areas Tested**:
+
 - ESLint configuration
 - Rule enforcement
 - File-specific rules
@@ -172,9 +181,11 @@ describe('ESLint Configuration Validation', () => {
 
 **Location**: `tests/typescript/`
 
-Type enforcement tests ensure TypeScript is properly configured and catching errors.
+Type enforcement tests ensure TypeScript is properly configured and catching
+errors.
 
 **Example Type Enforcement**:
+
 ```typescript
 describe('TypeScript Type Enforcement Tests', () => {
   test('should catch missing type annotations', () => {
@@ -188,6 +199,7 @@ describe('TypeScript Type Enforcement Tests', () => {
 ```
 
 **Key Areas Tested**:
+
 - TypeScript configuration
 - Type safety enforcement
 - Generic type usage
@@ -212,6 +224,7 @@ Our CI/CD pipeline includes:
 ### Quality Gates
 
 All required checks must pass before:
+
 - Pull requests can be merged
 - Code can be deployed to production
 - Releases can be created
@@ -270,6 +283,7 @@ open coverage/lcov-report/index.html
 ### Coverage Integration
 
 Coverage reports are automatically:
+
 - Generated on each test run
 - Uploaded to Codecov for PR analysis
 - Included in build artifacts
@@ -280,7 +294,8 @@ Coverage reports are automatically:
 ### Writing Tests
 
 1. **Test Behavior, Not Implementation**: Focus on what the code does, not how
-2. **Use Descriptive Names**: Test names should clearly describe what's being tested
+2. **Use Descriptive Names**: Test names should clearly describe what's being
+   tested
 3. **Arrange-Act-Assert**: Structure tests clearly
 4. **Mock External Dependencies**: Isolate code from external systems
 5. **Test Edge Cases**: Include error conditions and boundary values
@@ -370,7 +385,7 @@ Tests have relaxed ESLint rules, but should still follow basic patterns:
 const unusedVar = 'test'; // Allowed in tests
 
 // ❌ Still problematic
-const badlyFormattedCode='test';  // Formatting still matters
+const badlyFormattedCode = 'test'; // Formatting still matters
 ```
 
 #### 4. TypeScript Compilation Errors
@@ -442,6 +457,7 @@ export const renderWithProviders = (component: ReactElement) => {
 ### Test Metrics
 
 Track these metrics:
+
 - Test execution time
 - Coverage percentage
 - Test failure rate
@@ -464,6 +480,7 @@ Track these metrics:
 ## Support
 
 For testing-related questions:
+
 1. Check this documentation
 2. Review existing tests for patterns
 3. Ask in team discussions
@@ -471,4 +488,4 @@ For testing-related questions:
 
 ---
 
-*Last updated: 2025-01-25*
+_Last updated: 2025-01-25_

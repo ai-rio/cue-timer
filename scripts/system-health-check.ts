@@ -155,7 +155,8 @@ class SystemHealthChecker {
         if (auditOutput) {
           const audit = JSON.parse(auditOutput);
           vulnerabilities = audit.vulnerabilities || vulnerabilities;
-          metrics.vulnerabilities = vulnerabilities;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          metrics.vulnerabilities = vulnerabilities as any;
         }
       } catch (error) {
         metrics.auditCheckFailed = true;
@@ -206,14 +207,15 @@ class SystemHealthChecker {
           nodeModulesExists,
           criticalDepsMissing,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Dependency check failed');
       return {
         status: 'critical',
         message: 'Dependency health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -234,7 +236,8 @@ class SystemHealthChecker {
         }
       });
 
-      metrics.envFiles = envFileStatus;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      metrics.envFiles = envFileStatus as any;
 
       // Check Node.js version
       const nodeVersion = process.version;
@@ -312,14 +315,15 @@ class SystemHealthChecker {
           gitignoreExists,
           envFileStatus,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Environment check failed');
       return {
         status: 'critical',
         message: 'Environment health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -354,7 +358,8 @@ class SystemHealthChecker {
         this.alerts.push(`Missing critical directories: ${missingDirs.join(', ')}`);
       }
 
-      metrics.criticalDirectories = dirStatus;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      metrics.criticalDirectories = dirStatus as any;
 
       // Check file permissions
       const importantFiles = [
@@ -386,7 +391,8 @@ class SystemHealthChecker {
         this.alerts.push(`Permission issues with files: ${permissionIssues.join(', ')}`);
       }
 
-      metrics.filePermissions = filePermissions;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      metrics.filePermissions = filePermissions as any;
 
       // Check disk space (simplified check)
       try {
@@ -452,14 +458,15 @@ class SystemHealthChecker {
           permissionIssues: permissionIssues.length,
           diskSpaceCritical: metrics.diskSpaceCritical || false,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('File system check failed');
       return {
         status: 'critical',
         message: 'File system health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -489,7 +496,11 @@ class SystemHealthChecker {
           });
           toolResults.push({ tool, accessible: true });
         } catch (error: unknown) {
-          toolResults.push({ tool, accessible: false, error: error.message });
+          toolResults.push({
+            tool,
+            accessible: false,
+            error: error instanceof Error ? error.message : String(error),
+          });
         }
       }
 
@@ -551,7 +562,8 @@ class SystemHealthChecker {
         },
         metrics: {
           ...metrics,
-          toolResults: toolResults.map((r) => ({ tool: r.tool, accessible: r.accessible })),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          toolResults: toolResults.map((r) => ({ tool: r.tool, accessible: r.accessible })) as any,
         },
       };
     } catch (error: unknown) {
@@ -559,7 +571,7 @@ class SystemHealthChecker {
       return {
         status: 'critical',
         message: 'CLI tools health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -624,7 +636,8 @@ class SystemHealthChecker {
         }
       }
 
-      metrics.templateTests = templateTests;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      metrics.templateTests = templateTests as any;
       const workingTemplates = templateTests.filter((t) => t.accessible).length;
 
       // Check template system types
@@ -663,14 +676,15 @@ class SystemHealthChecker {
           existingTemplates: existingTemplates.length,
           workingTemplates,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Template system check failed');
       return {
         status: 'critical',
         message: 'Template system health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -764,14 +778,15 @@ class SystemHealthChecker {
           localesDirExists,
           localeFiles: localeFiles.length,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Multi-language support check failed');
       return {
         status: 'critical',
         message: 'Multi-language support health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -789,7 +804,8 @@ class SystemHealthChecker {
         dirStatus[dir] = existsSync(dir);
       });
 
-      metrics.contentDirectories = dirStatus;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      metrics.contentDirectories = dirStatus as any;
 
       // Check for MDX files
       let mdxFiles = [];
@@ -883,14 +899,15 @@ class SystemHealthChecker {
           validMdxFiles: validMdxFiles.length,
           invalidMdxFiles: invalidMdxFiles.length,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Content system check failed');
       return {
         status: 'critical',
         message: 'Content system health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }
@@ -902,12 +919,14 @@ class SystemHealthChecker {
     try {
       // Check memory usage
       const memoryUsage = process.memoryUsage();
+
       metrics.memoryUsage = {
         heapUsed: Math.round(memoryUsage.heapUsed / 1024 / 1024),
         heapTotal: Math.round(memoryUsage.heapTotal / 1024 / 1024),
         external: Math.round(memoryUsage.external / 1024 / 1024),
         rss: Math.round(memoryUsage.rss / 1024 / 1024),
-      };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any;
 
       // Check if application can start (basic startup test)
       let startupTime = 0;
@@ -987,14 +1006,15 @@ class SystemHealthChecker {
           bundleSize: bundleSize ? `${Math.round(bundleSize / 1024 / 1024)}MB` : 'unknown',
           memoryUsage: `${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
         },
-        metrics,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        metrics: metrics as any,
       };
     } catch (error: unknown) {
       spinner.fail('Performance check failed');
       return {
         status: 'critical',
         message: 'Performance health check failed',
-        details: { error: error.message },
+        details: { error: error instanceof Error ? error.message : String(error) },
       };
     }
   }

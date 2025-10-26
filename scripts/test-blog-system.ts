@@ -18,6 +18,8 @@ import { execSync } from 'child_process';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 
+import { CueTimerTemplate } from '../lib/blog-scripts/types';
+
 // Test configuration
 interface TestConfig {
   timeout: number;
@@ -198,7 +200,7 @@ class SystemValidator {
         success: true,
         duration,
         message: 'Test passed',
-        details: result,
+        details: result as Record<string, unknown>,
       });
     } catch (error) {
       const duration = Date.now() - startTime;
@@ -588,7 +590,7 @@ Content for performance testing.
           contentStructure: [],
         };
 
-        await creator.createPost(invalidTemplate, {}, 'en');
+        await creator.createPost(invalidTemplate as CueTimerTemplate, {}, 'en');
         throw new Error('Should have thrown an error for invalid template');
       } catch (error) {
         // Expected error

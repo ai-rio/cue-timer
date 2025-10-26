@@ -75,13 +75,25 @@ async function collectTemplateVariables(
 ): Promise<Record<string, string | number | boolean | string[]>> {
   switch (template.id) {
     case 'timing-guide':
-      return await collectTimingGuideVariables(cliOptions);
+      return (await collectTimingGuideVariables(cliOptions)) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'case-study':
-      return await collectCaseStudyVariables(cliOptions);
+      return (await collectCaseStudyVariables(cliOptions)) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'feature-announce':
-      return await collectFeatureAnnounceVariables(cliOptions);
+      return (await collectFeatureAnnounceVariables(cliOptions)) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'presentation-tips':
-      return await collectPresentationTipsVariables(cliOptions);
+      return (await collectPresentationTipsVariables(cliOptions)) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     default:
       return {};
   }
@@ -775,13 +787,25 @@ function createDefaultVariables(
 
   switch (template.id) {
     case 'timing-guide':
-      return createTimingGuideVariables(baseVariables);
+      return createTimingGuideVariables(baseVariables) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'case-study':
-      return createCaseStudyVariables(baseVariables);
+      return createCaseStudyVariables(baseVariables) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'feature-announce':
-      return createFeatureAnnounceVariables(baseVariables);
+      return createFeatureAnnounceVariables(baseVariables) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     case 'presentation-tips':
-      return createPresentationTipsVariables(baseVariables);
+      return createPresentationTipsVariables(baseVariables) as unknown as Record<
+        string,
+        string | number | boolean | string[]
+      >;
     default:
       return baseVariables;
   }

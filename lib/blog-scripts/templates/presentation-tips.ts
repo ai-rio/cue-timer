@@ -208,7 +208,7 @@ import { LightBulbIcon, ExclamationTriangleIcon, CheckCircleIcon, BookOpenIcon, 
     <div className="border-l-4 border-blue-500 bg-white p-6 rounded-lg shadow-sm">
       <div className="flex items-start gap-3">
         <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-semibold text-sm">
-          ${index + 1}
+          ${_index + 1}
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
@@ -252,7 +252,7 @@ ${
       <div class="bg-white p-4 rounded-lg border border-green-200">
         <div class="flex items-start gap-3">
           <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold">
-            ${index + 1}
+            ${_index + 1}
           </div>
           <div class="flex-1">
             <h4 class="font-medium text-green-900 mb-1">📋 Scenario: ${example.scenario}</h4>

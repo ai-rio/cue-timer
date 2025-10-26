@@ -2,9 +2,9 @@ name: Test Suite
 
 on:
   push:
-    branches: [ main, master, develop, feature/* ]
+    branches: [main, master, develop, feature/*]
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [main, master, develop]
 
 env:
   NODE_VERSION: '18'
@@ -248,7 +248,16 @@ jobs:
   quality-gate:
     name: Quality Gate
     runs-on: ubuntu-latest
-    needs: [type-check, lint, unit-tests, integration-tests, blog-scripts-tests, build-test, security-audit]
+    needs:
+      [
+        type-check,
+        lint,
+        unit-tests,
+        integration-tests,
+        blog-scripts-tests,
+        build-test,
+        security-audit,
+      ]
     if: always()
     steps:
       - name: Quality Gate Check

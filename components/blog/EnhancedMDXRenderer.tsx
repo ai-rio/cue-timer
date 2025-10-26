@@ -245,10 +245,11 @@ function EnhancedCodeBlock({
   const [output, setOutput] = useState('');
 
   const language = className?.replace('language-', '') || 'text';
-  const codeText =
+  const codeText = String(
     children && typeof children === 'object' && 'props' in children
       ? (children as { props?: { children?: React.ReactNode } }).props?.children || ''
-      : children?.toString() || '';
+      : children?.toString() || ''
+  );
 
   const handleCopy = async () => {
     try {
@@ -755,7 +756,8 @@ async function EnhancedMDXContent({
       options: {
         mdxOptions: {
           remarkPlugins: [],
-          rehypePlugins: [rehypeHighlight as unknown, rehypePrismPlus as unknown],
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          rehypePlugins: [rehypeHighlight as any, rehypePrismPlus as any],
         },
       },
     });

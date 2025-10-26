@@ -85,7 +85,7 @@ const mockPresentationTipsTemplate = {
 };
 
 // Mock content generation functions
-const generateTimingGuideContent = variables => {
+const generateTimingGuideContent = (variables) => {
   const { title, difficulty = 'beginner', steps } = variables;
   return `---
 title: "${title}"
@@ -118,7 +118,7 @@ import { TimerIcon } from '@heroicons/react/24/outline';
 `;
 };
 
-const generateCaseStudyContent = variables => {
+const generateCaseStudyContent = (variables) => {
   const { title, client, industry, challenge, solution, results } = variables;
   return `---
 title: "${title}"
@@ -147,7 +147,7 @@ ${solution}
 
 ${results
   .map(
-    result => `
+    (result) => `
 - **${result.metric}:** ${result.value}
 ${result.description ? `  ${result.description}` : ''}
 `
@@ -162,7 +162,7 @@ import { BuildingOfficeIcon } from '@heroicons/react/24/outline';
 `;
 };
 
-const generateFeatureAnnounceContent = variables => {
+const generateFeatureAnnounceContent = (variables) => {
   const { title, featureName, version, description, benefits, useCases } = variables;
   return `---
 title: "${title}"
@@ -179,11 +179,11 @@ ${description}
 
 ## Key Benefits
 
-${benefits.map(benefit => `- ${benefit}`).join('\n')}
+${benefits.map((benefit) => `- ${benefit}`).join('\n')}
 
 ## Perfect For
 
-${useCases.map(useCase => `- ${useCase}`).join('\n')}
+${useCases.map((useCase) => `- ${useCase}`).join('\n')}
 
 ## Get Started
 
@@ -193,7 +193,7 @@ import { SparklesIcon } from '@heroicons/react/24/outline';
 `;
 };
 
-const generatePresentationTipsContent = variables => {
+const generatePresentationTipsContent = (variables) => {
   const { title, topic, tips, difficulty = 'beginner' } = variables;
   return `---
 title: "${title}"
@@ -210,7 +210,7 @@ author: "CueTimer Team"
 
 ${tips
   .map(
-    tip => `
+    (tip) => `
 ### ${tip.title}
 
 ${tip.description}
@@ -253,24 +253,24 @@ function runTests() {
 
   function expect(actual) {
     return {
-      toBe: expected => {
+      toBe: (expected) => {
         if (actual !== expected) {
           throw new Error(`Expected ${expected}, but got ${actual}`);
         }
       },
-      toContain: expected => {
+      toContain: (expected) => {
         if (!actual.includes(expected)) {
           throw new Error(`Expected "${actual}" to contain "${expected}"`);
         }
       },
-      toEqual: expected => {
+      toEqual: (expected) => {
         if (JSON.stringify(actual) !== JSON.stringify(expected)) {
           throw new Error(
             `Expected ${JSON.stringify(expected)}, but got ${JSON.stringify(actual)}`
           );
         }
       },
-      toHaveLength: expected => {
+      toHaveLength: (expected) => {
         if (actual.length !== expected) {
           throw new Error(`Expected length ${expected}, but got ${actual.length}`);
         }

@@ -707,7 +707,7 @@ summary: "Content that will cause read error"
 
       // Mock file system error
       const originalReadFile = fs.readFile;
-      fs.readFile = jest.fn().mockRejectedValue(new Error('Permission denied'));
+      fs.readFile = jest.fn().mockRejectedValue(new Error('Permission denied') as never) as any;
 
       const options: SeoCheckOptions = {
         slug: 'invalid-content',

@@ -1,16 +1,24 @@
+import '../global.d.ts';
+
 /**
  * Integration tests for MDX renderer components
  * Tests the rendering functionality, accessibility features, and ESLint compliance
  */
-
 import { beforeEach, describe, expect, jest, test } from '@jest/globals';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+// Helper function to bypass TypeScript checking for jest-dom matchers
+
+const domMatchers = expect as any;
+
 // Mock Next.js components
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ alt, ...props }: any) => <img alt={alt} {...props} />,
+  default: ({ alt, ...props }: any) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img alt={alt} {...props} />
+  ),
 }));
 
 // Mock heavy dependencies
@@ -39,9 +47,10 @@ jest.mock('rehype-prism-plus', () => ({
 }));
 
 // Mock clipboard API
+// Mock clipboard API
 Object.assign(navigator, {
   clipboard: {
-    writeText: jest.fn().mockResolvedValue(undefined),
+    writeText: jest.fn(() => Promise.resolve()),
   },
 });
 
@@ -107,15 +116,15 @@ And custom components:
       );
 
       // Assert
-      expect(screen.getByRole('main')).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-      expect(screen.getByText('Main Heading')).toBeInTheDocument();
-      expect(screen.getByText('This is a paragraph with')).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
-      expect(screen.getByText('Subheading')).toBeInTheDocument();
-      expect(screen.getByRole('list')).toBeInTheDocument();
-      expect(screen.getByRole('blockquote')).toBeInTheDocument();
-      expect(screen.getByRole('link', { name: /Link text/ })).toBeInTheDocument();
+      domMatchers(screen.getByRole('main')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('heading', { level: 1 })).toBeInTheDocument() as any;
+      domMatchers(screen.getByText('Main Heading')).toBeInTheDocument() as any;
+      domMatchers(screen.getByText('This is a paragraph with')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('heading', { level: 2 })).toBeInTheDocument() as any;
+      domMatchers(screen.getByText('Subheading')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('list')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('blockquote')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('link', { name: /Link text/ })).toBeInTheDocument() as any;
 
       // Check callbacks
       expect(mockReadingTimeUpdate).toHaveBeenCalled();
@@ -140,10 +149,14 @@ function hello() {
       render(<AccessibleMDXRenderer content={contentWithCode} />);
 
       // Assert
-      expect(screen.getByRole('region', { name: /javascript code block/i })).toBeInTheDocument();
-      expect(screen.getByRole('toolbar', { name: /code block tools/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /copy code/i })).toBeInTheDocument();
-      expect(screen.getByLabelText('File: javascript')).toBeInTheDocument();
+      domMatchers(
+        screen.getByRole('region', { name: /javascript code block/i })
+      ).toBeInTheDocument() as any;
+      domMatchers(
+        screen.getByRole('toolbar', { name: /code block tools/i })
+      ).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('button', { name: /copy code/i })).toBeInTheDocument() as any;
+      domMatchers(screen.getByLabelText('File: javascript')).toBeInTheDocument() as any;
     });
 
     test('should handle copy functionality', async () => {
@@ -163,7 +176,7 @@ console.log('test');
 
       // Assert
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith("console.log('test');");
-      expect(screen.getByRole('button', { name: /code copied!/i })).toBeInTheDocument();
+      domMatchers(screen.getByRole('button', { name: /code copied!/i })).toBeInTheDocument() as any;
     });
 
     test('should provide proper ARIA labels for external links', () => {
@@ -172,8 +185,8 @@ console.log('test');
 
       // Assert
       const link = screen.getByRole('link', { name: /external \(opens in new tab\)/i });
-      expect(link).toHaveAttribute('target', '_blank');
-      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+      (expect(link) as any).toHaveAttribute('target', '_blank');
+      (expect(link) as any).toHaveAttribute('rel', 'noopener noreferrer');
     });
 
     test('should handle images with proper accessibility', () => {
@@ -189,8 +202,8 @@ console.log('test');
 
       // Assert
       const image = screen.getByRole('img');
-      expect(image).toHaveAttribute('alt', 'Alt text');
-      expect(image).toHaveAttribute('loading', 'lazy');
+      (expect(image) as any).toHaveAttribute('alt', 'Alt text');
+      (expect(image) as any).toHaveAttribute('loading', 'lazy');
     });
 
     test('should detect complex features and show enhanced option', () => {
@@ -198,8 +211,12 @@ console.log('test');
       render(<AccessibleMDXRenderer content={advancedContent} />);
 
       // Assert
-      expect(screen.getByText(/This content uses enhanced features/i)).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /load enhanced features/i })).toBeInTheDocument();
+      domMatchers(
+        screen.getByText(/This content uses enhanced features/i)
+      ).toBeInTheDocument() as any;
+      domMatchers(
+        screen.getByRole('button', { name: /load enhanced features/i })
+      ).toBeInTheDocument() as any;
     });
 
     test('should load enhanced features when requested', async () => {
@@ -213,7 +230,7 @@ console.log('test');
       await user.click(loadButton);
 
       // Assert
-      expect(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument();
+      domMatchers(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument() as any;
     });
   });
 
@@ -235,7 +252,7 @@ console.log('test');
 
       // Assert
       await waitFor(() => {
-        expect(screen.getByTestId('compiled-mdx')).toBeInTheDocument();
+        domMatchers(screen.getByTestId('compiled-mdx')).toBeInTheDocument() as any;
       });
       expect(mockReadingTimeUpdate).toHaveBeenCalled();
       expect(mockCodeBlockCount).toHaveBeenCalled();
@@ -260,7 +277,7 @@ Performance details
 
       // Assert
       await waitFor(() => {
-        expect(screen.getByTestId('compiled-mdx')).toBeInTheDocument();
+        domMatchers(screen.getByTestId('compiled-mdx')).toBeInTheDocument() as any;
       });
     });
 
@@ -279,7 +296,7 @@ console.log(message);
 
       // Assert
       await waitFor(() => {
-        expect(screen.getByTestId('compiled-mdx')).toBeInTheDocument();
+        domMatchers(screen.getByTestId('compiled-mdx')).toBeInTheDocument() as any;
       });
     });
 
@@ -296,7 +313,7 @@ console.log(message);
       compileMDX.mockRejectedValue(new Error('MDX compilation failed'));
 
       // Mock console.error to avoid noise in test output
-      const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
       // Act & Assert
       render(<EnhancedMDXRenderer content={invalidContent} />);
@@ -333,8 +350,8 @@ console.log(message);
       );
 
       // Assert
-      expect(screen.getByText('Main Heading')).toBeInTheDocument();
-      expect(screen.getByText('Subheading')).toBeInTheDocument();
+      domMatchers(screen.getByText('Main Heading')).toBeInTheDocument() as any;
+      domMatchers(screen.getByText('Subheading')).toBeInTheDocument() as any;
       expect(mockReadingTimeUpdate).toHaveBeenCalled();
       expect(mockCodeBlockCount).toHaveBeenCalledWith(0);
     });
@@ -344,8 +361,12 @@ console.log(message);
       render(<OptimizedMDXRenderer content={advancedContent} />);
 
       // Assert
-      expect(screen.getByText(/This content uses advanced features/i)).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /load enhanced features/i })).toBeInTheDocument();
+      domMatchers(
+        screen.getByText(/This content uses advanced features/i)
+      ).toBeInTheDocument() as any;
+      domMatchers(
+        screen.getByRole('button', { name: /load enhanced features/i })
+      ).toBeInTheDocument() as any;
     });
 
     test('should load advanced renderer when requested', async () => {
@@ -359,7 +380,7 @@ console.log(message);
       await user.click(loadButton);
 
       // Assert
-      expect(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument();
+      domMatchers(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument() as any;
     });
 
     test('should render simple code blocks', () => {
@@ -379,8 +400,8 @@ console.log('simple');
       render(<OptimizedMDXRenderer content={contentWithSimpleCode} />);
 
       // Assert
-      expect(screen.getByText('code')).toBeInTheDocument();
-      expect(screen.getByText("console.log('simple');")).toBeInTheDocument();
+      domMatchers(screen.getByText('code')).toBeInTheDocument() as any;
+      domMatchers(screen.getByText("console.log('simple');")).toBeInTheDocument() as any;
     });
   });
 
@@ -398,10 +419,10 @@ console.log('simple');
       render(<AccessibleMDXRenderer content={contentWithHeadings} />);
 
       // Assert
-      expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 3 })).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 4 })).toBeInTheDocument();
+      domMatchers(screen.getByRole('heading', { level: 1 })).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('heading', { level: 2 })).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('heading', { level: 3 })).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('heading', { level: 4 })).toBeInTheDocument() as any;
     });
 
     test('should provide proper ARIA labels for interactive elements', () => {
@@ -420,8 +441,11 @@ console.log('simple');
         name: /external link \(opens in new tab\)/i,
       });
 
-      expect(internalLink).not.toHaveAttribute('aria-label');
-      expect(externalLink).toHaveAttribute('aria-label', 'external link (opens in new tab)');
+      (expect(internalLink) as any).not.toHaveAttribute('aria-label');
+      (expect(externalLink) as any).toHaveAttribute(
+        'aria-label',
+        'external link (opens in new tab)'
+      );
     });
 
     test('should handle keyboard navigation for code blocks', async () => {
@@ -439,7 +463,7 @@ console.log('test');
 
       // Test keyboard navigation
       copyButton.focus();
-      expect(copyButton).toHaveFocus();
+      (expect(copyButton) as any).toHaveFocus();
 
       await user.keyboard('{Enter}');
       expect(navigator.clipboard.writeText).toHaveBeenCalled();
@@ -461,7 +485,9 @@ console.log('test');
       await user.click(copyButton);
 
       // Assert - Check for screen reader announcement
-      expect(screen.getByText(/Code has been copied to clipboard/i)).toBeInTheDocument();
+      domMatchers(
+        screen.getByText(/Code has been copied to clipboard/i)
+      ).toBeInTheDocument() as any;
     });
   });
 
@@ -513,7 +539,7 @@ console.log('test');
       render(<EnhancedMDXRenderer content={content} />);
 
       // Assert - Component should render without type errors
-      expect(screen.getByTestId('compiled-mdx')).toBeInTheDocument();
+      domMatchers(screen.getByTestId('compiled-mdx')).toBeInTheDocument() as any;
     });
 
     test('should use proper React patterns', () => {
@@ -524,7 +550,7 @@ console.log('test');
       const { unmount } = render(<OptimizedMDXRenderer content={content} />);
 
       // Assert - Should mount and unmount cleanly
-      expect(screen.getByText('React Patterns Test')).toBeInTheDocument();
+      domMatchers(screen.getByText('React Patterns Test')).toBeInTheDocument() as any;
       expect(() => unmount()).not.toThrow();
     });
   });
@@ -538,8 +564,8 @@ console.log('test');
       render(<AccessibleMDXRenderer content={content} />);
 
       // Assert - Should render basic content without loading heavy dependencies
-      expect(screen.getByRole('main')).toBeInTheDocument();
-      expect(screen.queryByTestId('syntax-highlighter')).not.toBeInTheDocument();
+      domMatchers(screen.getByRole('main')).toBeInTheDocument() as any;
+      (expect(screen.queryByTestId('syntax-highlighter')) as any).not.toBeInTheDocument();
     });
 
     test('should only load enhanced features when needed', () => {
@@ -549,11 +575,11 @@ console.log('test');
 
       // Act & Assert - Simple content should not show enhanced option
       const { rerender } = render(<OptimizedMDXRenderer content={simpleContent} />);
-      expect(screen.queryByText(/advanced features/i)).not.toBeInTheDocument();
+      (expect(screen.queryByText(/advanced features/i)) as any).not.toBeInTheDocument();
 
       // Rerender with complex content
       rerender(<OptimizedMDXRenderer content={complexContent} />);
-      expect(screen.getByText(/advanced features/i)).toBeInTheDocument();
+      domMatchers(screen.getByText(/advanced features/i)).toBeInTheDocument() as any;
     });
 
     test('should calculate reading time efficiently', () => {
@@ -610,14 +636,14 @@ body { color: red; }
       const { rerender } = render(<OptimizedMDXRenderer content={basicContent} />);
 
       // Act - Start with optimized renderer
-      expect(screen.getByText('Main Heading')).toBeInTheDocument();
+      domMatchers(screen.getByText('Main Heading')).toBeInTheDocument() as any;
 
       // Switch to enhanced content
       rerender(<OptimizedMDXRenderer content={advancedContent} />);
       await user.click(screen.getByRole('button', { name: /load enhanced features/i }));
 
       // Assert - Should transition to enhanced features
-      expect(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument();
+      domMatchers(screen.getByText(/Loading enhanced features.../i)).toBeInTheDocument() as any;
     });
 
     test('should maintain accessibility across different renderers', () => {
@@ -635,15 +661,15 @@ This content should be accessible in all renderers.
 
       // Act & Assert - Test all renderers
       const { rerender } = render(<AccessibleMDXRenderer content={accessibleContent} />);
-      expect(screen.getByRole('main')).toBeInTheDocument();
-      expect(screen.getByRole('list')).toBeInTheDocument();
+      domMatchers(screen.getByRole('main')).toBeInTheDocument() as any;
+      domMatchers(screen.getByRole('list')).toBeInTheDocument() as any;
 
       rerender(<EnhancedMDXRenderer content={accessibleContent} />);
       // Enhanced renderer should also maintain accessibility
-      expect(screen.getByTestId('compiled-mdx')).toBeInTheDocument();
+      domMatchers(screen.getByTestId('compiled-mdx')).toBeInTheDocument() as any;
 
       rerender(<OptimizedMDXRenderer content={accessibleContent} />);
-      expect(screen.getByRole('list')).toBeInTheDocument();
+      domMatchers(screen.getByRole('list')).toBeInTheDocument() as any;
     });
   });
 });

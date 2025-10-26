@@ -7,7 +7,7 @@ import inquirer from 'inquirer';
 import ora from 'ora';
 import { join } from 'path';
 
-import { BlogPost, SEOResult } from '../lib/blog-scripts/types';
+import { BlogPost, SEOIssue, SEORecommendation, SEOResult } from '../lib/blog-scripts/types';
 
 // CLI interface for publishing options
 interface PublishOptions {
@@ -66,18 +66,21 @@ async function parseFrontmatter(
 
     // Parse booleans
     if (value === 'true') {
-      frontmatter[key] = true;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      frontmatter[key] = 'true' as any;
       continue;
     }
     if (value === 'false') {
-      frontmatter[key] = false;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      frontmatter[key] = 'false' as any;
       continue;
     }
 
     frontmatter[key] = value;
   }
 
-  return { frontmatter, content };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { frontmatter: frontmatter as any, content };
 }
 
 // Helper function to write frontmatter back to file
@@ -226,8 +229,8 @@ async function validatePostForPublishing(
 
 // Helper function to perform basic SEO check
 async function performBasicSEOCheck(frontmatter: BlogPost, content: string): Promise<SEOResult> {
-  const issues: string[] = [];
-  const recommendations: string[] = [];
+  const issues: SEOIssue[] = [];
+  const recommendations: SEORecommendation[] = [];
   let score = 100;
 
   // Title checks
@@ -367,7 +370,7 @@ async function publishPost(options: PublishOptions): Promise<void> {
         },
       ]);
 
-      slug = answer.slug;
+      ({ slug } = answer);
     }
 
     // Find the post

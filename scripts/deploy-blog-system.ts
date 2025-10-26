@@ -184,7 +184,7 @@ class BlogSystemDeployer {
           name: step.name,
           success: false,
           duration,
-          error: error.message,
+          error: (error as Error).message,
         });
 
         if (step.critical) {
@@ -269,7 +269,7 @@ class BlogSystemDeployer {
       return true;
     } catch (error: unknown) {
       spinner.fail('Backup creation failed');
-      throw new Error(`Backup creation failed: ${error.message}`);
+      throw new Error(`Backup creation failed: ${(error as Error).message}`);
     }
   }
 
@@ -315,7 +315,7 @@ class BlogSystemDeployer {
       });
       return true;
     } catch (error: unknown) {
-      throw new Error(`Dependency installation failed: ${error.message}`);
+      throw new Error(`Dependency installation failed: ${(error as Error).message}`);
     }
   }
 
@@ -332,7 +332,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Quality checks failed: ${error.message}`);
+      throw new Error(`Quality checks failed: ${(error as Error).message}`);
     }
   }
 
@@ -350,7 +350,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Application build failed: ${error.message}`);
+      throw new Error(`Application build failed: ${(error as Error).message}`);
     }
   }
 
@@ -362,7 +362,7 @@ class BlogSystemDeployer {
       });
       return true;
     } catch (error: unknown) {
-      throw new Error(`Test suite failed: ${error.message}`);
+      throw new Error(`Test suite failed: ${(error as Error).message}`);
     }
   }
 
@@ -386,7 +386,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Security validation failed: ${error.message}`);
+      throw new Error(`Security validation failed: ${(error as Error).message}`);
     }
   }
 
@@ -419,7 +419,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Content system validation failed: ${error.message}`);
+      throw new Error(`Content system validation failed: ${(error as Error).message}`);
     }
   }
 
@@ -443,7 +443,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`CLI tools validation failed: ${error.message}`);
+      throw new Error(`CLI tools validation failed: ${(error as Error).message}`);
     }
   }
 
@@ -471,7 +471,9 @@ class BlogSystemDeployer {
       return true;
     } catch (error: unknown) {
       // Performance benchmarks are not critical
-      this.report.recommendations!.push(`Performance benchmarking failed: ${error.message}`);
+      this.report.recommendations!.push(
+        `Performance benchmarking failed: ${(error as Error).message}`
+      );
       return true;
     }
   }
@@ -496,7 +498,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Deployment to production failed: ${error.message}`);
+      throw new Error(`Deployment to production failed: ${(error as Error).message}`);
     }
   }
 
@@ -513,7 +515,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Post-deployment validation failed: ${error.message}`);
+      throw new Error(`Post-deployment validation failed: ${(error as Error).message}`);
     }
   }
 
@@ -527,7 +529,7 @@ class BlogSystemDeployer {
 
       return true;
     } catch (error: unknown) {
-      throw new Error(`Health check verification failed: ${error.message}`);
+      throw new Error(`Health check verification failed: ${(error as Error).message}`);
     }
   }
 
@@ -557,7 +559,7 @@ class BlogSystemDeployer {
     } catch (error: unknown) {
       spinner.fail('Rollback failed');
       this.report.rollbackSuccess = false;
-      this.report.recommendations!.push(`Manual rollback required: ${error.message}`);
+      this.report.recommendations!.push(`Manual rollback required: ${(error as Error).message}`);
     }
   }
 
@@ -590,7 +592,7 @@ class BlogSystemDeployer {
       // Reinstall dependencies
       execSync('bun install', { stdio: 'pipe', timeout: 300000 });
     } catch (error: unknown) {
-      throw new Error(`Backup restoration failed: ${error.message}`);
+      throw new Error(`Backup restoration failed: ${(error as Error).message}`);
     }
   }
 
@@ -676,7 +678,7 @@ async function main() {
     const report = await deployer.executeDeployment();
     process.exit(report.success ? 0 : 1);
   } catch (error: unknown) {
-    console.error(chalk.red('Deployment failed with exception:'), error.message);
+    console.error(chalk.red('Deployment failed with exception:'), (error as Error).message);
     process.exit(1);
   }
 }

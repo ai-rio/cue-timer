@@ -76,7 +76,11 @@ const components = {
           <button
             className='px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 rounded transition-colors'
             onClick={() => {
-              const codeText = children?.props?.children || '';
+              const codeText =
+                typeof children === 'object' && children && 'props' in children
+                  ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    (children as any).props?.children || ''
+                  : String(children);
               navigator.clipboard.writeText(codeText);
             }}
           >
@@ -112,7 +116,7 @@ const components = {
   hr: ({ ...props }: ComponentProps) => <hr className='my-4 border-0 border-t' {...props} />,
   a: ({ children, href, ...props }: ComponentProps) => (
     <a
-      href={href}
+      href={href as string}
       className='text-primary underline-offset-4 hover:underline'
       target='_blank'
       rel='noopener noreferrer'
@@ -124,8 +128,8 @@ const components = {
   img: ({ src, alt, ...props }: ComponentProps) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
-      alt={alt || ''}
+      src={src as string}
+      alt={(alt as string) || ''}
       className='rounded-lg border shadow-md w-full max-w-2xl mx-auto my-6'
       loading='lazy'
       {...props}

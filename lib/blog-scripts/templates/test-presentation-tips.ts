@@ -152,7 +152,10 @@ async function testPresentationTipsTemplate() {
     };
 
     // Test template validation
-    mockContentCreator.validateTemplateVariables(PRESENTATION_TIPS_TEMPLATE, testVariables);
+    mockContentCreator.validateTemplateVariables(
+      PRESENTATION_TIPS_TEMPLATE,
+      testVariables as unknown as Record<string, unknown>
+    );
     console.warn('✅ Template variables validation passed');
 
     // Test missing required variable

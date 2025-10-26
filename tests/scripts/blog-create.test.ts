@@ -39,15 +39,7 @@ import { type CliOptions, createBlogPost } from '../../scripts/blog-create';
 // Mock ContentCreator to avoid file system operations
 jest.mock('../../lib/blog-scripts/content-creator', () => ({
   ContentCreator: jest.fn().mockImplementation(() => ({
-    createPost: jest.fn().mockResolvedValue({
-      title: 'Test Blog Post',
-      slug: 'test-blog-post',
-      category: 'test',
-      language: 'en',
-      author: 'Test Author',
-      isDraft: false,
-      readTime: 5,
-    }),
+    createPost: jest.fn().mockResolvedValue({} as never),
   })),
 }));
 
@@ -415,7 +407,7 @@ describe('blog-create CLI Script', () => {
       MockContentCreator.mockImplementation(
         () =>
           ({
-            createPost: jest.fn().mockRejectedValue(new Error('Content creation failed')),
+            createPost: jest.fn().mockRejectedValue(new Error('Content creation failed') as never),
           }) as any
       );
 

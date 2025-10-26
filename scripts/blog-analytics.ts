@@ -97,7 +97,7 @@ function parseFrontmatter(content: string): BlogPost {
   }
 
   const frontmatterText = match[1] || '';
-  const frontmatter: Record<string, string | string[]> = {};
+  const frontmatter: Record<string, string | string[] | boolean> = {};
 
   const lines = frontmatterText.split('\n');
   for (const line of lines) {
@@ -137,7 +137,7 @@ function parseFrontmatter(content: string): BlogPost {
     frontmatter[key] = value;
   }
 
-  return frontmatter as BlogPost;
+  return frontmatter as unknown as BlogPost;
 }
 
 // Helper function to generate mock analytics data
@@ -307,12 +307,12 @@ function formatAsCsv(data: AnalyticsData | AnalyticsData[]): string {
     data = [data];
   }
 
-  const headers = Object.keys(data[0]);
+  const headers = Object.keys(data[0] || {});
   const csvRows = [headers.join(',')];
 
   data.forEach((row: AnalyticsData) => {
     const values = headers.map((header) => {
-      const value = row[header];
+      const value = (row as any)[header]; // eslint-disable-line @typescript-eslint/no-explicit-any
       if (typeof value === 'object' && value !== null) {
         return `"${JSON.stringify(value).replace(/"/g, '""')}"`;
       }
@@ -464,7 +464,7 @@ async function generateAnalytics(options: AnalyticsOptions): Promise<void> {
       spinner.succeed(chalk.green('Analytics generated successfully!'));
 
       // Format and display results
-      let outputData: AnalyticsData | AnalyticsData[];
+      let outputData: AnalyticsData | AnalyticsData[] = analyticsData[0] || ({} as AnalyticsData);
       let insights: string[] = [];
 
       if (selectedPosts.length === 1) {
@@ -477,16 +477,17 @@ async function generateAnalytics(options: AnalyticsOptions): Promise<void> {
       } else {
         // Aggregate analytics
         const aggregate = calculateAggregateMetrics(analyticsData);
-        outputData = analyticsData.map((m) => ({
-          title: m.title,
-          slug: m.postSlug,
-          category: m.category,
-          views: m.views,
-          readTime: m.readTime,
-          bounceRate: m.bounceRate,
-          seoScore: m.seoScore,
-          featureEngagement: m.featureEngagement,
-        }));
+        outputData = analyticsData.map(
+          (m): AnalyticsData => ({
+            title: m.title,
+            slug: m.postSlug,
+            views: m.views,
+            readTime: m.readTime,
+            bounceRate: m.bounceRate,
+            seoScore: m.seoScore,
+            featureEngagement: m.featureEngagement,
+          })
+        );
         insights = generateInsights(analyticsData);
       }
 

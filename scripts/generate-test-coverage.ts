@@ -292,10 +292,10 @@ class TestCoverageAnalyzer {
         failedTests: testResults.failed,
         skippedTests: testResults.skipped,
         coverage: {
-          lines: coverageData.total.lines.pct,
-          functions: coverageData.total.functions.pct,
-          branches: coverageData.total.branches.pct,
-          statements: coverageData.total.statements.pct,
+          lines: coverageData.total?.lines?.pct ?? 0,
+          functions: coverageData.total?.functions?.pct ?? 0,
+          branches: coverageData.total?.branches?.pct ?? 0,
+          statements: coverageData.total?.statements?.pct ?? 0,
         },
         performance: performanceMetrics,
       };

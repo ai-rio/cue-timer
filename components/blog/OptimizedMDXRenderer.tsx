@@ -2,7 +2,7 @@
 
 // import { ExternalLink } from 'lucide-react';
 // import Image from 'next/image';
-import { Suspense, useState } from 'react';
+import { lazy, Suspense, useMemo, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 

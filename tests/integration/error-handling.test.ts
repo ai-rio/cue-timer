@@ -295,12 +295,12 @@ describe('Error Handling Validation Tests', () => {
 
     test('should handle null/undefined variables', async () => {
       const nullResult = await testErrorScenario('null_variables', 'input', async () => {
-        const variables = { title: null };
+        const variables = { title: null } as any;
         return await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, variables, 'en');
       });
 
       const undefinedResult = await testErrorScenario('undefined_variables', 'input', async () => {
-        const variables = { title: undefined };
+        const variables = { title: undefined } as any;
         return await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, variables, 'en');
       });
 
@@ -627,7 +627,7 @@ describe('Error Handling Validation Tests', () => {
           return await contentCreator.createPost(invalidTemplate, {}, 'en');
         }),
         testErrorScenario('concurrent_error_2', 'input', async () => {
-          const variables = { title: null };
+          const variables = { title: null } as any;
           return await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, variables, 'en');
         }),
         testErrorScenario('concurrent_error_3', 'file_system', async () => {
@@ -669,7 +669,7 @@ describe('Error Handling Validation Tests', () => {
       });
 
       const invalidResult2 = await testErrorScenario('invalid_post_2', 'input', async () => {
-        const variables = { title: null };
+        const variables = { title: null } as any;
         return await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, variables, 'en');
       });
 
@@ -725,7 +725,7 @@ describe('Error Handling Validation Tests', () => {
           await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, variables, 'en');
         } catch (firstError) {
           // Step 2: Try to recover by providing different invalid data
-          const invalidVariables = { title: '', difficulty: null };
+          const invalidVariables = { title: '', difficulty: 'invalid' };
           return await contentCreator.createPost(TIMING_GUIDE_TEMPLATE, invalidVariables, 'en');
         }
 

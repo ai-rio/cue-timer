@@ -3,6 +3,9 @@
  * Tests deployment validation functionality with proper ESLint compliance
  */
 
+// Reference global test types
+/// <reference types="../types/test" />
+
 import { afterAll, beforeEach, describe, expect, jest, test } from '@jest/globals';
 import { execSync } from 'child_process';
 import { promises as fs } from 'fs';
@@ -31,8 +34,6 @@ jest.mock('chalk', () => ({
 }));
 
 // Import after mocking
-import { execSync } from 'child_process';
-
 import { DeploymentValidator } from '../../scripts/deploy-validation';
 
 describe('deploy-validation Script', () => {

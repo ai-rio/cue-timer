@@ -136,7 +136,7 @@ export default function AdvancedBlogSearchAndFilter({
   const [searchInput, setSearchInput] = useState(initialFilters.search || '');
 
   // Initialize Fuse instance with dynamic loading
-  const [fuse, setFuse] = useState<(typeof import('fuse.js'))['default'] | null>(null);
+  const [fuse, setFuse] = useState<import('fuse.js').default<BlogPostEnhanced> | null>(null);
 
   useEffect(() => {
     const initializeFuse = async () => {

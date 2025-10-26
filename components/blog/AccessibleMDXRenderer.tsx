@@ -223,7 +223,9 @@ export const AccessibleComponents = {
       className='text-primary underline-offset-4 hover:underline inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded'
       target={href?.startsWith('http') ? '_blank' : undefined}
       rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-      aria-label={href?.startsWith('http') ? `${children} (opens in new tab)` : children}
+      aria-label={
+        href?.startsWith('http') ? `${String(children)} (opens in new tab)` : String(children)
+      }
       {...props}
     >
       {children}
@@ -274,10 +276,11 @@ function AccessibleCodeBlock({
   const [isRunning, setIsRunning] = useState(false);
   const [output, setOutput] = useState('');
 
-  const codeText =
+  const codeText = String(
     children && typeof children === 'object' && 'props' in children
       ? (children as { props?: { children?: React.ReactNode } }).props?.children || ''
-      : children?.toString() || '';
+      : children?.toString() || ''
+  );
 
   const handleCopy = async () => {
     try {

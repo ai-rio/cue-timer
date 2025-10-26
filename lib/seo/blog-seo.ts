@@ -210,9 +210,9 @@ export function generateMetaTags(post: BlogPostEnhanced): {
         author: post.authorInfo?.name || post.author,
         section: structuredData.articleSection,
         tag: post.tags || [],
-      },
+      } as any, // eslint-disable-line @typescript-eslint/no-explicit-any
       images: post.image
-        ? [
+        ? ([
             {
               url: post.image,
               width: 1200,
@@ -220,7 +220,7 @@ export function generateMetaTags(post: BlogPostEnhanced): {
               alt: post.title,
               type: 'image/jpeg',
             },
-          ]
+          ] as any) // eslint-disable-line @typescript-eslint/no-explicit-any
         : [],
       locale: post.language || 'en_US',
     },
@@ -230,7 +230,7 @@ export function generateMetaTags(post: BlogPostEnhanced): {
       description: post.summary || post.excerpt || '',
       site: SEO_CONFIG.siteName,
       creator: post.authorInfo?.social?.twitter || post.author,
-      images: post.image ? [post.image] : [],
+      images: post.image ? [post.image] : ([] as any), // eslint-disable-line @typescript-eslint/no-explicit-any
     },
     jsonLd: generateJsonLd(post),
   };

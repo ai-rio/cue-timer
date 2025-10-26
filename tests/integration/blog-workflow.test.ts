@@ -196,7 +196,7 @@ describe('Blog Management System Integration Tests', () => {
       const language = 'en';
 
       // Step 1: Create blog post
-      const blogPost = await contentCreator.createPost(template, variables, language);
+      const blogPost = await contentCreator.createPost(template, variables as any as any, language);
 
       // Verify blog post structure
       expect(blogPost).toMatchObject({
@@ -254,7 +254,7 @@ describe('Blog Management System Integration Tests', () => {
       };
 
       // Create master post (English)
-      const masterPost = await contentCreator.createPost(template, baseVariables, 'en');
+      const masterPost = await contentCreator.createPost(template, baseVariables as any, 'en');
       multiLanguagePost.masterPost = masterPost;
 
       // Create translations
@@ -267,7 +267,7 @@ describe('Blog Management System Integration Tests', () => {
 
           const translatedPost = await contentCreator.createPost(
             template,
-            translatedVariables,
+            translatedVariables as any,
             lang
           );
           multiLanguagePost.translations.set(lang, translatedPost);
@@ -289,17 +289,19 @@ describe('Blog Management System Integration Tests', () => {
       const template = CASE_STUDY_TEMPLATE;
 
       // Test missing required variables
-      await expect(contentCreator.createPost(template, {}, 'en')).rejects.toThrow(
+      await expect(contentCreator.createPost(template, {} as any, 'en')).rejects.toThrow(
         'Required variable'
       );
 
       // Test with partial variables
       const partialVariables = { clientName: 'Test Client' };
-      await expect(contentCreator.createPost(template, partialVariables, 'en')).rejects.toThrow();
+      await expect(
+        contentCreator.createPost(template, partialVariables as any, 'en')
+      ).rejects.toThrow();
 
       // Test with all required variables
       const completeVariables = generateTestVariables('case-study');
-      const blogPost = await contentCreator.createPost(template, completeVariables, 'en');
+      const blogPost = await contentCreator.createPost(template, completeVariables as any, 'en');
 
       expect(blogPost.title).toContain(completeVariables.clientName);
       expect(blogPost.content).toBeDefined();
@@ -318,7 +320,7 @@ describe('Blog Management System Integration Tests', () => {
 
       for (const { id, template } of templates) {
         const variables = generateTestVariables(id);
-        const blogPost = await contentCreator.createPost(template, variables, 'en');
+        const blogPost = await contentCreator.createPost(template, variables as any, 'en');
 
         createdPosts.push(blogPost);
 
@@ -346,7 +348,7 @@ describe('Blog Management System Integration Tests', () => {
       const template = FEATURE_ANNOUNCE_TEMPLATE;
       const variables = generateTestVariables('feature-announce');
 
-      const blogPost = await contentCreator.createPost(template, variables, 'en');
+      const blogPost = await contentCreator.createPost(template, variables as any, 'en');
       const date = new Date();
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -392,7 +394,7 @@ describe('Blog Management System Integration Tests', () => {
       const template = TIMING_GUIDE_TEMPLATE;
       const variables = generateTestVariables('timing-guide');
 
-      const blogPost = await contentCreator.createPost(template, variables, 'en');
+      const blogPost = await contentCreator.createPost(template, variables as any, 'en');
       const date = new Date();
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -411,7 +413,7 @@ describe('Blog Management System Integration Tests', () => {
     test('should test content serialization and deserialization', async () => {
       const originalPost = await contentCreator.createPost(
         TIMING_GUIDE_TEMPLATE,
-        generateTestVariables('timing-guide'),
+        generateTestVariables('timing-guide') as any,
         'en'
       );
 
@@ -440,7 +442,7 @@ describe('Blog Management System Integration Tests', () => {
       const template = PRESENTATION_TIPS_TEMPLATE;
       const variables = generateTestVariables('presentation-tips');
 
-      const blogPost = await contentCreator.createPost(template, variables, 'en');
+      const blogPost = await contentCreator.createPost(template, variables as any, 'en');
       const date = new Date();
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -491,7 +493,11 @@ describe('Blog Management System Integration Tests', () => {
       ];
 
       for (const test of templateTests) {
-        const blogPost = await contentCreator.createPost(test.template, test.variables, 'en');
+        const blogPost = await contentCreator.createPost(
+          test.template,
+          test.variables as any,
+          'en'
+        );
 
         // Verify category
         expect(blogPost.category).toBe(test.expectedCategory);
@@ -510,7 +516,7 @@ describe('Blog Management System Integration Tests', () => {
       const template = TIMING_GUIDE_TEMPLATE;
       const variables = generateTestVariables('timing-guide');
 
-      const blogPost = await contentCreator.createPost(template, variables, 'en');
+      const blogPost = await contentCreator.createPost(template, variables as any, 'en');
 
       // Quality checks
       expect(blogPost.title.length).toBeGreaterThan(10);
@@ -534,12 +540,12 @@ describe('Blog Management System Integration Tests', () => {
       // Test with missing required variables
       const incompleteVariables = { featureName: 'Test Feature' };
       await expect(
-        contentCreator.createPost(template, incompleteVariables, 'en')
+        contentCreator.createPost(template, incompleteVariables as any, 'en')
       ).rejects.toThrow();
 
       // Test with all required variables
       const completeVariables = generateTestVariables('feature-announce');
-      const blogPost = await contentCreator.createPost(template, completeVariables, 'en');
+      const blogPost = await contentCreator.createPost(template, completeVariables as any, 'en');
 
       expect(blogPost.title).toContain(completeVariables.featureName);
       expect(blogPost.content).toBeDefined();
@@ -564,7 +570,11 @@ describe('Blog Management System Integration Tests', () => {
           clientName: `${baseVariables.clientName} (${language.toUpperCase()})`,
         };
 
-        const blogPost = await contentCreator.createPost(template, languageVariables, language);
+        const blogPost = await contentCreator.createPost(
+          template,
+          languageVariables as any,
+          language
+        );
         posts.push(blogPost);
 
         // Verify language-specific properties
