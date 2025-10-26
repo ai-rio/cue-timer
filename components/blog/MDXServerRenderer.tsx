@@ -1,6 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
 
-import { dedentFrontmatter } from '@/lib/utils';
+import { dedentFrontmatter, processBlogContent } from '@/lib/utils';
 
 import CodeBlock from './CodeBlock';
 import FallbackMDXRenderer from './FallbackMDXRenderer';
@@ -217,7 +217,7 @@ function processCustomSyntax(content: string): string {
 
 // Server Component that compiles MDX
 export default async function MDXServerRenderer({ content }: { content: string }) {
-  const processedContent = processCustomSyntax(content);
+  const processedContent = processBlogContent(processCustomSyntax(content));
 
   try {
     const { content: mdxContent } = await compileMDX({

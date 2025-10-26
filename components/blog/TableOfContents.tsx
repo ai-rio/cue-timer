@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,7 +14,11 @@ interface TableOfContentsProps {
 
 export default function TableOfContents({ content, headings, activeId }: TableOfContentsProps) {
   // Extract headings from content if not provided
-  const computedHeadings = headings || (content ? extractHeadings(content) : []);
+  const computedHeadings = useMemo(
+    () => headings || (content ? extractHeadings(content) : []),
+    [headings, content]
+  );
+
   const [currentActiveId, setCurrentActiveId] = useState<string>(activeId || '');
 
   // Update active section based on scroll position
