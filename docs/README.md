@@ -51,7 +51,7 @@ standards.
 - **[Architecture](development/architecture/)**: System architecture and design
   decisions
 - **[Guides](development/guides/)**: Development workflow, troubleshooting, and
-  best practices
+  best practices (includes Timer Visibility Fix guide)
 - **[Roadmap](development/roadmap/)**: Project roadmap and next steps
 - **API Docs**: API endpoints, data models, and integration guides _(Planned)_
 - **Deployment**: Setup instructions, deployment processes, and infrastructure
@@ -66,6 +66,21 @@ Market analysis, competitor research, user research, and data insights.
 - **Competitor Analysis**: Competitive landscape and feature comparisons
 - **User Research**: User interviews, surveys, and persona development
   _(Planned)_
+
+### 📋 Phase Reports
+
+Implementation reports, audit findings, and phase completion documentation.
+
+- **[Phase 1 Tasks](phase-reports/PHASE_1_TASKS.md)**: Initial phase task list
+  and planning
+- **[Design System Implementation](phase-reports/DESIGN_SYSTEM_IMPLEMENTATION.md)**:
+  Design system development report
+- **[Phase 1 Audit Report](phase-reports/PHASE_1_AUDIT_REPORT.md)**:
+  Comprehensive audit findings
+- **[Phase 1 Tasks - Archived](phase-reports/PHASE_1_TASKS-ARCHIVED.md)**:
+  Historical task documentation
+- **[Phase 4 Implementation Summary](phase-reports/PHASE_4_IMPLEMENTATION_SUMMARY.md)**:
+  Final phase implementation report
 
 ### 📝 Templates
 
@@ -151,14 +166,15 @@ All documentation follows kebab-case naming conventions:
 
 ## 📊 Document Status
 
-| Category    | Status      | Files     | Last Updated    |
-| ----------- | ----------- | --------- | --------------- |
-| Strategy    | ✅ Complete | 10 files  | 2025-10-24      |
-| Design      | ✅ Complete | 4 files   | 2025-10-23      |
-| Development | ✅ Complete | 7 files   | 2025-10-23      |
-| Research    | ✅ Complete | 1 file    | 2025-10-23      |
-| Templates   | 🚧 Partial  | 1 file    | 2025-10-23      |
-| Assets      | ✅ Active   | Structure | Structure Ready |
+| Category      | Status      | Files     | Last Updated    |
+| ------------- | ----------- | --------- | --------------- |
+| Strategy      | ✅ Complete | 10 files  | 2025-10-24      |
+| Design        | ✅ Complete | 4 files   | 2025-10-23      |
+| Development   | ✅ Complete | 8 files   | 2025-10-23      |
+| Research      | ✅ Complete | 1 file    | 2025-10-23      |
+| Phase Reports | ✅ Complete | 5 files   | 2025-10-25      |
+| Templates     | 🚧 Partial  | 1 file    | 2025-10-23      |
+| Assets        | ✅ Active   | Structure | Structure Ready |
 
 ### Key Files by Status
 
@@ -221,14 +237,15 @@ If you can't find what you're looking for:
 
 ## 📈 Documentation Statistics
 
-- **Total Files**: 34 documents (28 markdown, 6 JSON)
-- **Categories**: 6 main categories with 29 subdirectories
+- **Total Files**: 40 documents (34 markdown, 6 JSON)
+- **Categories**: 7 main categories with 30+ subdirectories
 - **Coverage**: Strategy, Design, Research, Development sections complete
 - **Market Research**: 345+ timing-related keywords analyzed
 - **Development Docs**: Complete technical setup, workflow, and architecture
   documentation
 - **Strategic Planning**: Comprehensive project roadmap and delivery timeline
-- **Last Major Update**: 2025-10-24 (Consolidated master roadmap documentation)
+- **Last Major Update**: 2025-10-25 (Phase reports organization and
+  documentation cleanup)
 
 ## 🔄 Planned Additions
 
@@ -249,5 +266,5 @@ If you can't find what you're looking for:
 
 ---
 
-**Last Updated:** 2025-10-23 **Maintained by:** CueTimer Team **Review
-Frequency:** Monthly **Next Review:** 2025-11-23
+**Last Updated:** 2025-10-25 **Maintained by:** CueTimer Team **Review
+Frequency:** Monthly **Next Review:** 2025-11-25
