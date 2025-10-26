@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { extractHeadingsFromMdx } from '@/lib/utils';
 import {
   BlogPostEnhanced,
   CueTimerTemplate,
@@ -15,7 +16,7 @@ import {
 
 import BlogErrorBoundary from './BlogErrorBoundary';
 import MDXRenderer from './MDXRenderer';
-import TableOfContents, { extractHeadings } from './TableOfContents';
+import TableOfContents from './TableOfContents';
 
 // Template configurations for UI
 const TEMPLATE_CONFIGS: Record<string, TemplateConfig> = {
@@ -412,7 +413,7 @@ export default function TemplateAwareBlogPostWrapper({
 }: TemplateAwareBlogPostWrapperProps) {
   const headings = useMemo(() => {
     if (post.content) {
-      return extractHeadings(post.content);
+      return extractHeadingsFromMdx(post.content);
     }
     return [];
   }, [post.content]);

@@ -1,6 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
 
-import { dedentFrontmatter, processBlogContent } from '@/lib/utils';
+import { dedentFrontmatter, generateSlug, processBlogContent } from '@/lib/utils';
 
 import CodeBlock from './CodeBlock';
 import FallbackMDXRenderer from './FallbackMDXRenderer';
@@ -13,24 +13,76 @@ interface ComponentProps {
 
 // Custom components for MDX rendering
 const components = {
-  h1: ({ children, ...props }: ComponentProps) => (
-    <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6' {...props}>
-      {children}
-    </h1>
-  ),
-  h2: ({ children, ...props }: ComponentProps) => (
-    <h2
-      className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
-      {...props}
-    >
-      {children}
-    </h2>
-  ),
-  h3: ({ children, ...props }: ComponentProps) => (
-    <h3 className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6' {...props}>
-      {children}
-    </h3>
-  ),
+  h1: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h1
+        id={id}
+        className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6'
+        {...props}
+      >
+        {children}
+      </h1>
+    );
+  },
+  h2: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h2
+        id={id}
+        className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
+        {...props}
+      >
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h3
+        id={id}
+        className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6'
+        {...props}
+      >
+        {children}
+      </h3>
+    );
+  },
+  h4: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h4 id={id} className='scroll-m-20 text-xl font-semibold tracking-tight mb-2 mt-4' {...props}>
+        {children}
+      </h4>
+    );
+  },
+  h5: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h5 id={id} className='scroll-m-20 text-lg font-semibold tracking-tight mb-2 mt-3' {...props}>
+        {children}
+      </h5>
+    );
+  },
+  h6: ({ children, ...props }: ComponentProps) => {
+    const text = typeof children === 'string' ? children : children?.toString?.() || '';
+    const id = generateSlug(text);
+    return (
+      <h6
+        id={id}
+        className='scroll-m-20 text-base font-semibold tracking-tight mb-2 mt-2'
+        {...props}
+      >
+        {children}
+      </h6>
+    );
+  },
   p: ({ children, ...props }: ComponentProps) => (
     <p className='leading-7 [&:not(:first-child)]:mt-6 text-base' {...props}>
       {children}

@@ -1,6 +1,16 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * Import TableOfContentsItem type for the utility functions
+ */
+type TableOfContentsItem = {
+  id: string;
+  text: string;
+  level: number;
+  children: TableOfContentsItem[];
+};
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -117,3 +127,67 @@ export function processMdxContent(content: string): string {
 
 // Alias for processMdxContent for backward compatibility
 export const processBlogContent = processMdxContent;
+
+/**
+ * Extract headings from MDX content with proper slug generation
+ * This function generates heading IDs using the same logic as remark-slug
+ */
+export function extractHeadingsFromMdx(content: string): TableOfContentsItem[] {
+  // Import here to avoid circular dependencies
+  // This matches the heading extraction logic but uses slugified IDs
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm;
+  const headings: TableOfContentsItem[] = [];
+  const stack: TableOfContentsItem[] = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1]?.length || 0;
+    const text = match[2]?.trim() || '';
+
+    // Generate slug using the same algorithm as remark-slug
+    const id = generateSlug(text);
+
+    const heading: TableOfContentsItem = {
+      id,
+      text,
+      level,
+      children: [],
+    };
+
+    // Pop items from stack that are at the same level or deeper
+    while (stack.length > 0) {
+      const lastItem = stack[stack.length - 1];
+      if (lastItem && lastItem.level >= level) {
+        stack.pop();
+      } else {
+        break;
+      }
+    }
+
+    // Add to parent or root
+    if (stack.length === 0) {
+      headings.push(heading);
+    } else {
+      const lastItem = stack[stack.length - 1];
+      if (lastItem) {
+        lastItem.children.push(heading);
+      }
+    }
+
+    stack.push(heading);
+  }
+
+  return headings;
+}
+
+/**
+ * Generate URL-friendly slug from text (matches remark-slug algorithm)
+ */
+export function generateSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '') // Remove non-word chars except hyphens
+    .replace(/[\s_-]+/g, '-') // Replace spaces, underscores, and multiple hyphens with single hyphen
+    .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
+}
