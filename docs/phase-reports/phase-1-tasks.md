@@ -7,7 +7,7 @@ roadmap.
 
 ## **👉 Current Authoritative Roadmap**
 
-**[docs/strategy/roadmap/project-roadmap-master.md](docs/strategy/roadmap/project-roadmap-master.md)**
+**[../../strategy/roadmap/project-roadmap-master.md](../../strategy/roadmap/project-roadmap-master.md)**
 
 ---
 

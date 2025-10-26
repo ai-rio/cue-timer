@@ -7,7 +7,7 @@ This document has been superseded by the consolidated master roadmap.
 ## **Current Authoritative Roadmap**
 
 👉
-**[docs/strategy/roadmap/project-roadmap-master.md](docs/strategy/roadmap/project-roadmap-master.md)**
+**[../../strategy/roadmap/project-roadmap-master.md](../../strategy/roadmap/project-roadmap-master.md)**
 
 ---
 
@@ -15,7 +15,7 @@ This document has been superseded by the consolidated master roadmap.
 
 **Archived Date:** October 24, 2025 **Reason:** Consolidated into master roadmap
 for comprehensive coverage **Replacement:**
-`docs/strategy/roadmap/project-roadmap-master.md`
+`../../strategy/roadmap/project-roadmap-master.md`
 
 ### What Was Archived
 

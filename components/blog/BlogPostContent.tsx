@@ -3,15 +3,26 @@ import { Suspense } from 'react';
 import { extractHeadingsFromMdx } from '@/lib/utils';
 
 import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
+import { InternalLinkInjector } from './InternalLinkInjector';
 import MDXServerRenderer from './MDXServerRenderer';
 import TableOfContents from './TableOfContents';
 
 interface BlogPostContentProps {
   content: string;
+  enableInternalLinks?: boolean;
+  currentSlug?: string;
+  locale?: string;
+  maxInternalLinks?: number;
 }
 
 // Server Component that handles the MDX rendering
-export default async function BlogPostContent({ content }: BlogPostContentProps) {
+export default async function BlogPostContent({
+  content,
+  enableInternalLinks = false,
+  currentSlug = '',
+  locale = 'en',
+  maxInternalLinks = 5,
+}: BlogPostContentProps) {
   // Extract headings on the server side for better performance
   const headings = extractHeadingsFromMdx(content);
 
@@ -22,7 +33,17 @@ export default async function BlogPostContent({ content }: BlogPostContentProps)
         <BlogErrorBoundary fallback={MDXErrorFallback}>
           <div className='prose prose-gray max-w-none'>
             <Suspense fallback={<div className='animate-pulse'>Loading content...</div>}>
-              <MDXServerRenderer content={content} />
+              {enableInternalLinks && currentSlug ? (
+                <InternalLinkInjector
+                  content={content}
+                  currentSlug={currentSlug}
+                  locale={locale}
+                  maxLinks={maxInternalLinks}
+                  className='prose prose-gray max-w-none'
+                />
+              ) : (
+                <MDXServerRenderer content={content} />
+              )}
             </Suspense>
           </div>
         </BlogErrorBoundary>

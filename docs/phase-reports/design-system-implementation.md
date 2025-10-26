@@ -15,7 +15,7 @@ adhering to the requirement of using **only shadcn/ui components**.
 - `/app/[locale]/design-system/README.md` - Documentation and usage guidelines
 - `/app/[locale]/design-system/test-assertions.md` - Validation checklist and
   test assertions
-- `/DESIGN_SYSTEM_IMPLEMENTATION.md` - This summary document
+- `/docs/phase-reports/design-system-implementation.md` - This summary document
 
 ### Modified Files:
 

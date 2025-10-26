@@ -1,5 +1,8 @@
 import { type ClassValue, clsx } from 'clsx';
+import { remark } from 'remark';
 import { twMerge } from 'tailwind-merge';
+
+import { remarkInternalLinkInserter } from './mdx-plugins/internal-link-inserter';
 
 /**
  * Import TableOfContentsItem type for the utility functions
@@ -127,6 +130,37 @@ export function processMdxContent(content: string): string {
 
 // Alias for processMdxContent for backward compatibility
 export const processBlogContent = processMdxContent;
+
+/**
+ * Process MDX content with internal link injection
+ * Extends existing processMdxContent() functionality
+ */
+export async function processMdxContentWithLinks(
+  content: string,
+  currentSlug: string,
+  locale: string,
+  maxLinks: number = 5
+): Promise<string> {
+  try {
+    // Apply existing dedenting logic from processMdxContent()
+    const dedentedContent = content.replace(/^[\r\n]+/, '').replace(/\t+$/gm, '');
+
+    // Apply internal link injection
+    const result = await remark()
+      .use(remarkInternalLinkInserter, {
+        currentSlug,
+        maxLinks,
+        locale,
+      })
+      .process(dedentedContent);
+
+    return String(result);
+  } catch (error) {
+    console.error('Error processing MDX content with links:', error);
+    // Fallback to existing processMdxContent
+    return processMdxContent(content);
+  }
+}
 
 /**
  * Extract headings from MDX content with proper slug generation
