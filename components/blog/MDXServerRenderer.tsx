@@ -297,11 +297,11 @@ export default async function MDXServerRenderer({ content }: { content: string }
     let errorType = 'Unknown';
 
     if (error instanceof Error) {
-      errorMessage = error.message;
-      errorStack = error.stack;
-      errorType = error.constructor.name;
+      errorMessage = (error as Error).message;
+      errorStack = (error as Error).stack;
+      errorType = (error as Error).constructor.name;
     } else if (typeof error === 'string') {
-      errorMessage = error;
+      errorMessage = error as string;
       errorType = 'String';
     } else if (error && typeof error === 'object') {
       // Handle cases where error is an object but not an Error instance
