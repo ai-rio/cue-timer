@@ -1,0 +1,29 @@
+{
+  "title": "CueTimer",
+  "subtitle": "Professional presentation timer platform with real-time synchronization for perfect event timing.",
+  "getStarted": "Get Started",
+  "watchDemo": "Watch Demo",
+  "features": {
+    "title": "Features",
+    "realtime": {
+      "title": "Real-time Synchronization",
+      "description": "Keep everyone in sync with real-time timer updates across all devices."
+    },
+    "professional": {
+      "title": "Professional Controls",
+      "description": "Industry-standard timing controls with customizable segments and warnings."
+    },
+    "multilingual": {
+      "title": "Multi-language Support",
+      "description": "Available in multiple languages to serve international events and teams."
+    },
+    "analytics": {
+      "title": "Detailed Analytics",
+      "description": "Comprehensive timing reports and insights for continuous improvement."
+    }
+  },
+  "cta": {
+    "primary": "Start Free Trial",
+    "secondary": "Schedule Demo"
+  }
+}

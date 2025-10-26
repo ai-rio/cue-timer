@@ -159,13 +159,99 @@ Desktop: 1024px+ (optional expanded features)
 
 ### Component Library
 
-#### Buttons
+#### 🚨 **MANDATORY: Use shadcn/ui Components Only**
 
-- **Primary Buttons:** Spotlight Orange background, white text, 48px height
-  minimum
-- **Secondary Buttons:** Outline style, Professional Gray border, 44px height
-  minimum
-- **Icon Buttons:** 44px × 44px minimum, clear icons, touch-friendly spacing
+**NO CUSTOM COMPONENTS SHOULD BE BUILT FROM SCRATCH**
+
+All UI components must use the installed shadcn/ui component library located in
+`components/ui/`. This ensures:
+
+- **Consistent Design Language** across the entire application
+- **Accessibility Compliance** (WCAG AA built-in)
+- **Type Safety** with full TypeScript support
+- **Maintainability** with proven component patterns
+- **Development Speed** with ready-to-use components
+
+#### Available shadcn/ui Components
+
+The following components are installed and ready for use:
+
+**Core Components:**
+
+- `Button` - Primary, secondary, destructive, outline, ghost variants
+- `Card` - Container components with header, content, footer
+- `Input` - Form input fields with validation
+- `Label` - Form labels with proper accessibility
+- `Select` - Dropdown selection with search
+- `Checkbox` - Boolean input controls
+- `Switch` - Toggle switches
+- `Tabs` - Tab navigation system
+- `Dialog` - Modal dialogs and overlays
+- `Dropdown Menu` - Context menus
+- `Progress` - Progress indicators
+- `Badge` - Status badges
+- `Avatar` - User avatars
+- `Separator` - Visual dividers
+- `Form` - Form validation components
+
+#### Customization Rules
+
+**DO Customize:**
+
+- **Colors**: Apply brand colors using Tailwind CSS classes
+- **Spacing**: Use consistent spacing with Tailwind utilities
+- **Typography**: Apply Inter font family using Tailwind classes
+- **Sizing**: Adjust component sizes with Tailwind classes
+- **Variants**: Create component variants for specific use cases
+
+**DO NOT Create:**
+
+- Custom button components (use `components/ui/button.tsx`)
+- Custom card components (use `components/ui/card.tsx`)
+- Custom form components (use installed shadcn forms)
+- Custom dialog components (use `components/ui/dialog.tsx`)
+- Any UI component that shadcn already provides
+
+#### Brand Application Examples
+
+```tsx
+// ✅ CORRECT: Using shadcn components with brand colors
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+
+<Button
+  className="bg-orange-500 hover:bg-orange-600 text-white"
+  size="lg"
+>
+  Start Timer
+</Button>
+
+<Card className="border-gray-200 shadow-sm">
+  <CardHeader>
+    <CardTitle className="text-gray-900">Timer Settings</CardTitle>
+  </CardHeader>
+  <CardContent>
+    {/* Content */}
+  </CardContent>
+</Card>
+
+// ❌ INCORRECT: Building custom components
+export const CustomButton = () => {
+  return (
+    <button className="bg-orange-500 text-white px-4 py-2">
+      {/* This should use shadcn Button instead */}
+    </button>
+  )
+}
+```
+
+#### Component Architecture Pattern
+
+1. **Import from shadcn**: Always import from `@/components/ui/`
+2. **Apply brand styling**: Use Tailwind classes for brand colors
+3. **Extend with variants**: Create custom variants when needed
+4. **Maintain accessibility**: Don't override shadcn accessibility features
+5. **Consistent patterns**: Follow shadcn component patterns throughout
 
 #### Timer Display
 
@@ -433,22 +519,30 @@ font-display: swap; /* Prevents FOUT, improves performance */
 
 ### Pre-Launch Requirements
 
-- [ ] All color combinations pass WCAG AA testing
-- [ ] Touch targets meet 44px minimum requirement
-- [ ] Font loading optimization implemented
-- [ ] Offline functionality tested and verified
-- [ ] Cross-browser compatibility testing completed
-- [ ] Mobile device testing on various screen sizes
-- [ ] Accessibility audit with screen readers completed
-- [ ] Performance optimization (under 3s load time)
+- [ ] **All color combinations pass WCAG AA testing**
+- [ ] **Touch targets meet 44px minimum requirement**
+- [ ] **Font loading optimization implemented**
+- [ ] **Offline functionality tested and verified**
+- [ ] **Cross-browser compatibility testing completed**
+- [ ] **Mobile device testing on various screen sizes**
+- [ ] **Accessibility audit with screen readers completed**
+- [ ] **Performance optimization (under 3s load time)**
+- [ ] **shadcn/ui components properly integrated throughout app**
+- [ ] **No custom UI components built from scratch**
+- [ ] **Brand colors properly applied to shadcn components**
+- [ ] **Component consistency verified across all screens**
 
 ### Quality Assurance
 
-- [ ] Visual consistency across all screens
-- [ ] Brand guidelines adherence verified
-- [ ] User testing with target audience completed
-- [ ] Error handling and edge cases covered
-- [ ] Documentation for development team created
+- [ ] **Visual consistency across all screens**
+- [ ] **Brand guidelines adherence verified**
+- [ ] **User testing with target audience completed**
+- [ ] **Error handling and edge cases covered**
+- [ ] **Documentation for development team created**
+- [ ] **shadcn/ui component usage compliance verified**
+- [ ] **No custom components found during code review**
+- [ ] **Accessibility testing with shadcn components passed**
+- [ ] **Mobile responsiveness tested with shadcn components**
 
 ---
 

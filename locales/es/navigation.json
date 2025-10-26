@@ -1,0 +1,20 @@
+{
+  "home": "Home",
+  "dashboard": "Dashboard",
+  "events": "Events",
+  "timers": "Timers",
+  "pricing": "Pricing",
+  "blog": "Blog",
+  "about": "About",
+  "contact": "Contact",
+  "login": "Login",
+  "signup": "Sign Up",
+  "logout": "Logout",
+  "profile": "Profile",
+  "settings": "Settings",
+  "backToHome": "Back to Home",
+  "language": "Language",
+  "theme": "Theme",
+  "help": "Help",
+  "support": "Support"
+}

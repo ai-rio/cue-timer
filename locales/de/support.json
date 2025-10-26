@@ -1,0 +1,21 @@
+{
+  "title": "Support",
+  "helpCenter": "Help Center",
+  "contactUs": "Contact Us",
+  "documentation": "Documentation",
+  "faq": "Frequently Asked Questions",
+  "tutorials": "Tutorials",
+  "community": "Community",
+  "reportIssue": "Report an Issue",
+  "featureRequest": "Request a Feature",
+  "subject": "Subject",
+  "message": "Message",
+  "send": "Send Message",
+  "searchHelp": "Search for help",
+  "category": "Category",
+  "priority": "Priority",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
+  "urgent": "Urgent"
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Blog CueTimer - Conseils de Temporisation d'Événements et Productivité",
+    "description": "Lisez les derniers articles sur la gestion d'événements, l'optimisation des minuteurs et les conseils de présentation professionnelle des experts CueTimer."
+  },
+  "title": "Blog CueTimer",
+  "subtitle": "Insights d'experts sur la temporisation d'événements, la productivité et les compétences de présentation professionnelle. Apprenez des experts du secteur et améliorez vos événements.",
+  "loading": "Chargement des articles du blog...",
+  "error": "Erreur lors du chargement des articles du blog",
+  "empty": "Aucun article du blog trouvé.",
+  "featured": "En vedette",
+  "minRead": "min de lecture",
+  "readMore": "Lire Plus",
+  "backToBlog": "Retour au Blog",
+  "relatedPosts": "Articles Connexes",
+  "navigation": {
+    "previous": "Article Précédent",
+    "next": "Article Suivant"
+  },
+  "categories": {
+    "timing": "Temporisation",
+    "productivity": "Productivité",
+    "events": "Événements",
+    "features": "Fonctionnalités",
+    "tutorials": "Tutoriels",
+    "industry": "Secteur"
+  },
+  "filter": {
+    "searchPlaceholder": "Rechercher des articles du blog...",
+    "categoryLabel": "Catégorie",
+    "allCategories": "Toutes les Catégories",
+    "featuredOnly": "Seulement en Vedette",
+    "clearFilters": "Effacer les Filtres",
+    "activeFilters": "Filtres Actifs"
+  }
+}

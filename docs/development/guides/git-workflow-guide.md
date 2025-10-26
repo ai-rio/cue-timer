@@ -246,35 +246,41 @@ git push origin --delete hotfix/critical-fix
 - ❌ Skip commit message validation
 - ❌ Commit sensitive data
 
-## QuoteKit Integration Readiness
+## Marketing Infrastructure Readiness
 
-The Git Flow workflow is fully prepared for QuoteKit integration:
+The Git Flow workflow is fully prepared for autonomous marketing infrastructure
+development:
 
-1. **Feature Branches**: Ready for `feature/quotekit-*` branches
+1. **Feature Branches**: Ready for `feature/marketing-*` branches
 2. **Marketing Content**: Dedicated `marketing` commit type available
 3. **Content Validation**: MDX and markdown validation in place
 4. **Code Quality**: Strict linting for marketing components
 5. **Release Process**: Tested and ready for regular releases
 
-### Suggested QuoteKit Workflow
+### **IMPORTANT: QuoteKit Reference-Only Policy**
+
+QuoteKit is used as reference inspiration only - **NO QuoteKit packages or
+dependencies** will be installed.
+
+### Suggested Marketing Infrastructure Workflow
 
 ```bash
-# Start QuoteKit feature
+# Start marketing infrastructure feature
 git checkout develop
 git pull origin develop
-git checkout -b feature/quotekit-landing-page
+git checkout -b feature/marketing-landing-page
 
-# Work on QuoteKit integration...
+# Work on marketing infrastructure (inspired by QuoteKit patterns)...
 git add .
-git commit -m "feat(marketing): integrate QuoteKit landing page components"
+git commit -m "feat(marketing): build independent landing page components"
 
 # Test and validate
 bun run quality:check
 bun run dev
 
-# Complete integration
+# Complete implementation
 git checkout develop
-git merge --no-ff feature/quotekit-landing-page
+git merge --no-ff feature/marketing-landing-page
 git push origin develop
 ```
 
@@ -337,5 +343,5 @@ The workflow is designed to integrate seamlessly with CI/CD pipelines:
 - **Branch protection** enforces proper workflow
 
 This Git Flow implementation provides a robust, professional development
-workflow suitable for the CueTimer project's QuoteKit integration phase and
-ongoing development.
+workflow suitable for the CueTimer project's autonomous marketing infrastructure
+development phase and ongoing development.

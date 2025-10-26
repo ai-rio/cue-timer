@@ -1,0 +1,79 @@
+{
+  "title": "Presentations",
+  "description": "Manage presentation schedules and timing",
+  "create": {
+    "title": "Create Presentation",
+    "name": "Presentation Title",
+    "namePlaceholder": "Keynote: Future of Technology",
+    "speaker": "Speaker",
+    "speakerPlaceholder": "John Smith",
+    "description": "Description",
+    "descriptionPlaceholder": "An overview of emerging technology trends",
+    "duration": "Duration",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "room": "Room/Stage",
+    "roomPlaceholder": "Main Stage",
+    "type": "Presentation Type",
+    "types": {
+      "keynote": "Keynote",
+      "talk": "Talk",
+      "workshop": "Workshop",
+      "panel": "Panel Discussion",
+      "lightning": "Lightning Talk",
+      "tutorial": "Tutorial"
+    }
+  },
+  "segments": {
+    "title": "Presentation Segments",
+    "add": "Add Segment",
+    "remove": "Remove Segment",
+    "name": "Segment Name",
+    "duration": "Duration",
+    "warnings": "Enable Warnings",
+    "preset": "Use Preset",
+    "presets": {
+      "standard": "Standard Presentation",
+      "withQA": "With Q&A",
+      "workshop": "Workshop Format",
+      "panel": "Panel Discussion",
+      "lightning": "Lightning Talk"
+    }
+  },
+  "details": {
+    "title": "Presentation Details",
+    "speaker": "Speaker",
+    "duration": "Duration",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "room": "Location",
+    "status": "Status",
+    "segments": "Segments"
+  },
+  "actions": {
+    "create": "Create Presentation",
+    "edit": "Edit Presentation",
+    "delete": "Delete Presentation",
+    "duplicate": "Duplicate Presentation",
+    "start": "Start Presentation",
+    "joinAsPresenter": "Join as Presenter",
+    "joinAsController": "Join as Timer Controller",
+    "viewAsAudience": "View as Audience"
+  },
+  "status": {
+    "scheduled": "Scheduled",
+    "ready": "Ready",
+    "running": "Running",
+    "paused": "Paused",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "realtime": {
+    "connected": "Connected to timer",
+    "disconnected": "Disconnected from timer",
+    "reconnecting": "Reconnecting...",
+    "syncStatus": "Sync Status",
+    "lastUpdate": "Last Update",
+    "participants": "Participants"
+  }
+}

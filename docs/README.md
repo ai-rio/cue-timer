@@ -105,7 +105,7 @@ Images, brand resources, and other visual assets.
 
 ### For Product Managers
 
-- [Product Roadmap](strategy/roadmap/project-roadmap.md)
+- [Product Roadmap](strategy/roadmap/project-roadmap-master.md)
 - [Product Strategy](strategy/)
 - [Content Strategy](strategy/content-strategy.md)
 - [Market Research](research/market-analysis/)
@@ -166,8 +166,9 @@ All documentation follows kebab-case naming conventions:
 
 - **[Project Brief](strategy/project-planning/project-brief.md)** -
   Comprehensive MVP planning
-- **[Project Roadmap](strategy/roadmap/project-roadmap.md)** - Complete
-  development timeline and feature delivery plan
+- **[Project Roadmap](strategy/roadmap/project-roadmap-master.md)** -
+  **Consolidated master roadmap** with strategic planning + implementation
+  details
 - **[Design System](design/branding/design-system.md)** - Complete brand
   guidelines
 - **[System Architecture](design/technical-specs/system-architecture.md)** -
@@ -176,8 +177,9 @@ All documentation follows kebab-case naming conventions:
   Real-time presenter communication
 - **[PowerSync Integration](development/guides/powersync-implementation-guide.md)** -
   Offline-first synchronization
-- **[QuoteKit Integration](development/guides/quotekit-integration-plan.md)** -
-  Marketing site and payment system
+- **[Marketing Infrastructure Plan](development/guides/quotekit-integration-plan.md)** -
+  Autonomous marketing site and payment system (QuoteKit patterns as reference
+  only)
 - **[Technical Setup Summary](development/setup/technical-setup-summary.md)** -
   Complete technical architecture and configuration
 - **[Development Workflow](development/guides/development-workflow.md)** -
@@ -186,8 +188,9 @@ All documentation follows kebab-case naming conventions:
   System architecture and design decisions
 - **[Troubleshooting Guide](development/guides/troubleshooting-guide.md)** -
   Common issues and solutions
-- **[Project Roadmap](strategy/roadmap/project-roadmap.md)** - Comprehensive
-  development timeline and feature delivery plan
+- **[Project Roadmap](strategy/roadmap/project-roadmap-master.md)** -
+  **Consolidated master roadmap** with strategic planning + implementation
+  details
 - **[Go-to-Market Strategy](strategy/go-to-market/go-to-market-strategy.md)** -
   Market positioning
 - **[Content Strategy](strategy/content-strategy.md)** - Brand voice and
@@ -225,7 +228,7 @@ If you can't find what you're looking for:
 - **Development Docs**: Complete technical setup, workflow, and architecture
   documentation
 - **Strategic Planning**: Comprehensive project roadmap and delivery timeline
-- **Last Major Update**: 2025-10-24 (Project roadmap documentation)
+- **Last Major Update**: 2025-10-24 (Consolidated master roadmap documentation)
 
 ## 🔄 Planned Additions
 

@@ -1,0 +1,70 @@
+{
+  "title": "Events",
+  "description": "Manage your events and presentations",
+  "create": {
+    "title": "Create Event",
+    "name": "Event Name",
+    "namePlaceholder": "Annual Conference 2024",
+    "description": "Description",
+    "descriptionPlaceholder": "Annual company conference with multiple speakers",
+    "date": "Event Date",
+    "time": "Event Time",
+    "location": "Location",
+    "locationPlaceholder": "Conference Center Main Hall",
+    "type": "Event Type",
+    "types": {
+      "conference": "Conference",
+      "meeting": "Meeting",
+      "webinar": "Webinar",
+      "workshop": "Workshop",
+      "presentation": "Presentation",
+      "training": "Training Session"
+    },
+    "timezone": "Timezone",
+    "maxDuration": "Maximum Duration",
+    "speakers": "Speakers",
+    "addSpeaker": "Add Speaker"
+  },
+  "details": {
+    "eventName": "Event Name",
+    "eventType": "Event Type",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location",
+    "duration": "Duration",
+    "status": "Status",
+    "speakers": "Speakers",
+    "timers": "Timers",
+    "attendees": "Attendees"
+  },
+  "list": {
+    "upcoming": "Upcoming Events",
+    "past": "Past Events",
+    "all": "All Events",
+    "noEvents": "No events found",
+    "createFirst": "Create your first event"
+  },
+  "actions": {
+    "createEvent": "Create Event",
+    "editEvent": "Edit Event",
+    "deleteEvent": "Delete Event",
+    "duplicateEvent": "Duplicate Event",
+    "exportReport": "Export Report",
+    "shareEvent": "Share Event",
+    "joinEvent": "Join Event",
+    "leaveEvent": "Leave Event"
+  },
+  "roles": {
+    "organizer": "Organizer",
+    "presenter": "Presenter",
+    "controller": "Timer Controller",
+    "viewer": "Viewer"
+  },
+  "status": {
+    "draft": "Draft",
+    "published": "Published",
+    "active": "Active",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
+}

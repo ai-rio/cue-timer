@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "CueTimer Blog - Expert Event Timing & Productivity Tips",
+    "description": "Read the latest articles on event management, timer optimization, and professional presentation tips from CueTimer experts."
+  },
+  "title": "CueTimer Blog",
+  "subtitle": "Expert insights on event timing, productivity, and professional presentation skills. Learn from industry experts and take your events to the next level.",
+  "loading": "Loading blog posts...",
+  "error": "Error loading blog posts",
+  "empty": "No blog posts found.",
+  "featured": "Featured",
+  "minRead": "min read",
+  "readMore": "Read More",
+  "backToBlog": "Back to Blog",
+  "relatedPosts": "Related Posts",
+  "navigation": {
+    "previous": "Previous Post",
+    "next": "Next Post"
+  },
+  "categories": {
+    "timing": "Timing",
+    "productivity": "Productivity",
+    "events": "Events",
+    "features": "Features",
+    "tutorials": "Tutorials",
+    "industry": "Industry"
+  },
+  "filter": {
+    "searchPlaceholder": "Search blog posts...",
+    "categoryLabel": "Category",
+    "allCategories": "All Categories",
+    "featuredOnly": "Featured Only",
+    "clearFilters": "Clear Filters",
+    "activeFilters": "Active Filters"
+  }
+}

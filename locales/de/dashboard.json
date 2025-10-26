@@ -1,0 +1,14 @@
+{
+  "title": "Dashboard",
+  "welcome": "Welcome back",
+  "overview": "Overview",
+  "recentActivity": "Recent Activity",
+  "quickActions": "Quick Actions",
+  "statistics": "Statistics",
+  "events": "Events",
+  "timers": "Timers",
+  "totalEvents": "Total Events",
+  "totalTimers": "Total Timers",
+  "activeTimers": "Active Timers",
+  "upcomingEvents": "Upcoming Events"
+}

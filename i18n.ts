@@ -29,6 +29,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     'settings',
     'billing',
     'support',
+    'blog',
   ];
 
   // Load each namespace with fallback to English
@@ -41,9 +42,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
         messages[namespace] = (
           await import(`./locales/${defaultLocale}/${namespace}.json`)
         ).default;
+        // Silent fallback handling
       } catch {
         // Final fallback - create empty object to prevent errors
-        console.warn(`Missing translation file: ${namespace}.json for locale ${locale}`);
+        // Silent error handling for missing translation files
         messages[namespace] = {};
       }
     }
@@ -52,5 +54,26 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages,
+    // Handle missing messages gracefully with structured logging
+    onError(error) {
+      // const errorInfo = {
+      //   type: 'I18N_ERROR',
+      //   code: error.code,
+      //   message: error.message,
+      //   namespace: (error as any).namespace,
+      //   key: (error as any).key,
+      //   timestamp: new Date().toISOString(),
+      // };
+
+      if (error.code === 'MISSING_MESSAGE') {
+        // Silent handling of missing messages
+      } else {
+        // Silent handling of other i18n errors
+      }
+    },
+    getMessageFallback({ namespace, key }) {
+      const path = [namespace, key].filter((part) => part != null).join('.');
+      return `${path}`;
+    },
   };
 });

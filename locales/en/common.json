@@ -18,7 +18,8 @@
     "logout": "Logout",
     "profile": "Profile",
     "settings": "Settings",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "getStarted": "Get Started"
   },
   "auth": {
     "email": "Email",

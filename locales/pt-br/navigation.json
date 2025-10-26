@@ -12,5 +12,9 @@
   "logout": "Sair",
   "profile": "Perfil",
   "settings": "Configurações",
-  "backToHome": "Voltar ao Início"
+  "backToHome": "Voltar ao Início",
+  "language": "Idioma",
+  "theme": "Tema",
+  "help": "Ajuda",
+  "support": "Suporte"
 }

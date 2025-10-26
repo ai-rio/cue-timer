@@ -42,9 +42,16 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     "**/*.mdx",
     "content/**/*.md",
-    "content/**/*.mdx"
+    "content/**/*.mdx",
+    ".next/dev/types/**/*.ts",
+    "jest.config.*.js",
+    "*.config.js",
+    "global.d.ts",
+    "types/**/*.d.ts"
   ],
   "exclude": ["node_modules", ".next", "out", "build", "coverage", "ios", "android"]
 }

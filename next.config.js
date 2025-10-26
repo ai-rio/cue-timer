@@ -15,11 +15,36 @@ const nextConfig = {
   // Enable transpilation of packages
   transpilePackages: ['@radix-ui/react-slot', '@ionic/react'],
   // Configure webpack to handle vendor chunks properly
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
+        crypto: false,
+        stream: false,
+        assert: false,
+        http: false,
+        https: false,
+        os: false,
+        url: false,
+      };
+
+      // Fix module concatenation issues that cause "Cannot read properties of undefined (reading 'call')"
+      config.optimization.concatenateModules = false;
+
+      // Handle dynamic imports properly
+      config.externals = config.externals || [];
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        // Ensure proper module resolution
+      };
+
+      // Fix React server components issues
+      config.resolve.extensionAlias = {
+        '.js': ['.js', '.jsx', '.ts', '.tsx'],
+        '.jsx': ['.jsx', '.tsx'],
+        '.ts': ['.ts', '.tsx'],
+        '.tsx': ['.tsx'],
       };
     }
     return config;
