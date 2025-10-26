@@ -6,6 +6,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypePrismPlus from 'rehype-prism-plus';
 
 import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
+import FallbackMDXRenderer from './FallbackMDXRenderer';
 
 interface MDXRendererProps {
   content: string;
@@ -244,9 +245,13 @@ async function MDXContent({ content }: { content: string }) {
       source: processedContent,
       components: { ...components, ...customComponents },
       options: {
+        parseFrontmatter: true,
         mdxOptions: {
           remarkPlugins: [],
-          rehypePlugins: [rehypeHighlight, rehypePrismPlus],
+          rehypePlugins: [
+            [rehypeHighlight, { detect: true, ignoreMissing: true }],
+            [rehypePrismPlus, { detect: true, ignoreMissing: true }],
+          ],
         },
       },
     });
@@ -268,6 +273,12 @@ async function MDXContent({ content }: { content: string }) {
     if (process.env.NODE_ENV === 'production') {
       // Example: Send to error reporting service
       // reportError(errorDetails);
+    }
+
+    // If the error is related to rehype plugins, use fallback
+    if (error instanceof Error && error.message.includes('start')) {
+      console.warn('Falling back to basic MDX renderer due to rehype plugin error');
+      return <FallbackMDXRenderer content={content} />;
     }
 
     // Throw the error to be caught by the error boundary

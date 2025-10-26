@@ -747,6 +747,12 @@ async function EnhancedMDXContent({
   try {
     const compileMDX = await loadCompileMDX();
     const [rehypeHighlight, rehypePrismPlus] = await loadRehypePlugins();
+
+    // Validate plugins before passing to compileMDX
+    if (!rehypeHighlight || !rehypePrismPlus) {
+      throw new Error('Failed to load rehype plugins');
+    }
+
     const { content: mdxContent } = await compileMDX({
       source: processedContent,
       components: {
@@ -754,10 +760,13 @@ async function EnhancedMDXContent({
         ...enhancedCustomComponents,
       },
       options: {
+        parseFrontmatter: true,
         mdxOptions: {
           remarkPlugins: [],
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          rehypePlugins: [rehypeHighlight as any, rehypePrismPlus as any],
+          rehypePlugins: [
+            [rehypeHighlight, { detect: true, ignoreMissing: true }],
+            [rehypePrismPlus, { detect: true, ignoreMissing: true }],
+          ],
         },
       },
     });
