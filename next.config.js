@@ -4,6 +4,8 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Explicitly set workspace root for git worktree environments
+  outputFileTracingRoot: '/home/carlos/projects/cue-timer/.worktrees/blog-management',
   experimental: {
     // Enable server actions with proper configuration
     serverActions: {
