@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+import BlogPostContent from '@/components/blog/BlogPostContent';
 import BlogPostNavigation from '@/components/blog/BlogPostNavigation';
-import BlogPostWrapper from '@/components/blog/BlogPostWrapper';
 import RelatedPosts from '@/components/blog/RelatedPosts';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -207,9 +207,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
-          <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
-            <BlogPostWrapper content={post.content} />
-          </div>
+          <BlogPostContent content={post.content} />
         </article>
 
         {/* Share section */}

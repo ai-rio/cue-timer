@@ -7,17 +7,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { TableOfContentsItem } from '@/types/blog';
 
 interface TableOfContentsProps {
-  headings: TableOfContentsItem[];
+  content?: string;
+  headings?: TableOfContentsItem[];
   activeId?: string;
 }
 
-export default function TableOfContents({ headings, activeId }: TableOfContentsProps) {
+export default function TableOfContents({ content, headings, activeId }: TableOfContentsProps) {
+  // Extract headings from content if not provided
+  const computedHeadings = headings || (content ? extractHeadings(content) : []);
   const [currentActiveId, setCurrentActiveId] = useState<string>(activeId || '');
 
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const headingElements = headings.map((heading) => ({
+      const headingElements = computedHeadings.map((heading) => ({
         id: heading.id,
         element: document.getElementById(heading.id),
       }));
@@ -38,9 +41,9 @@ export default function TableOfContents({ headings, activeId }: TableOfContentsP
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [headings]);
+  }, [computedHeadings]);
 
-  if (headings.length === 0) {
+  if (computedHeadings.length === 0) {
     return null;
   }
 
@@ -84,14 +87,14 @@ export default function TableOfContents({ headings, activeId }: TableOfContentsP
         <CardTitle className='text-lg flex items-center justify-between'>
           Table of Contents
           <Badge variant='secondary' className='text-xs'>
-            {headings.length} sections
+            {computedHeadings.length} sections
           </Badge>
         </CardTitle>
       </CardHeader>
       <CardContent className='pt-0'>
         <nav aria-label='Table of Contents'>
           <ul className='space-y-1'>
-            {headings.map((heading) => renderTableOfContentsItem(heading))}
+            {computedHeadings.map((heading) => renderTableOfContentsItem(heading))}
           </ul>
         </nav>
       </CardContent>

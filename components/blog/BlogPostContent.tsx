@@ -1,0 +1,38 @@
+import { Suspense } from 'react';
+
+import BlogErrorBoundary, { MDXErrorFallback } from './BlogErrorBoundary';
+import MDXServerRenderer from './MDXServerRenderer';
+import TableOfContents from './TableOfContents';
+
+interface BlogPostContentProps {
+  content: string;
+}
+
+// Server Component that handles the MDX rendering
+export default async function BlogPostContent({ content }: BlogPostContentProps) {
+  // Note: extractHeadings is a client function, so we'll pass the content to the client component
+
+  return (
+    <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
+      {/* Main content */}
+      <div className='lg:col-span-3'>
+        <BlogErrorBoundary fallback={MDXErrorFallback}>
+          <div className='prose prose-gray max-w-none'>
+            <Suspense fallback={<div className='animate-pulse'>Loading content...</div>}>
+              <MDXServerRenderer content={content} />
+            </Suspense>
+          </div>
+        </BlogErrorBoundary>
+      </div>
+
+      {/* Table of Contents */}
+      <aside className='lg:col-span-1'>
+        <BlogErrorBoundary>
+          <div className='hidden lg:block'>
+            <TableOfContents content={content} />
+          </div>
+        </BlogErrorBoundary>
+      </aside>
+    </div>
+  );
+}
