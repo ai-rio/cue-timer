@@ -1,5 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
-import rehypeHighlight from 'rehype-highlight';
+
+import { dedentFrontmatter } from '@/lib/utils';
 
 import CodeBlock from './CodeBlock';
 import FallbackMDXRenderer from './FallbackMDXRenderer';
@@ -174,9 +175,12 @@ const customComponents = {
   ),
 };
 
-// Process content to handle custom syntax
+// Process content to handle custom syntax and frontmatter issues
 function processCustomSyntax(content: string): string {
   let processedContent = content;
+
+  // Fix frontmatter indentation using the dedent utility
+  processedContent = dedentFrontmatter(processedContent);
 
   // Process info cards: {{info:Title}}Content{{/info}}
   processedContent = processedContent.replace(
@@ -223,32 +227,47 @@ export default async function MDXServerRenderer({ content }: { content: string }
         parseFrontmatter: true,
         mdxOptions: {
           remarkPlugins: [],
-          rehypePlugins: [
-            [
-              rehypeHighlight,
-              {
-                detect: true,
-                ignoreMissing: true,
-                plainSyntax: true,
-              },
-            ],
-          ],
+          rehypePlugins: [],
         },
       },
     });
 
     return mdxContent;
   } catch (error) {
-    // Enhanced error logging
+    // Enhanced error logging with proper serialization for Server Components
+    let errorMessage = 'Unknown error';
+    let errorStack = undefined;
+    let errorType = 'Unknown';
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+      errorStack = error.stack;
+      errorType = error.constructor.name;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+      errorType = 'String';
+    } else if (error && typeof error === 'object') {
+      // Handle cases where error is an object but not an Error instance
+      errorMessage = (error as { message?: string }).message || JSON.stringify(error);
+      errorType = (error as { constructor?: { name?: string } }).constructor?.name || 'Object';
+    }
+
     const errorDetails = {
-      message: error instanceof Error ? error.message : 'Unknown error',
-      stack: error instanceof Error ? error.stack : undefined,
+      type: errorType,
+      message: errorMessage,
+      stack: errorStack,
       contentLength: content.length,
       hasCustomSyntax: /{{(info|tip|warning|callout|tag)}}/.test(content),
+      hasFrontmatter: content.trimStart().startsWith('---'),
+      frontmatterIndented: !content.startsWith('---') && content.includes('---'),
       timestamp: new Date().toISOString(),
     };
 
-    console.error('MDX compilation error:', errorDetails);
+    // Log error details as JSON for proper serialization
+    console.error('MDX compilation error:', JSON.stringify(errorDetails, null, 2));
+
+    // Also log the raw error for debugging
+    console.error('Raw error object:', error);
 
     // In production, you might want to send this to an error reporting service
     if (process.env.NODE_ENV === 'production') {
@@ -256,13 +275,47 @@ export default async function MDXServerRenderer({ content }: { content: string }
       // reportError(errorDetails);
     }
 
-    // If the error is related to MDX compilation, use fallback
-    if (
-      error instanceof Error &&
-      (error.message.includes('start') ||
-        error.message.includes('next-mdx-remote') ||
-        error.message.includes('MDX'))
-    ) {
+    // Check for specific error patterns and handle accordingly
+    const isFrontmatterError =
+      errorMessage.includes('frontmatter') ||
+      errorMessage.includes('yaml') ||
+      errorDetails.frontmatterIndented;
+
+    const isMDXCompilationError =
+      errorMessage.includes('start') ||
+      errorMessage.includes('next-mdx-remote') ||
+      errorMessage.includes('MDX') ||
+      errorMessage.includes('compile');
+
+    if (isFrontmatterError) {
+      console.warn('Falling back due to frontmatter parsing error - attempting to fix indentation');
+      // Try to fix frontmatter indentation automatically (additional fallback)
+      const fixedContent = dedentFrontmatter(content);
+      if (fixedContent !== content) {
+        console.warn(
+          'Automatically fixed frontmatter indentation with dedent utility, retrying compilation'
+        );
+        try {
+          const { content: fixedMdxContent } = await compileMDX({
+            source: processCustomSyntax(fixedContent),
+            components: { ...components, ...customComponents },
+            options: {
+              parseFrontmatter: true,
+              mdxOptions: {
+                remarkPlugins: [],
+                rehypePlugins: [],
+              },
+            },
+          });
+          return fixedMdxContent;
+        } catch {
+          console.warn('Auto-fix with dedent utility failed, falling back to basic renderer');
+        }
+      }
+      return <FallbackMDXRenderer content={content} />;
+    }
+
+    if (isMDXCompilationError) {
       console.warn('Falling back to basic MDX renderer due to MDX compilation error');
       return <FallbackMDXRenderer content={content} />;
     }
