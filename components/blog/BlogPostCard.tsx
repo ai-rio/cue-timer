@@ -22,7 +22,7 @@ export default function BlogPostCard({
   showAuthor = true,
   showReadTime = true,
 }: BlogPostCardProps) {
-  const t = useTranslations('Blog');
+  const t = useTranslations('blog');
 
   const categoryColors = {
     timing: 'bg-blue-100 text-blue-800 border-blue-200',

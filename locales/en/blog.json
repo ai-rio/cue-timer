@@ -1,21 +1,16 @@
 {
+  "title": "Blog",
+  "description": "Discover the latest insights, tips, and tutorials on event timing, productivity, and professional presentation management.",
   "meta": {
     "title": "CueTimer Blog - Expert Event Timing & Productivity Tips",
-    "description": "Read the latest articles on event management, timer optimization, and professional presentation tips from CueTimer experts."
-  },
-  "title": "CueTimer Blog",
-  "subtitle": "Expert insights on event timing, productivity, and professional presentation skills. Learn from industry experts and take your events to the next level.",
-  "loading": "Loading blog posts...",
-  "error": "Error loading blog posts",
-  "empty": "No blog posts found.",
-  "featured": "Featured",
-  "minRead": "min read",
-  "readMore": "Read More",
-  "backToBlog": "Back to Blog",
-  "relatedPosts": "Related Posts",
-  "navigation": {
-    "previous": "Previous Post",
-    "next": "Next Post"
+    "description": "Read the latest articles on event management, timer optimization, and professional presentation tips from CueTimer experts.",
+    "keywords": [
+      "event timing",
+      "timer tips",
+      "productivity",
+      "event management",
+      "presentation skills"
+    ]
   },
   "categories": {
     "timing": "Timing",
@@ -32,5 +27,44 @@
     "featuredOnly": "Featured Only",
     "clearFilters": "Clear Filters",
     "activeFilters": "Active Filters"
+  },
+  "featured": "Featured",
+  "totalPosts": "total posts",
+  "featuredPosts": "featured posts",
+  "avgReadTime": "avg. read time",
+  "minRead": "min read",
+  "more": "more",
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest event timing tips and productivity insights delivered to your inbox weekly.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  },
+  "post": {
+    "by": "By",
+    "publishedOn": "Published on",
+    "readingTime": "Reading time",
+    "minutes": "minutes",
+    "relatedPosts": "Related Posts",
+    "tableOfContents": "Table of Contents",
+    "share": "Share",
+    "tags": "Tags",
+    "backToBlog": "Back to Blog",
+    "nextPost": "Next Post",
+    "previousPost": "Previous Post"
+  },
+  "postNotFound": {
+    "title": "Blog Post Not Found",
+    "description": "The blog post you're looking for doesn't exist or has been removed.",
+    "backToBlog": "Back to Blog",
+    "suggestion": "You might want to",
+    "browsePosts": "browse our latest posts",
+    "mightLike": {
+      "title": "You might also like:",
+      "timingPosts": "Timing posts",
+      "productivityPosts": "Productivity posts",
+      "featuredPosts": "Featured posts"
+    }
   }
 }
