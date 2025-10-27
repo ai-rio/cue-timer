@@ -18,15 +18,30 @@
     "events": "Events",
     "features": "Features",
     "tutorials": "Tutorials",
-    "industry": "Industry"
+    "industry": "Industry",
+    "browse": "Browse"
   },
   "filter": {
     "searchPlaceholder": "Search blog posts...",
     "categoryLabel": "Category",
     "allCategories": "All Categories",
+    "allPosts": "All Posts",
     "featuredOnly": "Featured Only",
     "clearFilters": "Clear Filters",
     "activeFilters": "Active Filters"
+  },
+  "tabs": {
+    "allPosts": "All Posts",
+    "featured": "Featured",
+    "categories": "Categories"
+  },
+  "stats": {
+    "posts": "posts"
+  },
+  "noResults": {
+    "title": "No posts found",
+    "description": "Try adjusting your filters or search terms to find what you're looking for.",
+    "clearFilters": "Clear Filters"
   },
   "featured": "Featured",
   "totalPosts": "total posts",

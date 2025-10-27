@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import chalk from 'chalk';
 import { Command } from 'commander';
