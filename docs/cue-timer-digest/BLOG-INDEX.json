@@ -1,0 +1,609 @@
+{
+  "name": "CueTimer Blog System Index",
+  "description": "LLM-friendly navigation index for blog-related functionality, components, and documentation",
+  "version": "1.0.0",
+  "total_blog_chunks": 51,
+  "total_blog_files": 89,
+  "last_updated": "2025-10-27",
+  "categories": {
+    "pages": {
+      "description": "Blog page components and API routes",
+      "chunks": [
+        {
+          "id": 1,
+          "group": "components_app",
+          "files": [
+            "app/[locale]/(marketing)/blog/page.tsx",
+            "app/[locale]/(marketing)/blog/[slug]/page.tsx",
+            "app/api/blog/route.ts"
+          ],
+          "description": "Main blog listing page, individual blog post pages, and blog API endpoints",
+          "size": "15,154 characters",
+          "use_cases": ["blog navigation", "blog post rendering", "blog API integration"]
+        }
+      ]
+    },
+    "components": {
+      "description": "React components for blog functionality",
+      "subcategories": {
+        "search_and_filtering": {
+          "description": "Blog search, filtering, and content discovery components",
+          "chunks": [
+            {
+              "id": 3,
+              "files": ["components/blog/AccessibleBlogSearch.tsx"],
+              "description": "Accessible blog search component with ARIA support",
+              "features": ["accessibility", "screen reader support", "keyboard navigation"]
+            },
+            {
+              "id": 5,
+              "files": ["components/blog/AdvancedBlogSearchAndFilter.tsx"],
+              "description": "Advanced search with Fuse.js fuzzy matching and comprehensive filtering",
+              "features": [
+                "fuzzy search",
+                "multi-criteria filtering",
+                "real-time results",
+                "template filtering"
+              ]
+            },
+            {
+              "id": 8,
+              "files": ["components/blog/BlogSearchAndFilter.tsx"],
+              "description": "Standard blog search and filtering component",
+              "features": ["basic search", "category filtering", "date sorting"]
+            },
+            {
+              "id": 9,
+              "files": ["components/blog/BlogSearchAndFilterSimple.tsx"],
+              "description": "Simplified blog search component for basic use cases",
+              "features": ["simple search", "minimal UI", "mobile-friendly"]
+            }
+          ]
+        },
+        "content_rendering": {
+          "description": "MDX content rendering and display components",
+          "chunks": [
+            {
+              "id": 4,
+              "files": ["components/blog/AccessibleMDXRenderer.tsx"],
+              "description": "Accessible MDX renderer with proper semantic markup",
+              "features": ["accessibility", "semantic HTML", "screen reader optimization"]
+            },
+            {
+              "id": 9,
+              "files": ["components/blog/EnhancedMDXRenderer.tsx"],
+              "description": "Enhanced MDX renderer with additional features",
+              "features": ["syntax highlighting", "code blocks", "table of contents"]
+            },
+            {
+              "id": 10,
+              "files": [
+                "components/blog/MDXRenderer.tsx",
+                "components/blog/OptimizedMDXRenderer.tsx"
+              ],
+              "description": "Standard and optimized MDX rendering components",
+              "features": ["performance optimization", "lazy loading", "code highlighting"]
+            }
+          ]
+        },
+        "content_display": {
+          "description": "Blog content layout and display components",
+          "chunks": [
+            {
+              "id": 5,
+              "files": ["components/blog/BlogContent.tsx"],
+              "description": "Main blog content display component",
+              "features": ["content layout", "post metadata", "reading time"]
+            },
+            {
+              "id": 6,
+              "files": ["components/blog/BlogContentEnhanced.tsx"],
+              "description": "Enhanced blog content with advanced features",
+              "features": ["progress indicators", "social sharing", "related posts"]
+            },
+            {
+              "id": 7,
+              "files": [
+                "components/blog/BlogContentManager.tsx",
+                "components/blog/BlogContentSimple.tsx"
+              ],
+              "description": "Content management and simplified display components",
+              "features": ["content management", "admin features", "simple layout"]
+            }
+          ]
+        },
+        "blog_layouts": {
+          "description": "Blog grid layouts and post card components",
+          "chunks": [
+            {
+              "id": 8,
+              "files": [
+                "components/blog/BlogGrid.tsx",
+                "components/blog/BlogGridSimple.tsx",
+                "components/blog/BlogPostCard.tsx",
+                "components/blog/BlogPostCardSimple.tsx",
+                "components/blog/BlogPostNavigation.tsx",
+                "components/blog/BlogPostWrapper.tsx"
+              ],
+              "description": "Blog grid layouts, post cards, and navigation components",
+              "features": ["responsive grids", "card layouts", "post navigation", "wrappers"]
+            }
+          ]
+        },
+        "blog_features": {
+          "description": "Specialized blog functionality components",
+          "chunks": [
+            {
+              "id": 5,
+              "files": ["components/blog/AuthorBio.tsx"],
+              "description": "Author biography and information component",
+              "features": ["author profile", "social links", "author stats", "recent posts"]
+            },
+            {
+              "id": 10,
+              "files": ["components/blog/RelatedPosts.tsx"],
+              "description": "Related posts suggestion component",
+              "features": ["content recommendations", "topic matching", "category suggestions"]
+            },
+            {
+              "id": 10,
+              "files": ["components/blog/LanguageSelector.tsx"],
+              "description": "Multi-language blog content selector",
+              "features": ["language switching", "locale detection", "translation links"]
+            },
+            {
+              "id": 11,
+              "files": ["components/blog/TableOfContents.tsx"],
+              "description": "Table of contents for blog posts",
+              "features": ["auto-generated TOC", "scroll tracking", "section navigation"]
+            },
+            {
+              "id": 11,
+              "files": ["components/blog/TemplateAwareBlogPostWrapper.tsx"],
+              "description": "Template-aware blog post wrapper component",
+              "features": ["template detection", "conditional styling", "layout adaptation"]
+            },
+            {
+              "id": 7,
+              "files": ["components/blog/BlogErrorBoundary.tsx"],
+              "description": "Error boundary for blog components",
+              "features": ["error handling", "fallback UI", "error reporting"]
+            }
+          ]
+        }
+      }
+    },
+    "content": {
+      "description": "Blog content files and translations",
+      "chunks": [
+        {
+          "id": 14,
+          "files": ["content/blog/2025/10/test-timing-guide.mdx"],
+          "description": "Example blog post content (MDX format)",
+          "type": "blog_content"
+        },
+        {
+          "id": 23,
+          "files": [
+            "content/blog/2024/productivity-event-management.md",
+            "content/blog/2024/professional-timing-tips-presentations.md"
+          ],
+          "description": "Published blog content from 2024",
+          "type": "blog_content"
+        }
+      ]
+    },
+    "localization": {
+      "description": "Blog internationalization and translations",
+      "chunks": [
+        {
+          "id": 17,
+          "files": ["locales/de/blog.json", "locales/en/blog.json"],
+          "description": "German and English blog translations",
+          "languages": ["de", "en"]
+        },
+        {
+          "id": 18,
+          "files": ["locales/es/blog.json", "locales/fr/blog.json"],
+          "description": "Spanish and French blog translations",
+          "languages": ["es", "fr"]
+        },
+        {
+          "id": 19,
+          "files": ["locales/pt-br/blog.json"],
+          "description": "Portuguese (Brazil) blog translations",
+          "languages": ["pt-br"]
+        }
+      ]
+    },
+    "documentation": {
+      "description": "Blog system documentation and guides",
+      "subcategories": {
+        "blog_management_docs": {
+          "description": "Complete blog management system documentation",
+          "chunks": [
+            {
+              "id": 26,
+              "files": ["docs/blog-management/README.md"],
+              "description": "Main blog management system documentation"
+            },
+            {
+              "id": 27,
+              "files": ["docs/blog-management/API-REFERENCE.md"],
+              "description": "Blog system API reference documentation"
+            },
+            {
+              "id": 28,
+              "files": ["docs/blog-management/CLI-REFERENCE.md"],
+              "description": "Blog management CLI tools reference"
+            },
+            {
+              "id": 29,
+              "files": ["docs/blog-management/DEPLOYMENT-READINESS.md"],
+              "description": "Blog system deployment readiness checklist"
+            },
+            {
+              "id": 30,
+              "files": ["docs/blog-management/DEPLOYMENT.md"],
+              "description": "Blog system deployment instructions"
+            },
+            {
+              "id": 31,
+              "files": ["docs/blog-management/DEVELOPER-GUIDE.md"],
+              "description": "Blog system developer guide"
+            },
+            {
+              "id": 32,
+              "files": ["docs/blog-management/IMPLEMENTATION-SUMMARY.md"],
+              "description": "Blog system implementation summary"
+            },
+            {
+              "id": 33,
+              "files": ["docs/blog-management/SYSTEM-CERTIFICATION.md"],
+              "description": "Blog system certification documentation"
+            },
+            {
+              "id": 34,
+              "files": ["docs/blog-management/TEMPLATES.md"],
+              "description": "Blog system templates documentation"
+            },
+            {
+              "id": 35,
+              "files": ["docs/blog-management/TROUBLESHOOTING.md"],
+              "description": "Blog system troubleshooting guide"
+            },
+            {
+              "id": 36,
+              "files": ["docs/blog-management/WORKFLOW.md"],
+              "description": "Blog system workflow documentation"
+            }
+          ]
+        },
+        "implementation_plans": {
+          "description": "Blog system implementation planning",
+          "chunks": [
+            {
+              "id": 48,
+              "files": ["docs/plans/2024-10-25-blog-management-implementation-plan.md"],
+              "description": "Comprehensive blog management implementation plan"
+            }
+          ]
+        }
+      }
+    },
+    "library_code": {
+      "description": "Blog system library and utility code",
+      "subcategories": {
+        "blog_utilities": {
+          "description": "Core blog utility functions",
+          "chunks": [
+            {
+              "id": 74,
+              "files": ["lib/blog-utils.ts", "lib/blog.ts"],
+              "description": "Blog utility functions and core blog logic",
+              "functions": ["blog helpers", "content processing", "metadata handling"]
+            },
+            {
+              "id": 79,
+              "files": ["lib/seo/blog-seo.ts"],
+              "description": "Blog SEO optimization utilities",
+              "functions": ["meta tags", "structured data", "SEO optimization"]
+            }
+          ]
+        },
+        "blog_scripts": {
+          "description": "Blog content creation and management scripts",
+          "chunks": [
+            {
+              "id": 75,
+              "files": [
+                "lib/blog-scripts/content-creator.ts",
+                "lib/blog-scripts/types.ts",
+                "lib/blog-scripts/examples/feature-announce-example.ts"
+              ],
+              "description": "Blog content creation system and types",
+              "functions": ["content generation", "template processing", "type definitions"]
+            },
+            {
+              "id": 58,
+              "files": [
+                "lib/blog-scripts/templates/README-feature-announce.md",
+                "lib/blog-scripts/templates/README-presentation-tips.md"
+              ],
+              "description": "Blog template documentation and examples"
+            }
+          ]
+        },
+        "blog_templates": {
+          "description": "Blog content templates",
+          "chunks": [
+            {
+              "id": 76,
+              "files": ["lib/blog-scripts/templates/case-study.ts"],
+              "description": "Case study blog post template"
+            },
+            {
+              "id": 77,
+              "files": ["lib/blog-scripts/templates/feature-announce.ts"],
+              "description": "Feature announcement blog post template"
+            },
+            {
+              "id": 78,
+              "files": [
+                "lib/blog-scripts/templates/presentation-tips.ts",
+                "lib/blog-scripts/templates/timing-guide.ts"
+              ],
+              "description": "Presentation tips and timing guide blog templates"
+            },
+            {
+              "id": 79,
+              "files": ["lib/blog-scripts/templates/verify-presentation-tips.ts"],
+              "description": "Presentation tips verification template"
+            }
+          ]
+        },
+        "blog_types": {
+          "description": "TypeScript type definitions for blog system",
+          "chunks": [
+            {
+              "id": 90,
+              "files": ["types/blog-api.ts", "types/blog-enhanced.ts", "types/blog.ts"],
+              "description": "Comprehensive TypeScript type definitions",
+              "types": ["blog post types", "API types", "enhanced blog features"]
+            }
+          ]
+        }
+      }
+    },
+    "scripts": {
+      "description": "Blog system automation and management scripts",
+      "chunks": [
+        {
+          "id": 82,
+          "files": ["scripts/blog-analytics.ts"],
+          "description": "Blog analytics and reporting script",
+          "functions": ["analytics generation", "report creation", "metrics tracking"]
+        },
+        {
+          "id": 83,
+          "files": ["scripts/blog-create.ts"],
+          "description": "Blog post creation script",
+          "functions": ["post creation", "template processing", "file generation"]
+        },
+        {
+          "id": 84,
+          "files": ["scripts/blog-publish.ts"],
+          "description": "Blog publishing automation script",
+          "functions": ["publishing workflow", "deployment", "validation"]
+        },
+        {
+          "id": 85,
+          "files": ["scripts/blog-seo-check.ts"],
+          "description": "Blog SEO validation script",
+          "functions": ["SEO analysis", "meta validation", "content optimization"]
+        },
+        {
+          "id": 86,
+          "files": ["scripts/blog-workflow-status.ts"],
+          "description": "Blog workflow status checking script",
+          "functions": ["status monitoring", "workflow tracking", "health checks"]
+        },
+        {
+          "id": 87,
+          "files": ["scripts/deploy-blog-system.ts"],
+          "description": "Blog system deployment script",
+          "functions": ["deployment automation", "system setup", "configuration"]
+        },
+        {
+          "id": 62,
+          "files": ["scripts/README-blog-create.md"],
+          "description": "Blog creation script documentation"
+        }
+      ]
+    },
+    "testing": {
+      "description": "Blog system testing infrastructure",
+      "subcategories": {
+        "unit_tests": {
+          "description": "Blog system unit tests",
+          "chunks": [
+            {
+              "id": 63,
+              "files": ["tests/blog-scripts/templates.test-summary.md"],
+              "description": "Blog scripts templates test summary"
+            },
+            {
+              "id": 93,
+              "files": ["lib/blog-scripts/templates/test-presentation-tips.ts"],
+              "description": "Presentation tips template test"
+            },
+            {
+              "id": 98,
+              "files": [
+                "tests/blog-scripts/content-creator.test.ts",
+                "tests/blog-scripts/templates-basic.test.js"
+              ],
+              "description": "Content creator and template basic tests"
+            },
+            {
+              "id": 106,
+              "files": ["tests/scripts/blog-create.test.ts"],
+              "description": "Blog creation script tests"
+            },
+            {
+              "id": 107,
+              "files": ["tests/scripts/blog-seo-check.test.ts"],
+              "description": "Blog SEO check script tests"
+            }
+          ]
+        },
+        "integration_tests": {
+          "description": "Blog system integration tests",
+          "chunks": [
+            {
+              "id": 96,
+              "files": ["scripts/test-blog-create.ts", "scripts/test-blog-system.ts"],
+              "description": "Blog creation and system integration tests"
+            },
+            {
+              "id": 100,
+              "files": ["tests/integration/blog-content-manager.test.tsx"],
+              "description": "Blog content manager integration tests"
+            },
+            {
+              "id": 101,
+              "files": ["tests/integration/blog-workflow.test.ts"],
+              "description": "Blog workflow integration tests"
+            }
+          ]
+        },
+        "performance_tests": {
+          "description": "Blog system performance testing",
+          "chunks": [
+            {
+              "id": 105,
+              "files": ["tests/performance/blog-performance.test.ts"],
+              "description": "Comprehensive blog system performance tests",
+              "features": [
+                "CLI performance",
+                "content generation speed",
+                "memory usage",
+                "concurrent operations"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "quick_navigation": {
+    "common_tasks": {
+      "create_blog_post": {
+        "description": "Create a new blog post",
+        "relevant_chunks": [83, 75, 76, 77, 78],
+        "steps": [
+          "Use scripts/blog-create.ts to generate post",
+          "Select template from lib/blog-scripts/templates/",
+          "Customize content using content-creator.ts",
+          "Validate with scripts/blog-seo-check.ts"
+        ]
+      },
+      "implement_blog_search": {
+        "description": "Implement blog search functionality",
+        "relevant_chunks": [3, 5, 8, 9],
+        "components": [
+          "AccessibleBlogSearch.tsx for accessibility",
+          "AdvancedBlogSearchAndFilter.tsx for full-featured search",
+          "BlogSearchAndFilterSimple.tsx for basic implementation"
+        ]
+      },
+      "add_blog_component": {
+        "description": "Add new blog UI component",
+        "relevant_chunks": [8, 10, 11],
+        "patterns": [
+          "Use BlogGrid.tsx for post listings",
+          "Use BlogPostCard.tsx for individual posts",
+          "Use BlogContent.tsx for post content display"
+        ]
+      },
+      "debug_blog_issue": {
+        "description": "Debug blog system issues",
+        "relevant_chunks": [35, 63, 96, 100, 101, 105],
+        "resources": [
+          "Check docs/blog-management/TROUBLESHOOTING.md",
+          "Run tests in tests/integration/",
+          "Review performance tests if issues are speed-related"
+        ]
+      }
+    },
+    "component_categories": {
+      "search_components": [3, 5, 8, 9],
+      "content_renderers": [4, 9, 10],
+      "layout_components": [6, 7, 8],
+      "feature_components": [5, 10, 11],
+      "utility_components": [7]
+    },
+    "file_patterns": {
+      "blog_pages": "app/[locale]/(marketing)/blog/**/*",
+      "blog_components": "components/blog/**/*",
+      "blog_utilities": "lib/blog*/**/*",
+      "blog_scripts": "scripts/blog-*.ts",
+      "blog_types": "types/blog*.ts",
+      "blog_content": "content/blog/**/*",
+      "blog_tests": "tests/**/blog*.ts"
+    }
+  },
+  "chunk_file_mapping": {
+    "1": "chunks/components-app/chunk_001.md",
+    "3": "chunks/components-components/chunk_003.md",
+    "4": "chunks/components-components/chunk_004.md",
+    "5": "chunks/components-components/chunk_005.md",
+    "6": "chunks/components-components/chunk_006.md",
+    "7": "chunks/components-components/chunk_007.md",
+    "8": "chunks/components-components/chunk_008.md",
+    "9": "chunks/components-components/chunk_009.md",
+    "10": "chunks/components-components/chunk_010.md",
+    "11": "chunks/components-components/chunk_011.md",
+    "14": "chunks/components-content/chunk_014.md",
+    "17": "chunks/config-locales/chunk_017.md",
+    "18": "chunks/config-locales/chunk_018.md",
+    "19": "chunks/config-locales/chunk_019.md",
+    "23": "chunks/documentation-content/chunk_023.md",
+    "26": "chunks/documentation-docs/chunk_026.md",
+    "27": "chunks/documentation-docs/chunk_027.md",
+    "28": "chunks/documentation-docs/chunk_028.md",
+    "29": "chunks/documentation-docs/chunk_029.md",
+    "30": "chunks/documentation-docs/chunk_030.md",
+    "31": "chunks/documentation-docs/chunk_031.md",
+    "32": "chunks/documentation-docs/chunk_032.md",
+    "33": "chunks/documentation-docs/chunk_033.md",
+    "34": "chunks/documentation-docs/chunk_034.md",
+    "35": "chunks/documentation-docs/chunk_035.md",
+    "36": "chunks/documentation-docs/chunk_036.md",
+    "48": "chunks/documentation-docs/chunk_048.md",
+    "58": "chunks/documentation-lib/chunk_058.md",
+    "62": "chunks/documentation-scripts/chunk_062.md",
+    "63": "chunks/documentation-tests/chunk_063.md",
+    "74": "chunks/source-lib/chunk_074.md",
+    "75": "chunks/source-lib/chunk_075.md",
+    "76": "chunks/source-lib/chunk_076.md",
+    "77": "chunks/source-lib/chunk_077.md",
+    "78": "chunks/source-lib/chunk_078.md",
+    "79": "chunks/source-lib/chunk_079.md",
+    "82": "chunks/source-scripts/chunk_082.md",
+    "83": "chunks/source-scripts/chunk_083.md",
+    "84": "chunks/source-scripts/chunk_084.md",
+    "85": "chunks/source-scripts/chunk_085.md",
+    "86": "chunks/source-scripts/chunk_086.md",
+    "87": "chunks/source-scripts/chunk_087.md",
+    "90": "chunks/source-types/chunk_090.md",
+    "93": "chunks/tests-lib/chunk_093.md",
+    "96": "chunks/tests-scripts/chunk_096.md",
+    "98": "chunks/tests-tests/chunk_098.md",
+    "100": "chunks/tests-tests/chunk_100.md",
+    "101": "chunks/tests-tests/chunk_101.md",
+    "105": "chunks/tests-tests/chunk_105.md",
+    "106": "chunks/tests-tests/chunk_106.md",
+    "107": "chunks/tests-tests/chunk_107.md"
+  }
+}

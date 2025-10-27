@@ -75,7 +75,13 @@ Implementation guides, technical standards, and development workflows.
 - **[Architecture](development/architecture/)**: System architecture and design
   decisions
 - **[Guides](development/guides/)**: Development workflow, troubleshooting, and
-  best practices
+  best practices <<<<<<< HEAD =======
+- **[Documentation Organization](development/guides/documentation-organization-plan.md)**:
+  Documentation structure and organization methodology
+- **[Documentation Overview](development/guides/documentation-overview.md)**:
+  Complete documentation framework overview
+  > > > > > > > 6050970 (feat(docs): organize documentation structure and create
+  > > > > > > > LLM-friendly blog navigation)
 - **[Type Checking](development/type-check/)**: TypeScript methodology and
   automation
 - **[Roadmap](development/roadmap/)**: Development roadmap and next steps
@@ -99,7 +105,13 @@ Comprehensive blog system documentation and automation.
 
 - **[Blog Management](blog-management/)**: Complete blog system documentation
 - **[Internal Linking](blog-management/INTERNAL-LINKING/)**: Automated internal
-  linking system
+  linking system <<<<<<< HEAD =======
+- **[Internal Linking Usage](blog-management/internal-linking-usage.md)**:
+  Practical usage examples and implementation
+- **[LLM Operation](blog-management/llm-operation/)**: End-to-end blog
+  publishing workflow
+  > > > > > > > 6050970 (feat(docs): organize documentation structure and create
+  > > > > > > > LLM-friendly blog navigation)
 - **[CLI Reference](blog-management/CLI-REFERENCE.md)**: Blog management CLI
   tools
 - **[Developer Guide](blog-management/DEVELOPER-GUIDE.md)**: Blog system
@@ -163,7 +175,15 @@ Quality assurance, validation reports, and system certification.
 - **[Validation Reports](validation/)**: Quality assurance and validation
   documentation
 - **[ESLint Reports](validation/eslint-reports/)**: Code quality and linting
-  reports
+  <<<<<<< HEAD reports ======= reports including disaster recovery and
+  maintenance strategy
+  - **[ESLint Disaster Recovery Report](validation/eslint-reports/ESLINT-DISASTER-RECOVERY-REPORT.md)**
+  - **[ESLint Maintenance Strategy](validation/eslint-reports/ESLINT-MAINTENANCE-STRATEGY.md)**
+  - **[ESLint Disaster Recovery Final Plan](validation/eslint-reports/ESLINT-DISASTER-RECOVERY-FINAL-PLAN.md)**
+- **[Validation Summary](validation/validation-summary.md)**: Complete
+  validation overview
+  > > > > > > > 6050970 (feat(docs): organize documentation structure and create
+  > > > > > > > LLM-friendly blog navigation)
 - **[System Certification](validation/system-certification.md)**: Production
   readiness validation
 
@@ -181,7 +201,41 @@ Images, diagrams, brand resources, and visual assets.
 - **[Documentation Assets](assets/)**: Images, diagrams, and visual assets
 - **[Images](assets/images/)**: Screenshots and UI mockups
 - **[Diagrams](assets/diagrams/)**: Architecture diagrams and flowcharts
-- **[Examples](assets/examples/)**: Code examples and sample files
+- **[Examples](assets/examples/)**: Code examples and sample files <<<<<<< HEAD
+  =======
+
+### 📋 Content & Media
+
+Blog content and media resources.
+
+- **[Content](content/)**: Blog content and articles
+- **[Blog Content](content/blog/)**: Blog post drafts and published content
+
+### 🛠️ Implementation & Projects
+
+Implementation plans, project documentation, and tools.
+
+- **[Implementation Plans](implementation-plans/)**: Detailed implementation
+  documentation
+- **[Phase Reports](phase-reports/)**: Project phase documentation and reports
+- **[Planning](planning/)**: Strategic planning documents
+- **[Plans](plans/)**: Specific project plans and technical designs
+- **[Projects](projects/)**: Active project documentation
+  - **[Frictionless Blog Workflow](projects/frictionless-blog-workflow/)**: Blog
+    system project
+- **[Shard Tool Python](shard-tool-python/)**: Python tooling for documentation
+  processing
+
+### 🔧 Tools & Utilities
+
+Specialized tools and utilities for documentation and development.
+
+- **[Shard Tool](shard-tool-python/)**: Documentation processing and analysis
+  tools
+- **[CueTimer Digest](cue-timer-digest/)**: Project documentation analysis and
+  chunks
+  > > > > > > > 6050970 (feat(docs): organize documentation structure and create
+  > > > > > > > LLM-friendly blog navigation)
 
 ## 🚀 Quick Navigation
 
@@ -191,6 +245,8 @@ Images, diagrams, brand resources, and visual assets.
 2. Review [Design System](design/branding/design-system.md)
 3. Check [System Architecture](design/technical-specs/system-architecture.md)
 4. Understand [Content Strategy](strategy/content-strategy.md)
+5. Review
+   [Documentation Organization](development/guides/documentation-organization-plan.md)
 
 ### For Developers
 
@@ -227,7 +283,8 @@ All documentation follows kebab-case naming conventions:
 
 - Files use lowercase with hyphens: `user-research-insights.md`
 - Folders are descriptive and organized by category
-- See [Naming Conventions](naming-conventions.md) for detailed guidelines
+- See [Naming Conventions](development/guides/naming-conventions.md) for
+  detailed guidelines
 
 ## 🔍 How to Use This Documentation
 
@@ -314,12 +371,16 @@ All documentation follows kebab-case naming conventions:
 
 If you can't find what you're looking for:
 
-1. Check the [Naming Conventions](naming-conventions.md) for file patterns
+1. Check the [Naming Conventions](development/guides/naming-conventions.md) for
+   file patterns
 2. Look in related categories for similar topics
 3. Check the [Templates](templates/) folder for reusable formats
 4. Review the [Key Files](#key-files-by-status) section for frequently accessed
    documents
-5. Contact the documentation maintainers for assistance
+5. Check
+   [Documentation Organization](development/guides/documentation-organization-plan.md)
+   for structure guidance
+6. Contact the documentation maintainers for assistance
 
 ## 📈 Documentation Statistics
 
