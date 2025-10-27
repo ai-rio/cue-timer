@@ -1,0 +1,1346 @@
+{
+  "total_chunks": 111,
+  "total_files": 325,
+  "chunks": [
+    {
+      "id": 0,
+      "group": "000_overview",
+      "file_count": 1,
+      "total_chars": 12879,
+      "files": ["__directory_structure__"],
+      "categories": ["metadata"]
+    },
+    {
+      "id": 1,
+      "group": "components_app",
+      "file_count": 3,
+      "total_chars": 15154,
+      "files": [
+        "app/[locale]/(marketing)/blog/page.tsx",
+        "app/[locale]/(marketing)/blog/[slug]/page.tsx",
+        "app/api/blog/route.ts"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 2,
+      "group": "components_components",
+      "file_count": 5,
+      "total_chars": 14233,
+      "files": [
+        "components/ErrorBoundary.tsx",
+        "components/LanguageSwitcher.tsx",
+        "components/Navigation.tsx",
+        "components/TailwindTest.tsx",
+        "components/theme-toggle.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 3,
+      "group": "components_components",
+      "file_count": 1,
+      "total_chars": 21343,
+      "files": ["components/blog/AccessibleBlogSearch.tsx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 4,
+      "group": "components_components",
+      "file_count": 1,
+      "total_chars": 20309,
+      "files": ["components/blog/AccessibleMDXRenderer.tsx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 5,
+      "group": "components_components",
+      "file_count": 3,
+      "total_chars": 31652,
+      "files": [
+        "components/blog/AdvancedBlogSearchAndFilter.tsx",
+        "components/blog/AuthorBio.tsx",
+        "components/blog/BlogContent.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 6,
+      "group": "components_components",
+      "file_count": 1,
+      "total_chars": 16073,
+      "files": ["components/blog/BlogContentEnhanced.tsx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 7,
+      "group": "components_components",
+      "file_count": 3,
+      "total_chars": 31539,
+      "files": [
+        "components/blog/BlogContentManager.tsx",
+        "components/blog/BlogContentSimple.tsx",
+        "components/blog/BlogErrorBoundary.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 8,
+      "group": "components_components",
+      "file_count": 7,
+      "total_chars": 29878,
+      "files": [
+        "components/blog/BlogGrid.tsx",
+        "components/blog/BlogGridSimple.tsx",
+        "components/blog/BlogPostCard.tsx",
+        "components/blog/BlogPostCardSimple.tsx",
+        "components/blog/BlogPostNavigation.tsx",
+        "components/blog/BlogPostWrapper.tsx",
+        "components/blog/BlogSearchAndFilter.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 9,
+      "group": "components_components",
+      "file_count": 2,
+      "total_chars": 31073,
+      "files": [
+        "components/blog/BlogSearchAndFilterSimple.tsx",
+        "components/blog/EnhancedMDXRenderer.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 10,
+      "group": "components_components",
+      "file_count": 4,
+      "total_chars": 28203,
+      "files": [
+        "components/blog/LanguageSelector.tsx",
+        "components/blog/MDXRenderer.tsx",
+        "components/blog/OptimizedMDXRenderer.tsx",
+        "components/blog/RelatedPosts.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 11,
+      "group": "components_components",
+      "file_count": 7,
+      "total_chars": 30674,
+      "files": [
+        "components/blog/TableOfContents.tsx",
+        "components/blog/TemplateAwareBlogPostWrapper.tsx",
+        "components/checkout/CheckoutForm.tsx",
+        "components/ui/avatar.tsx",
+        "components/ui/badge.tsx",
+        "components/ui/breadcrumb.tsx",
+        "components/ui/button.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 12,
+      "group": "components_components",
+      "file_count": 14,
+      "total_chars": 30406,
+      "files": [
+        "components/ui/card.tsx",
+        "components/ui/checkbox.tsx",
+        "components/ui/collapsible.tsx",
+        "components/ui/dialog.tsx",
+        "components/ui/dropdown-menu.tsx",
+        "components/ui/form.tsx",
+        "components/ui/input.tsx",
+        "components/ui/label.tsx",
+        "components/ui/loading.tsx",
+        "components/ui/popover.tsx",
+        "components/ui/progress.tsx",
+        "components/ui/select.tsx",
+        "components/ui/separator.tsx",
+        "components/ui/switch.tsx"
+      ],
+      "categories": ["components"]
+    },
+    {
+      "id": 13,
+      "group": "components_components",
+      "file_count": 1,
+      "total_chars": 1908,
+      "files": ["components/ui/tabs.tsx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 14,
+      "group": "components_content",
+      "file_count": 1,
+      "total_chars": 371,
+      "files": ["content/blog/2025/10/test-timing-guide.mdx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 15,
+      "group": "components_root",
+      "file_count": 2,
+      "total_chars": 8168,
+      "files": ["components.json", "mdx-components.tsx"],
+      "categories": ["components"]
+    },
+    {
+      "id": 16,
+      "group": "config_.serena",
+      "file_count": 1,
+      "total_chars": 4676,
+      "files": [".serena/project.yml"],
+      "categories": ["config"]
+    },
+    {
+      "id": 17,
+      "group": "config_locales",
+      "file_count": 25,
+      "total_chars": 29810,
+      "files": [
+        "locales/de/about.json",
+        "locales/de/auth.json",
+        "locales/de/billing.json",
+        "locales/de/blog.json",
+        "locales/de/common.json",
+        "locales/de/dashboard.json",
+        "locales/de/errors.json",
+        "locales/de/events.json",
+        "locales/de/hero.json",
+        "locales/de/navigation.json",
+        "locales/de/presentations.json",
+        "locales/de/pricing.json",
+        "locales/de/settings.json",
+        "locales/de/support.json",
+        "locales/de/timer.json",
+        "locales/en/about.json",
+        "locales/en/auth.json",
+        "locales/en/billing.json",
+        "locales/en/blog.json",
+        "locales/en/common.json",
+        "locales/en/dashboard.json",
+        "locales/en/errors.json",
+        "locales/en/events.json",
+        "locales/en/hero.json",
+        "locales/en/navigation.json"
+      ],
+      "categories": ["config"]
+    },
+    {
+      "id": 18,
+      "group": "config_locales",
+      "file_count": 26,
+      "total_chars": 31893,
+      "files": [
+        "locales/en/presentations.json",
+        "locales/en/pricing.json",
+        "locales/en/settings.json",
+        "locales/en/support.json",
+        "locales/en/timer.json",
+        "locales/es/about.json",
+        "locales/es/auth.json",
+        "locales/es/billing.json",
+        "locales/es/blog.json",
+        "locales/es/common.json",
+        "locales/es/dashboard.json",
+        "locales/es/errors.json",
+        "locales/es/events.json",
+        "locales/es/hero.json",
+        "locales/es/navigation.json",
+        "locales/es/presentations.json",
+        "locales/es/pricing.json",
+        "locales/es/settings.json",
+        "locales/es/support.json",
+        "locales/es/timer.json",
+        "locales/fr/about.json",
+        "locales/fr/auth.json",
+        "locales/fr/billing.json",
+        "locales/fr/blog.json",
+        "locales/fr/common.json",
+        "locales/fr/dashboard.json"
+      ],
+      "categories": ["config"]
+    },
+    {
+      "id": 19,
+      "group": "config_locales",
+      "file_count": 24,
+      "total_chars": 24980,
+      "files": [
+        "locales/fr/errors.json",
+        "locales/fr/events.json",
+        "locales/fr/hero.json",
+        "locales/fr/navigation.json",
+        "locales/fr/presentations.json",
+        "locales/fr/pricing.json",
+        "locales/fr/settings.json",
+        "locales/fr/support.json",
+        "locales/fr/timer.json",
+        "locales/pt-br/about.json",
+        "locales/pt-br/auth.json",
+        "locales/pt-br/billing.json",
+        "locales/pt-br/blog.json",
+        "locales/pt-br/common.json",
+        "locales/pt-br/dashboard.json",
+        "locales/pt-br/errors.json",
+        "locales/pt-br/events.json",
+        "locales/pt-br/hero.json",
+        "locales/pt-br/navigation.json",
+        "locales/pt-br/presentations.json",
+        "locales/pt-br/pricing.json",
+        "locales/pt-br/settings.json",
+        "locales/pt-br/support.json",
+        "locales/pt-br/timer.json"
+      ],
+      "categories": ["config"]
+    },
+    {
+      "id": 20,
+      "group": "config_root",
+      "file_count": 3,
+      "total_chars": 8078,
+      "files": ["lighthouserc.json", "package.json", "tsconfig.json"],
+      "categories": ["config"]
+    },
+    {
+      "id": 21,
+      "group": "documentation_.serena",
+      "file_count": 2,
+      "total_chars": 4294,
+      "files": [
+        ".serena/memories/documentation-clarity-validation.md",
+        ".serena/memories/type-check-mandatory-workflow.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 22,
+      "group": "documentation_app",
+      "file_count": 2,
+      "total_chars": 13918,
+      "files": [
+        "app/[locale]/design-system/README.md",
+        "app/[locale]/design-system/test-assertions.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 23,
+      "group": "documentation_content",
+      "file_count": 2,
+      "total_chars": 5600,
+      "files": [
+        "content/blog/2024/productivity-event-management.md",
+        "content/blog/2024/professional-timing-tips-presentations.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 24,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 22175,
+      "files": [
+        "docs/README.md",
+        "docs/documentation-overview.md",
+        "docs/ESLINT-DISASTER-RECOVERY-FINAL-PLAN.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 25,
+      "group": "documentation_docs",
+      "file_count": 4,
+      "total_chars": 27893,
+      "files": [
+        "docs/ESLINT-DISASTER-RECOVERY-REPORT.md",
+        "docs/ESLINT-MAINTENANCE-STRATEGY.md",
+        "docs/INDEX.md",
+        "docs/naming-conventions.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 26,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 18688,
+      "files": ["docs/VALIDATION-SUMMARY.md", "docs/blog-management/README.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 27,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 40247,
+      "files": ["docs/blog-management/API-REFERENCE.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 28,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 29518,
+      "files": ["docs/blog-management/CLI-REFERENCE.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 29,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 18018,
+      "files": ["docs/blog-management/DEPLOYMENT-READINESS.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 30,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 39414,
+      "files": ["docs/blog-management/DEPLOYMENT.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 31,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 39408,
+      "files": ["docs/blog-management/DEVELOPER-GUIDE.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 32,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 27140,
+      "files": ["docs/blog-management/IMPLEMENTATION-SUMMARY.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 33,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 13701,
+      "files": ["docs/blog-management/SYSTEM-CERTIFICATION.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 34,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 24845,
+      "files": ["docs/blog-management/TEMPLATES.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 35,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 19641,
+      "files": ["docs/blog-management/TROUBLESHOOTING.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 36,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 21542,
+      "files": ["docs/blog-management/WORKFLOW.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 37,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 18862,
+      "files": ["docs/design/branding/design-system.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 38,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 25321,
+      "files": [
+        "docs/design/technical-specs/mobile-pwa-architecture.md",
+        "docs/design/technical-specs/system-architecture.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 39,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 20630,
+      "files": [
+        "docs/design/ui-ux/messaging-system-specifications.md",
+        "docs/design/ui-ux/user-interface-guidelines.md",
+        "docs/development/husky-setup.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 40,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 26297,
+      "files": [
+        "docs/development/project-summary.md",
+        "docs/development/architecture/project-architecture.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 41,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 19110,
+      "files": [
+        "docs/development/guides/development-workflow.md",
+        "docs/development/guides/git-workflow-guide.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 42,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 29249,
+      "files": ["docs/development/guides/powersync-implementation-guide.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 43,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 24470,
+      "files": [
+        "docs/development/guides/quotekit-integration-plan.md",
+        "docs/development/guides/quotekit-reference-only-policy.md",
+        "docs/development/guides/TIMER_VISIBILITY_FIX.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 44,
+      "group": "documentation_docs",
+      "file_count": 5,
+      "total_chars": 26129,
+      "files": [
+        "docs/development/guides/troubleshooting-guide.md",
+        "docs/development/roadmap/next-steps-ARCHIVED.md",
+        "docs/development/roadmap/next-steps.md",
+        "docs/development/setup/technical-setup-summary.md",
+        "docs/development/type-check/README.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 45,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 26947,
+      "files": [
+        "docs/development/type-check/implementation-summary.md",
+        "docs/development/type-check/integration-guide.md",
+        "docs/development/type-check/quick-reference.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 46,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 28128,
+      "files": [
+        "docs/development/type-check/troubleshooting.md",
+        "docs/development/type-check/type-automation-summary.md",
+        "docs/development/type-check/type-check-verification-report.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 47,
+      "group": "documentation_docs",
+      "file_count": 5,
+      "total_chars": 28305,
+      "files": [
+        "docs/phase-reports/DESIGN_SYSTEM_IMPLEMENTATION.md",
+        "docs/phase-reports/PHASE_1_AUDIT_REPORT.md",
+        "docs/phase-reports/PHASE_1_TASKS-ARCHIVED.md",
+        "docs/phase-reports/PHASE_1_TASKS.md",
+        "docs/phase-reports/PHASE_4_IMPLEMENTATION_SUMMARY.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 48,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 51052,
+      "files": ["docs/plans/2024-10-25-blog-management-implementation-plan.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 49,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 16940,
+      "files": [
+        "docs/plans/2025-01-25-aggressive-eslint-agent-deployment-design.md",
+        "docs/research/competitor-analysis/competitive-landscape.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 50,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 17450,
+      "files": ["docs/strategy/content-strategy.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 51,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 29398,
+      "files": [
+        "docs/strategy/help-documentation.md",
+        "docs/strategy/keyword-integrated-content-strategy.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 52,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 30735,
+      "files": ["docs/strategy/marketing-messaging.md", "docs/strategy/user-onboarding-content.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 53,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 28534,
+      "files": [
+        "docs/strategy/go-to-market/go-to-market-strategy.md",
+        "docs/strategy/project-planning/ideal-customer-profile.md",
+        "docs/strategy/project-planning/offline-first-feasibility-report.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 54,
+      "group": "documentation_docs",
+      "file_count": 3,
+      "total_chars": 16307,
+      "files": [
+        "docs/strategy/project-planning/project-brief.md",
+        "docs/strategy/roadmap/CONSOLIDATION_SUMMARY.md",
+        "docs/strategy/roadmap/project-roadmap-ARCHIVED.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 55,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 29353,
+      "files": [
+        "docs/strategy/roadmap/project-roadmap-master.md",
+        "docs/strategy/roadmap/project-roadmap.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 56,
+      "group": "documentation_docs",
+      "file_count": 1,
+      "total_chars": 24805,
+      "files": ["docs/templates/prompts/creative-team-prompt.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 57,
+      "group": "documentation_docs",
+      "file_count": 2,
+      "total_chars": 21136,
+      "files": ["docs/testing/README.md", "docs/testing/COVERAGE-REPORT.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 58,
+      "group": "documentation_lib",
+      "file_count": 2,
+      "total_chars": 14122,
+      "files": [
+        "lib/blog-scripts/templates/README-feature-announce.md",
+        "lib/blog-scripts/templates/README-presentation-tips.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 59,
+      "group": "documentation_reports",
+      "file_count": 3,
+      "total_chars": 23425,
+      "files": [
+        "reports/accessibility-compliance-report.md",
+        "reports/bundle-optimization-report.md",
+        "reports/eslint-disaster-assessment.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 60,
+      "group": "documentation_reports",
+      "file_count": 1,
+      "total_chars": 9039,
+      "files": ["reports/optimization-summary.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 61,
+      "group": "documentation_root",
+      "file_count": 7,
+      "total_chars": 30840,
+      "files": [
+        "README.md",
+        "CLAUDE.md",
+        "DESIGN_SYSTEM_IMPLEMENTATION.md",
+        "PHASE_1_AUDIT_REPORT.md",
+        "PHASE_1_TASKS-ARCHIVED.md",
+        "PHASE_1_TASKS.md",
+        "TIMER_VISIBILITY_FIX.md"
+      ],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 62,
+      "group": "documentation_scripts",
+      "file_count": 2,
+      "total_chars": 15712,
+      "files": ["scripts/IMPLEMENTATION-SUMMARY.md", "scripts/README-blog-create.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 63,
+      "group": "documentation_tests",
+      "file_count": 1,
+      "total_chars": 7781,
+      "files": ["tests/blog-scripts/templates.test-summary.md"],
+      "categories": ["documentation"]
+    },
+    {
+      "id": 64,
+      "group": "other_.husky",
+      "file_count": 3,
+      "total_chars": 3883,
+      "files": [".husky/commit-msg", ".husky/post-commit", ".husky/pre-commit"],
+      "categories": ["other"]
+    },
+    {
+      "id": 65,
+      "group": "other_root",
+      "file_count": 7,
+      "total_chars": 5538,
+      "files": [
+        "commitlint.config.cjs",
+        "LICENSE",
+        "lint-staged.config.cjs",
+        "postcss.config.cjs",
+        "prettier.config.mjs",
+        "tailwind.config.ts.disabled",
+        ".env.example"
+      ],
+      "categories": ["other"]
+    },
+    {
+      "id": 66,
+      "group": "other_scripts",
+      "file_count": 1,
+      "total_chars": 8587,
+      "files": ["scripts/keyword_analysis.py"],
+      "categories": ["other"]
+    },
+    {
+      "id": 67,
+      "group": "pages_app",
+      "file_count": 6,
+      "total_chars": 28658,
+      "files": [
+        "app/globals.css",
+        "app/layout.tsx",
+        "app/[locale]/layout.tsx",
+        "app/[locale]/(auth)/layout.tsx",
+        "app/[locale]/(auth)/callback/route.ts",
+        "app/[locale]/(auth)/login/page.tsx"
+      ],
+      "categories": ["pages"]
+    },
+    {
+      "id": 68,
+      "group": "pages_app",
+      "file_count": 4,
+      "total_chars": 24060,
+      "files": [
+        "app/[locale]/(marketing)/page.tsx",
+        "app/[locale]/(marketing)/about/page.tsx",
+        "app/[locale]/(marketing)/pricing/page.tsx",
+        "app/[locale]/account/layout.tsx"
+      ],
+      "categories": ["pages"]
+    },
+    {
+      "id": 69,
+      "group": "pages_app",
+      "file_count": 3,
+      "total_chars": 25276,
+      "files": [
+        "app/[locale]/account/dashboard/page.tsx",
+        "app/[locale]/checkout/page.tsx",
+        "app/[locale]/checkout/cancel/page.tsx"
+      ],
+      "categories": ["pages"]
+    },
+    {
+      "id": 70,
+      "group": "pages_app",
+      "file_count": 1,
+      "total_chars": 7628,
+      "files": ["app/[locale]/checkout/success/page.tsx"],
+      "categories": ["pages"]
+    },
+    {
+      "id": 71,
+      "group": "pages_app",
+      "file_count": 1,
+      "total_chars": 32082,
+      "files": ["app/[locale]/design-system/page.tsx"],
+      "categories": ["pages"]
+    },
+    {
+      "id": 72,
+      "group": "pages_app",
+      "file_count": 7,
+      "total_chars": 29508,
+      "files": [
+        "app/[locale]/test/page.tsx",
+        "app/[locale]/theme-demo/page.tsx",
+        "app/api/auth/magic-link/route.ts",
+        "app/api/stripe/create-payment-intent/route.ts",
+        "app/api/stripe/webhook/route.ts",
+        "app/test-route/layout.tsx",
+        "app/test-route/page.tsx"
+      ],
+      "categories": ["pages"]
+    },
+    {
+      "id": 73,
+      "group": "source_contexts",
+      "file_count": 1,
+      "total_chars": 2234,
+      "files": ["contexts/AuthContext.tsx"],
+      "categories": ["source"]
+    },
+    {
+      "id": 74,
+      "group": "source_lib",
+      "file_count": 4,
+      "total_chars": 28729,
+      "files": ["lib/blog-utils.ts", "lib/blog.ts", "lib/utils.ts", "lib/auth/middleware.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 75,
+      "group": "source_lib",
+      "file_count": 4,
+      "total_chars": 21616,
+      "files": [
+        "lib/auth/supabase.ts",
+        "lib/blog-scripts/content-creator.ts",
+        "lib/blog-scripts/types.ts",
+        "lib/blog-scripts/examples/feature-announce-example.ts"
+      ],
+      "categories": ["source"]
+    },
+    {
+      "id": 76,
+      "group": "source_lib",
+      "file_count": 1,
+      "total_chars": 16471,
+      "files": ["lib/blog-scripts/templates/case-study.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 77,
+      "group": "source_lib",
+      "file_count": 1,
+      "total_chars": 20473,
+      "files": ["lib/blog-scripts/templates/feature-announce.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 78,
+      "group": "source_lib",
+      "file_count": 2,
+      "total_chars": 28088,
+      "files": [
+        "lib/blog-scripts/templates/presentation-tips.ts",
+        "lib/blog-scripts/templates/timing-guide.ts"
+      ],
+      "categories": ["source"]
+    },
+    {
+      "id": 79,
+      "group": "source_lib",
+      "file_count": 3,
+      "total_chars": 24499,
+      "files": [
+        "lib/blog-scripts/templates/verify-presentation-tips.ts",
+        "lib/seo/blog-seo.ts",
+        "lib/stripe/config.ts"
+      ],
+      "categories": ["source"]
+    },
+    {
+      "id": 80,
+      "group": "source_lib",
+      "file_count": 1,
+      "total_chars": 7780,
+      "files": ["lib/stripe/webhooks.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 81,
+      "group": "source_root",
+      "file_count": 9,
+      "total_chars": 25106,
+      "files": [
+        "eslint.config.js",
+        "global.d.ts",
+        "i18n.ts",
+        "jest.config.ci.js",
+        "jest.config.js",
+        "middleware.ts",
+        "next-env.d.ts",
+        "next.config.js",
+        "tailwind.config.ts"
+      ],
+      "categories": ["source"]
+    },
+    {
+      "id": 82,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 18976,
+      "files": ["scripts/blog-analytics.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 83,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 25578,
+      "files": ["scripts/blog-create.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 84,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 18444,
+      "files": ["scripts/blog-publish.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 85,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 27350,
+      "files": ["scripts/blog-seo-check.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 86,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 23475,
+      "files": ["scripts/blog-workflow-status.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 87,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 20301,
+      "files": ["scripts/deploy-blog-system.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 88,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 28598,
+      "files": ["scripts/deploy-validation.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 89,
+      "group": "source_scripts",
+      "file_count": 1,
+      "total_chars": 38871,
+      "files": ["scripts/system-health-check.ts"],
+      "categories": ["source"]
+    },
+    {
+      "id": 90,
+      "group": "source_types",
+      "file_count": 8,
+      "total_chars": 19130,
+      "files": [
+        "types/auth.ts",
+        "types/blog-api.ts",
+        "types/blog-enhanced.ts",
+        "types/blog.ts",
+        "types/jest.d.ts",
+        "types/orders.ts",
+        "types/stripe.ts",
+        "types/supabase.ts"
+      ],
+      "categories": ["source"]
+    },
+    {
+      "id": 91,
+      "group": "styles_styles",
+      "file_count": 1,
+      "total_chars": 8738,
+      "files": ["styles/accessibility.css"],
+      "categories": ["styles"]
+    },
+    {
+      "id": 92,
+      "group": "tests_.github",
+      "file_count": 1,
+      "total_chars": 9774,
+      "files": [".github/workflows/test-suite.yml"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 93,
+      "group": "tests_lib",
+      "file_count": 1,
+      "total_chars": 6815,
+      "files": ["lib/blog-scripts/templates/test-presentation-tips.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 94,
+      "group": "tests_root",
+      "file_count": 1,
+      "total_chars": 5001,
+      "files": ["test-timer.html"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 95,
+      "group": "tests_scripts",
+      "file_count": 1,
+      "total_chars": 32171,
+      "files": ["scripts/generate-test-coverage.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 96,
+      "group": "tests_scripts",
+      "file_count": 2,
+      "total_chars": 28545,
+      "files": ["scripts/test-blog-create.ts", "scripts/test-blog-system.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 97,
+      "group": "tests_scripts",
+      "file_count": 1,
+      "total_chars": 7436,
+      "files": ["scripts/test-local.sh"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 98,
+      "group": "tests_tests",
+      "file_count": 4,
+      "total_chars": 19951,
+      "files": [
+        "tests/global.d.ts",
+        "tests/setup.ts",
+        "tests/blog-scripts/content-creator.test.ts",
+        "tests/blog-scripts/templates-basic.test.js"
+      ],
+      "categories": ["tests"]
+    },
+    {
+      "id": 99,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 17810,
+      "files": ["tests/config/eslint-validation.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 100,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 28342,
+      "files": ["tests/integration/blog-content-manager.test.tsx"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 101,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 21852,
+      "files": ["tests/integration/blog-workflow.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 102,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 23862,
+      "files": ["tests/integration/cli-workflow.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 103,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 30417,
+      "files": ["tests/integration/error-handling.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 104,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 20406,
+      "files": ["tests/integration/mdx-renderers.test.tsx"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 105,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 23791,
+      "files": ["tests/performance/blog-performance.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 106,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 14722,
+      "files": ["tests/scripts/blog-create.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 107,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 24643,
+      "files": ["tests/scripts/blog-seo-check.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 108,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 26512,
+      "files": ["tests/scripts/cli-integration.test.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 109,
+      "group": "tests_tests",
+      "file_count": 2,
+      "total_chars": 20388,
+      "files": ["tests/scripts/deploy-validation.test.ts", "tests/types/test.d.ts"],
+      "categories": ["tests"]
+    },
+    {
+      "id": 110,
+      "group": "tests_tests",
+      "file_count": 1,
+      "total_chars": 21978,
+      "files": ["tests/typescript/type-enforcement.test.ts"],
+      "categories": ["tests"]
+    }
+  ],
+  "groups": {
+    "000_overview": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 12879
+    },
+    "components_app": {
+      "chunk_count": 1,
+      "file_count": 3,
+      "total_chars": 15154
+    },
+    "components_components": {
+      "chunk_count": 12,
+      "file_count": 49,
+      "total_chars": 287291
+    },
+    "components_content": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 371
+    },
+    "components_root": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 8168
+    },
+    "config_.serena": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 4676
+    },
+    "config_locales": {
+      "chunk_count": 3,
+      "file_count": 75,
+      "total_chars": 86683
+    },
+    "config_root": {
+      "chunk_count": 1,
+      "file_count": 3,
+      "total_chars": 8078
+    },
+    "documentation_.serena": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 4294
+    },
+    "documentation_app": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 13918
+    },
+    "documentation_content": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 5600
+    },
+    "documentation_docs": {
+      "chunk_count": 34,
+      "file_count": 68,
+      "total_chars": 881388
+    },
+    "documentation_lib": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 14122
+    },
+    "documentation_reports": {
+      "chunk_count": 2,
+      "file_count": 4,
+      "total_chars": 32464
+    },
+    "documentation_root": {
+      "chunk_count": 1,
+      "file_count": 7,
+      "total_chars": 30840
+    },
+    "documentation_scripts": {
+      "chunk_count": 1,
+      "file_count": 2,
+      "total_chars": 15712
+    },
+    "documentation_tests": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 7781
+    },
+    "other_.husky": {
+      "chunk_count": 1,
+      "file_count": 3,
+      "total_chars": 3883
+    },
+    "other_root": {
+      "chunk_count": 1,
+      "file_count": 7,
+      "total_chars": 5538
+    },
+    "other_scripts": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 8587
+    },
+    "pages_app": {
+      "chunk_count": 6,
+      "file_count": 22,
+      "total_chars": 147212
+    },
+    "source_contexts": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 2234
+    },
+    "source_lib": {
+      "chunk_count": 7,
+      "file_count": 16,
+      "total_chars": 147656
+    },
+    "source_root": {
+      "chunk_count": 1,
+      "file_count": 9,
+      "total_chars": 25106
+    },
+    "source_scripts": {
+      "chunk_count": 8,
+      "file_count": 8,
+      "total_chars": 201593
+    },
+    "source_types": {
+      "chunk_count": 1,
+      "file_count": 8,
+      "total_chars": 19130
+    },
+    "styles_styles": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 8738
+    },
+    "tests_.github": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 9774
+    },
+    "tests_lib": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 6815
+    },
+    "tests_root": {
+      "chunk_count": 1,
+      "file_count": 1,
+      "total_chars": 5001
+    },
+    "tests_scripts": {
+      "chunk_count": 3,
+      "file_count": 4,
+      "total_chars": 68152
+    },
+    "tests_tests": {
+      "chunk_count": 13,
+      "file_count": 17,
+      "total_chars": 294674
+    }
+  }
+}

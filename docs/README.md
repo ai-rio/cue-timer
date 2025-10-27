@@ -16,10 +16,77 @@ categorization.
 
 ## 📁 Documentation Structure
 
+### 🏗️ Architecture
+
+System architecture, design decisions, and technical specifications.
+
+- **[System Architecture](architecture/)**: High-level system design and
+  decisions
+- **Mobile PWA Architecture**: Mobile and progressive web app specifications
+- **Design Decisions**: Architectural decision records (ADRs)
+
+### 📖 Guides & Tutorials
+
+User guides, getting started documentation, and tutorials.
+
+- **[Getting Started](guides/getting-started/)**: Quick start guides and basic
+  setup
+- **[User Guides](guides/user-guides/)**: Detailed feature documentation
+- **[Tutorials](guides/tutorials/)**: Step-by-step tutorials and examples
+- **[Troubleshooting](guides/troubleshooting/)**: Common issues and solutions
+
+### 🔌 API Documentation
+
+Complete API reference and integration guides.
+
+- **[API Reference](api/)**: Comprehensive API documentation
+- **[Endpoints](api/endpoints/)**: API endpoint specifications
+- **[Authentication](api/authentication/)**: Auth and authorization guides
+- **[Examples](api/examples/)**: Code examples and integration samples
+
+### 🧩 Components
+
+UI components and reusable element documentation.
+
+- **[UI Components](components/ui/)**: Base UI components and design system
+- **[Timer Components](components/timer/)**: Timer-specific components
+- **[Layout Components](components/layout/)**: Page layout and structural
+  components
+- **[Blog Components](components/blog/)**: Blog and content management
+  components
+
+### 🎨 Design
+
+Brand guidelines, design system, user experience, and technical specifications.
+
+- **[Branding](design/branding/)**: Visual identity, brand guidelines, and
+  design system
+- **[UI/UX](design/ui-ux/)**: User interface designs, user flows, and
+  interaction patterns
+- **[Technical Specs](design/technical-specs/)**: System architecture, mobile
+  PWA architecture
+
+### 💻 Development
+
+Implementation guides, technical standards, and development workflows.
+
+- **[Setup & Configuration](development/setup/)**: Technical setup and
+  configuration guides
+- **[Architecture](development/architecture/)**: System architecture and design
+  decisions
+- **[Guides](development/guides/)**: Development workflow, troubleshooting, and
+  best practices
+- **[Documentation Organization](development/guides/documentation-organization-plan.md)**:
+  Documentation structure and organization methodology
+- **[Documentation Overview](development/guides/documentation-overview.md)**:
+  Complete documentation framework overview
+- **[Type Checking](development/type-check/)**: TypeScript methodology and
+  automation
+- **[Roadmap](development/roadmap/)**: Development roadmap and next steps
+
 ### 📋 Strategy
 
-Comprehensive project planning, business strategy, content strategy, and
-go-to-market planning.
+Comprehensive project planning, business strategy, and strategic direction.
 
 - **[Project Planning](strategy/project-planning/)**: Core project documents,
   briefs, and customer profiles
@@ -29,57 +96,136 @@ go-to-market planning.
   frameworks, and content pillars
 - **[Go-to-Market](strategy/go-to-market/)**: Market strategy, competitive
   positioning, and launch plans
-- **[Help Documentation](strategy/help-documentation.md)**: User assistance and
-  support content
 
-### 🎨 Design
+### 📝 Blog Management
 
-Brand guidelines, design system, user experience, and technical specifications.
+Comprehensive blog system documentation and automation.
 
-- **Branding**: Visual identity, brand guidelines, and design system
-- **UI/UX**: User interface designs, user flows, and interaction patterns
-- **Technical Specs**: System architecture, mobile PWA architecture, and
-  technical requirements
+- **[Blog Management](blog-management/)**: Complete blog system documentation
+- **[Internal Linking](blog-management/INTERNAL-LINKING/)**: Automated internal
+  linking system
+- **[Internal Linking Usage](blog-management/internal-linking-usage.md)**:
+  Practical usage examples and implementation
+- **[LLM Operation](blog-management/llm-operation/)**: End-to-end blog
+  publishing workflow
+- **[CLI Reference](blog-management/CLI-REFERENCE.md)**: Blog management CLI
+  tools
+- **[Developer Guide](blog-management/DEVELOPER-GUIDE.md)**: Blog system
+  development guide
 
-### 💻 Development
+### 🤝 Contributing
 
-Implementation guides, API documentation, deployment instructions, and technical
-standards.
+Contribution guidelines, development workflow, and community standards.
 
-- **[Setup & Configuration](development/setup/)**: Technical setup and
-  configuration guides
-- **[Architecture](development/architecture/)**: System architecture and design
-  decisions
-- **[Guides](development/guides/)**: Development workflow, troubleshooting, and
-  best practices
-- **[Roadmap](development/roadmap/)**: Project roadmap and next steps
-- **API Docs**: API endpoints, data models, and integration guides _(Planned)_
-- **Deployment**: Setup instructions, deployment processes, and infrastructure
+- **[Contributing Guide](contributing/)**: Complete contribution guidelines
+- **[Development Workflow](development/guides/development-workflow.md)**:
+  Development process and standards
+- **[Code of Conduct](contributing/code-of-conduct.md)**: Community guidelines
   _(Planned)_
+
+### 📊 Phase Reports
+
+Project phase documentation and implementation reports.
+
+- **[Phase Reports](phase-reports/)**: Complete phase documentation
+- **[Phase 1 Audit](phase-reports/phase-1-audit-report.md)**: Marketing
+  infrastructure readiness
+- **[Design System Implementation](phase-reports/design-system-implementation.md)**:
+  Design system validation
+
+### 📋 Planning
+
+Implementation plans, technical designs, and strategic planning.
+
+- **[Planning Documentation](planning/)**: Implementation plans and technical
+  designs
+- **[Blog Management Plan](planning/2024-10-25-blog-management-implementation-plan.md)**:
+  Blog system implementation
+- **[Internal Linking Plan](planning/2025-10-26-internal-linking-automation.md)**:
+  Content linking automation
 
 ### 🔬 Research
 
-Market analysis, competitor research, user research, and data insights.
+Market analysis, competitor research, and user research.
 
-- **Market Analysis**: Market research, keyword analysis (345+ keywords), and
-  opportunity assessment
-- **Competitor Analysis**: Competitive landscape and feature comparisons
+- **[Competitor Analysis](research/competitor-analysis/)**: Competitive
+  landscape and feature comparisons
+- **Market Research**: Market research and keyword analysis (345+ keywords)
 - **User Research**: User interviews, surveys, and persona development
   _(Planned)_
+
+### 🧪 Testing
+
+Test coverage, quality assurance, and validation reports.
+
+- **[Testing Documentation](testing/README.md)**: Complete testing strategy and
+  guides
+- **[Coverage Report](testing/coverage-report.md)**: Comprehensive test coverage
+  analysis
+- **[Test Suites](testing/)**: Unit tests, integration tests, and E2E tests
+
+### ✅ Validation
+
+Quality assurance, validation reports, and system certification.
+
+- **[Validation Reports](validation/)**: Quality assurance and validation
+  documentation
+- **[ESLint Reports](validation/eslint-reports/)**: Code quality and linting
+  reports including disaster recovery and maintenance strategy
+  - **[ESLint Disaster Recovery Report](validation/eslint-reports/ESLINT-DISASTER-RECOVERY-REPORT.md)**
+  - **[ESLint Maintenance Strategy](validation/eslint-reports/ESLINT-MAINTENANCE-STRATEGY.md)**
+  - **[ESLint Disaster Recovery Final Plan](validation/eslint-reports/ESLINT-DISASTER-RECOVERY-FINAL-PLAN.md)**
+- **[Validation Summary](validation/validation-summary.md)**: Complete
+  validation overview
+- **[System Certification](validation/system-certification.md)**: Production
+  readiness validation
 
 ### 📝 Templates
 
 Reusable templates for project management, meetings, and documentation.
 
-- **Prompts**: AI prompts and creative team templates
+- **[Prompts](templates/prompts/)**: AI prompts and creative team templates
 - **Checklists**: Quality assurance and review checklists _(Planned)_
 
 ### 🖼️ Assets
 
-Images, brand resources, and other visual assets.
+Images, diagrams, brand resources, and visual assets.
 
-- **Images**: Screenshots, diagrams, and visual documentation
-- **Brand Resources**: Logos, brand assets, and visual identity elements
+- **[Documentation Assets](assets/)**: Images, diagrams, and visual assets
+- **[Images](assets/images/)**: Screenshots and UI mockups
+- **[Diagrams](assets/diagrams/)**: Architecture diagrams and flowcharts
+- **[Examples](assets/examples/)**: Code examples and sample files
+
+### 📋 Content & Media
+
+Blog content and media resources.
+
+- **[Content](content/)**: Blog content and articles
+- **[Blog Content](content/blog/)**: Blog post drafts and published content
+
+### 🛠️ Implementation & Projects
+
+Implementation plans, project documentation, and tools.
+
+- **[Implementation Plans](implementation-plans/)**: Detailed implementation
+  documentation
+- **[Phase Reports](phase-reports/)**: Project phase documentation and reports
+- **[Planning](planning/)**: Strategic planning documents
+- **[Plans](plans/)**: Specific project plans and technical designs
+- **[Projects](projects/)**: Active project documentation
+  - **[Frictionless Blog Workflow](projects/frictionless-blog-workflow/)**: Blog
+    system project
+- **[Shard Tool Python](shard-tool-python/)**: Python tooling for documentation
+  processing
+
+### 🔧 Tools & Utilities
+
+Specialized tools and utilities for documentation and development.
+
+- **[Shard Tool](shard-tool-python/)**: Documentation processing and analysis
+  tools
+- **[CueTimer Digest](cue-timer-digest/)**: Project documentation analysis and
+  chunks
 
 ## 🚀 Quick Navigation
 
@@ -89,6 +235,8 @@ Images, brand resources, and other visual assets.
 2. Review [Design System](design/branding/design-system.md)
 3. Check [System Architecture](design/technical-specs/system-architecture.md)
 4. Understand [Content Strategy](strategy/content-strategy.md)
+5. Review
+   [Documentation Organization](development/guides/documentation-organization-plan.md)
 
 ### For Developers
 
@@ -125,7 +273,8 @@ All documentation follows kebab-case naming conventions:
 
 - Files use lowercase with hyphens: `user-research-insights.md`
 - Folders are descriptive and organized by category
-- See [Naming Conventions](naming-conventions.md) for detailed guidelines
+- See [Naming Conventions](development/guides/naming-conventions.md) for
+  detailed guidelines
 
 ## 🔍 How to Use This Documentation
 
@@ -212,12 +361,16 @@ All documentation follows kebab-case naming conventions:
 
 If you can't find what you're looking for:
 
-1. Check the [Naming Conventions](naming-conventions.md) for file patterns
+1. Check the [Naming Conventions](development/guides/naming-conventions.md) for
+   file patterns
 2. Look in related categories for similar topics
 3. Check the [Templates](templates/) folder for reusable formats
 4. Review the [Key Files](#key-files-by-status) section for frequently accessed
    documents
-5. Contact the documentation maintainers for assistance
+5. Check
+   [Documentation Organization](development/guides/documentation-organization-plan.md)
+   for structure guidance
+6. Contact the documentation maintainers for assistance
 
 ## 📈 Documentation Statistics
 

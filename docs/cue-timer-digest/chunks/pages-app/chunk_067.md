@@ -1,0 +1,1179 @@
+# Chunk 67: pages_app
+
+## Metadata
+
+- **Files**: 6
+- **Size**: 28,658 characters (~7,164 tokens)
+- **Categories**: pages
+
+## Files in this chunk
+
+- `app/globals.css`
+- `app/layout.tsx`
+- `app/[locale]/layout.tsx`
+- `app/[locale]/(auth)/layout.tsx`
+- `app/[locale]/(auth)/callback/route.ts`
+- `app/[locale]/(auth)/login/page.tsx`
+
+---
+
+## File: `app/globals.css`
+
+```css
+@import 'tailwindcss';
+
+@theme {
+  /* CueTimer Brand Colors - Design System v1.0 */
+
+  /* Primary Brand Colors */
+  --color-spotlight-orange: #ff6b35;
+  --color-spotlight-orange-50: #fff5f0;
+  --color-spotlight-orange-100: #ffe8db;
+  --color-spotlight-orange-200: #ffd4bf;
+  --color-spotlight-orange-300: #ffb395;
+  --color-spotlight-orange-400: #ff8b64;
+  --color-spotlight-orange-500: #ff6b35;
+  --color-spotlight-orange-600: #e55a2b;
+  --color-spotlight-orange-700: #cc4e24;
+  --color-spotlight-orange-800: #a33e1c;
+  --color-spotlight-orange-900: #7a3015;
+
+  --color-timing-yellow: #ffd23f;
+  --color-timing-yellow-50: #fffef3;
+  --color-timing-yellow-100: #fffbe6;
+  --color-timing-yellow-200: #fff7cc;
+  --color-timing-yellow-300: #ffee99;
+  --color-timing-yellow-400: #ffe466;
+  --color-timing-yellow-500: #ffd23f;
+  --color-timing-yellow-600: #e6bd38;
+  --color-timing-yellow-700: #cca831;
+  --color-timing-yellow-800: #a38628;
+  --color-timing-yellow-900: #7a641e;
+
+  --color-professional-gray: #2d3748;
+  --color-professional-gray-50: #f7fafc;
+  --color-professional-gray-100: #edf2f7;
+  --color-professional-gray-200: #e2e8f0;
+  --color-professional-gray-300: #cbd5e0;
+  --color-professional-gray-400: #a0aec0;
+  --color-professional-gray-500: #718096;
+  --color-professional-gray-600: #4a5568;
+  --color-professional-gray-700: #2d3748;
+  --color-professional-gray-800: #1a202c;
+  --color-professional-gray-900: #171923;
+
+  /* Secondary Colors */
+  --color-success-green: #48bb78;
+  --color-success-green-50: #f0fff4;
+  --color-success-green-100: #c6f6d5;
+  --color-success-green-200: #9ae6b4;
+  --color-success-green-300: #68d391;
+  --color-success-green-400: #48bb78;
+  --color-success-green-500: #38a169;
+  --color-success-green-600: #2f855a;
+  --color-success-green-700: #276749;
+  --color-success-green-800: #22543d;
+  --color-success-green-900: #1c4532;
+
+  --color-warning-red: #f56565;
+  --color-warning-red-50: #fff5f5;
+  --color-warning-red-100: #fed7d7;
+  --color-warning-red-200: #feb2b2;
+  --color-warning-red-300: #fc8181;
+  --color-warning-red-400: #f56565;
+  --color-warning-red-500: #e53e3e;
+  --color-warning-red-600: #c53030;
+  --color-warning-red-700: #9b2c2c;
+  --color-warning-red-800: #742a2a;
+  --color-warning-red-900: #5a2c2c;
+
+  --color-info-blue: #4299e1;
+  --color-info-blue-50: #ebf8ff;
+  --color-info-blue-100: #bee3f8;
+  --color-info-blue-200: #90cdf4;
+  --color-info-blue-300: #63b3ed;
+  --color-info-blue-400: #4299e1;
+  --color-info-blue-500: #3182ce;
+  --color-info-blue-600: #2b6cb5;
+  --color-info-blue-700: #2c5282;
+  --color-info-blue-800: #2a4e7c;
+  --color-info-blue-900: #2a4e7c;
+
+  /* Theme Backgrounds */
+  --color-light-bg: #ffffff;
+  --color-dark-bg: #1a202c;
+
+  /* Aliases for compatibility */
+  --color-primary: var(--color-spotlight-orange);
+  --color-primary-500: var(--color-spotlight-orange);
+  --color-secondary: var(--color-professional-gray);
+  --color-secondary-500: var(--color-professional-gray);
+  --color-success: var(--color-success-green);
+  --color-success-500: var(--color-success-green);
+  --color-warning: var(--color-timing-yellow);
+  --color-warning-500: var(--color-timing-yellow);
+  --color-destructive: var(--color-warning-red);
+  --color-destructive-500: var(--color-warning-red);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 214 15% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 214 15% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 214 15% 20%;
+  --primary: 16 95% 59%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 15% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 16 95% 59%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 214 15% 10%;
+  --foreground: 0 0% 98%;
+  --card: 214 15% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 214 15% 10%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 16 95% 59%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 15% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 214 15% 15%;
+  --muted-foreground: 0 0% 75%;
+  --accent: 214 15% 15%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 15% 15%;
+  --input: 214 15% 15%;
+  --ring: 16 95% 59%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Smooth theme transitions for all elements */
+* {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Enhanced theme transitions for interactive elements */
+button,
+a,
+.card,
+.badge,
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  /* Typography System - CueTimer Design System */
+  .font-timer {
+    font-family:
+      var(--font-timer), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: var(--font-mono), 'Fira Code', ui-monospace, monospace;
+  }
+
+  /* Timer Display Styles */
+  .timer-display {
+    font-family:
+      var(--font-timer), 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Heading Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Brand Color Utilities */
+  .bg-spotlight-orange {
+    background-color: var(--color-spotlight-orange);
+  }
+  .bg-timing-yellow {
+    background-color: var(--color-timing-yellow);
+  }
+  .bg-professional-gray {
+    background-color: var(--color-professional-gray);
+  }
+  .bg-success-green {
+    background-color: var(--color-success-green);
+  }
+  .bg-warning-red {
+    background-color: var(--color-warning-red);
+  }
+  .bg-info-blue {
+    background-color: var(--color-info-blue);
+  }
+
+  .text-spotlight-orange {
+    color: var(--color-spotlight-orange);
+  }
+  .text-timing-yellow {
+    color: var(--color-timing-yellow);
+  }
+  .text-professional-gray {
+    color: var(--color-professional-gray);
+  }
+  .text-success-green {
+    color: var(--color-success-green);
+  }
+  .text-warning-red {
+    color: var(--color-warning-red);
+  }
+  .text-info-blue {
+    color: var(--color-info-blue);
+  }
+
+  .border-spotlight-orange {
+    border-color: var(--color-spotlight-orange);
+  }
+  .border-timing-yellow {
+    border-color: var(--color-timing-yellow);
+  }
+  .border-professional-gray {
+    border-color: var(--color-professional-gray);
+  }
+  .border-success-green {
+    border-color: var(--color-success-green);
+  }
+  .border-warning-red {
+    border-color: var(--color-warning-red);
+  }
+  .border-info-blue {
+    border-color: var(--color-info-blue);
+  }
+
+  /* Brand Color Hover States */
+  .hover\:bg-spotlight-orange:hover {
+    background-color: var(--color-spotlight-orange-600);
+  }
+  .hover\:bg-timing-yellow:hover {
+    background-color: var(--color-timing-yellow-600);
+  }
+  .hover\:bg-professional-gray:hover {
+    background-color: var(--color-professional-gray-800);
+  }
+  .hover\:bg-success-green:hover {
+    background-color: var(--color-success-green-600);
+  }
+  .hover\:bg-warning-red:hover {
+    background-color: var(--color-warning-red-600);
+  }
+  .hover\:bg-info-blue:hover {
+    background-color: var(--color-info-blue-600);
+  }
+
+  /* Component-specific styling */
+  .timer-button-primary {
+    @apply bg-spotlight-orange hover:bg-spotlight-orange-600 text-white font-medium transition-colors;
+  }
+
+  .timer-button-secondary {
+    @apply bg-professional-gray hover:bg-professional-gray-800 text-white font-medium transition-colors;
+  }
+
+  .timer-button-warning {
+    @apply bg-timing-yellow hover:bg-timing-yellow-600 text-professional-gray font-medium transition-colors;
+  }
+
+  /* Timer Status Animations */
+  @keyframes pulse-gentle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes pulse-moderate {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes pulse-fast {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes flash-critical {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+
+  .timer-success {
+    animation: pulse-gentle 2s ease-in-out infinite;
+  }
+
+  .timer-warning {
+    animation: pulse-moderate 1.5s ease-in-out infinite;
+  }
+
+  .timer-critical {
+    animation: pulse-fast 1s ease-in-out infinite;
+  }
+
+  .timer-expired {
+    animation: flash-critical 0.5s ease-in-out infinite;
+  }
+
+  /* Enhanced Overlay and Dropdown Styles for CueTimer */
+  .dialog-overlay-enhanced {
+    background-color: rgba(
+      45,
+      55,
+      72,
+      0.85
+    ); /* Professional Gray with 85% opacity */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .dark .dialog-overlay-enhanced {
+    background-color: rgba(
+      26,
+      32,
+      44,
+      0.92
+    ); /* Dark theme background with 92% opacity */
+  }
+
+  .dropdown-content-enhanced {
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.98
+    ); /* Near-white background with 98% opacity */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(45, 55, 72, 0.12); /* Subtle border with Professional Gray */
+    box-shadow:
+      0 10px 25px rgba(45, 55, 72, 0.15),
+      0 4px 6px rgba(45, 55, 72, 0.1);
+  }
+
+  .dark .dropdown-content-enhanced {
+    background-color: rgba(
+      45,
+      55,
+      72,
+      0.96
+    ); /* Professional Gray with 96% opacity */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border in dark theme */
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.3),
+      0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-item-enhanced {
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .dropdown-item-enhanced:hover {
+    background-color: rgba(
+      255,
+      107,
+      53,
+      0.08
+    ); /* Spotlight Orange with 8% opacity */
+  }
+
+  .dropdown-item-enhanced:focus {
+    background-color: rgba(
+      255,
+      107,
+      53,
+      0.12
+    ); /* Spotlight Orange with 12% opacity */
+    outline: 2px solid rgba(255, 107, 53, 0.5);
+    outline-offset: -2px;
+  }
+
+  .dark .dropdown-item-enhanced:hover {
+    background-color: rgba(
+      255,
+      107,
+      53,
+      0.15
+    ); /* Higher opacity for dark theme */
+  }
+
+  .dark .dropdown-item-enhanced:focus {
+    background-color: rgba(255, 107, 53, 0.2);
+    outline: 2px solid rgba(255, 107, 53, 0.6);
+  }
+
+  /* Enhanced Dialog Content */
+  .dialog-content-enhanced {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(45, 55, 72, 0.08);
+    box-shadow:
+      0 20px 40px rgba(45, 55, 72, 0.15),
+      0 8px 12px rgba(45, 55, 72, 0.1);
+  }
+
+  .dark .dialog-content-enhanced {
+    background-color: rgba(45, 55, 72, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 8px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Popover Enhancement */
+  .popover-enhanced {
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(45, 55, 72, 0.1);
+    box-shadow:
+      0 8px 16px rgba(45, 55, 72, 0.12),
+      0 2px 4px rgba(45, 55, 72, 0.08);
+  }
+
+  .dark .popover-enhanced {
+    background-color: rgba(45, 55, 72, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.25),
+      0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Tooltip Enhancement */
+  .tooltip-enhanced {
+    background-color: rgba(45, 55, 72, 0.96);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .dark .tooltip-enhanced {
+    background-color: rgba(26, 32, 44, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.98);
+  }
+
+  /* Enhanced Timer Visibility Utilities */
+  .timer-visible {
+    color: #111827; /* Near-black for maximum contrast in light theme */
+  }
+
+  .dark .timer-visible {
+    color: #ffffff; /* Pure white for dark theme */
+  }
+
+  .timer-high-contrast {
+    color: #000000; /* Pure black for maximum contrast */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .timer-high-contrast {
+    color: #ffffff; /* Pure white for dark theme */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Theme-Aware Timer Display with Maximum Specificity */
+  .timer-display {
+    font-family:
+      var(--font-timer), 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+    font-variant-numeric: tabular-nums !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+    color: #000000 !important; /* Pure black for light theme - maximum contrast */
+    font-weight: 700 !important; /* Bolder weight for better visibility */
+  }
+
+  /* Dark theme timer display */
+  .dark .timer-display {
+    color: #ffffff !important; /* Pure white for dark theme */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important; /* Enhanced shadow for dark theme */
+  }
+
+  /* Fallback for theme variable support */
+  .timer-display-theme-aware {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  .dark .timer-display-theme-aware {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Additional high-contrast variants for different backgrounds */
+  .timer-display-on-light {
+    color: #000000 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+  }
+
+  .timer-display-on-dark {
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+  }
+
+  .dark .timer-display-on-dark {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Ensure timer visibility on all possible backgrounds */
+  .timer-display-robust {
+    color: #000000 !important;
+    text-shadow:
+      0 1px 2px rgba(255, 255, 255, 0.9),
+      0 0 8px rgba(255, 255, 255, 0.5) !important;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
+    ) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .dark .timer-display-robust {
+    color: #ffffff !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.9),
+      0 0 8px rgba(0, 0, 0, 0.5) !important;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.1)
+    ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Timer Background Variants for enhanced visibility */
+  .timer-bg-light {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .timer-bg-dark {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .timer-bg-light {
+    background-color: rgba(45, 55, 72, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .timer-bg-dark {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Syntax Highlighting for Code Blocks */
+.hljs {
+  background: #1a1a1a !important;
+  color: #e1e1e6 !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6b737c !important;
+  font-style: italic !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #f47067 !important;
+  font-weight: bold !important;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #79c0ff !important;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #a5d6ff !important;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #d2a8ff !important;
+  font-weight: bold !important;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #ffa657 !important;
+  font-weight: bold !important;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #7ee787 !important;
+  font-weight: normal !important;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #96d0ff !important;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #ffa198 !important;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa657 !important;
+}
+
+.hljs-meta {
+  color: #8b949e !important;
+}
+
+.hljs-deletion {
+  background: #ffeef0 !important;
+}
+
+.hljs-addition {
+  background: #f0fff4 !important;
+}
+
+.hljs-emphasis {
+  font-style: italic !important;
+}
+
+.hljs-strong {
+  font-weight: bold !important;
+}
+
+/* Enhanced Code Block Styling */
+pre {
+  position: relative !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+}
+
+pre code {
+  display: block !important;
+  padding: 1rem !important;
+  overflow-x: auto !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Code block language indicator */
+.code-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.5rem 1rem !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-size: 0.75rem !important;
+  color: #8b949e !important;
+}
+
+.dark .code-header {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Copy button styling */
+.copy-button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #e1e1e6 !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.75rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.copy-button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Inline code styling */
+:not(pre) > code {
+  background: rgba(110, 118, 129, 0.1) !important;
+  color: #e1e1e6 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875em !important;
+  border: 1px solid rgba(110, 118, 129, 0.2) !important;
+}
+
+.dark :not(pre) > code {
+  background: rgba(110, 118, 129, 0.2) !important;
+  border-color: rgba(110, 118, 129, 0.3) !important;
+}
+
+/* Line numbers for code blocks */
+.line-numbers .line-numbers-rows {
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.line-numbers-rows > span:before {
+  color: #6b737c !important;
+  font-size: 0.875rem !important;
+}
+
+/* Enhanced focus states for code blocks */
+pre:focus-within {
+  outline: 2px solid var(--color-spotlight-orange) !important;
+  outline-offset: 2px !important;
+}
+```
+
+## File: `app/layout.tsx`
+
+```tsx
+import './globals.css';
+
+import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-timer',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: 'CueTimer - Professional Event Management Timer',
+  description:
+    "Professional timing that works when technology doesn't. Offline-first countdown timer for events, presentations, and conferences.",
+  keywords: [
+    'timer',
+    'presentation',
+    'events',
+    'conference',
+    'countdown',
+    'offline',
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang='en'
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+      suppressHydrationWarning
+    >
+      <body
+        className='font-sans antialiased bg-background text-foreground transition-colors duration-300'
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+## File: `app/[locale]/layout.tsx`
+
+```tsx
+import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { ThemeProvider } from 'next-themes';
+
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+import Navigation from '@/components/Navigation';
+import { AuthProvider } from '@/contexts/AuthContext';
+
+interface LocaleLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!['en', 'pt-br', 'es', 'fr', 'de'].includes(locale)) {
+    notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
+  return (
+    <ErrorBoundary>
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='light'
+        enableSystem
+        disableTransitionOnChange={false}
+        storageKey='cue-timer-theme'
+      >
+        <NextIntlClientProvider messages={messages}>
+          <AuthProvider>
+            <div
+              className='min-h-screen bg-background text-foreground'
+              suppressHydrationWarning
+            >
+              <Navigation />
+              <main>{children}</main>
+            </div>
+          </AuthProvider>
+        </NextIntlClientProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
+}
+
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'pt-br' },
+    { locale: 'es' },
+    { locale: 'fr' },
+    { locale: 'de' },
+  ];
+}
+```
+
+## File: `app/[locale]/(auth)/layout.tsx`
+
+```tsx
+export default function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <div className='min-h-screen'>{children}</div>;
+}
+```
+
+## File: `app/[locale]/(auth)/callback/route.ts`
+
+```typescript
+import { createClient } from '@supabase/supabase-js';
+import { NextRequest, NextResponse } from 'next/server';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+export async function GET(request: NextRequest) {
+  const { searchParams, origin } = new URL(request.url);
+  const code = searchParams.get('code');
+  const next = searchParams.get('next') ?? '/account/dashboard';
+
+  // Extract locale from the URL pathname
+  const { pathname } = request.nextUrl;
+  const localeMatch = pathname.match(/^\/([^/]+)/);
+  const locale = localeMatch ? localeMatch[1] : 'en';
+
+  if (code) {
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+
+    if (!error) {
+      // Successfully authenticated, redirect to dashboard with locale
+      const forwardedNext = next.startsWith('/')
+        ? `/${locale}${next}`
+        : `/${locale}/${next}`;
+      return NextResponse.redirect(`${origin}${forwardedNext}`);
+    }
+  }
+
+  // Return the user to an error page with instructions
+  return NextResponse.redirect(`${origin}/${locale}/auth/auth-code-error`);
+}
+```
+
+## File: `app/[locale]/(auth)/login/page.tsx`
+
+```tsx
+'use client';
+
+import { AlertCircle, ArrowLeft, CheckCircle, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{
+    type: 'success' | 'error';
+    text: string;
+  } | null>(null);
+  const pathname = usePathname();
+
+  // Extract locale from pathname
+  const locale = pathname?.split('/')[1] || 'en';
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const response = await fetch('/api/auth/magic-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, locale }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage({
+          type: 'success',
+          text: 'Magic link sent! Check your email to continue.',
+        });
+      } else {
+        setMessage({
+          type: 'error',
+          text: data.error || 'Failed to send magic link. Please try again.',
+        });
+      }
+    } catch {
+      setMessage({
+        type: 'error',
+        text: 'An unexpected error occurred. Please try again.',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className='min-h-screen bg-gradient-to-b from-white to-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='max-w-md w-full space-y-8'>
+        <div className='text-center'>
+          <Link
+            href='/'
+            className='inline-flex items-center text-gray-600 hover:text-gray-900 mb-8'
+          >
+            <ArrowLeft className='h-4 w-4 mr-2' />
+            Back to Home
+          </Link>
+          <h2 className='text-3xl font-bold text-gray-900'>
+            Welcome back to CueTimer
+          </h2>
+          <p className='mt-2 text-gray-600'>
+            Sign in with your email to access your account
+          </p>
+        </div>
+
+        <Card>
+          <CardHeader className='text-center'>
+            <CardTitle className='text-2xl'>Sign In</CardTitle>
+            <CardDescription>
+              We'll send you a magic link to sign in instantly
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className='space-y-6'>
+              <div className='space-y-2'>
+                <Label htmlFor='email'>Email address</Label>
+                <Input
+                  id='email'
+                  type='email'
+                  autoComplete='email'
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder='you@example.com'
+                  className='w-full'
+                />
+              </div>
+
+              {message && (
+                <div
+                  className={`flex items-center gap-2 p-3 rounded-lg ${
+                    message.type === 'success'
+                      ? 'bg-green-50 border border-green-200'
+                      : 'bg-red-50 border border-red-200'
+                  }`}
+                >
+                  {message.type === 'success' ? (
+                    <CheckCircle className='h-4 w-4 text-green-500' />
+                  ) : (
+                    <AlertCircle className='h-4 w-4 text-red-500' />
+                  )}
+                  <span
+                    className={`text-sm ${
+                      message.type === 'success'
+                        ? 'text-green-700'
+                        : 'text-red-700'
+                    }`}
+                  >
+                    {message.text}
+                  </span>
+                </div>
+              )}
+
+              <Button
+                type='submit'
+                disabled={loading || !email}
+                className='w-full bg-brand-orange hover:bg-brand-600 text-white'
+                size='lg'
+              >
+                {loading ? (
+                  <div className='flex items-center'>
+                    <div className='animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2' />
+                    Sending...
+                  </div>
+                ) : (
+                  <div className='flex items-center'>
+                    <Mail className='h-4 w-4 mr-2' />
+                    Send Magic Link
+                  </div>
+                )}
+              </Button>
+            </form>
+
+            <div className='mt-6 text-center'>
+              <p className='text-sm text-gray-600'>
+                Don't have an account?{' '}
+                <Link
+                  href='/signup'
+                  className='text-brand-orange hover:underline font-medium'
+                >
+                  Sign up for free
+                </Link>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className='text-center text-sm text-gray-500'>
+          By signing in, you agree to our{' '}
+          <Link href='/terms' className='text-brand-orange hover:underline'>
+            Terms of Service
+          </Link>{' '}
+          and{' '}
+          <Link href='/privacy' className='text-brand-orange hover:underline'>
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
