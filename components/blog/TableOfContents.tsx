@@ -19,7 +19,6 @@ interface TableOfContentsProps {
 // Constants for scroll behavior
 const SCROLL_OFFSET = 100; // Offset in pixels to account for fixed headers
 const SCROLL_TIMEOUT = 50; // Throttle timeout for scroll events
-const NAVIGATION_TIMEOUT = 1000; // Timeout for navigation attempts
 
 // Debug flag - set to true to enable console logging
 const DEBUG_TOC = process.env.NODE_ENV === 'development';
