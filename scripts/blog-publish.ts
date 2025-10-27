@@ -66,12 +66,10 @@ async function parseFrontmatter(
 
     // Parse booleans
     if (value === 'true') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'true' as any;
       continue;
     }
     if (value === 'false') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'false' as any;
       continue;
     }
@@ -79,7 +77,6 @@ async function parseFrontmatter(
     frontmatter[key] = value;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return { frontmatter: frontmatter as any, content };
 }
 

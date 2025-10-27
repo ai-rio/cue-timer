@@ -52,9 +52,7 @@ export default async function BlogPostContent({
       {/* Table of Contents */}
       <aside className='lg:col-span-1'>
         <BlogErrorBoundary>
-          <div className='hidden lg:block'>
-            <TableOfContents headings={headings} />
-          </div>
+          <TableOfContents headings={headings} />
         </BlogErrorBoundary>
       </aside>
     </div>

@@ -168,12 +168,10 @@ function parseFrontmatter(content: string): BlogPost {
 
     // Parse booleans
     if (value === 'true') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'true' as any;
       continue;
     }
     if (value === 'false') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'false' as any;
       continue;
     }

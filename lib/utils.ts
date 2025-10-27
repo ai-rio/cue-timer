@@ -78,10 +78,50 @@ export function dedentFrontmatter(
 }
 
 /**
- * Process a single string input
+ * Process a single string input with frontmatter detection
  */
 function processSingleString(input: string): string {
   const lines = input.split('\n');
+
+  // Check if content starts with frontmatter
+  if (lines[0]?.trim() === '---') {
+    // Find the end of frontmatter
+    let frontmatterEnd = -1;
+    for (let i = 1; i < lines.length; i++) {
+      if (lines[i]?.trim() === '---') {
+        frontmatterEnd = i;
+        break;
+      }
+    }
+
+    if (frontmatterEnd !== -1) {
+      // Process frontmatter separately
+      const frontmatterLines = lines.slice(1, frontmatterEnd);
+      const remainingLines = lines.slice(frontmatterEnd + 1);
+
+      // Dedent frontmatter
+      const nonEmptyFrontmatterLines = frontmatterLines.filter((line) => line.trim().length > 0);
+      if (nonEmptyFrontmatterLines.length === 0) {
+        return input;
+      }
+
+      const minIndent = Math.min(
+        ...nonEmptyFrontmatterLines.map((line) => {
+          const match = line.match(/^(\s*)/);
+          return match?.[1]?.length ?? 0;
+        })
+      );
+
+      const dedentedFrontmatter = frontmatterLines.map((line) => {
+        if (line.trim().length === 0) return line;
+        return line.slice(minIndent);
+      });
+
+      return ['---', ...dedentedFrontmatter, '---', ...remainingLines].join('\n');
+    }
+  }
+
+  // Fallback to regular dedenting for non-frontmatter content
   const nonEmptyLines = lines.filter((line) => line.trim().length > 0);
 
   if (nonEmptyLines.length === 0) return input;
@@ -106,11 +146,93 @@ function processSingleString(input: string): string {
  * when the frontmatter title is already being used as the page title.
  */
 export function stripFirstH1(content: string): string {
-  // Match the first H1 heading at the start of the content or after frontmatter
-  const h1Regex = /^(?:---[\s\S]*?---\s*)?#\s+.+$/m;
+  const lines = content.split('\n');
+  let hasFrontmatter = false;
+  let frontmatterEnd = -1;
+  let h1LineIndex = -1;
 
-  // If we find an H1, remove it along with any surrounding whitespace
-  return content.replace(h1Regex, '').trim();
+  // Check for frontmatter and find H1
+  if (lines[0]?.trim() === '---') {
+    hasFrontmatter = true;
+    // Find end of frontmatter
+    for (let i = 1; i < lines.length; i++) {
+      if (lines[i]?.trim() === '---') {
+        frontmatterEnd = i;
+        break;
+      }
+    }
+
+    // Look for H1 immediately after frontmatter (skip empty lines)
+    let hasContentBeforeH1 = false;
+    for (let i = frontmatterEnd + 1; i < lines.length; i++) {
+      const line = lines[i]?.trim() || '';
+
+      if (line === '') {
+        // Skip empty lines
+        continue;
+      } else if (line.startsWith('# ')) {
+        // Found H1, check if there was content before it
+        if (!hasContentBeforeH1) {
+          h1LineIndex = i;
+        }
+        break;
+      } else {
+        // Found non-empty content before H1, don't remove H1
+        hasContentBeforeH1 = true;
+        break;
+      }
+    }
+  } else {
+    // Look for H1 at the very start of content (skip empty lines)
+    let hasContentBeforeH1 = false;
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]?.trim() || '';
+
+      if (line === '') {
+        // Skip empty lines
+        continue;
+      } else if (line.startsWith('# ')) {
+        // Found H1, check if there was content before it
+        if (!hasContentBeforeH1) {
+          h1LineIndex = i;
+        }
+        break;
+      } else {
+        // Found non-empty content before H1, don't remove H1
+        hasContentBeforeH1 = true;
+        break;
+      }
+    }
+  }
+
+  // Remove the H1 if found
+  if (h1LineIndex !== -1) {
+    lines.splice(h1LineIndex, 1);
+
+    // Remove extra whitespace around where the H1 was
+    // Clean up any double empty lines that might result from removal
+    const cleanedLines: string[] = [];
+    let previousLineEmpty = false;
+
+    for (let j = 0; j < lines.length; j++) {
+      const line = lines[j] || '';
+      const isEmpty = line.trim() === '';
+
+      if (isEmpty && previousLineEmpty) {
+        // Skip this line as it would create double empty lines
+        continue;
+      }
+
+      cleanedLines.push(line);
+      previousLineEmpty = isEmpty;
+    }
+
+    // Replace lines array with cleaned version
+    lines.length = 0;
+    lines.push(...cleanedLines);
+  }
+
+  return lines.join('\n').trim();
 }
 
 /**
@@ -215,9 +337,21 @@ export function extractHeadingsFromMdx(content: string): TableOfContentsItem[] {
 }
 
 /**
- * Generate URL-friendly slug from text (matches remark-slug algorithm)
+ * Generate URL-friendly slug from text (matches MDX components logic)
+ * This function uses the same algorithm as the MDX heading components to ensure consistency
  */
 export function generateSlug(text: string): string {
+  // Match the MDX components logic exactly: toLowerCase().replace(/\s+/g, '-')
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
+
+/**
+ * Generate URL-friendly slug from text with enhanced character handling
+ * This function provides more robust slugification for use cases where special characters need handling
+ */
+export function generateEnhancedSlug(text: string): string {
   return text
     .toLowerCase()
     .trim()
