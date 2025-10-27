@@ -1,0 +1,57 @@
+{
+  "title": "Blog",
+  "description": "Descubra as últimas ideias, dicas e tutoriais sobre timing de eventos, produtividade e gerenciamento profissional de apresentações.",
+  "meta": {
+    "title": "Blog CueTimer - Dicas Especializadas de Timing de Eventos e Produtividade",
+    "description": "Leia os últimos artigos sobre gerenciamento de eventos, otimização de timer e dicas profissionais de apresentação dos especialistas CueTimer.",
+    "keywords": [
+      "timing de eventos",
+      "dicas de timer",
+      "produtividade",
+      "gerenciamento de eventos",
+      "habilidades de apresentação"
+    ]
+  },
+  "categories": {
+    "timing": "Timing",
+    "productivity": "Produtividade",
+    "events": "Eventos",
+    "features": "Recursos",
+    "tutorials": "Tutoriais",
+    "industry": "Indústria"
+  },
+  "filter": {
+    "searchPlaceholder": "Pesquisar posts do blog...",
+    "categoryLabel": "Categoria",
+    "allCategories": "Todas as Categorias",
+    "featuredOnly": "Apenas Destaques",
+    "clearFilters": "Limpar Filtros",
+    "activeFilters": "Filtros Ativos"
+  },
+  "featured": "Destaque",
+  "totalPosts": "posts totais",
+  "featuredPosts": "posts em destaque",
+  "avgReadTime": "tempo médio de leitura",
+  "minRead": "min de leitura",
+  "more": "mais",
+  "newsletter": {
+    "title": "Mantenha-se Atualizado",
+    "description": "Receba as últimas dicas de timing de eventos e insights de produtividade em sua caixa de entrada semanalmente.",
+    "placeholder": "Digite seu email",
+    "subscribe": "Assinar",
+    "privacy": "Respeitamos sua privacidade. Cancele a inscrição a qualquer momento."
+  },
+  "post": {
+    "by": "Por",
+    "publishedOn": "Publicado em",
+    "readingTime": "Tempo de leitura",
+    "minutes": "minutos",
+    "relatedPosts": "Posts Relacionados",
+    "tableOfContents": "Sumário",
+    "share": "Compartilhar",
+    "tags": "Tags",
+    "backToBlog": "Voltar ao Blog",
+    "nextPost": "Próximo Post",
+    "previousPost": "Post Anterior"
+  }
+}

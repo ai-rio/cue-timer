@@ -23,6 +23,7 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
     } catch (error) {
       console.error('Error filtering posts:', error);
       setFilteredPosts([]);
+      // Optional: Show error toast message here
     } finally {
       setLoading(false);
     }

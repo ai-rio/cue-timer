@@ -1,0 +1,57 @@
+{
+  "title": "Blog",
+  "description": "Entdecken Sie die neuesten Einblicke, Tipps und Tutorials zu Event-Timing, Produktivität und professioneller Präsentationsverwaltung.",
+  "meta": {
+    "title": "CueTimer Blog - Experten-Tipps für Event-Timing und Produktivität",
+    "description": "Lesen Sie die neuesten Artikel über Event-Management, Timer-Optimierung und professionelle Präsentationstipps von CueTimer-Experten.",
+    "keywords": [
+      "Event-Timing",
+      "Timer-Tipps",
+      "Produktivität",
+      "Event-Management",
+      "Präsentationsfähigkeiten"
+    ]
+  },
+  "categories": {
+    "timing": "Timing",
+    "productivity": "Produktivität",
+    "events": "Events",
+    "features": "Funktionen",
+    "tutorials": "Tutorials",
+    "industry": "Industrie"
+  },
+  "filter": {
+    "searchPlaceholder": "Blog-Beiträge suchen...",
+    "categoryLabel": "Kategorie",
+    "allCategories": "Alle Kategorien",
+    "featuredOnly": "Nur Featured",
+    "clearFilters": "Filter löschen",
+    "activeFilters": "Aktive Filter"
+  },
+  "featured": "Featured",
+  "totalPosts": "gesamte Beiträge",
+  "featuredPosts": "Featured Beiträge",
+  "avgReadTime": "durchschn. Lesezeit",
+  "minRead": "Min Lesezeit",
+  "more": "mehr",
+  "newsletter": {
+    "title": "Bleiben Sie auf dem Laufenden",
+    "description": "Erhalten Sie die neuesten Event-Timing-Tipps und Produktivitäts-Insights wöchentlich in Ihrem Posteingang.",
+    "placeholder": "E-Mail eingeben",
+    "subscribe": "Abonnieren",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Jederzeit abbestellbar."
+  },
+  "post": {
+    "by": "Von",
+    "publishedOn": "Veröffentlicht am",
+    "readingTime": "Lesezeit",
+    "minutes": "Minuten",
+    "relatedPosts": "Verwandte Beiträge",
+    "tableOfContents": "Inhaltsverzeichnis",
+    "share": "Teilen",
+    "tags": "Tags",
+    "backToBlog": "Zurück zum Blog",
+    "nextPost": "Nächster Beitrag",
+    "previousPost": "Vorheriger Beitrag"
+  }
+}

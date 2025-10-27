@@ -29,6 +29,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     'settings',
     'billing',
     'support',
+    'blog',
   ];
 
   // Load each namespace with fallback to English

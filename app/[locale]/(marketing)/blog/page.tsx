@@ -2,17 +2,17 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 import BlogContent from '@/components/blog/BlogContent';
-import { BlogPost, getAllPosts } from '@/lib/blog';
+import { getAllPosts } from '@/lib/blog';
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     locale: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     category?: string;
     featured?: string;
     search?: string;
-  };
+  }>;
 }
 
 // Generate metadata for the blog page
@@ -43,16 +43,36 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function BlogPage() {
+export default async function BlogPage({ params, searchParams }: BlogPageProps) {
+  // Get initial posts for server-side rendering
+  const initialPosts = await getAllPosts({ includeDrafts: false });
+
   return (
     <div className='container mx-auto px-4 py-8'>
-      <h1 className='text-4xl font-bold text-gray-900 mb-4 text-center'>CueTimer Blog</h1>
-      <p className='text-xl text-gray-600 max-w-3xl mx-auto text-center mb-8'>
-        Simple blog page test.
-      </p>
-      <div className='text-center'>
-        <p>If you can see this page, the basic routing and layout are working.</p>
+      {/* Header */}
+      <div className='text-center mb-12'>
+        <h1 className='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>CueTimer Blog</h1>
+        <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+          Expert insights on event timing, productivity, and professional presentation management.
+          Learn from industry leaders and transform your events with proven strategies.
+        </p>
       </div>
+
+      {/* Blog Content with filtering and posts */}
+      <Suspense
+        fallback={
+          <div className='animate-pulse'>
+            <div className='h-8 bg-gray-200 rounded mb-8 w-1/3'></div>
+            <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className='bg-gray-200 rounded-lg border border-gray-300 h-80' />
+              ))}
+            </div>
+          </div>
+        }
+      >
+        <BlogContent initialPosts={initialPosts} />
+      </Suspense>
     </div>
   );
 }
