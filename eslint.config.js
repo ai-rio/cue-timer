@@ -51,6 +51,7 @@ export default [
       'content/**/*.md',
       'content/**/*.mdx',
       'tests/**/*.js',
+      'tests/setup.cjs',
     ],
   },
   {

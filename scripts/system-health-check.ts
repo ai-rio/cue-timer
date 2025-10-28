@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
  * System Health Check Script
@@ -155,7 +156,7 @@ class SystemHealthChecker {
         if (auditOutput) {
           const audit = JSON.parse(auditOutput);
           vulnerabilities = audit.vulnerabilities || vulnerabilities;
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
           metrics.vulnerabilities = vulnerabilities as any;
         }
       } catch (error) {
@@ -207,7 +208,7 @@ class SystemHealthChecker {
           nodeModulesExists,
           criticalDepsMissing,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -236,7 +237,6 @@ class SystemHealthChecker {
         }
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metrics.envFiles = envFileStatus as any;
 
       // Check Node.js version
@@ -315,7 +315,7 @@ class SystemHealthChecker {
           gitignoreExists,
           envFileStatus,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -358,7 +358,6 @@ class SystemHealthChecker {
         this.alerts.push(`Missing critical directories: ${missingDirs.join(', ')}`);
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metrics.criticalDirectories = dirStatus as any;
 
       // Check file permissions
@@ -391,7 +390,6 @@ class SystemHealthChecker {
         this.alerts.push(`Permission issues with files: ${permissionIssues.join(', ')}`);
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metrics.filePermissions = filePermissions as any;
 
       // Check disk space (simplified check)
@@ -458,7 +456,7 @@ class SystemHealthChecker {
           permissionIssues: permissionIssues.length,
           diskSpaceCritical: metrics.diskSpaceCritical || false,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -562,7 +560,7 @@ class SystemHealthChecker {
         },
         metrics: {
           ...metrics,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
           toolResults: toolResults.map((r) => ({ tool: r.tool, accessible: r.accessible })) as any,
         },
       };
@@ -636,7 +634,6 @@ class SystemHealthChecker {
         }
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metrics.templateTests = templateTests as any;
       const workingTemplates = templateTests.filter((t) => t.accessible).length;
 
@@ -676,7 +673,7 @@ class SystemHealthChecker {
           existingTemplates: existingTemplates.length,
           workingTemplates,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -778,7 +775,7 @@ class SystemHealthChecker {
           localesDirExists,
           localeFiles: localeFiles.length,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -804,7 +801,6 @@ class SystemHealthChecker {
         dirStatus[dir] = existsSync(dir);
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       metrics.contentDirectories = dirStatus as any;
 
       // Check for MDX files
@@ -899,7 +895,7 @@ class SystemHealthChecker {
           validMdxFiles: validMdxFiles.length,
           invalidMdxFiles: invalidMdxFiles.length,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {
@@ -925,7 +921,6 @@ class SystemHealthChecker {
         heapTotal: Math.round(memoryUsage.heapTotal / 1024 / 1024),
         external: Math.round(memoryUsage.external / 1024 / 1024),
         rss: Math.round(memoryUsage.rss / 1024 / 1024),
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any;
 
       // Check if application can start (basic startup test)
@@ -1006,7 +1001,7 @@ class SystemHealthChecker {
           bundleSize: bundleSize ? `${Math.round(bundleSize / 1024 / 1024)}MB` : 'unknown',
           memoryUsage: `${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
         },
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         metrics: metrics as any,
       };
     } catch (error: unknown) {

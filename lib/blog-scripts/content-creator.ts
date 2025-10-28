@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
-import { join } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { z } from 'zod';
 
 import { CueTimerTemplate } from './types';
@@ -29,6 +30,8 @@ export class ContentCreator {
 
   constructor() {
     this.contentDir = join(process.cwd(), 'content', 'blog');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
     this.templatesDir = join(__dirname, 'templates');
   }
 

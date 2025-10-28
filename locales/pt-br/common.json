@@ -151,5 +151,13 @@
     "event": "evento",
     "timers": "timers",
     "timer": "timer"
+  },
+  "header": {
+    "navigation": {
+      "features": "Recursos"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 CueTimer. Todos os direitos reservados."
   }
 }

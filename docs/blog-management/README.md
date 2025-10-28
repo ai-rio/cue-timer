@@ -22,6 +22,8 @@ presentation tips.
   Spanish, and more
 - **⚡ CLI Tools**: 5 powerful command-line tools for content workflow
   automation
+- **🔗 Internal Linking Automation**: Intelligent internal link suggestions and
+  automatic insertion
 - **🔍 SEO Optimization**: Built-in SEO analysis and optimization tools
 - **📊 Analytics Integration**: Comprehensive content performance tracking
 - **🛡️ Type Safety**: Full TypeScript support with comprehensive validation
@@ -73,6 +75,7 @@ bun run blog:publish         # Manage publishing workflow
 # Content optimization
 bun run blog:seo-check       # Analyze and optimize SEO
 bun run blog:analytics       # View content performance metrics
+bun run blog:internal-links  # Analyze and manage internal linking
 
 # Workflow management
 bun run blog:workflow:status # Track content creation progress
@@ -353,6 +356,8 @@ bun run quality:check
 
 This documentation includes:
 
+### Core Documentation
+
 - **[TEMPLATES.md](./TEMPLATES.md)** - Detailed template reference
 - **[CLI-REFERENCE.md](./CLI-REFERENCE.md)** - Complete CLI documentation
 - **[WORKFLOW.md](./WORKFLOW.md)** - End-to-end workflow guide
@@ -360,6 +365,30 @@ This documentation includes:
 - **[API-REFERENCE.md](./API-REFERENCE.md)** - API documentation
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deployment guide
 - **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Troubleshooting guide
+
+### Internal Linking Automation
+
+- **[INTERNAL-LINKING/](./INTERNAL-LINKING/)** - Complete internal linking
+  system
+  - **[Usage Guide](./INTERNAL-LINKING/USAGE-GUIDE.md)** - Complete usage guide
+    and API reference
+  - **[Examples](./INTERNAL-LINKING/EXAMPLES.md)** - Practical examples and code
+    samples
+  - **[Configuration](./INTERNAL-LINKING/CONFIGURATION.md)** - Configuration
+    options and customization
+  - **[API Reference](./INTERNAL-LINKING/API-REFERENCE.md)** - Complete API
+    documentation
+  - **[Design Document](./internal-linking-automation-design.md)** - System
+    architecture and design
+
+### System Documentation
+
+- **[IMPLEMENTATION-SUMMARY.md](./IMPLEMENTATION-SUMMARY.md)** - Implementation
+  overview
+- **[SYSTEM-CERTIFICATION.md](./SYSTEM-CERTIFICATION.md)** - System
+  certification
+- **[DEPLOYMENT-READINESS.md](./DEPLOYMENT-READINESS.md)** - Deployment
+  preparation
 
 ---
 

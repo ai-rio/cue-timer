@@ -210,15 +210,19 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPostEnha
         }
 
         const { content } = matter(fileContent);
-        const wordCount = content.split(/\s+/).length;
-        const excerpt = generateExcerpt(content);
+        // Use basic MDX processing to avoid internal linking issues
+        const processedContent = content
+          .replace(/^[\r\n]+/, '') // Remove leading newlines
+          .replace(/\t+$/gm, ''); // Remove trailing tabs
+        const wordCount = processedContent.split(/\s+/).length;
+        const excerpt = generateExcerpt(processedContent);
 
         const post: BlogPost = {
           ...metadata,
-          content,
+          content: processedContent,
           excerpt,
           wordCount,
-          readTime: metadata.readTime || Math.ceil(readingTime(content).minutes),
+          readTime: metadata.readTime || Math.ceil(readingTime(processedContent).minutes),
           publishedAtDate: new Date(metadata.publishedAt),
           lastModifiedDate: metadata.lastModified ? new Date(metadata.lastModified) : undefined,
         };
@@ -306,15 +310,19 @@ export async function getPostBySlug(slug: string): Promise<BlogPostEnhanced | nu
 
         if (postSlug === slug) {
           const { content } = matter(fileContent);
-          const wordCount = content.split(/\s+/).length;
-          const excerpt = generateExcerpt(content);
+          // Use basic MDX processing to avoid internal linking issues
+          const processedContent = content
+            .replace(/^[\r\n]+/, '') // Remove leading newlines
+            .replace(/\t+$/gm, ''); // Remove trailing tabs
+          const wordCount = processedContent.split(/\s+/).length;
+          const excerpt = generateExcerpt(processedContent);
 
           const post: BlogPost = {
             ...metadata,
-            content,
+            content: processedContent,
             excerpt,
             wordCount,
-            readTime: metadata.readTime || Math.ceil(readingTime(content).minutes),
+            readTime: metadata.readTime || Math.ceil(readingTime(processedContent).minutes),
             publishedAtDate: new Date(metadata.publishedAt),
             lastModifiedDate: metadata.lastModified ? new Date(metadata.lastModified) : undefined,
           };

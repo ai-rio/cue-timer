@@ -1,36 +1,85 @@
 {
+  "title": "Blog",
+  "description": "Descubra as últimas ideias, dicas e tutoriais sobre timing de eventos, produtividade e gerenciamento profissional de apresentações.",
   "meta": {
-    "title": "Blog CueTimer - Dicas de Temporização de Eventos e Produtividade",
-    "description": "Leia os últimos artigos sobre gestão de eventos, otimização de temporizadores e dicas de apresentação profissional dos especialistas CueTimer."
-  },
-  "title": "Blog CueTimer",
-  "subtitle": "Insights especialistas sobre temporização de eventos, produtividade e habilidades de apresentação profissional. Aprenda com especialistas do setor e leve seus eventos para o próximo nível.",
-  "loading": "Carregando posts do blog...",
-  "error": "Erro ao carregar posts do blog",
-  "empty": "Nenhum post do blog encontrado.",
-  "featured": "Destaque",
-  "minRead": "min de leitura",
-  "readMore": "Leia Mais",
-  "backToBlog": "Voltar ao Blog",
-  "relatedPosts": "Posts Relacionados",
-  "navigation": {
-    "previous": "Post Anterior",
-    "next": "Próximo Post"
+    "title": "Blog CueTimer - Dicas Especializadas de Timing de Eventos e Produtividade",
+    "description": "Leia os últimos artigos sobre gerenciamento de eventos, otimização de timer e dicas profissionais de apresentação dos especialistas CueTimer.",
+    "keywords": [
+      "timing de eventos",
+      "dicas de timer",
+      "produtividade",
+      "gerenciamento de eventos",
+      "habilidades de apresentação"
+    ]
   },
   "categories": {
-    "timing": "Temporização",
+    "timing": "Timing",
     "productivity": "Produtividade",
     "events": "Eventos",
     "features": "Recursos",
     "tutorials": "Tutoriais",
-    "industry": "Setor"
+    "industry": "Indústria",
+    "browse": "Navegar"
   },
   "filter": {
     "searchPlaceholder": "Pesquisar posts do blog...",
     "categoryLabel": "Categoria",
     "allCategories": "Todas as Categorias",
+    "allPosts": "Todos os Posts",
     "featuredOnly": "Apenas Destaques",
     "clearFilters": "Limpar Filtros",
     "activeFilters": "Filtros Ativos"
+  },
+  "featured": "Destaque",
+  "totalPosts": "posts totais",
+  "featuredPosts": "posts em destaque",
+  "avgReadTime": "tempo médio de leitura",
+  "minRead": "min de leitura",
+  "more": "mais",
+  "tabs": {
+    "allPosts": "Todos os Posts",
+    "featured": "Destaques",
+    "categories": "Categorias"
+  },
+  "stats": {
+    "posts": "posts"
+  },
+  "noResults": {
+    "title": "Nenhum post encontrado",
+    "description": "Tente ajustar seus filtros ou termos de pesquisa para encontrar o que você está procurando.",
+    "clearFilters": "Limpar Filtros"
+  },
+  "newsletter": {
+    "title": "Mantenha-se Atualizado",
+    "description": "Receba as últimas dicas de timing de eventos e insights de produtividade em sua caixa de entrada semanalmente.",
+    "placeholder": "Digite seu email",
+    "subscribe": "Assinar",
+    "privacy": "Respeitamos sua privacidade. Cancele a inscrição a qualquer momento."
+  },
+  "post": {
+    "by": "Por",
+    "publishedOn": "Publicado em",
+    "readingTime": "Tempo de leitura",
+    "minutes": "minutos",
+    "relatedPosts": "Posts Relacionados",
+    "tableOfContents": "Sumário",
+    "share": "Compartilhar",
+    "tags": "Tags",
+    "backToBlog": "Voltar ao Blog",
+    "nextPost": "Próximo Post",
+    "previousPost": "Post Anterior"
+  },
+  "postNotFound": {
+    "title": "Post do Blog Não Encontrado",
+    "description": "O post do blog que você está procurando não existe ou foi removido.",
+    "backToBlog": "Voltar ao Blog",
+    "suggestion": "Você pode querer",
+    "browsePosts": "navegar nossos posts mais recentes",
+    "mightLike": {
+      "title": "Você também pode gostar:",
+      "timingPosts": "Posts de timing",
+      "productivityPosts": "Posts de produtividade",
+      "featuredPosts": "Posts em destaque"
+    }
   }
 }

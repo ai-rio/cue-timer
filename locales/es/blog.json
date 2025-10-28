@@ -1,36 +1,85 @@
 {
+  "title": "Blog",
+  "description": "Descubre las últimas ideas, consejos y tutoriales sobre sincronización de eventos, productividad y gestión profesional de presentaciones.",
   "meta": {
-    "title": "Blog CueTimer - Consejos de Temporización de Eventos y Productividad",
-    "description": "Lee los últimos artículos sobre gestión de eventos, optimización de temporizadores y consejos de presentación profesional de los expertos CueTimer."
-  },
-  "title": "Blog CueTimer",
-  "subtitle": "Insights de expertos sobre temporización de eventos, productividad y habilidades de presentación profesional. Aprende de expertos del sector y lleva tus eventos al siguiente nivel.",
-  "loading": "Cargando publicaciones del blog...",
-  "error": "Error al cargar publicaciones del blog",
-  "empty": "No se encontraron publicaciones del blog.",
-  "featured": "Destacado",
-  "minRead": "min de lectura",
-  "readMore": "Leer Más",
-  "backToBlog": "Volver al Blog",
-  "relatedPosts": "Publicaciones Relacionadas",
-  "navigation": {
-    "previous": "Publicación Anterior",
-    "next": "Siguiente Publicación"
+    "title": "Blog CueTimer - Consejos Expertos de Sincronización de Eventos y Productividad",
+    "description": "Lee los últimos artículos sobre gestión de eventos, optimización de temporizador y consejos profesionales de presentación de los expertos CueTimer.",
+    "keywords": [
+      "sincronización de eventos",
+      "consejos de temporizador",
+      "productividad",
+      "gestión de eventos",
+      "habilidades de presentación"
+    ]
   },
   "categories": {
-    "timing": "Temporización",
+    "timing": "Sincronización",
     "productivity": "Productividad",
     "events": "Eventos",
     "features": "Características",
     "tutorials": "Tutoriales",
-    "industry": "Sector"
+    "industry": "Industria",
+    "browse": "Navegar"
   },
   "filter": {
     "searchPlaceholder": "Buscar publicaciones del blog...",
     "categoryLabel": "Categoría",
     "allCategories": "Todas las Categorías",
+    "allPosts": "Todas las Publicaciones",
     "featuredOnly": "Solo Destacados",
     "clearFilters": "Limpiar Filtros",
     "activeFilters": "Filtros Activos"
+  },
+  "featured": "Destacado",
+  "totalPosts": "publicaciones totales",
+  "featuredPosts": "publicaciones destacadas",
+  "avgReadTime": "tiempo promedio de lectura",
+  "minRead": "min de lectura",
+  "more": "más",
+  "tabs": {
+    "allPosts": "Todas las Publicaciones",
+    "featured": "Destacados",
+    "categories": "Categorías"
+  },
+  "stats": {
+    "posts": "publicaciones"
+  },
+  "noResults": {
+    "title": "No se encontraron publicaciones",
+    "description": "Intenta ajustar tus filtros o términos de búsqueda para encontrar lo que estás buscando.",
+    "clearFilters": "Limpiar Filtros"
+  },
+  "newsletter": {
+    "title": "Mantente Actualizado",
+    "description": "Recibe los últimos consejos de sincronización de eventos e insights de productividad en tu bandeja de entrada semanalmente.",
+    "placeholder": "Ingresa tu email",
+    "subscribe": "Suscribirse",
+    "privacy": "Respetamos tu privacidad. Cancela la suscripción en cualquier momento."
+  },
+  "post": {
+    "by": "Por",
+    "publishedOn": "Publicado en",
+    "readingTime": "Tiempo de lectura",
+    "minutes": "minutos",
+    "relatedPosts": "Publicaciones Relacionadas",
+    "tableOfContents": "Tabla de Contenidos",
+    "share": "Compartir",
+    "tags": "Etiquetas",
+    "backToBlog": "Volver al Blog",
+    "nextPost": "Siguiente Publicación",
+    "previousPost": "Publicación Anterior"
+  },
+  "postNotFound": {
+    "title": "Publicación del Blog No Encontrada",
+    "description": "La publicación del blog que buscas no existe o ha sido eliminada.",
+    "backToBlog": "Volver al Blog",
+    "suggestion": "Quizás quieras",
+    "browsePosts": "nuestras últimas publicaciones",
+    "mightLike": {
+      "title": "También podría interesarte:",
+      "timingPosts": "Publicaciones de sincronización",
+      "productivityPosts": "Publicaciones de productividad",
+      "featuredPosts": "Publicaciones destacadas"
+    }
   }
 }

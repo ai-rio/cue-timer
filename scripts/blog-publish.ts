@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import chalk from 'chalk';
 import { Command } from 'commander';
@@ -66,12 +67,10 @@ async function parseFrontmatter(
 
     // Parse booleans
     if (value === 'true') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'true' as any;
       continue;
     }
     if (value === 'false') {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       frontmatter[key] = 'false' as any;
       continue;
     }
@@ -79,7 +78,6 @@ async function parseFrontmatter(
     frontmatter[key] = value;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return { frontmatter: frontmatter as any, content };
 }
 
@@ -111,20 +109,31 @@ async function findPostBySlug(
 
     for (const year of years) {
       const yearDir = join(CONTENT_DIR, year);
-      const months = await fs.readdir(yearDir);
+      const yearItems = await fs.readdir(yearDir);
 
-      for (const month of months) {
-        const monthDir = join(yearDir, month);
-        const files = await fs.readdir(monthDir);
+      for (const item of yearItems) {
+        const itemPath = join(yearDir, item);
+        const stat = await fs.stat(itemPath);
 
-        for (const file of files) {
-          if (file.endsWith('.mdx')) {
-            const filePath = join(monthDir, file);
-            const { frontmatter } = await parseFrontmatter(filePath);
+        if (stat.isDirectory()) {
+          // This is a month directory
+          const files = await fs.readdir(itemPath);
+          for (const file of files) {
+            if (file.endsWith('.mdx') || file.endsWith('.md')) {
+              const filePath = join(itemPath, file);
+              const { frontmatter } = await parseFrontmatter(filePath);
 
-            if (frontmatter.slug === slug) {
-              return { filePath, frontmatter, content: '' };
+              if (frontmatter.slug === slug) {
+                return { filePath, frontmatter, content: '' };
+              }
             }
+          }
+        } else if (stat.isFile() && (item.endsWith('.mdx') || item.endsWith('.md'))) {
+          // This is a file directly in the year directory
+          const { frontmatter } = await parseFrontmatter(itemPath);
+
+          if (frontmatter.slug === slug) {
+            return { filePath: itemPath, frontmatter, content: '' };
           }
         }
       }
@@ -145,20 +154,31 @@ async function getDraftPosts(): Promise<Array<{ filePath: string; frontmatter: B
 
     for (const year of years) {
       const yearDir = join(CONTENT_DIR, year);
-      const months = await fs.readdir(yearDir);
+      const yearItems = await fs.readdir(yearDir);
 
-      for (const month of months) {
-        const monthDir = join(yearDir, month);
-        const files = await fs.readdir(monthDir);
+      for (const item of yearItems) {
+        const itemPath = join(yearDir, item);
+        const stat = await fs.stat(itemPath);
 
-        for (const file of files) {
-          if (file.endsWith('.mdx')) {
-            const filePath = join(monthDir, file);
-            const { frontmatter } = await parseFrontmatter(filePath);
+        if (stat.isDirectory()) {
+          // This is a month directory
+          const files = await fs.readdir(itemPath);
+          for (const file of files) {
+            if (file.endsWith('.mdx') || file.endsWith('.md')) {
+              const filePath = join(itemPath, file);
+              const { frontmatter } = await parseFrontmatter(filePath);
 
-            if (frontmatter.isDraft) {
-              drafts.push({ filePath, frontmatter });
+              if (frontmatter.isDraft) {
+                drafts.push({ filePath, frontmatter });
+              }
             }
+          }
+        } else if (stat.isFile() && (item.endsWith('.mdx') || item.endsWith('.md'))) {
+          // This is a file directly in the year directory
+          const { frontmatter } = await parseFrontmatter(itemPath);
+
+          if (frontmatter.isDraft) {
+            drafts.push({ filePath: itemPath, frontmatter });
           }
         }
       }

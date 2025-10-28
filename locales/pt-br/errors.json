@@ -150,5 +150,6 @@
     "event": "evento",
     "timers": "timers",
     "timer": "timer"
-  }
+  },
+  "pageNotFound": "Página não encontrada"
 }

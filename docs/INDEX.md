@@ -75,7 +75,7 @@
 
 - `design/branding/design-system.md` - Visual identity and component library
 
-### 💻 Development & Implementation (3 files)
+### 💻 Development & Implementation (Multiple files)
 
 #### Implementation Guides
 
@@ -85,6 +85,27 @@
   usage policy and guidelines**
 - `development/guides/quotekit-integration-plan.md` - **Autonomous marketing
   infrastructure (QuoteKit patterns as reference only)**
+- `development/guides/documentation-organization-plan.md` - Documentation
+  structure methodology
+- `development/guides/documentation-overview.md` - Documentation framework
+  overview
+- `development/guides/naming-conventions.md` - File naming standards
+
+### 📝 Blog Management (Multiple files)
+
+#### Content Automation
+
+- `blog-management/internal-linking-automation-design.md` - **Automated internal
+  linking system for SEO optimization**
+- `blog-management/internal-linking-usage.md` - Practical usage examples
+- `blog-management/INTERNAL-LINKING/` - Complete internal linking system docs
+
+### 📝 Blog Management (1 file)
+
+#### Content Automation
+
+- `blog-management/internal-linking-automation-design.md` - **Automated internal
+  linking system for SEO optimization**
 
 ### 🔬 Research & Analysis (1 file)
 
@@ -98,6 +119,37 @@
 #### Creative Templates
 
 - `templates/prompts/creative-team-prompt.md` - AI prompts for creative work
+
+### 📋 Content & Media
+
+#### Blog Content
+
+- `content/blog/` - Blog post drafts and published content
+
+### 🛠️ Implementation & Projects
+
+#### Project Documentation
+
+- `implementation-plans/` - Implementation plans and technical designs
+- `phase-reports/` - Project phase documentation and reports
+- `planning/` - Strategic planning documents
+- `plans/` - Specific project plans and designs
+- `projects/frictionless-blog-workflow/` - Active blog system project
+
+### 🔧 Tools & Utilities
+
+#### Documentation Tools
+
+- `shard-tool-python/` - Python tooling for documentation processing
+- `cue-timer-digest/` - Project documentation analysis and chunks
+
+### ✅ Validation & Quality
+
+#### Quality Assurance
+
+- `validation/validation-summary.md` - Complete validation overview
+- `validation/eslint-reports/` - ESLint reports and disaster recovery
+  documentation
 
 ---
 
@@ -135,6 +187,8 @@
 3. **Market Strategy**:
    [Go-to-Market Plan](strategy/go-to-market/go-to-market-strategy.md)
 4. **Content Strategy**: [Content Strategy](strategy/content-strategy.md)
+5. **SEO Optimization**:
+   [Internal Linking Automation](blog-management/internal-linking-automation-design.md)
 
 ---
 
@@ -201,5 +255,5 @@
 
 ---
 
-**Last Updated:** 2025-10-24 **Total Documents:** 18 files **Next Review:**
+**Last Updated:** 2025-10-26 **Total Documents:** 19 files **Next Review:**
 Weekly or as needed

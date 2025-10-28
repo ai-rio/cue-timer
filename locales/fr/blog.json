@@ -1,36 +1,85 @@
 {
+  "title": "Blog",
+  "description": "Découvrez les dernières idées, conseils et tutoriels sur le timing d'événements, la productivité et la gestion professionnelle de présentations.",
   "meta": {
-    "title": "Blog CueTimer - Conseils de Temporisation d'Événements et Productivité",
-    "description": "Lisez les derniers articles sur la gestion d'événements, l'optimisation des minuteurs et les conseils de présentation professionnelle des experts CueTimer."
-  },
-  "title": "Blog CueTimer",
-  "subtitle": "Insights d'experts sur la temporisation d'événements, la productivité et les compétences de présentation professionnelle. Apprenez des experts du secteur et améliorez vos événements.",
-  "loading": "Chargement des articles du blog...",
-  "error": "Erreur lors du chargement des articles du blog",
-  "empty": "Aucun article du blog trouvé.",
-  "featured": "En vedette",
-  "minRead": "min de lecture",
-  "readMore": "Lire Plus",
-  "backToBlog": "Retour au Blog",
-  "relatedPosts": "Articles Connexes",
-  "navigation": {
-    "previous": "Article Précédent",
-    "next": "Article Suivant"
+    "title": "Blog CueTimer - Conseils d'Experts en Timing d'Événements et Productivité",
+    "description": "Lisez les derniers articles sur la gestion d'événements, l'optimisation des minuteurs et les conseils professionnels de présentation des experts CueTimer.",
+    "keywords": [
+      "timing d'événements",
+      "conseils de minuteur",
+      "productivité",
+      "gestion d'événements",
+      "compétences de présentation"
+    ]
   },
   "categories": {
-    "timing": "Temporisation",
+    "timing": "Timing",
     "productivity": "Productivité",
     "events": "Événements",
     "features": "Fonctionnalités",
     "tutorials": "Tutoriels",
-    "industry": "Secteur"
+    "industry": "Industrie",
+    "browse": "Naviguer"
   },
   "filter": {
-    "searchPlaceholder": "Rechercher des articles du blog...",
+    "searchPlaceholder": "Rechercher des articles de blog...",
     "categoryLabel": "Catégorie",
     "allCategories": "Toutes les Catégories",
-    "featuredOnly": "Seulement en Vedette",
+    "allPosts": "Tous les Articles",
+    "featuredOnly": "Seulement les Vedettes",
     "clearFilters": "Effacer les Filtres",
     "activeFilters": "Filtres Actifs"
+  },
+  "featured": "Vedette",
+  "totalPosts": "articles totaux",
+  "featuredPosts": "articles en vedette",
+  "avgReadTime": "temps de lecture moyen",
+  "minRead": "min de lecture",
+  "more": "plus",
+  "tabs": {
+    "allPosts": "Tous les Articles",
+    "featured": "Vedettes",
+    "categories": "Catégories"
+  },
+  "stats": {
+    "posts": "articles"
+  },
+  "noResults": {
+    "title": "Aucun article trouvé",
+    "description": "Essayez d'ajuster vos filtres ou termes de recherche pour trouver ce que vous cherchez.",
+    "clearFilters": "Effacer les Filtres"
+  },
+  "newsletter": {
+    "title": "Restez Informé",
+    "description": "Recevez les derniers conseils de timing d'événements et insights de productivité dans votre boîte de réception hebdomadaire.",
+    "placeholder": "Entrez votre email",
+    "subscribe": "S'abonner",
+    "privacy": "Nous respectons votre vie privée. Désabonnez-vous à tout moment."
+  },
+  "post": {
+    "by": "Par",
+    "publishedOn": "Publié le",
+    "readingTime": "Temps de lecture",
+    "minutes": "minutes",
+    "relatedPosts": "Articles Connexes",
+    "tableOfContents": "Table des Matières",
+    "share": "Partager",
+    "tags": "Étiquettes",
+    "backToBlog": "Retour au Blog",
+    "nextPost": "Article Suivant",
+    "previousPost": "Article Précédent"
+  },
+  "postNotFound": {
+    "title": "Article de Blog Non Trouvé",
+    "description": "L'article de blog que vous cherchez n'existe pas ou a été supprimé.",
+    "backToBlog": "Retour au Blog",
+    "suggestion": "Vous pourriez vouloir",
+    "browsePosts": "naviguer nos derniers articles",
+    "mightLike": {
+      "title": "Vous pourriez aussi aimer:",
+      "timingPosts": "Articles de timing",
+      "productivityPosts": "Articles de productivité",
+      "featuredPosts": "Articles en vedette"
+    }
   }
 }

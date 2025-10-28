@@ -14,7 +14,7 @@ export default function BlogSearchAndFilter({
   onFilterChange,
   className = '',
 }: BlogSearchAndFilterProps) {
-  const t = useTranslations('Blog');
+  const t = useTranslations('blog');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<BlogCategory | 'all'>('all');
   const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);

@@ -10,54 +10,76 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Heading styles with anchor links
     h1: ({ children, ...props }) => (
       <h1
-        className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6'
+        className='scroll-m-24 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6'
+        style={{ scrollMarginTop: '6rem' }}
         {...props}
       >
         {children}
       </h1>
     ),
-    h2: ({ children, ...props }) => (
-      <h2
-        className='scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
-        id={children?.toString().toLowerCase().replace(/\s+/g, '-')}
-        {...props}
-      >
-        <a
-          href={`#${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
-          className='hover:text-primary'
+    h2: ({ children, ...props }) => {
+      const headingText = children?.toString() || '';
+      const headingId = headingText.toLowerCase().replace(/\s+/g, '-');
+
+      return (
+        <h2
+          className='scroll-m-24 text-3xl font-semibold tracking-tight first:mt-0 mb-4 mt-8 border-b pb-2'
+          id={headingId}
+          style={{ scrollMarginTop: '6rem' }}
+          {...props}
         >
-          {children}
-        </a>
-      </h2>
-    ),
-    h3: ({ children, ...props }) => (
-      <h3
-        className='scroll-m-20 text-2xl font-semibold tracking-tight mb-3 mt-6'
-        id={children?.toString().toLowerCase().replace(/\s+/g, '-')}
-        {...props}
-      >
-        <a
-          href={`#${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
-          className='hover:text-primary'
+          <a
+            href={`#${headingId}`}
+            className='hover:text-primary'
+            aria-label={`Link to ${headingText} section`}
+          >
+            {children}
+          </a>
+        </h2>
+      );
+    },
+    h3: ({ children, ...props }) => {
+      const headingText = children?.toString() || '';
+      const headingId = headingText.toLowerCase().replace(/\s+/g, '-');
+
+      return (
+        <h3
+          className='scroll-m-24 text-2xl font-semibold tracking-tight mb-3 mt-6'
+          id={headingId}
+          style={{ scrollMarginTop: '6rem' }}
+          {...props}
         >
-          {children}
-        </a>
-      </h3>
-    ),
-    h4: ({ children, ...props }) => (
-      <h4
-        className='scroll-m-20 text-xl font-semibold tracking-tight mb-2 mt-4'
-        id={children?.toString().toLowerCase().replace(/\s+/g, '-')}
-        {...props}
-      >
-        <a
-          href={`#${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
-          className='hover:text-primary'
+          <a
+            href={`#${headingId}`}
+            className='hover:text-primary'
+            aria-label={`Link to ${headingText} section`}
+          >
+            {children}
+          </a>
+        </h3>
+      );
+    },
+    h4: ({ children, ...props }) => {
+      const headingText = children?.toString() || '';
+      const headingId = headingText.toLowerCase().replace(/\s+/g, '-');
+
+      return (
+        <h4
+          className='scroll-m-24 text-xl font-semibold tracking-tight mb-2 mt-4'
+          id={headingId}
+          style={{ scrollMarginTop: '6rem' }}
+          {...props}
         >
-          {children}
-        </a>
-      </h4>
-    ),
+          <a
+            href={`#${headingId}`}
+            className='hover:text-primary'
+            aria-label={`Link to ${headingText} section`}
+          >
+            {children}
+          </a>
+        </h4>
+      );
+    },
 
     // Text elements
     p: ({ children, ...props }) => (

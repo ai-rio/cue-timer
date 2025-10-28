@@ -1,36 +1,85 @@
 {
+  "title": "Blog",
+  "description": "Entdecken Sie die neuesten Einblicke, Tipps und Tutorials zu Event-Timing, Produktivität und professioneller Präsentationsverwaltung.",
   "meta": {
-    "title": "CueTimer Blog - Event-Timing- und Produktivitätstipps",
-    "description": "Lesen Sie die neuesten Artikel über Veranstaltungsmanagement, Timer-Optimierung und professionelle Präsentationstipps von CueTimer-Experten."
-  },
-  "title": "CueTimer Blog",
-  "subtitle": "Experten-Einblicke in Event-Timing, Produktivität und professionelle Präsentationsfähigkeiten. Lernen Sie von Branchenexperten und verbessern Sie Ihre Veranstaltungen.",
-  "loading": "Blog-Beiträge werden geladen...",
-  "error": "Fehler beim Laden der Blog-Beiträge",
-  "empty": "Keine Blog-Beiträge gefunden.",
-  "featured": "Hervorgehoben",
-  "minRead": "Min Lesezeit",
-  "readMore": "Mehr Lesen",
-  "backToBlog": "Zurück zum Blog",
-  "relatedPosts": "Verwandte Beiträge",
-  "navigation": {
-    "previous": "Vorheriger Beitrag",
-    "next": "Nächster Beitrag"
+    "title": "CueTimer Blog - Experten-Tipps für Event-Timing und Produktivität",
+    "description": "Lesen Sie die neuesten Artikel über Event-Management, Timer-Optimierung und professionelle Präsentationstipps von CueTimer-Experten.",
+    "keywords": [
+      "Event-Timing",
+      "Timer-Tipps",
+      "Produktivität",
+      "Event-Management",
+      "Präsentationsfähigkeiten"
+    ]
   },
   "categories": {
     "timing": "Timing",
     "productivity": "Produktivität",
-    "events": "Veranstaltungen",
+    "events": "Events",
     "features": "Funktionen",
     "tutorials": "Tutorials",
-    "industry": "Branche"
+    "industry": "Industrie",
+    "browse": "Navigieren"
   },
   "filter": {
     "searchPlaceholder": "Blog-Beiträge suchen...",
     "categoryLabel": "Kategorie",
     "allCategories": "Alle Kategorien",
-    "featuredOnly": "Nur Hervorgehobene",
+    "allPosts": "Alle Beiträge",
+    "featuredOnly": "Nur Featured",
     "clearFilters": "Filter löschen",
     "activeFilters": "Aktive Filter"
+  },
+  "featured": "Featured",
+  "totalPosts": "gesamte Beiträge",
+  "featuredPosts": "Featured Beiträge",
+  "avgReadTime": "durchschn. Lesezeit",
+  "minRead": "Min Lesezeit",
+  "more": "mehr",
+  "tabs": {
+    "allPosts": "Alle Beiträge",
+    "featured": "Featured",
+    "categories": "Kategorien"
+  },
+  "stats": {
+    "posts": "Beiträge"
+  },
+  "noResults": {
+    "title": "Keine Beiträge gefunden",
+    "description": "Versuchen Sie, Ihre Filter oder Suchbegriffe anzupassen, um zu finden, was Sie suchen.",
+    "clearFilters": "Filter löschen"
+  },
+  "newsletter": {
+    "title": "Bleiben Sie auf dem Laufenden",
+    "description": "Erhalten Sie die neuesten Event-Timing-Tipps und Produktivitäts-Insights wöchentlich in Ihrem Posteingang.",
+    "placeholder": "E-Mail eingeben",
+    "subscribe": "Abonnieren",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Jederzeit abbestellbar."
+  },
+  "post": {
+    "by": "Von",
+    "publishedOn": "Veröffentlicht am",
+    "readingTime": "Lesezeit",
+    "minutes": "Minuten",
+    "relatedPosts": "Verwandte Beiträge",
+    "tableOfContents": "Inhaltsverzeichnis",
+    "share": "Teilen",
+    "tags": "Tags",
+    "backToBlog": "Zurück zum Blog",
+    "nextPost": "Nächster Beitrag",
+    "previousPost": "Vorheriger Beitrag"
+  },
+  "postNotFound": {
+    "title": "Blog-Beitrag Nicht Gefunden",
+    "description": "Der Blog-Beitrag, den Sie suchen, existiert nicht oder wurde entfernt.",
+    "backToBlog": "Zurück zum Blog",
+    "suggestion": "Vielleicht möchten Sie",
+    "browsePosts": "unsere neuesten Beiträge durchsuchen",
+    "mightLike": {
+      "title": "Vielleicht gefällt Ihnen auch:",
+      "timingPosts": "Timing-Beiträge",
+      "productivityPosts": "Produktivitäts-Beiträge",
+      "featuredPosts": "Featured Beiträge"
+    }
   }
 }

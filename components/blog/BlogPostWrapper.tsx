@@ -2,16 +2,18 @@
 
 import { useMemo } from 'react';
 
+import { extractHeadingsFromMdx } from '@/lib/utils';
+
 import BlogErrorBoundary from './BlogErrorBoundary';
 import MDXRenderer from './MDXRenderer';
-import TableOfContents, { extractHeadings } from './TableOfContents';
+import TableOfContents from './TableOfContents';
 
 interface BlogPostWrapperProps {
   content: string;
 }
 
 export default function BlogPostWrapper({ content }: BlogPostWrapperProps) {
-  const headings = useMemo(() => extractHeadings(content), [content]);
+  const headings = useMemo(() => extractHeadingsFromMdx(content), [content]);
 
   return (
     <BlogErrorBoundary>

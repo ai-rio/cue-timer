@@ -1,0 +1,23 @@
+{
+  "masterPost": {
+    "title": "'Boost Productivity: Essential Event Management Tools'",
+    "slug": "'productivity-event-management-tools'",
+    "summary": "",
+    "publishedAt": "'2024-10-15T14:30:00Z'",
+    "lastModified": "'2024-10-24T09:00:00Z'",
+    "author": "'CueTimer Team'",
+    "category": "'productivity'",
+    "tags": ["'productivity'", "'event management'", "'tools'", "'organization'"],
+    "featured": "false",
+    "draft": "false",
+    "readTime": "7"
+  },
+  "translations": {},
+  "workflowState": "published",
+  "synchronizationStatus": {
+    "isMaster": false,
+    "lastSynced": "2025-10-26T18:55:38.344Z",
+    "pendingTranslations": ["en", "pt-br", "es"],
+    "inconsistentFields": []
+  }
+}

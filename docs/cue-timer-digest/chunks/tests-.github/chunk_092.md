@@ -1,0 +1,399 @@
+# Chunk 92: tests\_.github
+
+## Metadata
+
+- **Files**: 1
+- **Size**: 9,774 characters (~2,443 tokens)
+- **Categories**: tests
+
+## Files in this chunk
+
+- `.github/workflows/test-suite.yml`
+
+---
+
+## File: `.github/workflows/test-suite.yml`
+
+```yaml
+name: Test Suite
+
+on:
+  push:
+    branches: [main, master, develop, feature/*]
+  pull_request:
+    branches: [main, master, develop]
+
+env:
+  NODE_VERSION: '18'
+  BUN_VERSION: '1.0.0'
+
+jobs:
+  type-check:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run TypeScript type checking
+        run: bun run type-check
+
+  lint:
+    name: ESLint Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run ESLint
+        run: bun run lint:all
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run unit tests
+        run:
+          bun run test:ci --testPathPattern="tests/(scripts|config|typescript)"
+          --coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run integration tests
+        run: bun run test:ci --testPathPattern="tests/integration" --coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/lcov.info
+          flags: integration
+          name: codecov-umbrella
+
+  blog-scripts-tests:
+    name: Blog Scripts Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Create test content directory
+        run: mkdir -p content/blog/2025/01
+
+      - name: Create test blog posts
+        run: |
+          cat > content/blog/2025/01/test-post.mdx << 'EOF'
+          ---
+          title: "Test Blog Post"
+          slug: "test-blog-post"
+          summary: "A test blog post for CI/CD validation"
+          author: "CI/CD Bot"
+          publishedAt: "2024-01-01"
+          isDraft: false
+          readTime: 3
+          tags: ["test", "ci-cd"]
+          category: "timing-guide"
+          ---
+
+          # Test Blog Post
+
+          This is a test blog post to validate our CI/CD pipeline.
+
+          ## Content Section
+
+          Here's some test content with **bold** and *italic* text.
+
+          \`\`\`javascript
+          console.log('Hello from CI/CD!');
+          \`\`\`
+
+          - Test item 1
+          - Test item 2
+          - Test item 3
+          EOF
+
+      - name: Test blog creation script
+        run: |
+          echo "Testing blog creation script..." && \
+          timeout 30s bun run blog:create --title "CI Test Post" --template timing-guide --no-interactive || echo "Script timeout or error - continuing..."
+
+      - name: Test blog SEO check script
+        run: |
+          echo "Testing blog SEO check script..." && \
+          timeout 30s bun run blog:seo-check --all || echo "Script timeout or error - continuing..."
+
+      - name: Test blog analytics script
+        run: |
+          echo "Testing blog analytics script..." && \
+          timeout 30s bun run blog:analytics || echo "Script timeout or error - continuing..."
+
+      - name: Test deployment validation script
+        run: |
+          echo "Testing deployment validation script..." && \
+          timeout 60s bun tsx scripts/deploy-validation.ts || echo "Script timeout or error - continuing..."
+
+  build-test:
+    name: Build Test
+    runs-on: ubuntu-latest
+    needs: [type-check, lint, unit-tests, integration-tests]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run build
+        run: bun run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: .next/
+          retention-days: 1
+
+  performance-tests:
+    name: Performance Tests
+    runs-on: ubuntu-latest
+    needs: [build-test]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: .next/
+
+      - name: Install Lighthouse
+        run: npm install -g @lhci/cli@0.12.x
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run security audit
+        run: bun run security:audit
+
+      - name: Run dependency check
+        run: bun audit
+
+  quality-gate:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    needs:
+      [
+        type-check,
+        lint,
+        unit-tests,
+        integration-tests,
+        blog-scripts-tests,
+        build-test,
+        security-audit,
+      ]
+    if: always()
+    steps:
+      - name: Quality Gate Check
+        run: |
+          echo "Checking if all required jobs passed..."
+
+          # Check if any required job failed
+          if [ "${{ needs.type-check.result }}" != "success" ]; then
+            echo "❌ Type check failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.lint.result }}" != "success" ]; then
+            echo "❌ Lint check failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.unit-tests.result }}" != "success" ]; then
+            echo "❌ Unit tests failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.integration-tests.result }}" != "success" ]; then
+            echo "❌ Integration tests failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.blog-scripts-tests.result }}" != "success" ]; then
+            echo "❌ Blog scripts tests failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.build-test.result }}" != "success" ]; then
+            echo "❌ Build test failed"
+            exit 1
+          fi
+
+          if [ "${{ needs.security-audit.result }}" != "success" ]; then
+            echo "❌ Security audit failed"
+            exit 1
+          fi
+
+          echo "✅ All quality gates passed!"
+
+  deploy-preview:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    needs: quality-gate
+    if: github.event_name == 'pull_request'
+    environment:
+      name: preview
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: .next/
+
+      - name: Deploy to Vercel Preview
+        id: deploy
+        uses: vercel/action@v1
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prebuilt'
+
+  deploy-production:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+    needs: quality-gate
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: .next/
+
+      - name: Deploy to Vercel Production
+        id: deploy
+        uses: vercel/action@v1
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prebuilt --prod'
+
+      - name: Run post-deployment validation
+        run: |
+          echo "Running post-deployment validation..."
+          sleep 30
+          curl -f ${{ steps.deploy.outputs.url }} || exit 1
+```

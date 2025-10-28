@@ -29,6 +29,7 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
     } catch {
       setError(t('error.filterFailed'));
       setFilteredPosts([]);
+      // Optional: Show error toast message here
     } finally {
       setLoading(false);
     }
