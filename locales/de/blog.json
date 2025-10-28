@@ -18,12 +18,14 @@
     "events": "Events",
     "features": "Funktionen",
     "tutorials": "Tutorials",
-    "industry": "Industrie"
+    "industry": "Industrie",
+    "browse": "Navigieren"
   },
   "filter": {
     "searchPlaceholder": "Blog-Beiträge suchen...",
     "categoryLabel": "Kategorie",
     "allCategories": "Alle Kategorien",
+    "allPosts": "Alle Beiträge",
     "featuredOnly": "Nur Featured",
     "clearFilters": "Filter löschen",
     "activeFilters": "Aktive Filter"
@@ -34,6 +36,19 @@
   "avgReadTime": "durchschn. Lesezeit",
   "minRead": "Min Lesezeit",
   "more": "mehr",
+  "tabs": {
+    "allPosts": "Alle Beiträge",
+    "featured": "Featured",
+    "categories": "Kategorien"
+  },
+  "stats": {
+    "posts": "Beiträge"
+  },
+  "noResults": {
+    "title": "Keine Beiträge gefunden",
+    "description": "Versuchen Sie, Ihre Filter oder Suchbegriffe anzupassen, um zu finden, was Sie suchen.",
+    "clearFilters": "Filter löschen"
+  },
   "newsletter": {
     "title": "Bleiben Sie auf dem Laufenden",
     "description": "Erhalten Sie die neuesten Event-Timing-Tipps und Produktivitäts-Insights wöchentlich in Ihrem Posteingang.",
@@ -53,5 +68,18 @@
     "backToBlog": "Zurück zum Blog",
     "nextPost": "Nächster Beitrag",
     "previousPost": "Vorheriger Beitrag"
+  },
+  "postNotFound": {
+    "title": "Blog-Beitrag Nicht Gefunden",
+    "description": "Der Blog-Beitrag, den Sie suchen, existiert nicht oder wurde entfernt.",
+    "backToBlog": "Zurück zum Blog",
+    "suggestion": "Vielleicht möchten Sie",
+    "browsePosts": "unsere neuesten Beiträge durchsuchen",
+    "mightLike": {
+      "title": "Vielleicht gefällt Ihnen auch:",
+      "timingPosts": "Timing-Beiträge",
+      "productivityPosts": "Produktivitäts-Beiträge",
+      "featuredPosts": "Featured Beiträge"
+    }
   }
 }

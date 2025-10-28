@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
 
-import { processBlogContent } from '@/lib/utils';
 import BlogPostSchema, {
   BlogAnalytics,
   blogCategories,
@@ -211,7 +210,10 @@ export async function getAllPosts(filter: BlogFilter = {}): Promise<BlogPostEnha
         }
 
         const { content } = matter(fileContent);
-        const processedContent = processBlogContent(content);
+        // Use basic MDX processing to avoid internal linking issues
+        const processedContent = content
+          .replace(/^[\r\n]+/, '') // Remove leading newlines
+          .replace(/\t+$/gm, ''); // Remove trailing tabs
         const wordCount = processedContent.split(/\s+/).length;
         const excerpt = generateExcerpt(processedContent);
 
@@ -308,7 +310,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPostEnhanced | nu
 
         if (postSlug === slug) {
           const { content } = matter(fileContent);
-          const processedContent = processBlogContent(content);
+          // Use basic MDX processing to avoid internal linking issues
+          const processedContent = content
+            .replace(/^[\r\n]+/, '') // Remove leading newlines
+            .replace(/\t+$/gm, ''); // Remove trailing tabs
           const wordCount = processedContent.split(/\s+/).length;
           const excerpt = generateExcerpt(processedContent);
 

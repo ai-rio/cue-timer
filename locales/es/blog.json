@@ -18,12 +18,14 @@
     "events": "Eventos",
     "features": "Características",
     "tutorials": "Tutoriales",
-    "industry": "Industria"
+    "industry": "Industria",
+    "browse": "Navegar"
   },
   "filter": {
     "searchPlaceholder": "Buscar publicaciones del blog...",
     "categoryLabel": "Categoría",
     "allCategories": "Todas las Categorías",
+    "allPosts": "Todas las Publicaciones",
     "featuredOnly": "Solo Destacados",
     "clearFilters": "Limpiar Filtros",
     "activeFilters": "Filtros Activos"
@@ -34,6 +36,19 @@
   "avgReadTime": "tiempo promedio de lectura",
   "minRead": "min de lectura",
   "more": "más",
+  "tabs": {
+    "allPosts": "Todas las Publicaciones",
+    "featured": "Destacados",
+    "categories": "Categorías"
+  },
+  "stats": {
+    "posts": "publicaciones"
+  },
+  "noResults": {
+    "title": "No se encontraron publicaciones",
+    "description": "Intenta ajustar tus filtros o términos de búsqueda para encontrar lo que estás buscando.",
+    "clearFilters": "Limpiar Filtros"
+  },
   "newsletter": {
     "title": "Mantente Actualizado",
     "description": "Recibe los últimos consejos de sincronización de eventos e insights de productividad en tu bandeja de entrada semanalmente.",
