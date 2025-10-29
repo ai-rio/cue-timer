@@ -2,7 +2,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/tests'],
+  roots: ['<rootDir>/tests', '<rootDir>/app'],
   testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/*.(test|spec).+(ts|tsx|js)'],
   transform: {
     '^.+\\.(ts|tsx)$': [
@@ -36,14 +36,19 @@ module.exports = {
   collectCoverageFrom: [
     'lib/blog-scripts/**/*.{ts,tsx}',
     'scripts/blog-*.ts',
+    'app/**/blog/components/contexts/blog-filter-context.tsx',
+    'app/**/blog/components/contexts/blog-filter-utils.ts',
+    'app/**/blog/components/contexts/use-blog-filter-with-url.ts',
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/coverage/**',
+    '!**/__tests__/**',
+    '!**/*.test.{ts,tsx}',
+    '!**/*.spec.{ts,tsx}',
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html', 'json'],
   testTimeout: 30000,
   verbose: true,
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };

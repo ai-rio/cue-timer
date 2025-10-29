@@ -7,17 +7,6 @@ const { TextDecoder, TextEncoder } = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
-// Make jest available globally - Fix for "jest.mock is not a function" error
-const { jest } = require('@jest/globals');
-global.jest = jest;
-
-// Global DOM setup for browser environment testing
-// Ensure proper DOM mocking for jsdom environment
-Object.defineProperty(window, 'scrollIntoView', {
-  value: jest.fn(),
-  writable: true,
-});
-
 // Enhanced IntersectionObserver mock for TOC functionality
 global.IntersectionObserver = jest.fn().mockImplementation((callback, options) => ({
   observe: jest.fn(),
@@ -41,18 +30,6 @@ Object.defineProperty(Element.prototype, 'getBoundingClientRect', {
   writable: true,
 });
 
-// Mock window location
-Object.defineProperty(window, 'location', {
-  value: {
-    hash: '',
-    href: 'http://localhost:3000',
-    origin: 'http://localhost:3000',
-    pathname: '/',
-    search: '',
-  },
-  writable: true,
-});
-
 // Additional window methods if not available in jsdom
 if (!window.history) {
   Object.defineProperty(window, 'history', {
@@ -66,6 +43,18 @@ if (!window.history) {
     writable: true,
   });
 }
+
+// Mock window.scrollTo
+Object.defineProperty(window, 'scrollTo', {
+  value: jest.fn(),
+  writable: true,
+});
+
+// Mock window.scrollIntoView
+Object.defineProperty(window, 'scrollIntoView', {
+  value: jest.fn(),
+  writable: true,
+});
 
 // Setup for file system tests
 const { promises: fs } = require('fs');
