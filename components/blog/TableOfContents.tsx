@@ -21,9 +21,6 @@ const SCROLL_OFFSET = 100; // Offset in pixels to account for fixed headers
 const SCROLL_TIMEOUT = 50; // Throttle timeout for scroll events
 // const NAVIGATION_TIMEOUT = 1000; // Timeout for navigation attempts
 
-// Debug flag - set to true to enable console logging
-const DEBUG_TOC = process.env.NODE_ENV === 'development';
-
 export default function TableOfContents({ content, headings }: TableOfContentsProps) {
   // Extract headings from content if not provided (fallback for backward compatibility)
   const computedHeadings = useMemo(() => {
@@ -49,9 +46,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
   // Set isClient to true after component mounts
   useEffect(() => {
     setIsClient(true);
-    if (DEBUG_TOC) {
-      console.warn('TableOfContents: Client-side hydration complete');
-    }
   }, []);
 
   // Reading progress tracking
@@ -117,9 +111,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
     let cleanup: (() => void) | undefined;
 
     if (!isClient || computedHeadings.length === 0) {
-      if (DEBUG_TOC && computedHeadings.length === 0) {
-        console.warn('TableOfContents: No headings to track');
-      }
       return cleanup;
     }
 
@@ -188,16 +179,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
         .filter(({ element }) => element !== null);
 
       if (headingElements.length === 0) {
-        if (DEBUG_TOC) {
-          console.warn('TableOfContents: No heading elements found in DOM');
-        }
         return cleanup;
-      }
-
-      if (DEBUG_TOC) {
-        console.warn(
-          `TableOfContents: Setting up IntersectionObserver for ${headingElements.length} headings`
-        );
       }
 
       // Create IntersectionObserver with optimized settings
@@ -214,11 +196,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
 
             if (headingId !== currentActiveId) {
               setCurrentActiveId(headingId);
-              if (DEBUG_TOC) {
-                console.warn(
-                  `TableOfContents: Active heading changed to "${headingId}" (IntersectionObserver - ${Math.round(mostVisible.intersectionRatio * 100)}% visible)`
-                );
-              }
             }
           }
         },
@@ -262,18 +239,11 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       // Check initial position after a short delay
       const initialCheckTimeout = setTimeout(setActiveFromScrollPosition, 100);
 
-      if (DEBUG_TOC) {
-        console.warn('TableOfContents: IntersectionObserver setup complete');
-      }
-
       cleanup = () => {
         // Cleanup: disconnect observer and clear timeout
         observer.disconnect();
         if (initialCheckTimeout) {
           clearTimeout(initialCheckTimeout);
-        }
-        if (DEBUG_TOC) {
-          console.warn('TableOfContents: IntersectionObserver cleaned up');
         }
       };
     } catch (error) {
@@ -295,14 +265,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
         const element = document.getElementById(heading.id);
         const exists = element !== null;
 
-        if (!exists && DEBUG_TOC) {
-          console.warn(`TableOfContents: Heading element not found:`, {
-            id: heading.id,
-            text: heading.text,
-            level: heading.level,
-          });
-        }
-
         return !exists;
       });
 
@@ -313,8 +275,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
         );
         setNavigationError(`Some sections unavailable`);
         setTimeout(() => setNavigationError(null), 5000);
-      } else if (DEBUG_TOC) {
-        console.warn(`TableOfContents: All ${computedHeadings.length} headings found in DOM`);
       }
     };
 
@@ -331,10 +291,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
     (headingId: string) => (e: React.MouseEvent) => {
       e.preventDefault();
       setNavigationError(null);
-
-      if (DEBUG_TOC) {
-        console.warn(`TableOfContents: Clicking heading "${headingId}"`);
-      }
 
       // Validate headingId
       if (!headingId || typeof headingId !== 'string') {
@@ -364,16 +320,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
 
         if (element) {
           try {
-            // Get element position for debugging
-            const rect = element.getBoundingClientRect();
-            if (DEBUG_TOC) {
-              console.warn(`TableOfContents: Found element "${headingId}" at position:`, {
-                top: rect.top,
-                bottom: rect.bottom,
-                visible: rect.top >= 0 && rect.bottom <= window.innerHeight,
-              });
-            }
-
             // Scroll with custom offset
             const scrollOptions: ScrollIntoViewOptions = {
               behavior: 'smooth',
@@ -388,10 +334,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
 
             // Update URL hash without causing a jump
             window.history.pushState(null, '', `#${headingId}`);
-
-            if (DEBUG_TOC) {
-              console.warn(`TableOfContents: Successfully scrolled to "${headingId}"`);
-            }
           } catch (scrollError) {
             console.error('TableOfContents: Error during scroll:', scrollError);
             setNavigationError('Scroll failed');
@@ -572,15 +514,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
                   </ul>
                 </nav>
               </div>
-
-              {/* Debug info in development */}
-              {DEBUG_TOC && (
-                <div className='mt-4 p-2 bg-muted/50 border rounded text-xs text-muted-foreground'>
-                  <div>Active: {currentActiveId || 'none'}</div>
-                  <div>Total: {computedHeadings.length}</div>
-                  <div>Filtered: {filteredHeadings.length}</div>
-                </div>
-              )}
             </CardContent>
           </Card>
         </div>
@@ -637,16 +570,9 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
         <CardHeader className='pb-3'>
           <CardTitle className='text-lg flex items-center justify-between'>
             <span>Table of Contents</span>
-            <div className='flex items-center gap-2'>
-              <Badge variant='secondary' className='text-xs font-normal'>
-                {computedHeadings.length} {computedHeadings.length === 1 ? 'section' : 'sections'}
-              </Badge>
-              {DEBUG_TOC && (
-                <Badge variant='outline' className='text-xs'>
-                  Debug
-                </Badge>
-              )}
-            </div>
+            <Badge variant='secondary' className='text-xs font-normal'>
+              {computedHeadings.length} {computedHeadings.length === 1 ? 'section' : 'sections'}
+            </Badge>
           </CardTitle>
         </CardHeader>
         <CardContent className='pt-0 max-h-[60vh] overflow-y-auto'>
@@ -679,15 +605,6 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
           {navigationError && (
             <div className='mb-3 p-2 bg-destructive/10 border border-destructive/20 rounded text-xs text-destructive'>
               {navigationError}
-            </div>
-          )}
-
-          {/* Debug info in development */}
-          {DEBUG_TOC && (
-            <div className='mb-3 p-2 bg-muted/50 border rounded text-xs text-muted-foreground'>
-              <div>Active: {currentActiveId || 'none'}</div>
-              <div>Total: {computedHeadings.length}</div>
-              <div>Filtered: {filteredHeadings.length}</div>
             </div>
           )}
 
