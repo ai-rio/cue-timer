@@ -201,8 +201,7 @@ Images, diagrams, brand resources, and visual assets.
 - **[Documentation Assets](assets/)**: Images, diagrams, and visual assets
 - **[Images](assets/images/)**: Screenshots and UI mockups
 - **[Diagrams](assets/diagrams/)**: Architecture diagrams and flowcharts
-- **[Examples](assets/examples/)**: Code examples and sample files <<<<<<< HEAD
-  =======
+- **[Examples](assets/examples/)**: Code examples and sample files
 
 ### 📋 Content & Media
 
