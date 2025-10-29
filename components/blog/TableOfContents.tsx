@@ -203,25 +203,30 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       // Create IntersectionObserver with optimized settings
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const headingId = entry.target.id;
-              if (headingId !== currentActiveId) {
-                setCurrentActiveId(headingId);
-                if (DEBUG_TOC) {
-                  console.warn(
-                    `TableOfContents: Active heading changed to "${headingId}" (IntersectionObserver)`
-                  );
-                }
+          // Find the most intersecting heading
+          const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+          if (visibleEntries.length > 0) {
+            // Sort by intersection ratio (most visible first)
+            visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            const mostVisible = visibleEntries[0];
+            const headingId = mostVisible.target.id;
+
+            if (headingId !== currentActiveId) {
+              setCurrentActiveId(headingId);
+              if (DEBUG_TOC) {
+                console.warn(
+                  `TableOfContents: Active heading changed to "${headingId}" (IntersectionObserver - ${Math.round(mostVisible.intersectionRatio * 100)}% visible)`
+                );
               }
             }
-          });
+          }
         },
         {
           // Threshold values for detecting when headings are visible
-          threshold: [0, 0.1, 0.5],
+          threshold: [0, 0.1, 0.3, 0.5, 0.7, 1],
           // Root margin to account for fixed headers and better UX
-          rootMargin: '-100px 0px -70% 0px',
+          rootMargin: '-80px 0px -60% 0px',
         }
       );
 
@@ -424,14 +429,30 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       // Generate a safe test ID for debugging
       const testId = `toc-link-${item.id.replace(/[^a-zA-Z0-9]/g, '-')}`;
 
+      // Get level-specific styling
+      const getLevelStyles = (level: number) => {
+        switch (level) {
+          case 0:
+            return 'font-semibold text-sm';
+          case 1:
+            return 'text-sm text-muted-foreground';
+          case 2:
+            return 'text-xs text-muted-foreground/80';
+          default:
+            return 'text-xs text-muted-foreground/60';
+        }
+      };
+
+      const levelStyles = getLevelStyles(level);
+
       return (
         <li key={item.id} className='my-1'>
           <a
             href={`#${item.id}`}
             data-testid={testId}
-            className={`block py-1 px-2 text-sm rounded transition-all duration-200 hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+            className={`block py-1.5 px-2 rounded-md transition-all duration-200 hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group ${levelStyles} ${
               isActive
-                ? 'bg-primary/10 text-primary font-medium border-l-2 border-primary shadow-sm'
+                ? 'bg-primary/15 text-primary font-medium border-l-3 border-primary shadow-sm'
                 : 'text-muted-foreground hover:text-foreground hover:translate-x-0.5'
             }`}
             style={{ marginLeft }}
@@ -440,9 +461,20 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             aria-current={isActive ? 'location' : undefined}
             title={`Go to: ${item.text}`}
           >
-            <span className='truncate flex items-center'>
-              {isActive && <span className='w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0' />}
-              {item.text}
+            <span className='truncate flex items-center justify-between'>
+              <span className='flex items-center flex-1 min-w-0'>
+                {isActive && (
+                  <span className='w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0 animate-pulse' />
+                )}
+                {!isActive && (
+                  <span className='w-1.5 h-1.5 bg-muted-foreground/30 rounded-full mr-2 flex-shrink-0 group-hover:bg-muted-foreground/50 transition-colors' />
+                )}
+                <span className='truncate'>{item.text}</span>
+              </span>
+              {/* Add heading level indicator */}
+              <span className='text-xs text-muted-foreground/50 ml-2 flex-shrink-0'>
+                H{item.level}
+              </span>
             </span>
           </a>
           {item.children && item.children.length > 0 && (

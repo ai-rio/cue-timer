@@ -269,11 +269,6 @@ function processCustomSyntax(content: string): string {
 
 // Server Component that compiles MDX
 export default async function MDXServerRenderer({ content }: { content: string }) {
-  // TEMPORARY FIX: Disable MDX compilation entirely and use fallback renderer
-  // to diagnose the compilation issue
-  console.warn('TEMPORARY: Using fallback renderer for all content');
-  return <FallbackMDXRenderer content={content} />;
-
   const processedContent = processBlogContent(processCustomSyntax(content));
 
   try {

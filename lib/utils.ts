@@ -343,8 +343,13 @@ export function extractHeadingsFromMdx(content: string): TableOfContentsItem[] {
  * This function uses the same algorithm as the MDX heading components to ensure consistency
  */
 export function generateSlug(text: string): string {
-  // Match the MDX components logic exactly: toLowerCase().replace(/\s+/g, '-')
-  return text.toLowerCase().replace(/\s+/g, '-');
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '') // Remove special characters except hyphens and spaces
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+    .replace(/^-+|-+$/g, ''); // Remove leading and trailing hyphens
 }
 
 /**
