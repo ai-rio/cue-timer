@@ -10,6 +10,7 @@ import { ThemeToggle } from './theme-toggle';
 
 export default function Navigation() {
   const t = useTranslations('common');
+  const navT = useTranslations('navigation');
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
@@ -19,17 +20,17 @@ export default function Navigation() {
 
   const isActive = (path: string) => pathname === path || pathname?.startsWith(`${path}/`) || false;
 
-  // Define static navigation links to prevent hydration issues
+  // Define navigation links using translations
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: '/about', label: 'About' },
+    { href: '/', label: navT('home') },
+    { href: '/pricing', label: navT('pricing') },
+    { href: '/about', label: navT('about') },
   ];
 
   // Fallback translations to prevent hydration mismatch
   const fallbackText = {
-    login: mounted ? t('navigation.login') : 'Login',
-    getStarted: mounted ? t('navigation.getStarted') : 'Get Started',
+    login: mounted ? navT('login') : 'Login',
+    getStarted: mounted ? t('hero.getStarted') : 'Get Started',
   };
 
   return (

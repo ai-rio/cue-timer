@@ -93,7 +93,7 @@ function parseFrontmatter(content: string): BlogPost {
   }
 
   const frontmatterText = match[1] || '';
-  const frontmatter: Record<string, string | string[]> = {};
+  const frontmatter: Record<string, string | string[] | boolean> = {};
 
   const lines = frontmatterText.split('\n');
   for (const line of lines) {
@@ -122,11 +122,11 @@ function parseFrontmatter(content: string): BlogPost {
 
     // Parse booleans
     if (value === 'true') {
-      frontmatter[key] = 'true' as any;
+      frontmatter[key] = true;
       continue;
     }
     if (value === 'false') {
-      frontmatter[key] = 'false' as any;
+      frontmatter[key] = false;
       continue;
     }
 

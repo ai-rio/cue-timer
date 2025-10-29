@@ -37,7 +37,7 @@ async function parseFrontmatter(
   const content = match[2] || '';
 
   // Parse YAML frontmatter
-  const frontmatter: Record<string, string | string[]> = {};
+  const frontmatter: Record<string, string | string[] | boolean> = {};
   const lines = frontmatterText.split('\n');
 
   for (const line of lines) {
@@ -66,18 +66,18 @@ async function parseFrontmatter(
 
     // Parse booleans
     if (value === 'true') {
-      frontmatter[key] = 'true' as any;
+      frontmatter[key] = true;
       continue;
     }
     if (value === 'false') {
-      frontmatter[key] = 'false' as any;
+      frontmatter[key] = false;
       continue;
     }
 
     frontmatter[key] = value;
   }
 
-  return { frontmatter: frontmatter as any, content };
+  return { frontmatter: frontmatter as unknown as BlogPost, content };
 }
 
 // Helper function to write frontmatter back to file

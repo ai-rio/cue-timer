@@ -42,10 +42,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
         messages[namespace] = (
           await import(`./locales/${defaultLocale}/${namespace}.json`)
         ).default;
-        // Silent fallback handling
       } catch {
         // Final fallback - create empty object to prevent errors
-        // Silent error handling for missing translation files
         messages[namespace] = {};
       }
     }

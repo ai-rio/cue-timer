@@ -1,5 +1,6 @@
 'use client';
 
+import { ChevronUp, Menu, Search, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
@@ -8,7 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { extractHeadingsFromMdx } from '@/lib/utils';
 import type { TableOfContentsItem } from '@/types/blog';
-import { Search, Menu, X, ChevronUp } from 'lucide-react';
 
 interface TableOfContentsProps {
   content?: string;
@@ -19,7 +19,7 @@ interface TableOfContentsProps {
 // Constants for scroll behavior
 const SCROLL_OFFSET = 100; // Offset in pixels to account for fixed headers
 const SCROLL_TIMEOUT = 50; // Throttle timeout for scroll events
-const NAVIGATION_TIMEOUT = 1000; // Timeout for navigation attempts
+// const NAVIGATION_TIMEOUT = 1000; // Timeout for navigation attempts
 
 // Debug flag - set to true to enable console logging
 const DEBUG_TOC = process.env.NODE_ENV === 'development';
@@ -50,7 +50,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
   useEffect(() => {
     setIsClient(true);
     if (DEBUG_TOC) {
-      console.log('TableOfContents: Client-side hydration complete');
+      console.warn('TableOfContents: Client-side hydration complete');
     }
   }, []);
 
@@ -82,20 +82,19 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
   const filteredHeadings = useMemo(() => {
     if (!searchQuery.trim()) return computedHeadings;
 
-    const filterHeadings = (headings: TableOfContentsItem[]): TableOfContentsItem[] => {
-      return headings.reduce((acc: TableOfContentsItem[], heading) => {
+    const filterHeadings = (headings: TableOfContentsItem[]): TableOfContentsItem[] =>
+      headings.reduce((acc: TableOfContentsItem[], heading) => {
         const matchesSearch = heading.text.toLowerCase().includes(searchQuery.toLowerCase());
         const filteredChildren = heading.children ? filterHeadings(heading.children) : [];
 
         if (matchesSearch || filteredChildren.length > 0) {
           acc.push({
             ...heading,
-            children: filteredChildren
+            children: filteredChildren,
           });
         }
         return acc;
       }, []);
-    };
 
     return filterHeadings(computedHeadings);
   }, [computedHeadings, searchQuery]);
@@ -104,27 +103,31 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
   const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }, []);
 
   // Mobile toggle functionality
   const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev);
+    setIsMobileMenuOpen((prev) => !prev);
   }, []);
 
   // Update active section using IntersectionObserver API
   useEffect(() => {
+    let cleanup: (() => void) | undefined;
+
     if (!isClient || computedHeadings.length === 0) {
       if (DEBUG_TOC && computedHeadings.length === 0) {
-        console.log('TableOfContents: No headings to track');
+        console.warn('TableOfContents: No headings to track');
       }
-      return undefined;
+      return cleanup;
     }
 
     // Check if IntersectionObserver is available
     if (typeof IntersectionObserver === 'undefined') {
-      console.warn('TableOfContents: IntersectionObserver not supported, falling back to scroll events');
+      console.warn(
+        'TableOfContents: IntersectionObserver not supported, falling back to scroll events'
+      );
       // Fallback to manual scroll tracking if IntersectionObserver is not available
       const handleScroll = () => {
         try {
@@ -143,11 +146,13 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             return rect.top <= SCROLL_OFFSET && rect.bottom > SCROLL_OFFSET;
           });
 
-          const activeHeading = currentHeading || headingElements.reverse().find(({ element }) => {
-            if (!element) return false;
-            const rect = element.getBoundingClientRect();
-            return rect.top <= SCROLL_OFFSET;
-          });
+          const activeHeading =
+            currentHeading ||
+            headingElements.reverse().find(({ element }) => {
+              if (!element) return false;
+              const rect = element.getBoundingClientRect();
+              return rect.top <= SCROLL_OFFSET;
+            });
 
           if (activeHeading && activeHeading.id !== currentActiveId) {
             setCurrentActiveId(activeHeading.id);
@@ -166,7 +171,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       window.addEventListener('scroll', throttledHandleScroll, { passive: true });
       const initialCheck = setTimeout(handleScroll, 100);
 
-      return () => {
+      cleanup = () => {
         window.removeEventListener('scroll', throttledHandleScroll);
         if (timeoutId) clearTimeout(timeoutId);
         if (initialCheck) clearTimeout(initialCheck);
@@ -184,34 +189,41 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
 
       if (headingElements.length === 0) {
         if (DEBUG_TOC) {
-          console.log('TableOfContents: No heading elements found in DOM');
+          console.warn('TableOfContents: No heading elements found in DOM');
         }
-        return;
+        return cleanup;
       }
 
       if (DEBUG_TOC) {
-        console.log(`TableOfContents: Setting up IntersectionObserver for ${headingElements.length} headings`);
+        console.warn(
+          `TableOfContents: Setting up IntersectionObserver for ${headingElements.length} headings`
+        );
       }
 
       // Create IntersectionObserver with optimized settings
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const headingId = entry.target.id;
-            if (headingId !== currentActiveId) {
-              setCurrentActiveId(headingId);
-              if (DEBUG_TOC) {
-                console.log(`TableOfContents: Active heading changed to "${headingId}" (IntersectionObserver)`);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const headingId = entry.target.id;
+              if (headingId !== currentActiveId) {
+                setCurrentActiveId(headingId);
+                if (DEBUG_TOC) {
+                  console.warn(
+                    `TableOfContents: Active heading changed to "${headingId}" (IntersectionObserver)`
+                  );
+                }
               }
             }
-          }
-        });
-      }, {
-        // Threshold values for detecting when headings are visible
-        threshold: [0, 0.1, 0.5],
-        // Root margin to account for fixed headers and better UX
-        rootMargin: '-100px 0px -70% 0px'
-      });
+          });
+        },
+        {
+          // Threshold values for detecting when headings are visible
+          threshold: [0, 0.1, 0.5],
+          // Root margin to account for fixed headers and better UX
+          rootMargin: '-100px 0px -70% 0px',
+        }
+      );
 
       // Observe all heading elements
       headingElements.forEach(({ element }) => {
@@ -231,8 +243,10 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
           const elementBottom = rect.bottom + scrollTop;
 
           // Check if the element is in the viewport
-          return elementBottom > scrollTop + SCROLL_OFFSET &&
-                 elementTop < scrollTop + viewportHeight - SCROLL_OFFSET;
+          return (
+            elementBottom > scrollTop + SCROLL_OFFSET &&
+            elementTop < scrollTop + viewportHeight - SCROLL_OFFSET
+          );
         });
 
         if (mostVisibleHeading && mostVisibleHeading.id !== currentActiveId) {
@@ -244,24 +258,27 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       const initialCheckTimeout = setTimeout(setActiveFromScrollPosition, 100);
 
       if (DEBUG_TOC) {
-        console.log('TableOfContents: IntersectionObserver setup complete');
+        console.warn('TableOfContents: IntersectionObserver setup complete');
       }
 
-      return () => {
+      cleanup = () => {
         // Cleanup: disconnect observer and clear timeout
         observer.disconnect();
         if (initialCheckTimeout) {
           clearTimeout(initialCheckTimeout);
         }
         if (DEBUG_TOC) {
-          console.log('TableOfContents: IntersectionObserver cleaned up');
+          console.warn('TableOfContents: IntersectionObserver cleaned up');
         }
       };
     } catch (error) {
       console.warn('TableOfContents: Error setting up IntersectionObserver:', error);
       setNavigationError('Advanced scroll tracking failed');
       setTimeout(() => setNavigationError(null), 3000);
+      return cleanup;
     }
+
+    return cleanup;
   }, [computedHeadings, isClient, currentActiveId]);
 
   // Validate that heading elements exist in the DOM (after hydration)
@@ -269,7 +286,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
     if (!isClient || computedHeadings.length === 0) return undefined;
 
     const validateHeadings = () => {
-      const missingHeadings = computedHeadings.filter(heading => {
+      const missingHeadings = computedHeadings.filter((heading) => {
         const element = document.getElementById(heading.id);
         const exists = element !== null;
 
@@ -277,7 +294,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
           console.warn(`TableOfContents: Heading element not found:`, {
             id: heading.id,
             text: heading.text,
-            level: heading.level
+            level: heading.level,
           });
         }
 
@@ -285,11 +302,14 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       });
 
       if (missingHeadings.length > 0) {
-        console.error(`TableOfContents: ${missingHeadings.length} heading(s) missing from DOM:`, missingHeadings);
+        console.error(
+          `TableOfContents: ${missingHeadings.length} heading(s) missing from DOM:`,
+          missingHeadings
+        );
         setNavigationError(`Some sections unavailable`);
         setTimeout(() => setNavigationError(null), 5000);
       } else if (DEBUG_TOC) {
-        console.log(`TableOfContents: All ${computedHeadings.length} headings found in DOM`);
+        console.warn(`TableOfContents: All ${computedHeadings.length} headings found in DOM`);
       }
     };
 
@@ -308,14 +328,14 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       setNavigationError(null);
 
       if (DEBUG_TOC) {
-        console.log(`TableOfContents: Clicking heading "${headingId}"`);
+        console.warn(`TableOfContents: Clicking heading "${headingId}"`);
       }
 
       // Validate headingId
       if (!headingId || typeof headingId !== 'string') {
-        const error = 'Invalid heading ID';
+        const _error = 'Invalid heading ID';
         console.error('TableOfContents: Invalid heading ID:', headingId);
-        setNavigationError(error);
+        setNavigationError(_error);
         setTimeout(() => setNavigationError(null), 3000);
         return;
       }
@@ -342,10 +362,10 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             // Get element position for debugging
             const rect = element.getBoundingClientRect();
             if (DEBUG_TOC) {
-              console.log(`TableOfContents: Found element "${headingId}" at position:`, {
+              console.warn(`TableOfContents: Found element "${headingId}" at position:`, {
                 top: rect.top,
                 bottom: rect.bottom,
-                visible: rect.top >= 0 && rect.bottom <= window.innerHeight
+                visible: rect.top >= 0 && rect.bottom <= window.innerHeight,
               });
             }
 
@@ -365,9 +385,8 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             window.history.pushState(null, '', `#${headingId}`);
 
             if (DEBUG_TOC) {
-              console.log(`TableOfContents: Successfully scrolled to "${headingId}"`);
+              console.warn(`TableOfContents: Successfully scrolled to "${headingId}"`);
             }
-
           } catch (scrollError) {
             console.error('TableOfContents: Error during scroll:', scrollError);
             setNavigationError('Scroll failed');
@@ -381,11 +400,10 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             }
           }
         } else {
-          const error = `Heading "${headingId}" not found`;
           console.error('TableOfContents: Heading element not found after retries:', {
             headingId,
             attempts: maxAttempts,
-            availableHeadings: computedHeadings.map(h => h.id)
+            availableHeadings: computedHeadings.map((h) => h.id),
           });
           setNavigationError('Section not found');
           setTimeout(() => setNavigationError(null), 3000);
@@ -423,9 +441,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
             title={`Go to: ${item.text}`}
           >
             <span className='truncate flex items-center'>
-              {isActive && (
-                <span className='w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0' />
-              )}
+              {isActive && <span className='w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0' />}
               {item.text}
             </span>
           </a>
@@ -448,14 +464,17 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       aria-label='Toggle table of contents'
     >
       {isMobileMenuOpen ? <X className='w-5 h-5' /> : <Menu className='w-5 h-5' />}
-      <Badge variant='secondary' className='absolute -top-1 -right-1 w-5 h-5 p-0 text-xs flex items-center justify-center'>
+      <Badge
+        variant='secondary'
+        className='absolute -top-1 -right-1 w-5 h-5 p-0 text-xs flex items-center justify-center'
+      >
         {filteredHeadings.length}
       </Badge>
     </Button>
   );
 
   // Mobile overlay panel
-  const MobilePanel = () => (
+  const MobilePanel = () =>
     isMobileMenuOpen && (
       <>
         {/* Overlay */}
@@ -470,12 +489,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
           <Card className='h-full rounded-none border-0 shadow-none'>
             <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-4 border-b'>
               <CardTitle className='text-lg font-semibold'>Table of Contents</CardTitle>
-              <Button
-                variant='ghost'
-                size='sm'
-                onClick={toggleMobileMenu}
-                className='h-8 w-8 p-0'
-              >
+              <Button variant='ghost' size='sm' onClick={toggleMobileMenu} className='h-8 w-8 p-0'>
                 <X className='h-4 w-4' />
               </Button>
             </CardHeader>
@@ -539,11 +553,10 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
           </Card>
         </div>
       </>
-    )
-  );
+    );
 
   // Scroll to top button
-  const ScrollTopButton = () => (
+  const ScrollTopButton = () =>
     showScrollTop && (
       <Button
         onClick={scrollToTop}
@@ -553,8 +566,7 @@ export default function TableOfContents({ content, headings }: TableOfContentsPr
       >
         <ChevronUp className='w-5 h-5' />
       </Button>
-    )
-  );
+    );
 
   // Show loading state on server-side
   if (!isClient) {

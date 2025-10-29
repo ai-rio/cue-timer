@@ -53,5 +53,28 @@
     "backToBlog": "Zurück zum Blog",
     "nextPost": "Nächster Beitrag",
     "previousPost": "Vorheriger Beitrag"
+  },
+  "postNotFound": {
+    "title": "Blog-Beitrag nicht gefunden",
+    "description": "Der Blog-Beitrag, den Sie suchen, existiert nicht oder wurde entfernt.",
+    "backToBlog": "Zurück zum Blog",
+    "suggestion": "Vielleicht möchten Sie",
+    "browsePosts": "unsere neuesten Beiträge durchsuchen",
+    "mightLike": {
+      "title": "Vielleicht gefällt Ihnen auch:",
+      "timingPosts": "Timing-Beiträge",
+      "productivityPosts": "Produktivitäts-Beiträge",
+      "featuredPosts": "Featured-Beiträge"
+    }
+  },
+  "loading": "Wird geladen...",
+  "error": {
+    "loadFailed": "Blog-Beiträge konnten nicht geladen werden",
+    "filterFailed": "Filter konnten nicht angewendet werden"
+  },
+  "emptyStates": {
+    "noPosts": "Keine Blog-Beiträge gefunden",
+    "noPostsDescription": "Schauen Sie später für neue Inhalte vorbei oder versuchen Sie, Ihre Filter anzupassen.",
+    "noSearchResultsDescription": "Keine Blog-Beiträge entsprechen Ihren Suchkriterien. Versuchen Sie andere Schlüsselwörter oder Filter."
   }
 }

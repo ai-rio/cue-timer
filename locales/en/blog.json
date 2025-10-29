@@ -66,5 +66,15 @@
       "productivityPosts": "Productivity posts",
       "featuredPosts": "Featured posts"
     }
+  },
+  "loading": "Loading...",
+  "error": {
+    "loadFailed": "Failed to load blog posts",
+    "filterFailed": "Failed to apply filters"
+  },
+  "emptyStates": {
+    "noPosts": "No blog posts found",
+    "noPostsDescription": "Check back later for new content or try adjusting your filters.",
+    "noSearchResultsDescription": "No blog posts match your search criteria. Try different keywords or filters."
   }
 }

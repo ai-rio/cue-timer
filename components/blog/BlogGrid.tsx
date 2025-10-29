@@ -21,7 +21,7 @@ export default function BlogGrid({
   error,
   emptyMessage,
 }: BlogGridProps) {
-  const t = useTranslations('Blog');
+  const t = useTranslations('blog');
   if (loading) {
     return (
       <div className='space-y-4'>

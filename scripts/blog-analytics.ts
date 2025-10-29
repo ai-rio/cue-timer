@@ -321,7 +321,7 @@ function formatAsCsv(data: AnalyticsData | AnalyticsData[]): string {
 
   data.forEach((row: AnalyticsData) => {
     const values = headers.map((header) => {
-      const value = (row as any)[header];
+      const value = row[header as keyof AnalyticsData];
       if (typeof value === 'object' && value !== null) {
         return `"${JSON.stringify(value).replace(/"/g, '""')}"`;
       }

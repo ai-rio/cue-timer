@@ -147,13 +147,11 @@ function processSingleString(input: string): string {
  */
 export function stripFirstH1(content: string): string {
   const lines = content.split('\n');
-  let hasFrontmatter = false;
   let frontmatterEnd = -1;
   let h1LineIndex = -1;
 
   // Check for frontmatter and find H1
   if (lines[0]?.trim() === '---') {
-    hasFrontmatter = true;
     // Find end of frontmatter
     for (let i = 1; i < lines.length; i++) {
       if (lines[i]?.trim() === '---') {
@@ -264,6 +262,10 @@ export async function processMdxContentWithLinks(
   maxLinks: number = 5
 ): Promise<string> {
   try {
+    // Temporarily disable internal link injection to fix SSR hydration issues
+    // TODO: Re-implement this with client-side only processing
+    return processMdxContent(content);
+
     // Apply existing dedenting logic from processMdxContent()
     const dedentedContent = content.replace(/^[\r\n]+/, '').replace(/\t+$/gm, '');
 
@@ -342,9 +344,7 @@ export function extractHeadingsFromMdx(content: string): TableOfContentsItem[] {
  */
 export function generateSlug(text: string): string {
   // Match the MDX components logic exactly: toLowerCase().replace(/\s+/g, '-')
-  return text
-    .toLowerCase()
-    .replace(/\s+/g, '-');
+  return text.toLowerCase().replace(/\s+/g, '-');
 }
 
 /**

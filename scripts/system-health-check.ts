@@ -17,7 +17,7 @@ interface HealthCheckResult {
   status: 'healthy' | 'warning' | 'critical';
   message: string;
   details?: Record<string, unknown>;
-  metrics?: Record<string, number | string>;
+  metrics?: Record<string, number | string | boolean>;
   recommendations?: string[];
 }
 
@@ -156,7 +156,7 @@ class SystemHealthChecker {
           const audit = JSON.parse(auditOutput);
           vulnerabilities = audit.vulnerabilities || vulnerabilities;
 
-          metrics.vulnerabilities = vulnerabilities as any;
+          metrics.vulnerabilities = JSON.stringify(vulnerabilities);
         }
       } catch (error) {
         metrics.auditCheckFailed = true;
@@ -208,7 +208,7 @@ class SystemHealthChecker {
           criticalDepsMissing,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Dependency check failed');
@@ -236,7 +236,7 @@ class SystemHealthChecker {
         }
       });
 
-      metrics.envFiles = envFileStatus as any;
+      metrics.envFiles = JSON.stringify(envFileStatus);
 
       // Check Node.js version
       const nodeVersion = process.version;
@@ -315,7 +315,7 @@ class SystemHealthChecker {
           envFileStatus,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Environment check failed');
@@ -357,7 +357,7 @@ class SystemHealthChecker {
         this.alerts.push(`Missing critical directories: ${missingDirs.join(', ')}`);
       }
 
-      metrics.criticalDirectories = dirStatus as any;
+      metrics.criticalDirectories = JSON.stringify(dirStatus);
 
       // Check file permissions
       const importantFiles = [
@@ -389,7 +389,7 @@ class SystemHealthChecker {
         this.alerts.push(`Permission issues with files: ${permissionIssues.join(', ')}`);
       }
 
-      metrics.filePermissions = filePermissions as any;
+      metrics.filePermissions = JSON.stringify(filePermissions);
 
       // Check disk space (simplified check)
       try {
@@ -456,7 +456,7 @@ class SystemHealthChecker {
           diskSpaceCritical: metrics.diskSpaceCritical || false,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('File system check failed');
@@ -560,7 +560,9 @@ class SystemHealthChecker {
         metrics: {
           ...metrics,
 
-          toolResults: toolResults.map((r) => ({ tool: r.tool, accessible: r.accessible })) as any,
+          toolResults: JSON.stringify(
+            toolResults.map((r) => ({ tool: r.tool, accessible: r.accessible }))
+          ),
         },
       };
     } catch (error: unknown) {
@@ -633,7 +635,7 @@ class SystemHealthChecker {
         }
       }
 
-      metrics.templateTests = templateTests as any;
+      metrics.templateTests = JSON.stringify(templateTests);
       const workingTemplates = templateTests.filter((t) => t.accessible).length;
 
       // Check template system types
@@ -673,7 +675,7 @@ class SystemHealthChecker {
           workingTemplates,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Template system check failed');
@@ -775,7 +777,7 @@ class SystemHealthChecker {
           localeFiles: localeFiles.length,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Multi-language support check failed');
@@ -800,7 +802,7 @@ class SystemHealthChecker {
         dirStatus[dir] = existsSync(dir);
       });
 
-      metrics.contentDirectories = dirStatus as any;
+      metrics.contentDirectories = JSON.stringify(dirStatus);
 
       // Check for MDX files
       let mdxFiles = [];
@@ -895,7 +897,7 @@ class SystemHealthChecker {
           invalidMdxFiles: invalidMdxFiles.length,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Content system check failed');
@@ -915,12 +917,12 @@ class SystemHealthChecker {
       // Check memory usage
       const memoryUsage = process.memoryUsage();
 
-      metrics.memoryUsage = {
+      metrics.memoryUsage = JSON.stringify({
         heapUsed: Math.round(memoryUsage.heapUsed / 1024 / 1024),
         heapTotal: Math.round(memoryUsage.heapTotal / 1024 / 1024),
         external: Math.round(memoryUsage.external / 1024 / 1024),
         rss: Math.round(memoryUsage.rss / 1024 / 1024),
-      } as any;
+      });
 
       // Check if application can start (basic startup test)
       let startupTime = 0;
@@ -1001,7 +1003,7 @@ class SystemHealthChecker {
           memoryUsage: `${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
         },
 
-        metrics: metrics as any,
+        metrics,
       };
     } catch (error: unknown) {
       spinner.fail('Performance check failed');
