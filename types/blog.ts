@@ -25,6 +25,7 @@ export const BlogPostSchema = z.object({
   slug: z.string().min(1, 'Slug is required'),
   category: z.enum(blogCategories),
   author: z.string().min(1, 'Author is required'),
+  authorBio: z.string().optional(),
   publishedAt: z.string().datetime(),
   summary: z.string().min(10, 'Summary must be at least 10 characters'),
   readTime: z.number().int().positive().optional(),
